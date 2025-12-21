@@ -2,12 +2,17 @@
 layout: about
 title: about
 permalink: /
-subtitle: Senior Economist at the Economic Innovation Group
+subtitle: ""
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: true
+  more_info: >
+    <p><strong>Economic Innovation Group (EIG)</strong></p>
+    <p>Senior Economist</p>
+    <p>Washington, DC</p>
+
 social: true
 
 selected_papers: false
@@ -44,9 +49,3 @@ I’m Ben Glasner, a Senior Economist at the Economic Innovation Group. I work o
 I’m currently a **Senior Economist at the Economic Innovation Group (EIG)**. Previously, I was a **Postdoctoral Research Scientist** at Columbia University’s Center on Poverty and Social Policy, where I worked on policies affecting poverty and well-being, including the Child Tax Credit.
 
 I earned my Ph.D. in Public Policy and Management from the University of Washington’s Daniel J. Evans School of Public Policy and Governance.
-
----
-
-## For those looking for the CV:
-
-- **CV:** [/cv/](/cv/)  
