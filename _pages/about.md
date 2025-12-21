@@ -9,9 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: true
   more_info: >
-    <p><strong>Economic Innovation Group (EIG)</strong></p>
-    <p>Senior Economist</p>
-    <p>Washington, DC</p>
+    <p><strong>An Outdated Headshot</strong></p>
 
 social: true
 
@@ -31,8 +29,6 @@ I’m Ben Glasner, a Senior Economist at the Economic Innovation Group. I work o
 - **How to end low-wage work forever** — a wage-subsidy proposal aimed at raising take-home pay without discouraging employment.  
 - **The Great Transfer-mation** — analysis of how many U.S. communities became more reliant on government-transfer income.  
 - **Opportunity Zones & housing supply** — work on place-based policy and housing stock outcomes.
-
-*(Next step: we can turn each of these into clickable items—either as Project cards in `_projects/` or links to Publications / external pages.)*
 
 ---
 
@@ -54,10 +50,6 @@ I earned my Ph.D. in Public Policy and Management from the University of Washing
 
 ---
 
-## Explore
+## For those looking for the CV:
 
 - **CV:** [/cv/](/cv/)  
-- **Projects:** [/projects/](/projects/)  
-- **Writing:** [/blog/](/blog/)  
-- **Publications:** [/publications/](/publications/)  
-- **Updates:** [/news/](/news/)
