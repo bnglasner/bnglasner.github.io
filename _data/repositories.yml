@@ -1,14 +1,14 @@
-github_users:
-  - torvalds
-  - alshedivat
+# _data/repositories.yml
 
+# Pull repositories from these GitHub "users".
+# This can be a personal username OR an organization name.
+github_users:
+  - EIG-Research
+  - bnglasner
+
+# How many lines of repo description to show on the cards
 repo_description_lines_max: 2
 
-github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+# Optional: pin a few repos to always show (even if you later remove github_users)
+# Leave empty for now.
+github_repos: []
