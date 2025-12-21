@@ -8,9 +8,6 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: true
-  more_info: >
-    <p><strong>An Outdated Headshot</strong></p>
-
 social: true
 
 selected_papers: false
