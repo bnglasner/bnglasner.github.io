@@ -11,7 +11,6 @@ profile:
   more_info: >
     <p><strong>Economic Innovation Group (EIG)</strong></p>
     <p>Senior Economist</p>
-    <p>Washington, DC</p>
 
 social: true
 
