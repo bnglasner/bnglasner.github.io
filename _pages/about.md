@@ -9,8 +9,7 @@ profile:
   image: prof_pic.png
   image_circular: true
   more_info: >
-    <p><strong>Economic Innovation Group (EIG)</strong></p>
-    <p>Senior Economist</p>
+    <p><strong>This is Ben</strong></p>
 
 social: true
 
