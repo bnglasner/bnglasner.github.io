@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Senior Economist at the Economic Innovation Group · Labor markets, place-based policy, and safety net design
+subtitle: Senior Economist at the Economic Innovation Group
 
 profile:
   align: right
