@@ -2,96 +2,183 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Benjamin (Ben) Glasner, Ph.D.
+    - name: Current Role
+      value: Economist, Economic Innovation Group (EIG)
+    - name: Location
+      value: Washington, D.C.
+    - name: Email
+      value: <a href="mailto:bnglasner@gmail.com">bnglasner@gmail.com</a>
+    - name: LinkedIn
+      value: <a href="https://www.linkedin.com/in/bglasner/" target="_blank" rel="noopener noreferrer">linkedin.com/in/bglasner</a>
+    - name: Google Scholar
+      value: <a href="https://scholar.google.com/citations?user=ZvG1rc8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar profile</a>
+    - name: Research Focus
+      value: Labor markets; place-based policy; social-policy design and economic well-being.
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. and M.Sc., Public Policy &amp; Management
+      institution: Evans School of Public Policy and Governance, University of Washington
+      location: Seattle, WA
+      year: 2016 - 2021
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+        - "Dissertation: The Impact of Public Policy on Nonstandard Work Arrangements."
+        - "Research: labor-market regulation and worker classification; benefits and nonstandard work; minimum wage, overtime, employer-provided health insurance, monopsony, and tax evasion."
+        - "Skills: quantitative and econometric analysis; policy evaluation; interdisciplinary communication; project management."
 
-- title: Experience
+    - title: B.A., Economics
+      institution: Vassar College
+      location: Poughkeepsie, NY
+      year: 2012 - 2016
+      description:
+        - "Thesis: The Chinese Hukou System: Structural Change and Political Reform."
+        - "Research: political reform, urbanization, and structural change in modern China."
+
+- title: Employment
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Economist
+      institution: Economic Innovation Group (EIG)
+      location: Washington, D.C.
+      year: 2023 - present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Economic research with large datasets; advanced statistical and spatial analysis.
+        - Translate empirical results into policy writing, data visualization, and stakeholder outreach.
+
+    - title: Postdoctoral Research Scientist
+      institution: Center on Poverty and Social Policy, Columbia University
+      location: New York, NY
+      year: 2021 - 2022
       description:
-        - Description 1.
-        - Description 2.
+        - Empirical analyses of major U.S. social policies and reforms.
+        - Work on intergenerational poverty, material hardship, and employment impacts of the Child Tax Credit.
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: Dean's Research Assistant
+      institution: University of Washington
+      location: Seattle, WA
+      year: 2020 - 2021
       description:
+        - Supported faculty transition to technology-enhanced learning.
+        - Conducted DEI and course design assessments; developed action plans informed by interviews and surveys.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+    - title: Predoctoral Instructor
+      institution: University of Washington
+      location: Seattle, WA
+      year: 2020
+      description:
+        - Primary instructor for a section of the core MPA microeconomics and public policy course.
 
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Short-Term Consultant
+      institution: World Bank Group
+      location: Seattle, WA
+      year: 2018
+      description:
+        - Expenditure analysis across household surveys in Malawi, Tanzania, Ghana, Peru, and Cote d'Ivoire.
+        - Developed seasonality estimates using parametric, semi-parametric, and machine learning approaches.
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
+- title: Selected Publications
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Peer-reviewed journal articles
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+        - <a href="https://doi.org/10.1086/719690" target="_blank" rel="noopener noreferrer">The Minimum Wage, Self-Employment, and the Online Gig Economy</a> &mdash; <i>Journal of Labor Economics</i> (2023)
+        - <a href="https://doi.org/10.1377/hlthaff.2022.00730" target="_blank" rel="noopener noreferrer">No Evidence the Child Tax Credit Expansion Had an Effect on the Well-Being and Mental Health of Parents</a> &mdash; <i>Health Affairs</i> (2022)
+        - <a href="https://doi.org/10.1016/j.jpubeco.2024.105168" target="_blank" rel="noopener noreferrer">Effects of the expanded Child Tax Credit on employment outcomes</a> &mdash; <i>Journal of Public Economics</i> (2024)
 
-- title: Other Interests
+    - title: Reports and working papers
+      items:
+        - <a href="https://eig.org/american-worker/" target="_blank" rel="noopener noreferrer">The American Worker: Toward a New Consensus</a> (EIG, June 2024)
+        - <a href="https://eig.org/great-transfermation/" target="_blank" rel="noopener noreferrer">The Great &ldquo;Transfer&rdquo;-mation</a> (EIG, September 2024)
+        - <a href="https://eig.org/opportunity-zones-housing-supply/" target="_blank" rel="noopener noreferrer">The Impact of Opportunity Zones on Housing Supply</a> (EIG, March 2025)
+        - <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank" rel="noopener noreferrer">How to end low-wage work forever: An 80-80 wage subsidy proposal</a> (EIG, September 2025)
+
+    - title: Full list
+      items:
+        - See <a href="/publications/">Publications</a> or <a href="https://scholar.google.com/citations?user=ZvG1rc8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>.
+
+- title: Code and Data (Selected)
+  type: time_table
+  contents:
+    - title: <a href="https://github.com/EIG-Research/EIG-Great-Transfer-Mation" target="_blank" rel="noopener noreferrer">The Great "Transfer"-mation (Repository)</a>
+      institution: GitHub (EIG-Research)
+      year: 2024
+      description:
+        - County-level analysis of the growth of government transfer income as a share of personal income since 1970.
+        - Data and replication code supporting EIG's report and interactive.
+      linkitems:
+        - link: https://github.com/EIG-Research/EIG-Great-Transfer-Mation
+          linkname: Code
+        - link: https://eig.org/great-transfermation/
+          linkname: Website
+        - link: https://eig.org/wp-content/uploads/2024/09/Great-Transfermation.pdf
+          linkname: PDF
+
+    - title: <a href="https://github.com/EIG-Research/oz-housing-supply" target="_blank" rel="noopener noreferrer">The Impact of Opportunity Zones on Housing Supply (Repository)</a>
+      institution: GitHub (EIG-Research)
+      year: 2025
+      description:
+        - Difference-in-differences analysis using HUD USPS Administrative Data on Address Vacancies.
+        - Estimates suggest Opportunity Zones increased new residential addresses in treated low-income communities.
+      linkitems:
+        - link: https://github.com/EIG-Research/oz-housing-supply
+          linkname: Code
+        - link: https://eig.org/opportunity-zones-housing-supply/
+          linkname: Website
+        - link: https://eig.org/wp-content/uploads/2025/02/The_Impact_of_Opportunity_Zones_on_Housing_Supply.pdf
+          linkname: PDF
+
+- title: Awards and Honors
+  type: time_table
+  contents:
+    - year: 2020
+      items:
+        - <b>Pi Alpha Alpha Doctoral Manuscript Award</b> &mdash; recognizes outstanding student research, methodological rigor, and originality.
+        - <b>NASPAA Staats Emerging Scholar</b> &mdash; selected to present research at the NASPAA annual conference.
+    - year: 2016
+      items:
+        - <b>The Agnes Reynolds Jackson Prize</b> &mdash; awarded for the best senior seminar paper at Vassar College.
+
+- title: Community Outreach
+  type: time_table
+  contents:
+    - year: Public Policy
+      title: Public Policy Advisor
+      institution: Seattle Mayor's Office &amp; advisory team for Senator Mark Warner
+      description:
+        - Strategic advice on local legislation governing nonstandard work arrangements and the online gig economy.
+        - Consultation on COVID-19 impacts on local labor markets, independent contracting, and unemployment insurance.
+
+    - year: Public Policy
+      title: Public Policy Advisor
+      institution: Utah Legislative Session report on SB 233 (Flexible Benefits Working Group)
+      description:
+        - Co-developed the executive summary for an assessment of Utah's SB 233 portable benefits law.
+        - Identified key implementation challenges and recommendations to strengthen incentives and legal clarity.
+
+    - year: New Tools
+      title: Data Tools &amp; Methodology Developer
+      institution: Washington State Employment Security Department &amp; World Bank
+      description:
+        - Contributed to administrative data tools (including work supporting the Seattle Minimum Wage project).
+        - Developed and delivered a random forest methodology to improve analysis of incomplete survey data.
+
+- title: Policy, News, and Media
+  type: nested_list
+  contents:
+    - title: Television
+      items:
+        - CBS MoneyWatch &mdash; "More than half of U.S. workers don't have access to employer-sponsored retirement plan"
+    - title: Print / Online
+      items:
+        - New York Times; Wall Street Journal; Financial Times; Washington Post; Bloomberg; CBS News; Yahoo Finance; MarketWatch; and others.
+
+- title: Research and Policy Areas
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - Wages, work, and labor-market institutions (including wage-subsidy design)
+    - Economic geography and place-based policy
+    - Transfers, safety net programs, and poverty dynamics
+    - Opportunity Zones and housing supply
+    - Gig economy and the future of work
