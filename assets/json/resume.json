@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Benjamin (Ben) Glasner, Ph.D.",
-    "label": "Economist",
+    "label": "Senior Economist",
     "image": "",
-    "email": "bnglasner@gmail.com",
+    "email": "benjamin@eig.org",
     "phone": "",
     "url": "https://linktr.ee/bglasner",
-    "summary": "Economist at the Economic Innovation Group (EIG). Former Postdoctoral Research Scientist with Columbia University’s Center on Poverty and Social Policy. Ph.D. and M.Sc. in Public Policy & Management (University of Washington); B.A. in Economics (Vassar College).",
+    "summary": "Senior Economist at the Economic Innovation Group (EIG). Former Postdoctoral Research Scientist with Columbia University’s Center on Poverty and Social Policy. Ph.D. and M.Sc. in Public Policy & Management (University of Washington); B.A. in Economics (Vassar College).",
     "location": {
       "address": "",
       "postalCode": "",
@@ -300,32 +300,10 @@
       "reference": "Available upon request."
     }
   ],
-  "projects": [
+  "Policy, News, and Media": [
     {
-      "name": "The Great “Transfer”-mation (code repository)",
-      "summary": "Repository with data and code supporting EIG’s report on the rise of transfer income across U.S. communities.",
-      "highlights": [
-        "Reproducible analysis pipeline",
-        "Companion report PDF"
-      ],
-      "startDate": "2024-01-01",
-      "endDate": "",
-      "url": "https://github.com/EIG-Research/EIG-Great-Transfer-Mation"
-    },
-    {
-      "name": "The Impact of Opportunity Zones on Housing Supply (code repository)",
-      "summary": "Repository with methods and documentation supporting EIG’s working paper estimating OZ effects on housing supply.",
-      "highlights": [
-        "HUD/USPS address data methods",
-        "Companion working paper PDF"
-      ],
-      "startDate": "2025-01-01",
-      "endDate": "",
-      "url": "https://github.com/EIG-Research/oz-housing-supply"
-    },
-    {
-      "name": "Policy, News, and Media",
-      "summary": "Selected media appearances and coverage (per CV), including CBS MoneyWatch and mentions in outlets such as the New York Times, Wall Street Journal, Financial Times, Washington Post, Bloomberg, CBS News, Yahoo Finance, and MarketWatch.",
+      "name": "Selected media appearances and coverage",
+      "summary": "CBS MoneyWatch and mentions in outlets such as the New York Times, Wall Street Journal, Financial Times, Washington Post, Bloomberg, CBS News, Yahoo Finance, and MarketWatch.",
       "highlights": [],
       "startDate": "",
       "endDate": "",
