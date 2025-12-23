@@ -1,35 +1,32 @@
 # _data/socials.yml
-# Displayed in the order listed
+# IMPORTANT: this theme expects a YAML MAP (key: value), not a list.
 
-- name: CV
-  icon: ai ai-cv
-  url: /assets/pdf/Ben_Glasner_CV.pdf
+cv_pdf: /assets/pdf/Ben_Glasner_CV.pdf
 
-- name: Email
-  icon: fas fa-envelope
-  url: mailto:ben.glasner@eig.org
+# Put ONLY the email address here (the template adds mailto:)
+email: benjamin@eig.org
 
-- name: LinkedIn
-  icon: fab fa-linkedin
-  url: https://www.linkedin.com/in/bglasner/
+linkedin_username: bglasner
+github_username: EIG-Research
+instagram_id: microfamousben
 
-- name: Substack
-  icon: fas fa-rss
-  url: https://substack.com/@benglasner
+# This key is named blogger_url in your theme (it just needs a full URL)
+blogger_url: https://substack.com/@benglasner
 
-- name: Google Scholar
-  icon: ai ai-google-scholar
-  url: https://scholar.google.com/citations?user=ZvG1rc8AAAAJ
+scholar_userid: ZvG1rc8AAAAJ
 
-- name: GitHub
-  icon: fab fa-github
-  url: https://github.com/EIG-Research
+work_url: https://eig.org/
 
-- name: Work
-  icon: fas fa-briefcase
-  url: https://eig.org/
+# Put ONLY the handle here (NO @). Your template currently links to twitter.com/<handle>
+x_username: BenGlasner
 
-- name: X
-  icon: fab fa-x-twitter
-  url: https://x.com/BenGlasner
+# If you want RSS icon
+rss_icon: true
 
+# Optional: Linktree as a custom icon
+custom_social:
+  title: Linktree
+  url: https://linktr.ee/bglasner
+  # Best: host your own image in the repo
+  logo: /assets/img/linktree.png
+  # (Put linktree.png at: assets/img/linktree.png)
