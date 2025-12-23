@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "Peer-reviewed articles, policy reports, and working papers.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
         },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
