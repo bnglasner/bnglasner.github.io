@@ -6,7 +6,7 @@
     "email": "benjamin@eig.org",
     "phone": "",
     "url": "https://linktr.ee/bglasner",
-    "summary": "Senior Economist at the Economic Innovation Group (EIG). Former Postdoctoral Research Scientist with Columbia University’s Center on Poverty and Social Policy. Ph.D. and M.Sc. in Public Policy & Management (University of Washington); B.A. in Economics (Vassar College).",
+    "summary": "Senior Economist at the Economic Innovation Group (EIG). Researcher and writer focused on labor markets, place-based policy, and how social-policy design shapes economic opportunity and well-being.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -37,6 +37,7 @@
       }
     ]
   },
+
   "work": [
     {
       "name": "Economic Innovation Group",
@@ -44,11 +45,11 @@
       "url": "https://eig.org/",
       "startDate": "2023-01-01",
       "endDate": "",
-      "summary": "Conducts economic research and public-facing analysis on U.S. labor markets and related policy issues, including economic writing, data visualization, and stakeholder outreach.",
+      "summary": "Conducts applied economic research and public-facing analysis on U.S. labor markets, wages, and place-based policy.",
       "highlights": [
-        "Labor market and policy analysis",
-        "Research-to-communication translation",
-        "Data visualization and stakeholder outreach"
+        "Author and coauthor of major reports and working papers on wage subsidies, transfer income dependence, Opportunity Zones, housing supply, and labor-market measurement",
+        "Develops original empirical analyses using CPS, ACS, SIPP, HUD–USPS vacancy data, and administrative sources",
+        "Produces public-facing writing, figures, and data visualizations for policymakers, media, and general audiences"
       ]
     },
     {
@@ -57,22 +58,22 @@
       "url": "https://www.povertycenter.columbia.edu/",
       "startDate": "2021-01-01",
       "endDate": "2022-12-31",
-      "summary": "Conducted analyses of major U.S. social policies and reforms, including studies related to the intergenerational transmission of poverty.",
+      "summary": "Conducted empirical research on major U.S. social policies and reforms, including the expanded Child Tax Credit, poverty dynamics, and intergenerational mobility.",
       "highlights": [
-        "Policy evaluation and empirical research",
-        "Work with CPSP investigators (per CV): Irwin Garfinkel, Jane Waldfogel, and Christopher Wimer"
+        "Peer-reviewed and policy-facing research on employment, mental health, and material hardship",
+        "Collaborated with CPSP faculty including Irwin Garfinkel, Jane Waldfogel, and Christopher Wimer"
       ]
     },
     {
       "name": "University of Washington",
-      "position": "Dean's Research Assistant",
+      "position": "Dean’s Research Assistant",
       "url": "https://www.washington.edu/",
       "startDate": "2020-01-01",
       "endDate": "2021-12-31",
-      "summary": "Served as the primary analyst for equity- and inclusion-related feedback, coordinating and analyzing focus groups and surveys with faculty, staff, students, alumni, and donors.",
+      "summary": "Led survey and qualitative analysis for equity- and inclusion-focused institutional research initiatives.",
       "highlights": [
-        "Survey and qualitative data workflows",
-        "Institutional research and stakeholder coordination"
+        "Designed and analyzed surveys and focus groups involving faculty, staff, students, alumni, and donors",
+        "Synthesized qualitative and quantitative feedback for senior leadership"
       ]
     },
     {
@@ -81,73 +82,36 @@
       "url": "https://www.washington.edu/",
       "startDate": "2020-01-01",
       "endDate": "2020-12-31",
-      "summary": "Primary instructor for a course section, developing and delivering material for students with diverse skill levels.",
+      "summary": "Primary instructor for undergraduate coursework in public policy and economics.",
       "highlights": [
-        "Teaching and instruction",
-        "Curriculum delivery"
+        "Curriculum delivery and assessment across students with diverse backgrounds"
       ]
     },
     {
       "name": "World Bank Group (via University of Washington)",
-      "position": "Short Term Consultant",
+      "position": "Short-Term Consultant",
       "url": "https://www.worldbank.org/",
       "startDate": "2018-01-01",
       "endDate": "2018-12-31",
-      "summary": "Performed expenditure analysis using survey data, including work on missingness and seasonality; contributed to a working paper.",
+      "summary": "Conducted expenditure and survey-data analysis addressing missingness and seasonality in household data.",
       "highlights": [
-        "Survey data methods and expenditure analysis",
-        "Applied research support"
+        "Contributed to a World Bank working paper",
+        "Applied survey-data methods in development contexts"
       ]
     }
   ],
-  "volunteer": [
-    {
-      "organization": "Seattle Mayor's Office & Advisory Team for Senator Mark Warner",
-      "location": "",
-      "position": "Public Policy Advisor",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "Provided strategic advice on local labor markets, independent contracting, and unemployment insurance.",
-      "highlights": []
-    },
-    {
-      "organization": "Utah Legislative Session Report on SB 233",
-      "location": "",
-      "position": "Public Policy Advisor",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "Co-developed an executive summary outlining policy options intended to increase legal clarity and bolster benefits for independent contractors.",
-      "highlights": []
-    },
-    {
-      "organization": "Washington State Employment Security Department & World Bank",
-      "location": "",
-      "position": "Data Tools & Methodology Developer",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "Contributed to development of new data tools and methods for analysis of incomplete survey data across developing economies.",
-      "highlights": []
-    }
-  ],
+
   "education": [
     {
-      "institution": "Evans School of Public Policy and Governance, University of Washington",
+      "institution": "University of Washington",
       "location": "Seattle, WA",
       "url": "https://www.washington.edu/",
       "area": "Public Policy & Management",
       "studyType": "Ph.D. and M.Sc.",
       "startDate": "2016-01-01",
       "endDate": "2021-01-01",
-      "score": "",
       "courses": [
-        "Dissertation: The Impact of Public Policy on Nonstandard Work Arrangements",
-        "Quantitative & econometric analysis",
-        "Policy analysis and evaluation",
-        "Interdisciplinary communication",
-        "Project management"
+        "Dissertation: The Impact of Public Policy on Nonstandard Work Arrangements"
       ]
     },
     {
@@ -158,157 +122,150 @@
       "studyType": "B.A.",
       "startDate": "2012-01-01",
       "endDate": "2016-01-01",
-      "score": "",
       "courses": [
-        "Undergraduate thesis: The Chinese Hukou System: Structural Change and Political Reform",
-        "Multi-stakeholder communication",
-        "Historical and policy analysis",
-        "Interdisciplinary research"
+        "Undergraduate thesis: The Chinese Hukou System: Structural Change and Political Reform"
       ]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Pi Alpha Alpha Doctoral Manuscript Award",
-      "date": "2020-01-01",
-      "awarder": "Pi Alpha Alpha",
-      "url": "",
-      "summary": "Recognizes an outstanding doctoral student paper (per CV)."
     },
     {
-      "title": "NASPAA Staats Emerging Scholar",
-      "date": "2020-01-01",
-      "awarder": "NASPAA",
-      "url": "",
-      "summary": "Awarded to up to three Ph.D. candidates (per CV)."
-    },
-    {
-      "title": "Agnes Reynolds Jackson Prize",
-      "date": "2016-01-01",
-      "awarder": "Vassar College",
-      "url": "",
-      "summary": "Prize recognizing excellence in academic research and writing (per CV)."
+      "institution": "Stockholm School of Economics",
+      "location": "Stockholm, Sweden",
+      "url": "https://www.hhs.se/",
+      "area": "Economics",
+      "studyType": "Study Abroad",
+      "startDate": "2015-01-01",
+      "endDate": "2015-12-31",
+      "courses": []
     }
   ],
-  "certificates": [],
+
   "publications": [
     {
       "name": "The Minimum Wage, Self-Employment, and the Online Gig Economy",
       "publisher": "Journal of Labor Economics",
       "releaseDate": "2023-01-01",
-      "url": "https://ideas.repec.org/a/ucp/jlabec/doi10.1086-719690.html",
-      "summary": "Estimates the effect of minimum wage increases on work not covered by minimum wage laws; finds heterogeneous effects across traditional self-employment and online gig economy activity."
+      "url": "https://ideas.repec.org/a/ucp/jlabec/doi10.1086-719690.html"
     },
     {
       "name": "No Evidence the Child Tax Credit Expansion Has Affected the Well-being and Mental Health of Parents",
       "publisher": "Health Affairs",
       "releaseDate": "2022-11-01",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/36378850/",
-      "summary": "Analysis of survey-based evidence on parental well-being and mental health in the context of the 2021 expanded Child Tax Credit."
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36378850/"
     },
     {
-      "name": "Effects of the expanded Child Tax Credit on employment outcomes",
+      "name": "Effects of the Expanded Child Tax Credit on Employment Outcomes",
       "publisher": "Journal of Public Economics",
       "releaseDate": "2024-10-01",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S004727272400104X",
-      "summary": "Estimates employment impacts of the expanded Child Tax Credit using real-world data from 2021."
-    },
-    {
-      "name": "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the Intergenerational Persistence of Poverty",
-      "publisher": "Center on Poverty & Social Policy / Washington Center for Equitable Growth (Working Paper)",
-      "releaseDate": "2023-05-30",
-      "url": "https://equitablegrowth.org/working-papers/the-effectiveness-of-the-food-stamp-program-at-reducing-differences-in-the-intergenerational-persistence-of-poverty/",
-      "summary": "Investigates how Food Stamp Program expansions affected intergenerational poverty and racial disparities."
-    },
-    {
-      "name": "Liquid Assets, Financial Shocks, and Entrances into Material Hardship",
-      "publisher": "Center on Poverty & Social Policy (Report)",
-      "releaseDate": "2023-01-01",
-      "url": "https://robinhoodorg-5662.kxcdn.com/wp-content/uploads/2023/01/Liquid-Assets-Financial-Shocks-and-Entrances-into-Material-Hardship.pdf",
-      "summary": "Examines how liquid assets buffer households against financial shocks and transitions into material hardship."
-    },
-    {
-      "name": "Effects of Noncompete Agreement Reforms on Business Formation",
-      "publisher": "Economic Innovation Group (Working Paper)",
-      "releaseDate": "2023-03-29",
-      "url": "https://eig.org/wp-content/uploads/2023/03/Noncompetes-Reforms-and-Business-Formation.pdf",
-      "summary": "Studies the relationship between noncompete agreement reforms and business formation."
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S004727272400104X"
     },
     {
       "name": "The American Worker: Toward a New Consensus",
-      "publisher": "Economic Innovation Group (Report)",
+      "publisher": "Economic Innovation Group",
       "releaseDate": "2024-06-01",
-      "url": "https://eig.org/wp-content/uploads/2024/06/The-American-Worker-Toward-a-New-Consensus.pdf",
-      "summary": "A policy and research synthesis on the state of work in the U.S. and a proposed agenda for a new consensus."
+      "url": "https://eig.org/wp-content/uploads/2024/06/The-American-Worker-Toward-a-New-Consensus.pdf"
     },
     {
-      "name": "The Great “Transfer”-mation: How American communities became reliant on income from government",
-      "publisher": "Economic Innovation Group (Report)",
+      "name": "The Great “Transfer”-mation: How American Communities Became Reliant on Income from Government",
+      "publisher": "Economic Innovation Group",
       "releaseDate": "2024-09-01",
-      "url": "https://eig.org/wp-content/uploads/2024/09/Great-Transfermation.pdf",
-      "summary": "Documents the rise of transfer income across U.S. communities and discusses implications for regional political economy."
+      "url": "https://eig.org/wp-content/uploads/2024/09/Great-Transfermation.pdf"
     },
     {
       "name": "The Impact of Opportunity Zones on Housing Supply",
-      "publisher": "Economic Innovation Group (Working Paper)",
+      "publisher": "Economic Innovation Group",
       "releaseDate": "2025-03-11",
-      "url": "https://eig.org/wp-content/uploads/2025/02/The_Impact_of_Opportunity_Zones_on_Housing_Supply.pdf",
-      "summary": "Provides quantitative evidence on the effect of Opportunity Zones on housing supply using HUD/USPS address data."
+      "url": "https://eig.org/wp-content/uploads/2025/02/The_Impact_of_Opportunity_Zones_on_Housing_Supply.pdf"
     }
   ],
+
   "skills": [
     {
-      "name": "Economic Research & Policy Analysis",
-      "level": "",
-      "icon": "fa-solid fa-chart-line",
+      "name": "Economic & Quantitative Analysis",
       "keywords": [
-        "Quantitative & econometric analysis",
-        "Policy analysis and evaluation",
-        "Interdisciplinary communication",
-        "Project management"
+        "Econometrics",
+        "Statistics",
+        "Quantitative analysis",
+        "Labor-market and social-policy evaluation"
       ]
     },
     {
-      "name": "Communication",
-      "level": "",
-      "icon": "fa-solid fa-pen",
+      "name": "Data & Tools",
       "keywords": [
-        "Economic writing",
-        "Data visualization",
-        "Stakeholder outreach",
-        "Multi-stakeholder communication"
+        "R",
+        "Stata",
+        "Bloomberg",
+        "Moody’s",
+        "SCOPE",
+        "Fiserv"
       ]
-    }
-  ],
-  "languages": [],
-  "interests": [
+    },
     {
-      "name": "Research areas",
-      "icon": "fa-solid fa-tag",
+      "name": "Substantive Expertise",
       "keywords": [
         "Labor markets and wages",
         "Poverty and social policy",
-        "Place-based policy and regional development",
-        "Transfer income and fiscal geography"
+        "Place-based policy",
+        "International and political economy"
       ]
     }
   ],
-  "references": [
+
+  "languages": [
     {
-      "name": "References",
-      "icon": "fa-solid fa-user-check",
-      "reference": "Available upon request."
+      "language": "German",
+      "fluency": "Elementary proficiency"
+    },
+    {
+      "language": "Swedish",
+      "fluency": "Elementary proficiency"
     }
   ],
-  "Media": [
+
+  "awards": [
     {
-      "name": "Selected media appearances and coverage",
-      "summary": "CBS MoneyWatch and mentions in outlets such as the New York Times, Wall Street Journal, Financial Times, Washington Post, Bloomberg, CBS News, Yahoo Finance, and MarketWatch.",
-      "highlights": [],
-      "startDate": "",
-      "endDate": "",
-      "url": ""
+      "title": "Pi Alpha Alpha Doctoral Manuscript Award",
+      "date": "2020-01-01",
+      "awarder": "Pi Alpha Alpha"
+    },
+    {
+      "title": "NASPAA Staats Emerging Scholar",
+      "date": "2020-01-01",
+      "awarder": "NASPAA"
+    },
+    {
+      "title": "Agnes Reynolds Jackson Prize",
+      "date": "2016-01-01",
+      "awarder": "Vassar College"
+    }
+  ],
+
+  "media": {
+    "media_coverage": {
+      "summary": "Research and policy analysis cited, featured, or discussed in major national media outlets.",
+      "outlets": [
+        "The New York Times",
+        "The Wall Street Journal",
+        "Financial Times",
+        "The Washington Post",
+        "Bloomberg",
+        "CBS News / CBS MoneyWatch",
+        "Yahoo Finance",
+        "MarketWatch"
+      ]
+    },
+    "broadcast_and_podcasts": {
+      "summary": "Guest appearances and interviews discussing labor markets, wages, and economic policy.",
+      "appearances": [
+        "Money with Katie (Morning Brew)",
+        "The Ross Kaminsky Show",
+        "Spotlight on Poverty & Opportunity",
+        "Political Economy Forum Podcast (University of Washington)"
+      ]
+    }
+  },
+
+  "references": [
+    {
+      "reference": "Available upon request."
     }
   ]
 }
-
