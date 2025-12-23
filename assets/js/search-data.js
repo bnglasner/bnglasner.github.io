@@ -448,60 +448,81 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
-        id: 'social-',
-        title: '',
+        id: 'social-cv',
+        title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("", "_blank");
+          window.open("/assets/pdf/Ben_Glasner_CV.pdf", "_blank");
         },
       },{
-        id: 'social-',
-        title: '',
+        id: 'social-email',
+        title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("", "_blank");
+          window.open("mailto:%62%65%6E%6A%61%6D%69%6E@%65%69%67.%6F%72%67", "_blank");
         },
       },{
-        id: 'social-',
-        title: '',
+        id: 'social-linkedin',
+        title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("", "_blank");
+          window.open("https://www.linkedin.com/in/bglasner", "_blank");
         },
       },{
-        id: 'social-',
-        title: '',
+        id: 'social-github',
+        title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("", "_blank");
+          window.open("https://github.com/EIG-Research", "_blank");
         },
       },{
-        id: 'social-',
-        title: '',
+        id: 'social-instagram',
+        title: 'Instagram',
         section: 'Socials',
         handler: () => {
-          window.open("", "_blank");
+          window.open("https://instagram.com/microfamousben", "_blank");
         },
       },{
-        id: 'social-',
-        title: '',
+        id: 'social-blogger',
+        title: 'Blogger',
         section: 'Socials',
         handler: () => {
-          window.open("", "_blank");
+          window.open("https://substack.com/@benglasner", "_blank");
         },
       },{
-        id: 'social-',
-        title: '',
+        id: 'social-scholar',
+        title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("", "_blank");
+          window.open("https://scholar.google.com/citations?user=ZvG1rc8AAAAJ", "_blank");
         },
       },{
-        id: 'social-',
-        title: '',
+        id: 'social-work',
+        title: 'Work',
         section: 'Socials',
         handler: () => {
-          window.open("", "_blank");
+          window.open("https://eig.org/", "_blank");
+        },
+      },{
+        id: 'social-x',
+        title: 'X',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://twitter.com/BenGlasner", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://linktr.ee/bglasner", "_blank");
         },
       },{
       id: 'light-theme',
