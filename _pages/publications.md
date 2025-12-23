@@ -3,8 +3,8 @@ layout: page
 permalink: /publications/
 title: publications
 description: Peer-reviewed articles, policy reports, and working papers.
-nav: false
-nav_order: 2
+nav: true
+nav_order: 3
 ---
 
 {% include bib_search.liquid %}
