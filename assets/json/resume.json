@@ -40,18 +40,31 @@
 
   "work": [
     {
-      "name": "Economic Innovation Group",
-      "position": "Economist",
-      "url": "https://eig.org/",
-      "startDate": "2023-01-01",
-      "endDate": "",
-      "summary": "Conducts applied economic research and public-facing analysis on U.S. labor markets, wages, and place-based policy.",
-      "highlights": [
-        "Author and coauthor of major reports and working papers on wage subsidies, transfer income dependence, Opportunity Zones, housing supply, and labor-market measurement",
-        "Develops original empirical analyses using CPS, ACS, SIPP, HUD–USPS vacancy data, and administrative sources",
-        "Produces public-facing writing, figures, and data visualizations for policymakers, media, and general audiences"
-      ]
-    },
+    "name": "Economic Innovation Group",
+    "position": "Economist",
+    "url": "https://eig.org/",
+    "startDate": "2024-09-01",
+    "endDate": "",
+    "summary": "Conducts applied economic research and public-facing analysis on U.S. labor markets, wages, and place-based policy.",
+    "highlights": [
+      "Author and coauthor of major reports and working papers on wage subsidies, transfer income dependence, Opportunity Zones, housing supply, and labor-market measurement",
+      "Develops original empirical analyses using CPS, ACS, SIPP, HUD–USPS vacancy data, and administrative sources",
+      "Produces public-facing writing, figures, and data visualizations for policymakers, media, and general audiences"
+    ]
+  },
+  {
+    "name": "Economic Innovation Group",
+    "position": "Associate Economist",
+    "url": "https://eig.org/",
+    "startDate": "2023-01-01",
+    "endDate": "2024-09-01",
+    "summary": "Conducted applied economic research and public-facing analysis on U.S. labor markets, wages, and place-based policy.",
+    "highlights": [
+      "Supported core EIG research products with data construction, empirical analysis, and visualization",
+      "Contributed to reports and working papers on labor markets, transfer dependence, and place-based policy",
+      "Translated technical findings into public-facing charts, briefs, and written analysis"
+    ]
+  },
     {
       "name": "Center on Poverty and Social Policy, Columbia University",
       "position": "Postdoctoral Research Scientist",
