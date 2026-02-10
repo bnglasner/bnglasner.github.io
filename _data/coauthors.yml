@@ -1,5 +1,55 @@
-# Coauthor data for linking names in publications to their websites.
-# Format:
-# "lastname":
-#   - firstname: ["First", "F.", "F. M."]
-#     url: https://example.com
+"ozimek":
+  - firstname: ["Adam", "A."]
+    url: https://eig.org/about-us/executive-team-staff/adam-ozimek/
+
+"lettieri":
+  - firstname: ["John", "J."]
+    url: https://eig.org/about-us/executive-team-staff/john-lettieri/
+
+"fikri":
+  - firstname: ["Kenan", "K."]
+    url: https://eig.org/about-us/executive-team-staff/kenan-fikri/
+
+"eckhardt":
+  - firstname: ["Sarah", "S."]
+    url: https://eig.org/about-us/executive-team-staff/sarah-eckhardt/
+
+"parolin":
+  - firstname: ["Zachary", "Z."]
+    url: https://www.zachparolin.com/
+
+"wimer":
+  - firstname: ["Christopher", "C."]
+    url: https://socialwork.columbia.edu/faculty-research/faculty/full-time/christopher-wimer/
+
+"ananat":
+  - firstname: ["Elizabeth", "E."]
+    url: https://econ.barnard.edu/profiles/elizabeth-ananat
+
+"garfinkel":
+  - firstname: ["Irwin", "I."]
+    url: https://socialwork.columbia.edu/faculty-research/faculty/full-time/irwin-garfinkel/
+
+"mincy":
+  - firstname: ["Ronald", "Ronald B.", "R.", "R. B."]
+    url: https://socialwork.columbia.edu/faculty-research/faculty/full-time/ronald-mincy/
+
+"collyer":
+  - firstname: ["Sophie", "S."]
+    url: https://www.povertycenter.columbia.edu/sophie-collyer
+
+"jiménez-solomon":
+  - firstname: ["Oscar", "O."]
+    url: https://www.columbiapsychiatry.org/profile/oscar-jimenez-solomon-phd
+
+"hamilton":
+  - firstname: ["Christal", "C."]
+
+"pignatti":
+  - firstname: ["Clemente", "C."]
+
+"maury":
+  - firstname: ["Matthew", "M."]
+
+"yera":
+  - firstname: ["Christopher", "C."]

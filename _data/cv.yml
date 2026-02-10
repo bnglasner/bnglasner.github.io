@@ -4,11 +4,11 @@
     - name: Full Name
       value: Benjamin (Ben) Glasner, Ph.D.
     - name: Current Role
-      value: Economist, Economic Innovation Group (EIG)
+      value: Senior Economist, Economic Innovation Group (EIG)
     - name: Location
       value: Washington, D.C.
     - name: Email
-      value: <a href="mailto:bnglasner@gmail.com">bnglasner@gmail.com</a>
+      value: <a href="mailto:benjamin@eig.org">benjamin@eig.org</a>
     - name: LinkedIn
       value: <a href="https://www.linkedin.com/in/bglasner/" target="_blank" rel="noopener noreferrer">linkedin.com/in/bglasner</a>
     - name: Google Scholar
@@ -39,10 +39,18 @@
 - title: Employment
   type: time_table
   contents:
-    - title: Economist
+    - title: Senior Economist
       institution: Economic Innovation Group (EIG)
       location: Washington, D.C.
-      year: 2023 - present
+      year: 2024 - present
+      description:
+        - Economic research with large datasets; advanced statistical and spatial analysis.
+        - Translate empirical results into policy writing, data visualization, and stakeholder outreach.
+
+    - title: Associate Economist
+      institution: Economic Innovation Group (EIG)
+      location: Washington, D.C.
+      year: 2023 - 2024
       description:
         - Economic research with large datasets; advanced statistical and spatial analysis.
         - Translate empirical results into policy writing, data visualization, and stakeholder outreach.
@@ -170,6 +178,12 @@
     - title: Television
       items:
         - CBS MoneyWatch &mdash; "More than half of U.S. workers don't have access to employer-sponsored retirement plan"
+    - title: Podcasts
+      items:
+        - Money with Katie (Morning Brew)
+        - The Ross Kaminsky Show
+        - Spotlight on Poverty &amp; Opportunity
+        - Political Economy Forum Podcast (University of Washington)
     - title: Print / Online
       items:
         - New York Times; Wall Street Journal; Financial Times; Washington Post; Bloomberg; CBS News; Yahoo Finance; MarketWatch; and others.
