@@ -17,4 +17,8 @@ nav_order: 3
 ## Reports & working papers
 {% bibliography --query @techreport %}
 
+## Dissertations & Theses
+{% bibliography --query @phdthesis %}
+{% bibliography --query @misc %}
+
 </div>
