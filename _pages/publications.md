@@ -4,7 +4,7 @@ permalink: /publications/
 title: publications
 description: Peer-reviewed articles, policy reports, and working papers.
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 {% include bib_search.liquid %}
