@@ -24,6 +24,12 @@ I’m Ben Glasner, a Senior Economist at the Economic Innovation Group. I work o
 
 ---
 
+## Resume
+
+- [Download resume (PDF)]({{ '/assets/resume.pdf' | relative_url }})
+
+---
+
 ## Featured work
 
 - **How to end low-wage work forever** — a wage-subsidy proposal aimed at raising take-home pay without discouraging employment.  
