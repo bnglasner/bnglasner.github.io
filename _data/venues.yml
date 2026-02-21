@@ -1,9 +1,29 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+- id: JLE
+  name: Journal of Labor Economics
+  url: https://www.journals.uchicago.edu/journals/jole
+  color: "#2a6f97"
 
-"PhysRev":
-  url: https://journals.aps.org/
+- id: HealthAff
+  name: Health Affairs
+  url: https://www.healthaffairs.org/
+  color: "#1b4332"
 
-"Vision":
-  color: "#009f36"
+- id: JPubE
+  name: Journal of Public Economics
+  url: https://www.sciencedirect.com/journal/journal-of-public-economics
+  color: "#6c757d"
+
+- id: EIG
+  name: Economic Innovation Group
+  url: https://eig.org/
+  color: "#2d6a4f"
+
+- id: EquitableGrowth
+  name: Washington Center for Equitable Growth
+  url: https://equitablegrowth.org/
+  color: "#3c096c"
+
+- id: RobinHood
+  name: Robin Hood
+  url: https://robinhood.org/
+  color: "#d62828"
