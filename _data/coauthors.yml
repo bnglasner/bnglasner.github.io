@@ -1,55 +1,34 @@
-"ozimek":
-  - firstname: ["Adam", "A."]
-    url: https://eig.org/about-us/executive-team-staff/adam-ozimek/
+"adams":
+  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
+    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
 
-"lettieri":
-  - firstname: ["John", "J."]
-    url: https://eig.org/about-us/executive-team-staff/john-lettieri/
+"podolsky":
+  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
+    url: https://en.wikipedia.org/wiki/Boris_Podolsky
 
-"fikri":
-  - firstname: ["Kenan", "K."]
-    url: https://eig.org/about-us/executive-team-staff/kenan-fikri/
+"rosen":
+  - firstname: ["Nathan", "N."]
+    url: https://en.wikipedia.org/wiki/Nathan_Rosen
 
-"eckhardt":
-  - firstname: ["Sarah", "S."]
-    url: https://eig.org/about-us/executive-team-staff/sarah-eckhardt/
+"bach":
+  - firstname: ["Johann Sebastian", "J. S."]
+    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
 
-"parolin":
-  - firstname: ["Zachary", "Z."]
-    url: https://www.zachparolin.com/
+  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
+    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
 
-"wimer":
-  - firstname: ["Christopher", "C."]
-    url: https://socialwork.columbia.edu/faculty-research/faculty/full-time/christopher-wimer/
+"przibram":
+  - firstname: ["Karl"]
+    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
 
-"ananat":
-  - firstname: ["Elizabeth", "E."]
-    url: https://econ.barnard.edu/profiles/elizabeth-ananat
+"schrodinger":
+  - firstname: ["Erwin"]
+    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
 
-"garfinkel":
-  - firstname: ["Irwin", "I."]
-    url: https://socialwork.columbia.edu/faculty-research/faculty/full-time/irwin-garfinkel/
+"lorentz":
+  - firstname: ["Hendrik Antoon"]
+    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
 
-"mincy":
-  - firstname: ["Ronald", "Ronald B.", "R.", "R. B."]
-    url: https://socialwork.columbia.edu/faculty-research/faculty/full-time/ronald-mincy/
-
-"collyer":
-  - firstname: ["Sophie", "S."]
-    url: https://www.povertycenter.columbia.edu/sophie-collyer
-
-"jimenez-solomon":
-  - firstname: ["Oscar", "O."]
-    url: https://www.columbiapsychiatry.org/profile/oscar-jimenez-solomon-phd
-
-"hamilton":
-  - firstname: ["Christal", "C."]
-
-"pignatti":
-  - firstname: ["Clemente", "C."]
-
-"maury":
-  - firstname: ["Matthew", "M."]
-
-"yera":
-  - firstname: ["Christopher", "C."]
+"planck":
+  - firstname: ["Max"]
+    url: https://en.wikipedia.org/wiki/Max_Planck
