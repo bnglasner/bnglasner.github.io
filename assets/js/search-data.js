@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "",
+          description: "Current CV with downloadable full PDF.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -55,7 +55,7 @@ ninja.data = [{
         
           title: 'How to end low-wage work forever, Part 2: the FAQ <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Answering common questions about the 80-80 wage subsidy proposal.",
+        description: "Follow-up FAQ on the 80-80 wage subsidy proposal.",
         section: "Posts",
         handler: () => {
           
@@ -66,11 +66,77 @@ ninja.data = [{
         
           title: 'The jobs chart that really has us worried <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Involuntary part-time employment surged around 20 percent between September and November 2025, reaching levels comparable to recession periods.",
+        description: "Analysis of involuntary part-time employment trends.",
         section: "Posts",
         handler: () => {
           
             window.open("https://agglomerations.substack.com/p/the-jobs-chart-that-really-has-us", "_blank");
+          
+        },
+      },{id: "post-how-many-manufacturing-workers-are-there",
+        
+          title: 'How many manufacturing workers are there? <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Clarifying measurement and trends in manufacturing employment.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/how-many-manufacturing-workers-are", "_blank");
+          
+        },
+      },{id: "post-where-any-snap-lapse-will-bite-hardest",
+        
+          title: 'Where any SNAP lapse will bite hardest <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Geographic distribution of potential SNAP disruption impacts.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/where-any-snap-lapse-will-bite-hardest", "_blank");
+          
+        },
+      },{id: "post-fat-bear-week-and-the-fate-of-the-world",
+        
+          title: 'Fat Bear Week and the Fate of the World <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Commentary on AI, productivity, and human judgment.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/fat-bear-week-and-the-fate-of-the", "_blank");
+          
+        },
+      },{id: "post-abundance-the-missing-piece",
+        
+          title: 'Abundance: the Missing Piece <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Supply-side growth and implementation constraints.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/abundance-the-missing-piece", "_blank");
+          
+        },
+      },{id: "post-how-to-end-low-wage-work-forever",
+        
+          title: 'How to end low-wage work forever <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Proposal for the 80-80 wage subsidy framework.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/how-to-end-low-wage-work-forever", "_blank");
+          
+        },
+      },{id: "post-tariffs-and-manufacturing-jobs-three-big-problems",
+        
+          title: 'Tariffs and Manufacturing Jobs: Three Big Problems <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Assessing tariff policy claims against labor-market evidence.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/tariffs-and-manufacturing-jobs-three", "_blank");
           
         },
       },{id: "post-a-post-with-plotly-js",
@@ -84,6 +150,39 @@ ninja.data = [{
             window.location.href = "/blog/2025/plotly/";
           
         },
+      },{id: "post-opportunity-zones-a-quiet-revolution-in-housing-policy",
+        
+          title: 'Opportunity Zones: A Quiet Revolution in Housing Policy <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Evidence on Opportunity Zones and housing supply outcomes.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/opportunity-zones-a-quiet-revolution", "_blank");
+          
+        },
+      },{id: "post-transfers-deficits-and-your-community-how-will-you-know",
+        
+          title: 'Transfers, deficits, and your community: How will you know? <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Local implications of transfers and fiscal trends.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/transfers-deficits-and-your-community", "_blank");
+          
+        },
+      },{id: "post-no-we-are-not-producing-too-many-stem-graduates",
+        
+          title: 'No, we are not producing too many STEM graduates <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Reassessing STEM labor-market narratives.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/no-we-are-not-producing-too-many", "_blank");
+          
+        },
       },{id: "post-a-post-with-image-galleries",
         
           title: "a post with image galleries",
@@ -93,6 +192,39 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2024/photo-gallery/";
+          
+        },
+      },{id: "post-the-economic-geography-of-the-2024-elections",
+        
+          title: 'The economic geography of the 2024 elections <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Place-based analysis of 2024 election patterns.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/the-economic-geography-of-the-2024", "_blank");
+          
+        },
+      },{id: "post-an-inflation-puzzle-of-the-2024-election",
+        
+          title: 'An inflation puzzle of the 2024 election <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Inflation perceptions and voting behavior.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/inflation-puzzle-election", "_blank");
+          
+        },
+      },{id: "post-who-s-left-out-of-america-s-retirement-savings-system",
+        
+          title: 'Who’s left out of America’s retirement savings system? <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Coverage gaps in employer-sponsored retirement access.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://agglomerations.substack.com/p/whos-left-out-of-americas-retirement", "_blank");
           
         },
       },{id: "post-a-post-with-tabs",
