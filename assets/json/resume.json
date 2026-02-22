@@ -1,221 +1,252 @@
 {
-  "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
-    "image": "",
-    "email": "einstein@example.com",
-    "phone": "(912) 123-4567",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
-    },
-    "profiles": []
-  },
-  "work": [
-    {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "location": "Princeton University, NJ",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity", "Description 2."]
-    },
-    {
-      "name": "California Institute of Technology",
-      "position": "Visiting Professor",
-      "location": "Pasadena, California, US",
-      "startDate": "1933-01-01",
-      "endDate": "1933-01-01",
-      "summary": "",
-      "highlights": ["Description 1.", "Description 2."]
-    },
-    {
-      "name": "Kaiser Wilhelm Institute for Physics",
-      "position": "Director",
-      "location": "Berlin, Germany",
-      "startDate": "1917-01-01",
-      "endDate": "1933-01-01",
-      "summary": "",
-      "highlights": []
-    },
-    {
-      "name": "Karl-Ferdinand University",
-      "position": "Professor of Theoretical Physics",
-      "location": "Prague, Czechoslovakia",
-      "startDate": "1911-01-01",
-      "endDate": "1917-01-01",
-      "summary": "",
-      "highlights": []
-    },
-    {
-      "name": "University of Zurich",
-      "position": "Associate Professor of Theoretical Physics",
-      "location": "Zurich, Switzerland",
-      "startDate": "1909-01-01",
-      "endDate": "1911-01-01",
-      "summary": "",
-      "highlights": []
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
-  ],
-  "education": [
-    {
-      "institution": "University of Zurich",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Physics",
-      "studyType": "PhD",
-      "startDate": "1900-01-01",
-      "endDate": "1905-01-01",
-      "score": "",
-      "courses": ["Theory of Relativity"],
-      "highlights": ["Description 1.", "Description 2."]
-    },
-    {
-      "institution": "Eidgenössische Technische Hochschule",
-      "location": "Zurich, Switzerland",
-      "area": "Physics",
-      "studyType": "Federal teaching diploma",
-      "startDate": "1896-01-01",
-      "endDate": "1900-01-01",
-      "score": "",
-      "courses": [],
-      "highlights": ["Description 1.", "Description 2."]
-    }
-  ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "awarder": "",
+      "date": "2020-01-01",
+      "summary": "Pi Alpha Alpha Doctoral Manuscript Award — recognizes outstanding student research, methodological rigor, and originality.",
+      "title": "Pi Alpha Alpha Doctoral Manuscript Award"
     },
     {
-      "title": "Max Planck Medal",
-      "date": "2029-01-01",
-      "awarder": "German Physical Society",
-      "summary": ""
+      "awarder": "",
+      "date": "2020-01-01",
+      "summary": "NASPAA Staats Emerging Scholar — selected to present research at the NASPAA annual conference.",
+      "title": "NASPAA Staats Emerging Scholar"
+    },
+    {
+      "awarder": "",
+      "date": "2016-01-01",
+      "summary": "The Agnes Reynolds Jackson Prize — awarded for the best senior seminar paper at Vassar College.",
+      "title": "The Agnes Reynolds Jackson Prize"
     }
   ],
-  "certificates": [
+  "basics": {
+    "email": "benjamin@eig.org",
+    "label": "Senior Economist, Economic Innovation Group (EIG)",
+    "location": {
+      "city": "Washington",
+      "region": "D.C."
+    },
+    "name": "Benjamin (Ben) Glasner, Ph.D.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/bglasner/",
+        "username": "bglasner"
+      },
+      {
+        "network": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=ZvG1rc8AAAAJ&hl=en"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/bnglasner",
+        "username": "bnglasner"
+      }
+    ],
+    "summary": "Labor markets; place-based policy; social-policy design and economic well-being.",
+    "url": "https://bnglasner.github.io"
+  },
+  "certificates": [],
+  "education": [
     {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-location-dot"
+      "endDate": "2021-12-31",
+      "highlights": [
+        "Dissertation: The Impact of Public Policy on Nonstandard Work Arrangements.",
+        "Research: labor-market regulation and worker classification; benefits and nonstandard work; minimum wage, overtime, employer-provided health insurance, monopsony, and tax evasion.",
+        "Skills: quantitative and econometric analysis; policy evaluation; interdisciplinary communication; project management."
+      ],
+      "institution": "Evans School of Public Policy and Governance, University of Washington",
+      "location": "Seattle, WA",
+      "startDate": "2016-01-01",
+      "studyType": "Ph.D. and M.Sc., Public Policy & Management"
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-envelope"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrodynamik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
-    },
-    {
-      "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
+      "endDate": "2016-12-31",
+      "highlights": [
+        "Thesis: The Chinese Hukou System: Structural Change and Political Reform.",
+        "Research: political reform, urbanization, and structural change in modern China."
+      ],
+      "institution": "Vassar College",
+      "location": "Poughkeepsie, NY",
+      "startDate": "2012-01-01",
+      "studyType": "B.A., Economics"
     }
   ],
   "interests": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+        "Wages, work, and labor-market institutions (including wage-subsidy design)",
+        "Economic geography and place-based policy",
+        "Transfers, safety net programs, and poverty dynamics",
+        "Opportunity Zones and housing supply",
+        "Gig economy and the future of work"
+      ],
+      "name": "Research and Policy Areas"
     }
   ],
-  "references": [
+  "languages": [],
+  "projects": [],
+  "publications": [
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
+      "name": "How to end low-wage work forever: An 80-80 wage subsidy proposal",
+      "publisher": "Economic Innovation Group",
+      "releaseDate": "2025-01-01",
+      "summary": "",
+      "url": "https://eig.org/how-to-end-low-wage-work-forever/"
     },
     {
-      "name": "Professor Jane Smith",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
+      "name": "The Impact of Opportunity Zones on Housing Supply",
+      "publisher": "Economic Innovation Group",
+      "releaseDate": "2025-01-01",
+      "summary": "",
+      "url": "https://eig.org/opportunity-zones-housing-supply/"
+    },
+    {
+      "name": "Effects of the expanded Child Tax Credit on employment outcomes",
+      "publisher": "Journal of Public Economics",
+      "releaseDate": "2024-01-01",
+      "summary": "",
+      "url": "https://doi.org/10.1016/j.jpubeco.2024.105168"
+    },
+    {
+      "name": "The American Worker: Toward a New Consensus",
+      "publisher": "Economic Innovation Group",
+      "releaseDate": "2024-01-01",
+      "summary": "",
+      "url": "https://eig.org/american-worker/"
+    },
+    {
+      "name": "The Great \"Transfer\"-mation: How American Communities Became Reliant on Income from Government",
+      "publisher": "Economic Innovation Group",
+      "releaseDate": "2024-01-01",
+      "summary": "",
+      "url": "https://eig.org/great-transfermation/"
+    },
+    {
+      "name": "Are Opportunity Zones Working? What the Literature Tells Us",
+      "publisher": "Economic Innovation Group",
+      "releaseDate": "2023-01-01",
+      "summary": ""
+    },
+    {
+      "name": "Liquid Assets, Financial Shocks, and Entrances into Material Hardship",
+      "publisher": "Poverty Tracker (Robin Hood)",
+      "releaseDate": "2023-01-01",
+      "summary": "",
+      "url": "https://robinhood.org/reports/annual-report-the-state-of-poverty-and-disadvantage-in-new-york-city-vol-6/"
+    },
+    {
+      "name": "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the Intergenerational Persistence of Poverty",
+      "publisher": "Working paper",
+      "releaseDate": "2023-01-01",
+      "summary": "",
+      "url": "https://equitablegrowth.org/working-papers/the-effectiveness-of-the-food-stamp-program-at-reducing-differences-in-the-intergenerational-persistence-of-poverty/"
+    },
+    {
+      "name": "The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii and Oregon",
+      "publisher": "Economic Innovation Group",
+      "releaseDate": "2023-01-01",
+      "summary": "",
+      "url": "https://eig.org/noncompetes-research-note/"
+    },
+    {
+      "name": "The Minimum Wage, Self-Employment, and the Online Gig Economy",
+      "publisher": "Journal of Labor Economics",
+      "releaseDate": "2023-01-01",
+      "summary": "",
+      "url": "https://doi.org/10.1086/719690"
+    },
+    {
+      "name": "No Evidence the Child Tax Credit Expansion Had an Effect on the Well-Being and Mental Health of Parents",
+      "publisher": "Health Affairs",
+      "releaseDate": "2022-01-01",
+      "summary": "",
+      "url": "https://doi.org/10.1377/hlthaff.2022.00730"
+    },
+    {
+      "name": "The Impact of Public Policy on Nonstandard Work Arrangements",
+      "publisher": "University of Washington",
+      "releaseDate": "2021-01-01",
+      "summary": ""
+    },
+    {
+      "name": "The Chinese Hukou System: Structural Change and Political Reform",
+      "publisher": "Senior thesis, Vassar College",
+      "releaseDate": "2016-01-01",
+      "summary": ""
     }
   ],
-  "projects": [
+  "references": [],
+  "skills": [],
+  "volunteer": [],
+  "work": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
+      "highlights": [
+        "Economic research with large datasets; advanced statistical and spatial analysis.",
+        "Translate empirical results into policy writing, data visualization, and stakeholder outreach."
+      ],
+      "location": "Washington, D.C.",
+      "name": "Economic Innovation Group (EIG)",
+      "position": "Senior Economist",
+      "startDate": "2026-01-01",
+      "summary": "Economic research with large datasets; advanced statistical and spatial analysis. Translate empirical results into policy writing, data visualization, and stakeholder outreach."
+    },
+    {
+      "endDate": "2025-12-31",
+      "highlights": [
+        "Economic research with large datasets; advanced statistical and spatial analysis.",
+        "Translate empirical results into policy writing, data visualization, and stakeholder outreach."
+      ],
+      "location": "Washington, D.C.",
+      "name": "Economic Innovation Group (EIG)",
+      "position": "Economist",
+      "startDate": "2023-01-01",
+      "summary": "Economic research with large datasets; advanced statistical and spatial analysis. Translate empirical results into policy writing, data visualization, and stakeholder outreach."
+    },
+    {
+      "endDate": "2022-12-31",
+      "highlights": [
+        "Empirical analyses of major U.S. social policies and reforms.",
+        "Work on intergenerational poverty, material hardship, and employment impacts of the Child Tax Credit."
+      ],
+      "location": "New York, NY",
+      "name": "Center on Poverty and Social Policy, Columbia University",
+      "position": "Postdoctoral Research Scientist",
+      "startDate": "2021-01-01",
+      "summary": "Empirical analyses of major U.S. social policies and reforms. Work on intergenerational poverty, material hardship, and employment impacts of the Child Tax Credit."
+    },
+    {
+      "endDate": "2021-12-31",
+      "highlights": [
+        "Supported faculty transition to technology-enhanced learning.",
+        "Conducted DEI and course design assessments; developed action plans informed by interviews and surveys."
+      ],
+      "location": "Seattle, WA",
+      "name": "University of Washington",
+      "position": "Dean's Research Assistant",
+      "startDate": "2020-01-01",
+      "summary": "Supported faculty transition to technology-enhanced learning. Conducted DEI and course design assessments; developed action plans informed by interviews and surveys."
+    },
+    {
+      "highlights": [
+        "Primary instructor for a section of the core MPA microeconomics and public policy course."
+      ],
+      "location": "Seattle, WA",
+      "name": "University of Washington",
+      "position": "Predoctoral Instructor",
+      "startDate": "2020-01-01",
+      "summary": "Primary instructor for a section of the core MPA microeconomics and public policy course."
+    },
+    {
+      "highlights": [
+        "Expenditure analysis across household surveys in Malawi, Tanzania, Ghana, Peru, and Cote d'Ivoire.",
+        "Developed seasonality estimates using parametric, semi-parametric, and machine learning approaches."
+      ],
+      "location": "Seattle, WA",
+      "name": "World Bank Group",
+      "position": "Short-Term Consultant",
       "startDate": "2018-01-01",
-      "endDate": "2018-01-01"
+      "summary": "Expenditure analysis across household surveys in Malawi, Tanzania, Ghana, Peru, and Cote d'Ivoire. Developed seasonality estimates using parametric, semi-parametric, and machine learning approaches."
     }
   ]
 }
