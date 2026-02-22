@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - bnglasner
+  - EIG-Research
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - EIG-Research/AI-unemployment
+  - EIG-Research/EIG-Great-Transfer-Mation
+  - EIG-Research/oz-housing-supply
+  - EIG-Research/import-dependence
+  - bnglasner/bnglasner.github.io
