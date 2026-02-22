@@ -3,13 +3,26 @@ layout: cv
 permalink: /cv/
 title: CV
 nav: true
-nav_order: 3
+nav_order: 2
 cv_format: jsonresume
 cv_pdf: /assets/pdf/Ben_Glasner_CV_full.pdf
-description: Current CV with downloadable full PDF.
+description: Online full CV with the same structure as the downloadable full PDF.
 ---
 
-This CV is generated from the private canonical profile source.
+This page is the online version of my full curriculum vitae.
 
-- Download Full PDF: `/assets/pdf/Ben_Glasner_CV_full.pdf`
+- Download Full PDF: [/assets/pdf/Ben_Glasner_CV_full.pdf](/assets/pdf/Ben_Glasner_CV_full.pdf)
+- Download Two-Page CV: [/assets/pdf/Ben_Glasner_CV_2p.pdf](/assets/pdf/Ben_Glasner_CV_2p.pdf)
+- Download One-Page CV: [/assets/pdf/Ben_Glasner_CV_1p.pdf](/assets/pdf/Ben_Glasner_CV_1p.pdf)
 - Canonical structured source: `data/canonical/cv.yml`
+
+## Full CV Organization
+- General Information
+- Education
+- Employment
+- Selected Publications
+- Code and Data (Selected)
+- Awards and Honors
+- Community Outreach
+- Policy, News, and Media
+- Research and Policy Areas
