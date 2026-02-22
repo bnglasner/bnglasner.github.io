@@ -1,0 +1,22 @@
+{
+  "default_pdf": "/assets/pdf/Ben_Glasner_CV_full.pdf",
+  "default_variant": "full",
+  "download_alias_pdf": "/assets/pdf/Ben_Glasner_CV.pdf",
+  "variants": [
+    {
+      "id": "1p",
+      "label": "One-page CV",
+      "pdf": "/assets/pdf/Ben_Glasner_CV_1p.pdf"
+    },
+    {
+      "id": "2p",
+      "label": "Two-page CV",
+      "pdf": "/assets/pdf/Ben_Glasner_CV_2p.pdf"
+    },
+    {
+      "id": "full",
+      "label": "Full CV",
+      "pdf": "/assets/pdf/Ben_Glasner_CV_full.pdf"
+    }
+  ]
+}

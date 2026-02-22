@@ -2,17 +2,19 @@
   type: map
   contents:
     - name: Full Name
-      value: Benjamin (Ben) Glasner, Ph.D.
+      value: Benjamin Glasner, Ph.D.
     - name: Current Role
       value: Senior Economist, Economic Innovation Group (EIG)
     - name: Location
       value: Washington, D.C.
     - name: Email
-      value: <a href="mailto:benjamin@eig.org">benjamin@eig.org</a>
+      value: <a href="mailto:bnglasner@gmail.com">bnglasner@gmail.com</a>
     - name: LinkedIn
       value: <a href="https://www.linkedin.com/in/bglasner/" target="_blank" rel="noopener noreferrer">linkedin.com/in/bglasner</a>
     - name: Google Scholar
       value: <a href="https://scholar.google.com/citations?user=ZvG1rc8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar profile</a>
+    - name: Linktree
+      value: <a href="https://linktr.ee/bglasner" target="_blank" rel="noopener noreferrer">linktr.ee/bglasner</a>
     - name: Research Focus
       value: Labor markets; place-based policy; social-policy design and economic well-being.
 
@@ -41,22 +43,39 @@
   contents:
     - title: Senior Economist
       institution: Economic Innovation Group (EIG)
+      institution_url: https://eig.org/
+      url: https://eig.org/about-us/executive-team-staff/ben-glasner/
       location: Washington, D.C.
-      year: 2026 - present
+      year: Jan 2026 - present
       description:
-        - Economic research with large datasets; advanced statistical and spatial analysis.
-        - Translate empirical results into policy writing, data visualization, and stakeholder outreach.
+        - Help shape and prioritize EIG's research pipeline by generating new ideas, assessing fit with strategic priorities, and tracking key economic, academic, and policy developments.
+        - "Lead end-to-end research projects: frame questions, select data, design and defend identification strategies, run quantitative analysis, and write publication-ready outputs with institutional rigor."
+        - Serve as a public-facing representative of EIG by presenting findings to policymakers, researchers, and media and translating technical work for broad audiences.
+        - Support fundraising and external partnerships by cultivating relationships with funders, contractors, and vendors.
+        - Mentor and develop junior staff with hands-on support for coding, data best practices, quality norms, and team development.
 
     - title: Economist
       institution: Economic Innovation Group (EIG)
+      institution_url: https://eig.org/
       location: Washington, D.C.
-      year: 2023 - 2025
+      year: Sep 2024 - Jan 2026
       description:
         - Economic research with large datasets; advanced statistical and spatial analysis.
         - Translate empirical results into policy writing, data visualization, and stakeholder outreach.
 
+    - title: Associate Economist
+      institution: Economic Innovation Group (EIG)
+      institution_url: https://eig.org/
+      location: Washington, D.C.
+      year: Jan 2023 - Sep 2024
+      description:
+        - Applied empirical methods to EIG research on labor markets, place-based policy, and economic mobility.
+        - Supported report production, data engineering, and policy communication for public-facing publications.
+
     - title: Postdoctoral Research Scientist
       institution: Center on Poverty and Social Policy, Columbia University
+      institution_url: https://povertycenter.columbia.edu/people
+      url: https://povertycenter.columbia.edu/people
       location: New York, NY
       year: 2021 - 2022
       description:
@@ -97,10 +116,16 @@
 
     - title: Reports and working papers
       items:
-        - '<a href="https://eig.org/american-worker/" target="_blank" rel="noopener noreferrer">The American Worker: Toward a New Consensus</a> (EIG, June 2024)'
+        - '<a href="https://eig.org/american-worker/" target="_blank" rel="noopener noreferrer">The American Worker Project: Toward a New Consensus</a> (EIG, June 2024)'
         - <a href="https://eig.org/great-transfermation/" target="_blank" rel="noopener noreferrer">The Great &ldquo;Transfer&rdquo;-mation</a> (EIG, September 2024)
         - <a href="https://eig.org/opportunity-zones-housing-supply/" target="_blank" rel="noopener noreferrer">The Impact of Opportunity Zones on Housing Supply</a> (EIG, March 2025)
         - '<a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank" rel="noopener noreferrer">How to end low-wage work forever: An 80-80 wage subsidy proposal</a> (EIG, September 2025)'
+
+    - title: Agglomerations (selected short-form writing)
+      items:
+        - '<a href="https://agglomerations.substack.com/p/how-to-end-low-wage-work-forever" target="_blank" rel="noopener noreferrer">How to end low-wage work forever, Part 1</a> (September 2025)'
+        - '<a href="https://agglomerations.substack.com/p/how-to-end-low-wage-work-forever-4a4" target="_blank" rel="noopener noreferrer">How to end low-wage work forever, Part 2: the FAQ</a> (December 2025)'
+        - '<a href="https://agglomerations.substack.com/p/the-jobs-chart-that-really-has-us" target="_blank" rel="noopener noreferrer">The jobs chart that really has us worried</a> (December 2025)'
 
     - title: Full list
       items:
@@ -109,6 +134,17 @@
 - title: Code and Data (Selected)
   type: time_table
   contents:
+    - title: <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">Reproducible Research Pipeline and GitHub Standards at EIG</a>
+      institution: Economic Innovation Group (EIG)
+      year: 2026
+      description:
+        - Implemented a rigorous, fully transparent, and replicable data and analysis pipeline for public-facing economic research, and built and trained staff workflows for GitHub collaboration, code review, documentation, and reproducibility best practices.
+      linkitems:
+        - link: https://github.com/EIG-Research
+          linkname: EIG-Research
+        - link: https://github.com/bnglasner
+          linkname: bnglasner
+
     - title: <a href="https://github.com/EIG-Research/EIG-Great-Transfer-Mation" target="_blank" rel="noopener noreferrer">The Great "Transfer"-mation (Repository)</a>
       institution: GitHub (EIG-Research)
       year: 2024

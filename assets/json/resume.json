@@ -20,13 +20,13 @@
     }
   ],
   "basics": {
-    "email": "benjamin@eig.org",
+    "email": "bnglasner@gmail.com",
     "label": "Senior Economist, Economic Innovation Group (EIG)",
     "location": {
       "city": "Washington",
       "region": "D.C."
     },
-    "name": "Benjamin (Ben) Glasner, Ph.D.",
+    "name": "Benjamin Glasner, Ph.D.",
     "profiles": [
       {
         "network": "LinkedIn",
@@ -85,6 +85,31 @@
     }
   ],
   "languages": [],
+  "meta": {
+    "cv_assets": {
+      "default_pdf": "/assets/pdf/Ben_Glasner_CV_full.pdf",
+      "default_variant": "full",
+      "download_alias_pdf": "/assets/pdf/Ben_Glasner_CV.pdf",
+      "variants": [
+        {
+          "id": "1p",
+          "label": "One-page CV",
+          "pdf": "/assets/pdf/Ben_Glasner_CV_1p.pdf"
+        },
+        {
+          "id": "2p",
+          "label": "Two-page CV",
+          "pdf": "/assets/pdf/Ben_Glasner_CV_2p.pdf"
+        },
+        {
+          "id": "full",
+          "label": "Full CV",
+          "pdf": "/assets/pdf/Ben_Glasner_CV_full.pdf"
+        }
+      ]
+    },
+    "source": "data/canonical/profile_graph.json"
+  },
   "projects": [],
   "publications": [
     {
@@ -109,7 +134,7 @@
       "url": "https://doi.org/10.1016/j.jpubeco.2024.105168"
     },
     {
-      "name": "The American Worker: Toward a New Consensus",
+      "name": "The American Worker Project: Toward a New Consensus",
       "publisher": "Economic Innovation Group",
       "releaseDate": "2024-01-01",
       "summary": "",
@@ -182,17 +207,20 @@
   "work": [
     {
       "highlights": [
-        "Economic research with large datasets; advanced statistical and spatial analysis.",
-        "Translate empirical results into policy writing, data visualization, and stakeholder outreach."
+        "Help shape and prioritize EIG's research pipeline by generating new ideas, assessing fit with strategic priorities, and tracking key economic, academic, and policy developments.",
+        "Lead end-to-end research projects: frame questions, select data, design and defend identification strategies, run quantitative analysis, and write publication-ready outputs with institutional rigor.",
+        "Serve as a public-facing representative of EIG by presenting findings to policymakers, researchers, and media and translating technical work for broad audiences.",
+        "Support fundraising and external partnerships by cultivating relationships with funders, contractors, and vendors.",
+        "Mentor and develop junior staff with hands-on support for coding, data best practices, quality norms, and team development."
       ],
       "location": "Washington, D.C.",
       "name": "Economic Innovation Group (EIG)",
       "position": "Senior Economist",
       "startDate": "2026-01-01",
-      "summary": "Economic research with large datasets; advanced statistical and spatial analysis. Translate empirical results into policy writing, data visualization, and stakeholder outreach."
+      "summary": "Help shape and prioritize EIG's research pipeline by generating new ideas, assessing fit with strategic priorities, and tracking key economic, academic, and policy developments. Lead end-to-end research projects: frame questions, select data, design and defend identification strategies, run quantitative analysis, and write publication-ready outputs with institutional rigor. Serve as a public-facing representative of EIG by presenting findings to policymakers, researchers, and media and translating technical work for broad audiences. Support fundraising and external partnerships by cultivating relationships with funders, contractors, and vendors. Mentor and develop junior staff with hands-on support for coding, data best practices, quality norms, and team development."
     },
     {
-      "endDate": "2025-12-31",
+      "endDate": "2026-12-31",
       "highlights": [
         "Economic research with large datasets; advanced statistical and spatial analysis.",
         "Translate empirical results into policy writing, data visualization, and stakeholder outreach."
@@ -200,8 +228,20 @@
       "location": "Washington, D.C.",
       "name": "Economic Innovation Group (EIG)",
       "position": "Economist",
-      "startDate": "2023-01-01",
+      "startDate": "2024-01-01",
       "summary": "Economic research with large datasets; advanced statistical and spatial analysis. Translate empirical results into policy writing, data visualization, and stakeholder outreach."
+    },
+    {
+      "endDate": "2024-12-31",
+      "highlights": [
+        "Applied empirical methods to EIG research on labor markets, place-based policy, and economic mobility.",
+        "Supported report production, data engineering, and policy communication for public-facing publications."
+      ],
+      "location": "Washington, D.C.",
+      "name": "Economic Innovation Group (EIG)",
+      "position": "Associate Economist",
+      "startDate": "2023-01-01",
+      "summary": "Applied empirical methods to EIG research on labor markets, place-based policy, and economic mobility. Supported report production, data engineering, and policy communication for public-facing publications."
     },
     {
       "endDate": "2022-12-31",
