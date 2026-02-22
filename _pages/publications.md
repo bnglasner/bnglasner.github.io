@@ -17,7 +17,7 @@ Publication records below are generated from `data/canonical/papers_manual.bib`.
 ## Reports and Working Papers
 - [How to end low-wage work forever: An 80-80 wage subsidy proposal](https://eig.org/how-to-end-low-wage-work-forever/) (Economic Innovation Group, 2025)
 - [The Impact of Opportunity Zones on Housing Supply](https://eig.org/opportunity-zones-housing-supply/) (Economic Innovation Group, 2025)
-- [The American Worker: Toward a New Consensus](https://eig.org/american-worker/) (Economic Innovation Group, 2024)
+- [The American Worker Project: Toward a New Consensus](https://eig.org/american-worker/) (Economic Innovation Group, 2024)
 - [The Great "Transfer"-mation: How American Communities Became Reliant on Income from Government](https://eig.org/great-transfermation/) (Economic Innovation Group, 2024)
 - Are Opportunity Zones Working? What the Literature Tells Us (Economic Innovation Group, 2023)
 - [Liquid Assets, Financial Shocks, and Entrances into Material Hardship](https://robinhood.org/reports/annual-report-the-state-of-poverty-and-disadvantage-in-new-york-city-vol-6/) (Poverty Tracker (Robin Hood), 2023)

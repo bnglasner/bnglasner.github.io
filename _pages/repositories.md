@@ -27,4 +27,4 @@ nav_order: 5
 
 ## Full Repository Snapshot
 
-- See `/repositories-full/` in this profile pack.
+- See `/repositories-full/` for the complete snapshot.

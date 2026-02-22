@@ -20,4 +20,4 @@ nav_order: 7
 
 ## Full Snapshot
 
-- See `/media-full/` in this profile pack.
+- See `/media-full/` for the complete snapshot.

@@ -11,7 +11,7 @@ Generated from `data/canonical/repos.json`.
 - [EIG-Research/flawed-study-h1b-fee](https://github.com/EIG-Research/flawed-study-h1b-fee) | language: R | stars: 0 | created: 2026-02-17T19:19:33Z | updated: 2026-02-21T12:26:14Z
 - [EIG-Research/ai-human-touch](https://github.com/EIG-Research/ai-human-touch) | language: R | stars: 0 | created: 2026-01-14T23:04:46Z | updated: 2026-02-09T14:40:12Z
 - [EIG-Research/digital-economy](https://github.com/EIG-Research/digital-economy) | language: R | stars: 0 | created: 2026-01-05T15:50:02Z | updated: 2026-01-09T11:38:15Z
-- [bnglasner/bnglasner.github.io](https://github.com/bnglasner/bnglasner.github.io) | language: HTML | stars: 0 | created: 2025-12-20T21:28:16Z | updated: 2026-02-18T01:15:18Z
+- [bnglasner/bnglasner.github.io](https://github.com/bnglasner/bnglasner.github.io) | language: HTML | stars: 0 | created: 2025-12-20T21:28:16Z | updated: 2026-02-22T03:13:32Z
 - [EIG-Research/ai-btos](https://github.com/EIG-Research/ai-btos) | language: Stata | stars: 0 | created: 2025-12-18T20:33:31Z | updated: 2025-12-18T21:27:58Z
 - [EIG-Research/LCA-misuse-example](https://github.com/EIG-Research/LCA-misuse-example) | language: n/a | stars: 0 | created: 2025-11-24T21:29:40Z | updated: 2025-11-24T21:38:25Z
 - [EIG-Research/Retirement-data-summary-2025](https://github.com/EIG-Research/Retirement-data-summary-2025) | language: R | stars: 0 | created: 2025-11-21T19:12:46Z | updated: 2025-11-21T19:20:16Z
