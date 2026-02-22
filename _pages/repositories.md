@@ -2,46 +2,29 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.
+description: GitHub profile and research code repositories.
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
-{% if site.data.repositories.github_users %}
+## Primary GitHub Profiles
 
-## GitHub users
+- https://github.com/bnglasner
+- https://github.com/EIG-Research
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %}
-    {% include repository/repo_user.liquid username=user %}
-  {% endfor %}
-</div>
+## Featured Repositories (from `data/canonical/featured_repos.json`)
 
----
+- [EIG-Research/AI-unemployment](https://github.com/EIG-Research/AI-unemployment) - Estimates of the impact of AI on employment
+- [EIG-Research/EIG-Great-Transfer-Mation](https://github.com/EIG-Research/EIG-Great-Transfer-Mation) - An overview of the rise in government transfer payments across the U.S. map
+- [EIG-Research/import-dependence](https://github.com/EIG-Research/import-dependence) - Analyzing the reliance of American advanced manufacturing on imported inputs and equipment.
+- [EIG-Research/oz-housing-supply](https://github.com/EIG-Research/oz-housing-supply) - The impact of OZs on housing supply
+- [bnglasner/telework-ASEC-analysis](https://github.com/bnglasner/telework-ASEC-analysis) - This folder includes the telework micro data and CPS merge code.
+- [EIG-Research/trade-policy-targets-tracker](https://github.com/EIG-Research/trade-policy-targets-tracker) - Tracking the Stated Targets of the Trump Administration's Trade Policy
+- [EIG-Research/h1b-npv-wage-ranking-simulations](https://github.com/EIG-Research/h1b-npv-wage-ranking-simulations) - Code and Data for EIG's Comment Letter on Revising Proposed H-1B Allocation Rules
+- [EIG-Research/dense-places](https://github.com/EIG-Research/dense-places) - Dense Places Can Still Build
+- [EIG-Research/noncompete-income](https://github.com/EIG-Research/noncompete-income) - Repository for studies of the effects of income cutoffs in noncompete bans
+- [EIG-Research/Retirement-Analysis-Urban-Rural](https://github.com/EIG-Research/Retirement-Analysis-Urban-Rural) - Analysis how the retirement system functions in urban and rural regions
 
-{% if site.repo_trophies.enabled %}
-{% for user in site.data.repositories.github_users %}
-{% if site.data.repositories.github_users.size > 1 %}
+## Full Repository Snapshot
 
-  <h4>{{ user }}</h4>
-  {% endif %}
-  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
-  </div>
-
----
-
-{% endfor %}
-{% endif %}
-{% endif %}
-
-{% if site.data.repositories.github_repos %}
-
-## GitHub Repositories
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.liquid repository=repo %}
-  {% endfor %}
-</div>
-{% endif %}
+- See `/repositories-full/` in this profile pack.
