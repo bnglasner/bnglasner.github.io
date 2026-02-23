@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-cv",
           title: "CV",
-          description: "Online full CV with the same structure as the downloadable full PDF.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
