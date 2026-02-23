@@ -43,7 +43,7 @@
         "username": "bnglasner"
       }
     ],
-    "summary": "Labor markets; place-based policy; social-policy design and economic well-being.",
+    "summary": "labor markets; place-based policy; social-policy design and economic well-being.",
     "url": "https://bnglasner.github.io"
   },
   "certificates": [],
@@ -111,96 +111,7 @@
     "source": "data/canonical/profile_graph.json"
   },
   "projects": [],
-  "publications": [
-    {
-      "name": "How to end low-wage work forever: An 80-80 wage subsidy proposal",
-      "publisher": "Economic Innovation Group",
-      "releaseDate": "2025-01-01",
-      "summary": "",
-      "url": "https://eig.org/how-to-end-low-wage-work-forever/"
-    },
-    {
-      "name": "The Impact of Opportunity Zones on Housing Supply",
-      "publisher": "Economic Innovation Group",
-      "releaseDate": "2025-01-01",
-      "summary": "",
-      "url": "https://eig.org/opportunity-zones-housing-supply/"
-    },
-    {
-      "name": "Effects of the expanded Child Tax Credit on employment outcomes",
-      "publisher": "Journal of Public Economics",
-      "releaseDate": "2024-01-01",
-      "summary": "",
-      "url": "https://doi.org/10.1016/j.jpubeco.2024.105168"
-    },
-    {
-      "name": "The American Worker Project: Toward a New Consensus",
-      "publisher": "Economic Innovation Group",
-      "releaseDate": "2024-01-01",
-      "summary": "",
-      "url": "https://eig.org/american-worker/"
-    },
-    {
-      "name": "The Great \"Transfer\"-mation: How American Communities Became Reliant on Income from Government",
-      "publisher": "Economic Innovation Group",
-      "releaseDate": "2024-01-01",
-      "summary": "",
-      "url": "https://eig.org/great-transfermation/"
-    },
-    {
-      "name": "Are Opportunity Zones Working? What the Literature Tells Us",
-      "publisher": "Economic Innovation Group",
-      "releaseDate": "2023-01-01",
-      "summary": ""
-    },
-    {
-      "name": "Liquid Assets, Financial Shocks, and Entrances into Material Hardship",
-      "publisher": "Poverty Tracker (Robin Hood)",
-      "releaseDate": "2023-01-01",
-      "summary": "",
-      "url": "https://robinhood.org/reports/annual-report-the-state-of-poverty-and-disadvantage-in-new-york-city-vol-6/"
-    },
-    {
-      "name": "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the Intergenerational Persistence of Poverty",
-      "publisher": "Working paper",
-      "releaseDate": "2023-01-01",
-      "summary": "",
-      "url": "https://equitablegrowth.org/working-papers/the-effectiveness-of-the-food-stamp-program-at-reducing-differences-in-the-intergenerational-persistence-of-poverty/"
-    },
-    {
-      "name": "The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii and Oregon",
-      "publisher": "Economic Innovation Group",
-      "releaseDate": "2023-01-01",
-      "summary": "",
-      "url": "https://eig.org/noncompetes-research-note/"
-    },
-    {
-      "name": "The Minimum Wage, Self-Employment, and the Online Gig Economy",
-      "publisher": "Journal of Labor Economics",
-      "releaseDate": "2023-01-01",
-      "summary": "",
-      "url": "https://doi.org/10.1086/719690"
-    },
-    {
-      "name": "No Evidence the Child Tax Credit Expansion Had an Effect on the Well-Being and Mental Health of Parents",
-      "publisher": "Health Affairs",
-      "releaseDate": "2022-01-01",
-      "summary": "",
-      "url": "https://doi.org/10.1377/hlthaff.2022.00730"
-    },
-    {
-      "name": "The Impact of Public Policy on Nonstandard Work Arrangements",
-      "publisher": "University of Washington",
-      "releaseDate": "2021-01-01",
-      "summary": ""
-    },
-    {
-      "name": "The Chinese Hukou System: Structural Change and Political Reform",
-      "publisher": "Senior thesis, Vassar College",
-      "releaseDate": "2016-01-01",
-      "summary": ""
-    }
-  ],
+  "publications": [],
   "references": [],
   "skills": [],
   "volunteer": [],

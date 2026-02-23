@@ -6,7 +6,7 @@ nav: true
 nav_order: 2
 cv_format: jsonresume
 cv_pdf: /assets/pdf/Ben_Glasner_CV_full.pdf
-description: Online full CV with the same structure as the downloadable full PDF.
+description: 
 ---
 
 This page is the online version of my full curriculum vitae.
@@ -20,9 +20,10 @@ This page is the online version of my full curriculum vitae.
 - General Information
 - Education
 - Employment
-- Selected Publications
 - Code and Data (Selected)
 - Awards and Honors
 - Community Outreach
 - Policy, News, and Media
 - Research and Policy Areas
+
+Publications are listed on the dedicated [Publications](/publications/) page.
