@@ -1,56 +1,71 @@
 metadata:
-  last_updated: "2026-02-22"
-  source: "Generated from canonical bibliography"
+  last_updated: '2026-03-04'
 papers:
-  ananat2024ctc_employment:
+  ZvG1rc8AAAAJ:3fE2CSJIrl8C:
+    citations: 25
+    title: The Minimum Wage, Self-Employment, and the Online Gig Economy
+    year: '2022'
+  ZvG1rc8AAAAJ:4DMP91E08xMC:
     citations: 0
-    title: "Effects of the expanded Child Tax Credit on employment outcomes"
-    year: "2024"
-  fikri_eckhardt_glasner_2024_transfermation:
+    title: The American Worker
+    year: '2024'
+  ZvG1rc8AAAAJ:4TOpqqG69KYC:
+    citations: 1
+    title: The Effectiveness of the Food Stamp Program at Reducing Differences in the Intergenerational Persistence of Poverty
+    year: '2023'
+  ZvG1rc8AAAAJ:7PzlFSSx8tAC:
     citations: 0
-    title: "The Great \"Transfer\"-mation: How American Communities Became Reliant on Income from Government"
-    year: "2024"
-  fikri_glasner_2023_oz_literature:
+    title: Evaluating the (short-lived) US experiment with a child benefit
+    year: Unknown Year
+  ZvG1rc8AAAAJ:IWHjjKOFINEC:
     citations: 0
-    title: "Are Opportunity Zones Working? What the Literature Tells Us"
-    year: "2023"
-  glasner2021impact:
+    title: How to end low-wage work forever
+    year: Unknown Year
+  ZvG1rc8AAAAJ:KlAtU1dfN6UC:
+    citations: 30
+    title: "No Evidence The Child Tax Credit Expansion Had An Effect On The Well-Being And Mental Health Of Parents: Study examines the effect of the Child Tax Credit expansion on the \u2026"
+    year: '2022'
+  ZvG1rc8AAAAJ:L8Ckcad2t8MC:
+    citations: 2
+    title: 'The Great ''Transfer''-mation: How American Communities Became Reliant on Income from Government'
+    year: '2024'
+  ZvG1rc8AAAAJ:M3ejUd6NZC8C:
+    citations: 1
+    title: Liquid Assets, Financial Shocks, and Entrances into Material Hardship
+    year: '2023'
+  ZvG1rc8AAAAJ:Tyk-4Ss8FVUC:
     citations: 0
-    title: "The Impact of Public Policy on Nonstandard Work Arrangements"
-    year: "2021"
-  glasner2022ctc_healthaffairs:
+    title: The Impact of Public Policy on Nonstandard Work Arrangements
+    year: '2021'
+  ZvG1rc8AAAAJ:ULOm3_A8WrAC:
     citations: 0
-    title: "No Evidence the Child Tax Credit Expansion Had an Effect on the Well-Being and Mental Health of Parents"
-    year: "2022"
-  glasner2023minimumwage_gig:
+    title: 'The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii and Oregon'
+    year: '2023'
+  ZvG1rc8AAAAJ:Wp0gIr-vW9MC:
+    citations: 113
+    title: Effects of the expanded Child Tax Credit on employment outcomes
+    year: '2024'
+  ZvG1rc8AAAAJ:Y0pCki6q_DkC:
     citations: 0
-    title: "The Minimum Wage, Self-Employment, and the Online Gig Economy"
-    year: "2023"
-  glasner_2023_noncompetes_workingpaper:
+    title: 'Tax Evasion Among the Self-Employed: Medicaid Expansion'
+    year: Unknown Year
+  ZvG1rc8AAAAJ:ZeXyd9-uunAC:
+    citations: 6
+    title: The Impact of Opportunity Zones on Housing Supply
+    year: '2025'
+  ZvG1rc8AAAAJ:dhFuZR0502QC:
+    citations: 7
+    title: Are Opportunity Zones Working? What the Literature Tells Us
+    year: '2023'
+  ZvG1rc8AAAAJ:eQOLeE2rZwMC:
     citations: 0
-    title: "The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii and Oregon"
-    year: "2023"
-  glasner_2025_oz_housing_supply:
+    title: 'The Chinese Hukou System: Structural Change and Political Reform'
+    year: Unknown Year
+  ZvG1rc8AAAAJ:qUcmZB5y_30C:
     citations: 0
-    title: "The Impact of Opportunity Zones on Housing Supply"
-    year: "2025"
-  glasner_parolin_2023_foodstamp:
+    title: The Earned Income Tax Credit and the Intergenerational Persistence of Poverty
+    year: '2025'
+  ZvG1rc8AAAAJ:zYLM7Y9cAGgC:
     citations: 0
-    title: "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the Intergenerational Persistence of Poverty"
-    year: "2023"
-  glasnerchinese:
-    citations: 0
-    title: "The Chinese Hukou System: Structural Change and Political Reform"
-    year: "2016"
-  maury_jia_yera_glasner_2023_liquid_assets:
-    citations: 0
-    title: "Liquid Assets, Financial Shocks, and Entrances into Material Hardship"
-    year: "2023"
-  ozimek_glasner_2025_wage_subsidy:
-    citations: 0
-    title: "How to end low-wage work forever: An 80-80 wage subsidy proposal"
-    year: "2025"
-  ozimek_lettieri_glasner_2024_american_worker:
-    citations: 0
-    title: "The American Worker Project: Toward a New Consensus"
-    year: "2024"
+    title: Nonstandard Work Arrangements across Metropolitan and Nonmetropolitan Areas of the United States
+    year: Unknown Year
