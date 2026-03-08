@@ -30,6 +30,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
+        },{id: "nav-wage-subsidy-simulator",
+          title: "wage subsidy simulator",
+          description: "Interactive simulation of the EIG 80-80 Rule wage subsidy proposal, estimating fiscal and distributional effects for U.S. workers.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/wage-subsidy-sim/";
+          },
         },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
