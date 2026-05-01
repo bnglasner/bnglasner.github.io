@@ -1,0 +1,110 @@
+reports:
+  - title: "How to end low-wage work forever: An 80-80 wage subsidy proposal"
+    url: "https://eig.org/how-to-end-low-wage-work-forever/"
+    outlet: "Economic Innovation Group"
+    published: 2025-09-22
+    featured: true
+    description: "A proposal for a large, targeted wage subsidy designed to raise earnings and strengthen labor-market attachment for low-wage workers."
+  - title: "The Impact of Opportunity Zones on Housing Supply"
+    url: "https://eig.org/opportunity-zones-housing-supply/"
+    outlet: "Economic Innovation Group"
+    published: 2025-03-11
+    featured: true
+    description: "Evidence on how Opportunity Zones affected residential development and housing supply in designated communities."
+  - title: "The Great \"Transfer\"-mation: How American Communities Became Reliant on Income from Government"
+    url: "https://eig.org/great-transfermation/"
+    outlet: "Economic Innovation Group"
+    published: 2024-09-12
+    featured: true
+    description: "A portrait of how transfer income has grown across U.S. communities and reshaped local economic foundations."
+  - title: "The American Worker Project: Toward a New Consensus"
+    url: "https://eig.org/american-worker/"
+    outlet: "Economic Innovation Group"
+    published: 2024-06-26
+    description: "A framing document for a worker-centered economic policy agenda grounded in labor-market dynamism, mobility, and earnings growth."
+  - title: "Are Opportunity Zones Working? What the Literature Tells Us"
+    url: "https://eig.org/are-opportunity-zones-working/"
+    outlet: "Economic Innovation Group"
+    published: 2023-10-19
+    description: "A synthesis of the empirical literature on Opportunity Zones and what early evidence suggests about program effects."
+  - title: "The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii and Oregon"
+    url: "https://eig.org/noncompetes-research-note/"
+    outlet: "Economic Innovation Group"
+    published: 2023-03-22
+    description: "A research note comparing business-formation outcomes following noncompete reforms in two states."
+
+working_papers:
+  - title: "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the Intergenerational Persistence of Poverty"
+    url: "https://equitablegrowth.org/working-papers/the-effectiveness-of-the-food-stamp-program-at-reducing-differences-in-the-intergenerational-persistence-of-poverty/"
+    outlet: "Washington Center for Equitable Growth"
+    published: 2023-05-30
+    description: "A working paper on how SNAP participation shaped intergenerational mobility and racial inequality in long-run poverty outcomes."
+  - title: "The Impact of Public Policy on Nonstandard Work Arrangements"
+    outlet: "University of Washington"
+    published: 2021-01-01
+    description: "Doctoral dissertation on labor-market regulation, worker classification, and the gig economy."
+
+short_form:
+  - title: "Looking for the Ladder"
+    url: "https://agglomerations.substack.com/p/looking-for-the-ladder"
+    outlet: "Agglomerations"
+    published: 2026-01-14
+    featured: true
+    description: "A short essay on early-career work, occupational ladders, and how AI may be reshaping entry-level opportunity."
+  - title: "A Policy Stack to Save America"
+    url: "https://agglomerations.substack.com/p/a-policy-stack-to-save-america"
+    outlet: "Agglomerations"
+    published: 2025-12-31
+    featured: true
+    description: "A year-end essay about combining abundance, work, and state capacity into a coherent policy program."
+  - title: "The jobs chart that really has us worried"
+    url: "https://agglomerations.substack.com/p/the-jobs-chart-that-really-has-us"
+    outlet: "Agglomerations"
+    published: 2025-12-17
+    featured: true
+    description: "An examination of labor-market slack through involuntary part-time work and what it signals about worker bargaining power."
+  - title: "Why Place Matters More Than Ever"
+    url: "https://agglomerations.substack.com/p/why-place-matters-more-than-ever"
+    outlet: "Agglomerations"
+    published: 2025-12-10
+    description: "A short argument for why local labor markets and economic geography remain central to policy analysis."
+  - title: "No, Governor DeSantis, H-1Bs aren’t going to cashiers"
+    url: "https://agglomerations.substack.com/p/no-governor-desantis-h-1bs-arent-going-to-cashiers"
+    outlet: "Agglomerations"
+    published: 2025-11-25
+    description: "A data-driven response to common misconceptions about high-skill immigration and job competition."
+  - title: "Where any SNAP lapse will bite hardest"
+    url: "https://agglomerations.substack.com/p/where-any-snap-lapse-will-bite-hardest"
+    outlet: "Agglomerations"
+    published: 2025-11-03
+    description: "A place-based look at which communities would feel the sharpest effects from interruptions in SNAP support."
+  - title: "Fat Bear Week and the Fate of the World"
+    url: "https://agglomerations.substack.com/p/fat-bear-week-and-the-fate-of-the"
+    outlet: "Agglomerations"
+    published: 2025-10-08
+    description: "A reflection on AI, productivity, and the human judgment problems that policy still has to solve."
+  - title: "Abundance: the Missing Piece"
+    url: "https://agglomerations.substack.com/p/abundance-the-missing-piece"
+    outlet: "Agglomerations"
+    published: 2025-10-03
+    description: "A short essay on supply, implementation, and what abundance arguments need to say about institutions."
+  - title: "How to end low-wage work forever"
+    url: "https://agglomerations.substack.com/p/how-to-end-low-wage-work-forever"
+    outlet: "Agglomerations"
+    published: 2025-09-22
+    description: "A concise public-facing introduction to the wage subsidy proposal and the labor-market problem it is designed to solve."
+  - title: "Tariffs and Manufacturing Jobs: Three Big Problems"
+    url: "https://agglomerations.substack.com/p/tariffs-and-manufacturing-jobs-three"
+    outlet: "Agglomerations"
+    published: 2025-05-15
+    description: "An evidence-based critique of common claims linking tariffs to durable manufacturing-job gains."
+  - title: "Opportunity Zones: A Quiet Revolution in Housing Policy"
+    url: "https://agglomerations.substack.com/p/opportunity-zones-a-quiet-revolution"
+    outlet: "Agglomerations"
+    published: 2025-03-11
+    description: "A short essay connecting new evidence on Opportunity Zones to broader housing-supply debates."
+  - title: "No, we are not producing too many STEM graduates"
+    url: "https://agglomerations.substack.com/p/no-we-are-not-producing-too-many"
+    outlet: "Agglomerations"
+    published: 2025-01-21
+    description: "A rebuttal to arguments that the U.S. has oversupplied STEM labor."

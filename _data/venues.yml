@@ -1,9 +1,29 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"Dissertation":
+  color: "#58657a"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"EIG":
+  url: https://eig.org/
+  color: "#234f3c"
 
-"Vision":
-  color: "#009f36"
+"EquitableGrowth":
+  url: https://equitablegrowth.org/
+  color: "#215b83"
+
+"HealthAff":
+  url: https://www.healthaffairs.org/
+  color: "#7d2447"
+
+"JLE":
+  url: https://www.journals.uchicago.edu/journals/jole/home
+  color: "#6b4c9a"
+
+"JPubE":
+  url: https://www.sciencedirect.com/journal/journal-of-public-economics
+  color: "#26547c"
+
+"RobinHood":
+  url: https://robinhood.org/
+  color: "#b3621b"
+
+"Thesis":
+  color: "#4f5d75"

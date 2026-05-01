@@ -1,0 +1,184 @@
+/*******************************************************************************
+ * Site-specific presentation layer
+ ******************************************************************************/
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(244, 167, 66, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(25, 79, 139, 0.14), transparent 24%),
+    var(--global-bg-color);
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.post .post-header {
+  margin-bottom: 2rem;
+}
+
+.post .post-title,
+.post .post-title a,
+.post h1,
+.post h2,
+.post h3 {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.post .post-title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.post .desc,
+.post .post-description,
+.page-lead {
+  color: var(--global-text-color-light);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  max-width: 46rem;
+}
+
+.profile img,
+.profile .img-fluid {
+  border: 1px solid rgba(25, 79, 139, 0.12);
+  box-shadow: 0 24px 45px rgba(25, 79, 139, 0.12);
+}
+
+.home-intro,
+.page-lead {
+  margin-bottom: 2rem;
+}
+
+.home-intro p:last-child,
+.page-lead p:last-child {
+  margin-bottom: 0;
+}
+
+.section-block {
+  margin: 2.75rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.section-kicker {
+  margin-bottom: 0.9rem;
+  color: var(--global-theme-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.insight-grid,
+.page-card-grid,
+.quick-links {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.page-card,
+.insight-card,
+.quick-link-card,
+.tool-highlight {
+  height: 100%;
+  padding: 1.15rem 1.2rem 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(25, 79, 139, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(25, 79, 139, 0.08);
+}
+
+html[data-theme="dark"] {
+  .page-card,
+  .insight-card,
+  .quick-link-card,
+  .tool-highlight {
+    background: linear-gradient(180deg, rgba(25, 79, 139, 0.92), rgba(18, 58, 102, 0.96));
+    border-color: rgba(247, 244, 239, 0.12);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+  }
+}
+
+.page-card h3,
+.insight-card h3,
+.quick-link-card strong,
+.tool-highlight h3 {
+  margin-bottom: 0.4rem;
+}
+
+.quick-link-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.quick-link-card span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.quick-link-card:hover,
+.quick-link-card:focus {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.meta-line {
+  margin-bottom: 0.45rem;
+  color: var(--global-text-color-light);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.page-card p:last-child,
+.insight-card p:last-child,
+.tool-highlight p:last-child {
+  margin-bottom: 0;
+}
+
+.focus-list {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.focus-list li {
+  margin-bottom: 0.6rem;
+}
+
+.focus-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tool-highlight {
+  max-width: 54rem;
+}
+
+.tool-highlight ul {
+  margin-bottom: 0;
+}
+
+.cv .card,
+.publications .bibliography li,
+.publications ol.bibliography li {
+  border-color: rgba(25, 79, 139, 0.12);
+  box-shadow: 0 10px 22px rgba(25, 79, 139, 0.06);
+}
+
+@media (max-width: 576px) {
+  .post .post-title {
+    font-size: 2.2rem;
+  }
+
+  .page-card,
+  .insight-card,
+  .quick-link-card,
+  .tool-highlight {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+}

@@ -1,10 +1,9 @@
 ---
 layout: page
 permalink: /wage-subsidy-sim/
-title: wage subsidy simulator
+title: 80-80 wage subsidy simulator
 description: Interactive simulation of the EIG 80-80 Rule wage subsidy proposal, estimating fiscal and distributional effects for U.S. workers.
-nav: true
-nav_order: 5
+nav: false
 ---
 
 <p>
@@ -18,9 +17,14 @@ nav_order: 5
   <a href="https://eig-wage-subsidy.streamlit.app/" target="_blank">eig-wage-subsidy.streamlit.app</a>.
 </p>
 
+<p>
+  For background on the policy design, see the <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank">report</a>. For the broader research and writing context, start with the [tools]({{ '/tools/' | relative_url }}) page and the [writing]({{ '/writing/' | relative_url }}) page.
+</p>
+
 <div style="position: relative; width: 100%; padding-bottom: 0;">
   <iframe
     src="https://eig-wage-subsidy.streamlit.app/?embed=true"
+    title="80-80 wage subsidy simulator"
     style="width: 100%; height: 85vh; min-height: 600px; border: 1px solid #e0e0e0; border-radius: 6px;"
     allow="clipboard-read; clipboard-write"
     loading="lazy"

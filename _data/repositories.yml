@@ -1,12 +1,74 @@
-github_users:
-  - bnglasner
-  - EIG-Research
+profiles:
+  - label: bnglasner
+    url: https://github.com/bnglasner
+    description: Personal repositories, experiments, and site infrastructure.
+  - label: EIG-Research
+    url: https://github.com/EIG-Research
+    description: Reproducible public-policy research and data products developed at the Economic Innovation Group.
 
-repo_description_lines_max: 2
-
-github_repos:
-  - EIG-Research/AI-unemployment
-  - EIG-Research/EIG-Great-Transfer-Mation
-  - EIG-Research/oz-housing-supply
-  - EIG-Research/import-dependence
-  - bnglasner/bnglasner.github.io
+featured:
+  - name: trade-policy-targets-tracker
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/trade-policy-targets-tracker
+    language: R
+    updated: 2026-01-30
+    featured: true
+    description: Tracking the stated targets of U.S. trade policy and organizing the evidence behind those claims.
+  - name: EIG-Great-Transfer-Mation
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/EIG-Great-Transfer-Mation
+    language: R
+    updated: 2025-11-06
+    featured: true
+    description: The code and data behind EIG's analysis of transfer income growth across counties and commuting zones.
+  - name: h1b-npv-wage-ranking-simulations
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/h1b-npv-wage-ranking-simulations
+    language: R
+    updated: 2025-10-24
+    description: Simulation code and data supporting EIG's H-1B allocation-rule comment letter.
+  - name: import-dependence
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/import-dependence
+    language: R
+    updated: 2025-09-10
+    featured: true
+    description: Analysis of how American advanced manufacturing relies on imported machinery, equipment, and inputs.
+  - name: AI-unemployment
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/AI-unemployment
+    language: R
+    updated: 2025-08-12
+    featured: true
+    description: Estimates of the potential labor-market impact of AI adoption.
+  - name: dense-places
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/dense-places
+    language: R
+    updated: 2025-06-24
+    description: Analysis supporting EIG's work on housing, density, and local development capacity.
+  - name: noncompete-income
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/noncompete-income
+    language: R
+    updated: 2025-06-16
+    description: Repository for studies of income cutoffs and treatment effects in noncompete reforms.
+  - name: Retirement-Analysis-Urban-Rural
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/Retirement-Analysis-Urban-Rural
+    language: R
+    updated: 2025-05-21
+    description: Research code on how retirement-plan access and saving patterns differ across urban and rural communities.
+  - name: oz-housing-supply
+    organization: EIG-Research
+    url: https://github.com/EIG-Research/oz-housing-supply
+    language: R
+    updated: 2025-05-16
+    featured: true
+    description: Replication code for the Opportunity Zones housing-supply study.
+  - name: telework-ASEC-analysis
+    organization: bnglasner
+    url: https://github.com/bnglasner/telework-ASEC-analysis
+    language: HTML
+    updated: 2023-11-16
+    description: Telework microdata and CPS merge code for early telework measurement work.

@@ -1,9 +1,6 @@
 {
-  "files": [
-    "_pages/about.md",
-    "_pages/cv.md",
-    "_pages/publications.md",
-    "_pages/repositories.md"
-  ],
-  "source_manifest": "/Users/benjamin/Dropbox (Personal)/Resume Stuff/job-market-materials/outputs/profile_site_payload/manifest.json"
+  "files": [],
+  "source_manifest": null,
+  "status": "retired",
+  "note": "Repo-local data and pages are now authoritative. Do not overwrite public site pages from an external sync pipeline."
 }
