@@ -162,8 +162,8 @@ exclude:
   - _posts/
   - _projects/
   - _teachings/
-  - PORTFOLIO_DEEP_DIVE.md
-  - REVIEW_REPORT.md
+  # Audit reports — historical reference, not site content
+  - docs/
   - assets/html/relativity.html
   - assets/json/resume.json
   - assets/jupyter/

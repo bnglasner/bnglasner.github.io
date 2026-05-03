@@ -8,3 +8,15 @@ repos:
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
+
+  # Local hook: enforce that every entry in _data/writing.yml carries an authors
+  # field. Closes the integrity gap flagged in
+  # docs/audits/2026-05-03-portfolio-deep-dive.md.
+  - repo: local
+    hooks:
+      - id: check-writing-authors
+        name: writing.yml authors-field integrity check
+        entry: python3 bin/check_writing_authors.py
+        language: system
+        files: ^_data/writing\.yml$
+        pass_filenames: false

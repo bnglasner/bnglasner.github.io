@@ -52,6 +52,7 @@ nav_order: 4
 </section>
 
 {% if site.data.writing.guest_posts %}
+
 <section class="section-block">
   <h2 class="section-kicker">Guest Writing</h2>
   <p class="page-lead">Pieces written for outside publications.</p>
