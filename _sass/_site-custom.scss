@@ -5,8 +5,7 @@
 body {
   background:
     radial-gradient(circle at top left, rgba(244, 167, 66, 0.14), transparent 28%),
-    radial-gradient(circle at top right, rgba(25, 79, 139, 0.14), transparent 24%),
-    var(--global-bg-color);
+    radial-gradient(circle at top right, rgba(25, 79, 139, 0.14), transparent 24%), var(--global-bg-color);
   font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
@@ -96,6 +95,27 @@ html[data-theme="dark"] {
     background: linear-gradient(180deg, rgba(25, 79, 139, 0.92), rgba(18, 58, 102, 0.96));
     border-color: rgba(247, 244, 239, 0.12);
     box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+  }
+
+  // Brighten in-card links so they meet WCAG AA contrast (>= 4.5:1) on
+  // the dark navy card background. The default --global-theme-color
+  // (#f4a742) only reaches ~4.12:1 on #194f8b, which axe-core flags.
+  .cv .card a,
+  .publications .bibliography li a {
+    color: #ffc680;
+  }
+
+  .cv .card a:hover,
+  .publications .bibliography li a:hover {
+    color: #ffd9a8;
+  }
+
+  // Bootstrap's .text-muted (#6c757d) drops to 1.76:1 on the dark navy
+  // card background; force a lighter muted shade in dark mode for
+  // CV institution/date lines and similar muted text inside cards.
+  .cv .card .text-muted,
+  .publications .bibliography li .text-muted {
+    color: #c0d3e8 !important;
   }
 }
 

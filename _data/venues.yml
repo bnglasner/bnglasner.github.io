@@ -1,5 +1,5 @@
 "Dissertation":
-  color: "#58657a"
+  color: "#3f4c5e"
 
 "EIG":
   url: https://eig.org/
@@ -23,7 +23,7 @@
 
 "RobinHood":
   url: https://robinhood.org/
-  color: "#b3621b"
+  color: "#9d5417"
 
 "Thesis":
-  color: "#4f5d75"
+  color: "#36425a"

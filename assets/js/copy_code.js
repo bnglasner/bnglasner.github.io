@@ -1,6 +1,8 @@
 // create element for copy button in code blocks
 var codeBlocks = document.querySelectorAll("pre");
 codeBlocks.forEach(function (codeBlock) {
+  codeBlock.setAttribute("tabindex", "0");
+
   if (
     (codeBlock.querySelector("pre:not(.lineno)") || codeBlock.querySelector("code")) &&
     codeBlock.querySelector("code:not(.language-chartjs)") &&

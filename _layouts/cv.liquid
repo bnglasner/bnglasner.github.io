@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post">
-  <header class="post-header">
+  <div class="post-header">
     <h1 class="post-title">
       {{ page.title }}
       {% if page.cv_pdf %}
@@ -24,7 +24,7 @@ layout: default
     {% if page.description %}
       <p class="post-description">{{ page.description }}</p>
     {% endif %}
-  </header>
+  </div>
 
   <article>
     {{ content }}
@@ -45,13 +45,15 @@ layout: default
         {% for section in sections %}
           <a class="anchor" id="{{ section.title | slugify }}"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ section.title }}</h3>
+            <h2 class="card-title font-weight-medium h3">{{ section.title }}</h2>
 
             {% if section.type == 'map' %}
               <table class="table table-cv table-sm table-borderless mb-0">
                 {% for row in section.contents %}
                   <tr>
-                    <td class="p-1 pr-2 font-weight-bold"><b>{{ row.name }}</b></td>
+                    <td class="p-1 pr-2 font-weight-bold">
+                      <b>{{ row.name }}</b>
+                    </td>
                     <td class="p-1 pl-2 font-weight-light">{{ row.value }}</td>
                   </tr>
                 {% endfor %}
@@ -63,7 +65,7 @@ layout: default
                   <div class="d-flex flex-wrap justify-content-between align-items-start">
                     <div>
                       {% if entry.title %}
-                        <h4 class="h5 mb-1">{{ entry.title }}</h4>
+                        <h3 class="h5 mb-1">{{ entry.title }}</h3>
                       {% endif %}
                       {% if entry.institution or entry.location %}
                         <p class="mb-1 text-muted">
@@ -109,7 +111,8 @@ layout: default
                   {% if entry.linkitems %}
                     <p class="mt-2 mb-0 font-weight-light">
                       {% for link in entry.linkitems %}
-                        <a href="{{ link.link }}" target="_blank" rel="noopener noreferrer">{{ link.linkname }}</a>{% unless forloop.last %} &middot; {% endunless %}
+                        <a href="{{ link.link }}" target="_blank" rel="noopener noreferrer">{{ link.linkname }}</a>
+                        {%- unless forloop.last %} &middot; {% endunless %}
                       {% endfor %}
                     </p>
                   {% endif %}
@@ -120,7 +123,7 @@ layout: default
               {% for group in section.contents %}
                 <div class="{% unless forloop.last %}mb-3{% endunless %}">
                   {% if group.title %}
-                    <h4 class="h5 mb-2">{{ group.title }}</h4>
+                    <h3 class="h5 mb-2">{{ group.title }}</h3>
                   {% endif %}
                   {% if group.items %}
                     <ul class="card-text font-weight-light list-group list-group-flush">
@@ -149,7 +152,7 @@ layout: default
               {% for item in section.contents %}
                 <div class="{% unless forloop.last %}mb-3{% endunless %}">
                   {% if item.title %}
-                    <h4 class="h5 mb-1">{{ item.title }}</h4>
+                    <h3 class="h5 mb-1">{{ item.title }}</h3>
                   {% endif %}
                   {% if item.value %}
                     <p class="mb-0">{{ item.value }}</p>

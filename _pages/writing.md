@@ -12,7 +12,7 @@ nav_order: 4
 </div>
 
 <section class="section-block">
-  <p class="section-kicker">Policy Reports</p>
+  <h2 class="section-kicker">Policy Reports</h2>
   <div class="page-card-grid">
     {% for item in site.data.writing.reports %}
       <article class="page-card">
@@ -25,7 +25,7 @@ nav_order: 4
 </section>
 
 <section class="section-block">
-  <p class="section-kicker">Working Papers and Long-Form Research</p>
+  <h2 class="section-kicker">Working Papers and Long-Form Research</h2>
   <div class="page-card-grid">
     {% for item in site.data.writing.working_papers %}
       <article class="page-card">
@@ -38,7 +38,7 @@ nav_order: 4
 </section>
 
 <section class="section-block">
-  <p class="section-kicker">Selected Short-Form Writing</p>
+  <h2 class="section-kicker">Selected Short-Form Writing</h2>
   <div class="page-card-grid">
     {% for item in site.data.writing.short_form %}
       <article class="page-card">

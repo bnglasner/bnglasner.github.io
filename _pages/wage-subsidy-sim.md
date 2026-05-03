@@ -11,22 +11,19 @@ nav: false
   It combines Current Population Survey (CPS) microdata with pre-computed PolicyEngine-US household income schedules to estimate eligibility, gross cost, and safety-net interactions at the individual and population level.
 </p>
 
-<p style="font-size: 0.85rem; color: #666;">
-  The app is hosted on Streamlit Community Cloud. If it shows a loading screen, click <strong>Yes, get this app back up!</strong> to wake it from sleep.
-  You can also open it directly at
-  <a href="https://eig-wage-subsidy.streamlit.app/" target="_blank">eig-wage-subsidy.streamlit.app</a>.
-</p>
+<div class="tool-highlight mt-4">
+  <p class="meta-line">Status</p>
+  <h2>Public Prototype Offline</h2>
+  <p>
+    The previous public Streamlit deployment for this simulator is no longer live. Rather than embedding a broken application, this page now serves as a stable methods and context page for the proposal.
+  </p>
+  <ul class="focus-list">
+    <li>Read the companion <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank">report</a> for the policy design, motivation, and topline findings.</li>
+    <li>Use the <a href="{{ '/tools/' | relative_url }}">tools</a> page as the landing page for interactive and prototype work across the site.</li>
+    <li>Use the <a href="{{ '/writing/' | relative_url }}">writing</a> page for related public-facing essays and policy commentary.</li>
+  </ul>
+</div>
 
 <p>
   For background on the policy design, see the <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank">report</a>. For the broader research and writing context, start with the [tools]({{ '/tools/' | relative_url }}) page and the [writing]({{ '/writing/' | relative_url }}) page.
 </p>
-
-<div style="position: relative; width: 100%; padding-bottom: 0;">
-  <iframe
-    src="https://eig-wage-subsidy.streamlit.app/?embed=true"
-    title="80-80 wage subsidy simulator"
-    style="width: 100%; height: 85vh; min-height: 600px; border: 1px solid #e0e0e0; border-radius: 6px;"
-    allow="clipboard-read; clipboard-write"
-    loading="lazy"
-  ></iframe>
-</div>

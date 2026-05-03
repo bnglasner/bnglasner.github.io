@@ -5,7 +5,8 @@ permalink: /
 subtitle: Research on labor markets, place-based policy, and social-policy design.
 profile:
   align: right
-  image: prof_pic_color.png
+  image: prof_pic_color.jpg
+  image_alt: Benjamin Glasner standing on the walls of the old city of Dubrovnik with the harbor and Adriatic coast in the background.
   image_circular: false
   more_info: >
     <p>Washington, D.C.</p>
@@ -20,7 +21,7 @@ selected_papers: true
 </div>
 
 <section class="section-block">
-  <p class="section-kicker">What I Work On</p>
+  <h2 class="section-kicker">What I Work On</h2>
   <div class="insight-grid">
     <div class="insight-card">
       <h3>Wages and Work</h3>
@@ -38,7 +39,7 @@ selected_papers: true
 </section>
 
 <section class="section-block">
-  <p class="section-kicker">Start Here</p>
+  <h2 class="section-kicker">Start Here</h2>
   <div class="quick-links">
     <a class="quick-link-card" href="{{ '/cv/' | relative_url }}">
       <strong>CV</strong>
@@ -64,7 +65,7 @@ selected_papers: true
 </section>
 
 <section class="section-block">
-  <p class="section-kicker">Current Focus</p>
+  <h2 class="section-kicker">Current Focus</h2>
   <ul class="focus-list">
     <li>Designing and evaluating policies that raise earnings and improve job quality for low-wage workers.</li>
     <li>Measuring how place-based policy changes housing supply, local growth, and regional inequality.</li>
@@ -73,7 +74,7 @@ selected_papers: true
 </section>
 
 <section class="section-block">
-  <p class="section-kicker">Featured Writing</p>
+  <h2 class="section-kicker">Featured Writing</h2>
   {% assign featured_writing = site.data.writing.short_form | where: 'featured', true %}
   <div class="page-card-grid">
     {% for item in featured_writing limit: 3 %}
@@ -87,12 +88,12 @@ selected_papers: true
 </section>
 
 <section class="section-block">
-  <p class="section-kicker">Code, Data, and Tools</p>
+  <h2 class="section-kicker">Code, Data, and Tools</h2>
   <div class="page-card-grid">
     <article class="page-card">
       <p class="meta-line">Featured Tool</p>
       <h3><a href="{{ '/wage-subsidy-sim/' | relative_url }}">80-80 wage subsidy simulator</a></h3>
-      <p>An interactive policy model for exploring eligibility, cost, and distributional effects under the 80-80 Rule proposal.</p>
+      <p>A methods and policy page for the 80-80 Rule simulator, preserving the proposal logic and public framing while the live prototype is offline.</p>
     </article>
     <article class="page-card">
       <p class="meta-line">Research Infrastructure</p>

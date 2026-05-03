@@ -12,7 +12,7 @@ nav_order: 5
 </div>
 
 <section class="section-block">
-  <p class="section-kicker">Primary Profiles</p>
+  <h2 class="section-kicker">Primary Profiles</h2>
   <div class="page-card-grid">
     {% for profile in site.data.repositories.profiles %}
       <article class="page-card">
@@ -25,7 +25,7 @@ nav_order: 5
 </section>
 
 <section class="section-block">
-  <p class="section-kicker">Selected Repositories</p>
+  <h2 class="section-kicker">Selected Repositories</h2>
   <div class="page-card-grid">
     {% for repo in site.data.repositories.featured %}
       <article class="page-card">

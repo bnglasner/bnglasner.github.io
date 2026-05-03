@@ -50,14 +50,15 @@
           display: inline-block;
           background-color: var(--global-theme-color);
           margin-bottom: 0.5rem;
-          color: var(--global-card-bg-color) !important;
+          color: #ffffff !important;
 
-          a {
-            color: white;
+          a,
+          div {
+            color: #ffffff !important;
+          }
 
-            &:hover {
-              text-decoration: none;
-            }
+          a:hover {
+            text-decoration: none;
           }
         }
 

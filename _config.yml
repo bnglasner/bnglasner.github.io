@@ -71,7 +71,7 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: true # Include Schema.org in the HTML head
-og_image: /assets/img/prof_pic_color.png # The site-wide (default for all links) Open Graph preview image
+og_image: /assets/img/prof_pic_color.jpg # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -190,9 +190,14 @@ exclude:
   - _pages/teaching.md
   - assets/html/relativity.html
   - assets/json/resume.json
+  - assets/jupyter/
   - assets/pdf/example_pdf.pdf
+  - assets/plotly/
   - assets/rendercv/
   - bin/
+  - AGENTS.md
+  - ANALYTICS.md
+  - CLAUDE.md
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
@@ -207,8 +212,12 @@ exclude:
   - package.json
   - package-lock.json
   - purgecss.config.js
+  - QUICKSTART.md
   - README.md
   - readme_preview/
+  - requirements.txt
+  - SEO.md
+  - TROUBLESHOOTING.md
   - vendor
 keep_files:
   - CNAME

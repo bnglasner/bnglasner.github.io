@@ -8,10 +8,12 @@ div.container-link-button {
 
 table.table-cv {
   background-color: transparent !important;
+  color: var(--global-text-color) !important;
 
   td,
   th {
     padding: 1px;
+    color: var(--global-text-color) !important;
   }
 }
 

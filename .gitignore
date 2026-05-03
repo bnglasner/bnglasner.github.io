@@ -4,6 +4,7 @@ _site
 .idea
 .jekyll-cache
 .jekyll-metadata
+.playwright-browsers/
 .ruby-version
 .sass-cache
 .tweet-cache
