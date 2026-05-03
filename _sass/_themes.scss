@@ -45,6 +45,19 @@
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
 
+  // Surface and elevation tokens. Pulled into cards, profile image,
+  // bibliography entries, and CV cards so the shadow language stays
+  // consistent across the site.
+  --surface-border: rgba(25, 79, 139, 0.12);
+  --surface-border-strong: rgba(25, 79, 139, 0.2);
+  --surface-elev-1: 0 8px 18px rgba(25, 79, 139, 0.06);
+  --surface-elev-2: 0 14px 28px rgba(25, 79, 139, 0.1);
+  --surface-elev-3: 0 22px 42px rgba(25, 79, 139, 0.14);
+  --surface-accent: var(--brand-sunset-ember);
+  --surface-radius: 18px;
+  --surface-radius-sm: 12px;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
   #light-toggle-system {
     display: inline-block;
   }
@@ -108,6 +121,16 @@ html[data-theme="dark"] {
   --global-danger-block-bg: #600;
   --global-danger-block-text: #ffb9b9;
   --global-danger-block-title: #ffe0e0;
+
+  // Dark-mode surface/elevation tokens. Shadows are deeper and more
+  // saturated against the navy background; the accent color shifts to
+  // golden hour, which has stronger contrast on dark navy than ember.
+  --surface-border: rgba(247, 244, 239, 0.12);
+  --surface-border-strong: rgba(247, 244, 239, 0.22);
+  --surface-elev-1: 0 8px 18px rgba(0, 0, 0, 0.18);
+  --surface-elev-2: 0 16px 30px rgba(0, 0, 0, 0.24);
+  --surface-elev-3: 0 22px 42px rgba(0, 0, 0, 0.32);
+  --surface-accent: var(--brand-golden-hour);
 
   .only-light {
     display: none;

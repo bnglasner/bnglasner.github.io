@@ -12,6 +12,12 @@ nav_order: 5
 </div>
 
 <section class="section-block">
+  <h2 class="section-kicker">Open Research, by Default</h2>
+  <p>I established the open-research standard EIG now uses for its empirical projects. Every analysis — a short memo or a multi-year study — should be readable from raw inputs to final figure, and that expectation now applies across the EIG-Research organization. The aim is straightforward: any researcher, journalist, or policymaker should be able to open one of these repositories and trace the chain from data to claim.</p>
+  <p>I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and documentation practices that make a public repository worth publishing. Pushing for that level of openness on every project I touch — and across every team I work with — is a commitment I intend to carry forward.</p>
+</section>
+
+<section class="section-block">
   <h2 class="section-kicker">Recently Updated on EIG-Research</h2>
   <div id="eig-research-repos" class="page-card-grid" data-state="loading">
     <article class="page-card">

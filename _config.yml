@@ -11,9 +11,7 @@ contact_note: >
 description: > # site description
   Research on labor markets, place-based policy, and social-policy design.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+  Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme, and <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: labor markets, place-based policy, social policy, economics
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 logo: bg-hex-logo.svg # logo image in /assets/img/

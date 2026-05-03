@@ -3,24 +3,33 @@
  ******************************************************************************/
 
 footer.fixed-bottom {
+  // Soften the slab: pull a tonal treatment from the brand palette
+  // instead of a flat forest-green wall, and bump the type slightly so
+  // attribution is legible without dominating the page.
   background-color: var(--global-footer-bg-color);
-  font-size: 0.75rem;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
 
   .container {
     color: var(--global-footer-text-color);
-    padding-top: 9px;
-    padding-bottom: 8px;
+    padding-top: 12px;
+    padding-bottom: 11px;
     text-align: center;
   }
 
   a {
     color: var(--global-footer-link-color);
     text-decoration: underline;
-    text-underline-offset: 0.16em;
+    text-decoration-color: rgba(255, 255, 255, 0.45);
+    text-underline-offset: 0.18em;
+    transition: text-decoration-color 0.18s ease;
 
     &:hover {
       color: var(--global-footer-link-color);
       text-decoration: underline;
+      text-decoration-color: currentColor;
     }
   }
 }

@@ -7,8 +7,23 @@
 .navbar {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
-  background-color: var(--global-bg-color);
-  opacity: 0.95;
+  // Use a translucent surface and backdrop blur so the bg gradient and
+  // page content show through subtly. Gracefully degrades to the solid
+  // bg color in browsers without backdrop-filter support.
+  background-color: rgba(247, 244, 239, 0.78);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  transition: background-color 0.2s ease;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .navbar {
+    background-color: var(--global-bg-color);
+  }
+}
+
+html[data-theme="dark"] .navbar {
+  background-color: rgba(18, 58, 102, 0.82);
 }
 
 .navbar .dropdown-menu,
