@@ -28,6 +28,13 @@ ninja.data = [{
         handler: () => {
           window.location.href = "/writing/";
         },
+      },{id: "nav-media",
+        title: "media",
+        description: "Podcast appearances, broadcast and print coverage, and policy-advisory work.",
+        section: "Navigation",
+        handler: () => {
+          window.location.href = "/media/";
+        },
       },{id: "nav-code-data",
         title: "code + data",
         description: "The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.",
@@ -75,6 +82,14 @@ ninja.data = [{
         window.open("https://eig.org/american-worker/", "_blank");
       },
     },{
+      id: "report-full-vs-hybrid-examining-the-consequences-of-how-americans-work-remotely",
+      title: "Full vs. Hybrid: Examining the Consequences of How Americans Work Remotely",
+      description: "Why full-remote and hybrid arrangements have substantively different consequences for local labor markets.",
+      section: "Reports",
+      handler: () => {
+        window.open("https://eig.org/full-vs-hybrid-remote-work/", "_blank");
+      },
+    },{
       id: "report-are-opportunity-zones-working-what-the-literature-tells-us",
       title: "Are Opportunity Zones Working? What the Literature Tells Us",
       description: "A synthesis of the empirical literature on Opportunity Zones and what the early evidence says about program effects.",
@@ -111,20 +126,20 @@ ninja.data = [{
         
       },
     },{
-      id: "writing-looking-for-the-ladder",
-      title: "Looking for the Ladder",
-      description: "Early-career work, occupational ladders, and how AI may be reshaping entry-level opportunity.",
+      id: "writing-fixing-the-u-s-retirement-system-a-q-a",
+      title: "Fixing the U.S. Retirement System: A Q&amp;A",
+      description: "A Q&amp;A on the coverage gap, auto-enrollment, and the design choices behind the Retirement Savings for Americans Act.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/looking-for-the-ladder", "_blank");
+        window.open("https://agglomerations.eig.org/p/fixing-the-us-retirement-system-a", "_blank");
       },
     },{
-      id: "writing-a-policy-stack-to-save-america",
-      title: "A Policy Stack to Save America",
-      description: "Combining abundance, work, and state capacity into a coherent policy program.",
+      id: "writing-how-to-end-low-wage-work-forever-part-2-the-faq",
+      title: "How to end low-wage work forever, Part 2: the FAQ",
+      description: "Common objections to the 80-80 wage subsidy, addressed: incidence, take-up, fiscal cost, and interactions with the safety net.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/a-policy-stack-to-save-america", "_blank");
+        window.open("https://agglomerations.eig.org/p/how-to-end-low-wage-work-forever-4a4", "_blank");
       },
     },{
       id: "writing-the-jobs-chart-that-really-has-us-worried",
@@ -132,23 +147,15 @@ ninja.data = [{
       description: "Reading labor-market slack through involuntary part-time work, and what it signals about worker bargaining power.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/the-jobs-chart-that-really-has-us", "_blank");
+        window.open("https://agglomerations.eig.org/p/the-jobs-chart-that-really-has-us", "_blank");
       },
     },{
-      id: "writing-why-place-matters-more-than-ever",
-      title: "Why Place Matters More Than Ever",
-      description: "Why local labor markets and economic geography remain central to policy analysis.",
+      id: "writing-how-many-manufacturing-workers-are-there",
+      title: "How many manufacturing workers are there?",
+      description: "What counts as a manufacturing worker, and why the number depends on which definition you use.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/why-place-matters-more-than-ever", "_blank");
-      },
-    },{
-      id: "writing-no-governor-desantis-h-1bs-aren-t-going-to-cashiers",
-      title: "No, Governor DeSantis, H-1Bs aren’t going to cashiers",
-      description: "Sorting through the data on high-skill immigration and the jobs H-1B holders actually do.",
-      section: "Writing",
-      handler: () => {
-        window.open("https://agglomerations.substack.com/p/no-governor-desantis-h-1bs-arent-going-to-cashiers", "_blank");
+        window.open("https://agglomerations.eig.org/p/how-many-manufacturing-workers-are", "_blank");
       },
     },{
       id: "writing-where-any-snap-lapse-will-bite-hardest",
@@ -156,15 +163,15 @@ ninja.data = [{
       description: "Which communities would feel the sharpest effects of any interruption in SNAP support.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/where-any-snap-lapse-will-bite-hardest", "_blank");
+        window.open("https://agglomerations.eig.org/p/where-any-snap-lapse-will-bite-hardest", "_blank");
       },
     },{
       id: "writing-fat-bear-week-and-the-fate-of-the-world",
       title: "Fat Bear Week and the Fate of the World",
-      description: "A reflection on AI, productivity, and the human-judgment problems that policy still has to solve.",
+      description: "AI, productivity, and the human-judgment problems that policy still has to solve.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/fat-bear-week-and-the-fate-of-the", "_blank");
+        window.open("https://agglomerations.eig.org/p/fat-bear-week-and-the-fate-of-the", "_blank");
       },
     },{
       id: "writing-abundance-the-missing-piece",
@@ -172,7 +179,7 @@ ninja.data = [{
       description: "Supply, implementation, and what abundance arguments need to say about institutions.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/abundance-the-missing-piece", "_blank");
+        window.open("https://agglomerations.eig.org/p/abundance-the-missing-piece", "_blank");
       },
     },{
       id: "writing-how-to-end-low-wage-work-forever",
@@ -180,7 +187,7 @@ ninja.data = [{
       description: "A public-facing introduction to the 80-80 wage subsidy proposal and the labor-market problem it is designed to solve.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/how-to-end-low-wage-work-forever", "_blank");
+        window.open("https://agglomerations.eig.org/p/how-to-end-low-wage-work-forever", "_blank");
       },
     },{
       id: "writing-tariffs-and-manufacturing-jobs-three-big-problems",
@@ -188,7 +195,7 @@ ninja.data = [{
       description: "Three problems with the standard claim that tariffs bring back durable manufacturing jobs.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/tariffs-and-manufacturing-jobs-three", "_blank");
+        window.open("https://agglomerations.eig.org/p/tariffs-and-manufacturing-jobs-three", "_blank");
       },
     },{
       id: "writing-opportunity-zones-a-quiet-revolution-in-housing-policy",
@@ -196,7 +203,15 @@ ninja.data = [{
       description: "Connecting new evidence on Opportunity Zones to broader housing-supply debates.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/opportunity-zones-a-quiet-revolution", "_blank");
+        window.open("https://agglomerations.eig.org/p/opportunity-zones-a-quiet-revolution", "_blank");
+      },
+    },{
+      id: "writing-transfers-deficits-and-your-community-how-will-you-know",
+      title: "Transfers, deficits, and your community: How will you know?",
+      description: "An interactive tour of the county-level transfer dependence behind the Great Transfer-mation report.",
+      section: "Writing",
+      handler: () => {
+        window.open("https://agglomerations.eig.org/p/transfers-deficits-and-your-community", "_blank");
       },
     },{
       id: "writing-no-we-are-not-producing-too-many-stem-graduates",
@@ -204,7 +219,31 @@ ninja.data = [{
       description: "Why the argument that the U.S. has oversupplied STEM labor does not hold up.",
       section: "Writing",
       handler: () => {
-        window.open("https://agglomerations.substack.com/p/no-we-are-not-producing-too-many", "_blank");
+        window.open("https://agglomerations.eig.org/p/no-we-are-not-producing-too-many", "_blank");
+      },
+    },{
+      id: "writing-the-economic-geography-of-the-2024-elections",
+      title: "The economic geography of the 2024 elections",
+      description: "Mapping the 2024 results onto county-level economic conditions and demographic change.",
+      section: "Writing",
+      handler: () => {
+        window.open("https://agglomerations.eig.org/p/the-economic-geography-of-the-2024", "_blank");
+      },
+    },{
+      id: "writing-an-inflation-puzzle-of-the-2024-election",
+      title: "An inflation puzzle of the 2024 election",
+      description: "Why post-2021 inflation hit voters harder than headline indicators suggested.",
+      section: "Writing",
+      handler: () => {
+        window.open("https://agglomerations.eig.org/p/inflation-puzzle-election", "_blank");
+      },
+    },{
+      id: "writing-who-s-left-out-of-america-s-retirement-savings-system",
+      title: "Who&#39;s left out of America&#39;s retirement savings system?",
+      description: "Who falls outside the U.S. retirement savings system, and what the coverage gap looks like by income, employer size, and worker classification.",
+      section: "Writing",
+      handler: () => {
+        window.open("https://agglomerations.eig.org/p/whos-left-out-of-americas-retirement", "_blank");
       },
     },{
     id: "repo-eig-research",
