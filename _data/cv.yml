@@ -105,6 +105,17 @@
         - Expenditure analysis across household surveys in Malawi, Tanzania, Ghana, Peru, and Cote d'Ivoire.
         - Developed seasonality estimates using parametric, semi-parametric, and machine learning approaches.
 
+- title: Affiliations
+  type: time_table
+  contents:
+    - title: Affiliate
+      institution: Center on Poverty and Social Policy, Columbia University
+      institution_url: https://povertycenter.columbia.edu/people
+      location: New York, NY
+      year: 2022 - present
+      description:
+        - Continuing research collaboration with the Center on social-policy evaluation, poverty measurement, and the long-run effects of safety-net programs.
+
 - title: Selected Publications
   type: nested_list
   contents:

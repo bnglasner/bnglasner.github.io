@@ -4,7 +4,7 @@ permalink: /repositories/
 title: code + data
 description: The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 <div class="page-lead">
@@ -28,6 +28,43 @@ nav_order: 5
   <p class="meta-line" style="margin-top: 1rem;">
     For the full catalog, browse <a href="https://github.com/EIG-Research">github.com/EIG-Research</a>.
   </p>
+</section>
+
+<section class="section-block">
+  <h2 class="section-kicker">Personal Research Code</h2>
+  <p>Side projects and earlier replication code, on the personal account at <a href="https://github.com/bnglasner">github.com/bnglasner</a>. The repositories below are research-bearing; experimental forks and infrastructure (the source of this site, course material, third-party plugin forks) are not listed here.</p>
+  <div class="page-card-grid">
+    <article class="page-card">
+      <p class="meta-line">Python · 80-80 wage subsidy</p>
+      <h3><a href="https://github.com/bnglasner/eig-wagesubsidy-policy-sim" target="_blank" rel="noopener noreferrer">eig-wagesubsidy-policy-sim</a></h3>
+      <p>The microsimulation engine behind the 80-80 wage subsidy methods page: combines CPS microdata with PolicyEngine-US household income schedules to estimate eligibility, fiscal cost, and distributional effects.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">HTML · Housing affordability</p>
+      <h3><a href="https://github.com/bnglasner/hours-working-for-median-home" target="_blank" rel="noopener noreferrer">hours-working-for-median-home</a></h3>
+      <p>Hours of work required to afford the median home, by metro area and over time.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">HTML · Remote work</p>
+      <h3><a href="https://github.com/bnglasner/telework-ASEC-analysis" target="_blank" rel="noopener noreferrer">telework-ASEC-analysis</a></h3>
+      <p>Telework microdata work merging CPS-ASEC and contemporary remote-work supplements.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">R · Replication</p>
+      <h3><a href="https://github.com/bnglasner/MinimumWage-SelfEmp" target="_blank" rel="noopener noreferrer">MinimumWage-SelfEmp</a></h3>
+      <p>Replication code for "The Minimum Wage, Self-Employment, and the Online Gig Economy," <i>Journal of Labor Economics</i>, 2023.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">HTML · QCEW</p>
+      <h3><a href="https://github.com/bnglasner/QCEW" target="_blank" rel="noopener noreferrer">QCEW</a></h3>
+      <p>Summary tooling and visualizations built on the BLS Quarterly Census of Employment and Wages.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">Stata · Replication</p>
+      <h3><a href="https://github.com/bnglasner/CTC-MentalHealth" target="_blank" rel="noopener noreferrer">CTC-MentalHealth</a></h3>
+      <p>Replication code for "No Evidence the Child Tax Credit Expansion Had an Effect on the Well-Being and Mental Health of Parents," <i>Health Affairs</i>, 2022.</p>
+    </article>
+  </div>
 </section>
 
 <script>

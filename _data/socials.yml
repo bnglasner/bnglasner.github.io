@@ -4,3 +4,16 @@ rss_icon: false
 scholar_userid: ZvG1rc8AAAAJ
 github_username: bnglasner
 linkedin_username: bglasner
+x_username: BenGlasner
+bluesky_url: https://bsky.app/profile/benglasner.bsky.social
+instagram_id: microfamousben
+# Custom keys (TikTok, Threads, Substack are not natively supported by
+# jekyll-socials icons). The {% else %} branch in metadata.liquid renders
+# `key.url` into the schema.org sameAs block, and the about page renders
+# explicit links for each of them in the "Find me elsewhere" block.
+tiktok_url:
+  url: https://www.tiktok.com/@microfamousben
+threads_url:
+  url: https://www.threads.com/@microfamousben
+substack_url:
+  url: https://agglomerations.eig.org

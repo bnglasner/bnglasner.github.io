@@ -11,12 +11,13 @@ profile:
   more_info: >
     <p>Washington, D.C.</p>
     <p>Senior Economist, Economic Innovation Group</p>
+    <p>Affiliate, Center on Poverty and Social Policy, Columbia University</p>
 social: true
 selected_papers: true
 ---
 
 <div class="home-intro">
-  <p>I am Benjamin Glasner, a Senior Economist at the Economic Innovation Group in Washington, D.C. My research focuses on U.S. labor markets, place-based policy, and the design of the social safety net — with a particular interest in worker well-being, economic mobility, and how national policy choices play out in local economies.</p>
+  <p>I am Benjamin Glasner, a Senior Economist at the Economic Innovation Group in Washington, D.C., and an affiliate at the Center on Poverty and Social Policy at Columbia University. My research focuses on U.S. labor markets, place-based policy, and the design of the social safety net — with a particular interest in worker well-being, economic mobility, and how national policy choices play out in local economies.</p>
   <p>I work at the intersection of applied microeconomics, policy evaluation, and public-facing research communication. The goal is research that holds up under empirical scrutiny and is still useful to the policymakers, journalists, and practitioners who have to act on it.</p>
 </div>
 
@@ -60,6 +61,10 @@ selected_papers: true
     <a class="quick-link-card" href="{{ '/policy/' | relative_url }}">
       <strong>Policy</strong>
       <span>Active policy work: Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal.</span>
+    </a>
+    <a class="quick-link-card" href="{{ '/media/' | relative_url }}">
+      <strong>Media</strong>
+      <span>Podcast appearances, broadcast and print coverage, and policy-advisory work.</span>
     </a>
   </div>
 </section>
@@ -106,4 +111,18 @@ selected_papers: true
       <p>The problem each policy is meant to solve, the state of the relevant literature, and my role on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy.</p>
     </article>
   </div>
+</section>
+
+<section class="section-block">
+  <h2 class="section-kicker">Find Me Elsewhere</h2>
+  <p>The icons above link to the channels I keep professional. Below are the rest — the long-form newsletter, the consumer-creator stack, and the academic discoverability anchors.</p>
+  <ul class="focus-list">
+    <li><strong>Agglomerations</strong> (Substack, EIG newsletter) — <a href="https://agglomerations.eig.org" target="_blank" rel="noopener noreferrer">agglomerations.eig.org</a></li>
+    <li><strong>X / Twitter</strong> — <a href="https://x.com/BenGlasner" target="_blank" rel="noopener noreferrer">@BenGlasner</a></li>
+    <li><strong>Bluesky</strong> — <a href="https://bsky.app/profile/benglasner.bsky.social" target="_blank" rel="noopener noreferrer">@benglasner.bsky.social</a></li>
+    <li><strong>TikTok</strong> — <a href="https://www.tiktok.com/@microfamousben" target="_blank" rel="noopener noreferrer">@microfamousben</a></li>
+    <li><strong>Instagram</strong> — <a href="https://www.instagram.com/microfamousben" target="_blank" rel="noopener noreferrer">@microfamousben</a></li>
+    <li><strong>Threads</strong> — <a href="https://www.threads.com/@microfamousben" target="_blank" rel="noopener noreferrer">@microfamousben</a></li>
+    <li><strong>Linktree</strong> (single-page index) — <a href="https://linktr.ee/bglasner" target="_blank" rel="noopener noreferrer">linktr.ee/bglasner</a></li>
+  </ul>
 </section>

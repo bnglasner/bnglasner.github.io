@@ -155,18 +155,15 @@ kramdown:
 # Includes & excludes
 include: ["_pages", "_scripts"]
 exclude:
+  # Empty al-folio template collections retained for theme compatibility;
+  # excluding the directories prevents the build from emitting routes for them.
   - _books/
   - _news/
   - _posts/
   - _projects/
   - _teachings/
-  - _pages/about_einstein.md
-  - _pages/books.md
-  - _pages/dropdown.md
-  - _pages/news.md
-  - _pages/profiles.md
-  - _pages/projects.md
-  - _pages/teaching.md
+  - PORTFOLIO_DEEP_DIVE.md
+  - REVIEW_REPORT.md
   - assets/html/relativity.html
   - assets/json/resume.json
   - assets/jupyter/
@@ -256,14 +253,17 @@ terser:
 # -----------------------------------------------------------------------------
 
 jekyll-archives:
+  # Blog and book-shelf archives are disabled; the site no longer ships a
+  # /blog/ stream (short-form writing lives on Agglomerations) and the
+  # /books/ shelf is gone. Re-enable here if either feature returns.
   posts:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+    enabled: []
     permalinks:
       year: "/blog/:year/"
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
   books:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+    enabled: []
 
 display_tags: [] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog

@@ -2,34 +2,46 @@ reports:
   - title: "How to end low-wage work forever: An 80-80 wage subsidy proposal"
     url: "https://eig.org/how-to-end-low-wage-work-forever/"
     outlet: "Economic Innovation Group"
+    authors: ["Ben Glasner", "Adam Ozimek"]
     published: 2025-09-22
     featured: true
     description: "A large, targeted wage subsidy designed to raise earnings and strengthen labor-market attachment for low-wage workers."
   - title: "The Impact of Opportunity Zones on Housing Supply"
     url: "https://eig.org/opportunity-zones-housing-supply/"
     outlet: "Economic Innovation Group"
+    authors: ["Benjamin Glasner", "Adam Ozimek", "John Lettieri"]
     published: 2025-03-11
     featured: true
     description: "Evidence that Opportunity Zones increased residential development and housing supply in designated communities."
   - title: 'The Great "Transfer"-mation: How American Communities Became Reliant on Income from Government'
     url: "https://eig.org/great-transfermation/"
     outlet: "Economic Innovation Group"
+    authors: ["Kenan Fikri", "Sarah Eckhardt", "Ben Glasner"]
     published: 2024-09-12
     featured: true
     description: "How transfer income has grown across U.S. communities and reshaped the foundations of local economies."
   - title: "The American Worker Project: Toward a New Consensus"
     url: "https://eig.org/american-worker/"
     outlet: "Economic Innovation Group"
+    authors: ["Adam Ozimek", "John Lettieri", "Ben Glasner"]
     published: 2024-06-26
     description: "A worker-centered economic policy agenda grounded in labor-market dynamism, mobility, and earnings growth."
+  - title: "Full vs. Hybrid: Examining the Consequences of How Americans Work Remotely"
+    url: "https://eig.org/full-vs-hybrid-remote-work/"
+    outlet: "Economic Innovation Group"
+    authors: ["Eric Carlson", "Benjamin Glasner", "Adam Ozimek"]
+    published: 2023-11-16
+    description: "Why full-remote and hybrid arrangements have substantively different consequences for local labor markets."
   - title: "Are Opportunity Zones Working? What the Literature Tells Us"
     url: "https://eig.org/are-opportunity-zones-working/"
     outlet: "Economic Innovation Group"
+    authors: ["Kenan Fikri", "Ben Glasner"]
     published: 2023-10-19
     description: "A synthesis of the empirical literature on Opportunity Zones and what the early evidence says about program effects."
   - title: "The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii and Oregon"
     url: "https://eig.org/noncompetes-research-note/"
     outlet: "Economic Innovation Group"
+    authors: ["Benjamin Glasner"]
     published: 2023-03-22
     description: "A research note comparing business-formation outcomes after noncompete reforms in Hawaii and Oregon."
 
@@ -37,74 +49,121 @@ working_papers:
   - title: "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the Intergenerational Persistence of Poverty"
     url: "https://equitablegrowth.org/working-papers/the-effectiveness-of-the-food-stamp-program-at-reducing-differences-in-the-intergenerational-persistence-of-poverty/"
     outlet: "Washington Center for Equitable Growth"
+    authors: ["Benjamin Glasner", "Ronald B. Mincy", "Zachary Parolin", "Christopher Wimer"]
     published: 2023-05-30
     description: "How SNAP participation shaped intergenerational mobility and racial inequality in long-run poverty outcomes."
   - title: "The Impact of Public Policy on Nonstandard Work Arrangements"
     outlet: "University of Washington"
+    authors: ["Benjamin Glasner"]
     published: 2021-01-01
     description: "Doctoral dissertation on labor-market regulation, worker classification, and the gig economy."
 
+# Short-form entries are limited to posts on which Ben is a published byline
+# per Substack's profile API for profile_user_id 219318610. EIG-newsletter
+# posts authored by other EIG staff (e.g., the Looking for the Ladder TAWP by
+# Iscenko & Millet) are intentionally excluded from this list per the strict
+# byline rule.
 short_form:
-  - title: "Looking for the Ladder"
-    url: "https://agglomerations.substack.com/p/looking-for-the-ladder"
+  - title: "Fixing the U.S. Retirement System: A Q&A"
+    url: "https://agglomerations.eig.org/p/fixing-the-us-retirement-system-a"
     outlet: "Agglomerations"
-    published: 2026-01-14
+    authors: ["Ben Glasner"]
+    published: 2026-04-30
     featured: true
-    description: "Early-career work, occupational ladders, and how AI may be reshaping entry-level opportunity."
-  - title: "A Policy Stack to Save America"
-    url: "https://agglomerations.substack.com/p/a-policy-stack-to-save-america"
+    description: "A Q&A on the coverage gap, auto-enrollment, and the design choices behind the Retirement Savings for Americans Act."
+  - title: "How to end low-wage work forever, Part 2: the FAQ"
+    url: "https://agglomerations.eig.org/p/how-to-end-low-wage-work-forever-4a4"
     outlet: "Agglomerations"
-    published: 2025-12-31
+    authors: ["Ben Glasner"]
+    published: 2025-12-22
     featured: true
-    description: "Combining abundance, work, and state capacity into a coherent policy program."
+    description: "Common objections to the 80-80 wage subsidy, addressed: incidence, take-up, fiscal cost, and interactions with the safety net."
   - title: "The jobs chart that really has us worried"
-    url: "https://agglomerations.substack.com/p/the-jobs-chart-that-really-has-us"
+    url: "https://agglomerations.eig.org/p/the-jobs-chart-that-really-has-us"
     outlet: "Agglomerations"
+    authors: ["Ben Glasner"]
     published: 2025-12-17
     featured: true
     description: "Reading labor-market slack through involuntary part-time work, and what it signals about worker bargaining power."
-  - title: "Why Place Matters More Than Ever"
-    url: "https://agglomerations.substack.com/p/why-place-matters-more-than-ever"
+  - title: "How many manufacturing workers are there?"
+    url: "https://agglomerations.eig.org/p/how-many-manufacturing-workers-are"
     outlet: "Agglomerations"
-    published: 2025-12-10
-    description: "Why local labor markets and economic geography remain central to policy analysis."
-  - title: "No, Governor DeSantis, H-1Bs aren’t going to cashiers"
-    url: "https://agglomerations.substack.com/p/no-governor-desantis-h-1bs-arent-going-to-cashiers"
-    outlet: "Agglomerations"
-    published: 2025-11-25
-    description: "Sorting through the data on high-skill immigration and the jobs H-1B holders actually do."
+    authors: ["Adam Ozimek", "Ben Glasner", "Jiaxin (Jason) He"]
+    published: 2025-12-08
+    description: "What counts as a manufacturing worker, and why the number depends on which definition you use."
   - title: "Where any SNAP lapse will bite hardest"
-    url: "https://agglomerations.substack.com/p/where-any-snap-lapse-will-bite-hardest"
+    url: "https://agglomerations.eig.org/p/where-any-snap-lapse-will-bite-hardest"
     outlet: "Agglomerations"
+    authors: ["Kenan Fikri", "Sarah Eckhardt", "Ben Glasner"]
     published: 2025-11-03
     description: "Which communities would feel the sharpest effects of any interruption in SNAP support."
   - title: "Fat Bear Week and the Fate of the World"
-    url: "https://agglomerations.substack.com/p/fat-bear-week-and-the-fate-of-the"
+    url: "https://agglomerations.eig.org/p/fat-bear-week-and-the-fate-of-the"
     outlet: "Agglomerations"
+    authors: ["Ben Glasner", "Nathan Goldschlag"]
     published: 2025-10-08
-    description: "A reflection on AI, productivity, and the human-judgment problems that policy still has to solve."
+    description: "AI, productivity, and the human-judgment problems that policy still has to solve."
   - title: "Abundance: the Missing Piece"
-    url: "https://agglomerations.substack.com/p/abundance-the-missing-piece"
+    url: "https://agglomerations.eig.org/p/abundance-the-missing-piece"
     outlet: "Agglomerations"
+    authors: ["Ben Glasner"]
     published: 2025-10-03
     description: "Supply, implementation, and what abundance arguments need to say about institutions."
   - title: "How to end low-wage work forever"
-    url: "https://agglomerations.substack.com/p/how-to-end-low-wage-work-forever"
+    url: "https://agglomerations.eig.org/p/how-to-end-low-wage-work-forever"
     outlet: "Agglomerations"
+    authors: ["Ben Glasner", "Adam Ozimek"]
     published: 2025-09-22
     description: "A public-facing introduction to the 80-80 wage subsidy proposal and the labor-market problem it is designed to solve."
   - title: "Tariffs and Manufacturing Jobs: Three Big Problems"
-    url: "https://agglomerations.substack.com/p/tariffs-and-manufacturing-jobs-three"
+    url: "https://agglomerations.eig.org/p/tariffs-and-manufacturing-jobs-three"
     outlet: "Agglomerations"
+    authors: ["Ben Glasner"]
     published: 2025-05-15
     description: "Three problems with the standard claim that tariffs bring back durable manufacturing jobs."
   - title: "Opportunity Zones: A Quiet Revolution in Housing Policy"
-    url: "https://agglomerations.substack.com/p/opportunity-zones-a-quiet-revolution"
+    url: "https://agglomerations.eig.org/p/opportunity-zones-a-quiet-revolution"
     outlet: "Agglomerations"
+    authors: ["Ben Glasner", "John Lettieri", "Adam Ozimek"]
     published: 2025-03-11
     description: "Connecting new evidence on Opportunity Zones to broader housing-supply debates."
-  - title: "No, we are not producing too many STEM graduates"
-    url: "https://agglomerations.substack.com/p/no-we-are-not-producing-too-many"
+  - title: "Transfers, deficits, and your community: How will you know?"
+    url: "https://agglomerations.eig.org/p/transfers-deficits-and-your-community"
     outlet: "Agglomerations"
+    authors: ["Ben Glasner", "Sarah Eckhardt", "Cardiff Garcia"]
+    published: 2025-02-07
+    description: "An interactive tour of the county-level transfer dependence behind the Great Transfer-mation report."
+  - title: "No, we are not producing too many STEM graduates"
+    url: "https://agglomerations.eig.org/p/no-we-are-not-producing-too-many"
+    outlet: "Agglomerations"
+    authors: ["Ben Glasner", "Connor O'Brien"]
     published: 2025-01-21
     description: "Why the argument that the U.S. has oversupplied STEM labor does not hold up."
+  - title: "The economic geography of the 2024 elections"
+    url: "https://agglomerations.eig.org/p/the-economic-geography-of-the-2024"
+    outlet: "Agglomerations"
+    authors: ["Ben Glasner", "Sarah Eckhardt", "Connor O'Brien"]
+    published: 2024-11-15
+    description: "Mapping the 2024 results onto county-level economic conditions and demographic change."
+  - title: "An inflation puzzle of the 2024 election"
+    url: "https://agglomerations.eig.org/p/inflation-puzzle-election"
+    outlet: "Agglomerations"
+    authors: ["Ben Glasner", "Cardiff Garcia"]
+    published: 2024-11-08
+    description: "Why post-2021 inflation hit voters harder than headline indicators suggested."
+  - title: "Who's left out of America's retirement savings system?"
+    url: "https://agglomerations.eig.org/p/whos-left-out-of-americas-retirement"
+    outlet: "Agglomerations"
+    authors: ["Ben Glasner", "Sarah Eckhardt"]
+    published: 2024-10-03
+    description: "Who falls outside the U.S. retirement savings system, and what the coverage gap looks like by income, employer size, and worker classification."
+
+# Guest posts on outside publications, listed separately so they are not
+# presented as Agglomerations work.
+guest_posts:
+  - title: "Minimum Wage Laws and App-Based Workers"
+    url: "https://www.labormarketmatters.com/p/minimum-wage-laws-and-app-based-workers"
+    outlet: "Labor Market Matters"
+    authors: ["Ben Glasner"]
+    published: 2024-03-28
+    description: "Guest essay on Liya Palagashvili and Revana Sharfuddin's newsletter, covering minimum-wage policy and platform-based work."
