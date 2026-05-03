@@ -30,17 +30,17 @@ ninja.data = [{
         },
       },{id: "nav-code-data",
         title: "code + data",
-        description: "Selected public repositories, reproducible research code, and data products.",
+        description: "The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.",
         section: "Navigation",
         handler: () => {
           window.location.href = "/repositories/";
         },
-      },{id: "nav-tools",
-        title: "tools",
-        description: "Interactive research tools and policy prototypes.",
+      },{id: "nav-policy",
+        title: "policy",
+        description: "Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal.",
         section: "Navigation",
         handler: () => {
-          window.location.href = "/tools/";
+          window.location.href = "/policy/";
         },
       },{
       id: "report-how-to-end-low-wage-work-forever-an-80-80-wage-subsidy-proposal",
@@ -207,6 +207,14 @@ ninja.data = [{
         window.open("https://agglomerations.substack.com/p/no-we-are-not-producing-too-many", "_blank");
       },
     },{
+    id: "repo-eig-research",
+    title: "EIG-Research on GitHub",
+    description: "All code and data I write or collaborate on through work is published on the EIG-Research GitHub organization.",
+    section: "Code + Data",
+    handler: () => {
+      window.open("https://github.com/EIG-Research", "_blank");
+    },
+  },{
             id: "social-cv",
             title: "CV PDF",
             section: "Profiles",
