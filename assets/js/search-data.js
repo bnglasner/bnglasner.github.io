@@ -45,7 +45,7 @@ ninja.data = [{
       },{
       id: "report-how-to-end-low-wage-work-forever-an-80-80-wage-subsidy-proposal",
       title: "How to end low-wage work forever: An 80-80 wage subsidy proposal",
-      description: "A proposal for a large, targeted wage subsidy designed to raise earnings and strengthen labor-market attachment for low-wage workers.",
+      description: "A large, targeted wage subsidy designed to raise earnings and strengthen labor-market attachment for low-wage workers.",
       section: "Reports",
       handler: () => {
         window.open("https://eig.org/how-to-end-low-wage-work-forever/", "_blank");
@@ -53,7 +53,7 @@ ninja.data = [{
     },{
       id: "report-the-impact-of-opportunity-zones-on-housing-supply",
       title: "The Impact of Opportunity Zones on Housing Supply",
-      description: "Evidence on how Opportunity Zones affected residential development and housing supply in designated communities.",
+      description: "Evidence that Opportunity Zones increased residential development and housing supply in designated communities.",
       section: "Reports",
       handler: () => {
         window.open("https://eig.org/opportunity-zones-housing-supply/", "_blank");
@@ -61,7 +61,7 @@ ninja.data = [{
     },{
       id: "report-the-great-transfer-mation-how-american-communities-became-reliant-on-income-from-government",
       title: "The Great &quot;Transfer&quot;-mation: How American Communities Became Reliant on Income from Government",
-      description: "A portrait of how transfer income has grown across U.S. communities and reshaped local economic foundations.",
+      description: "How transfer income has grown across U.S. communities and reshaped the foundations of local economies.",
       section: "Reports",
       handler: () => {
         window.open("https://eig.org/great-transfermation/", "_blank");
@@ -69,7 +69,7 @@ ninja.data = [{
     },{
       id: "report-the-american-worker-project-toward-a-new-consensus",
       title: "The American Worker Project: Toward a New Consensus",
-      description: "A framing document for a worker-centered economic policy agenda grounded in labor-market dynamism, mobility, and earnings growth.",
+      description: "A worker-centered economic policy agenda grounded in labor-market dynamism, mobility, and earnings growth.",
       section: "Reports",
       handler: () => {
         window.open("https://eig.org/american-worker/", "_blank");
@@ -77,7 +77,7 @@ ninja.data = [{
     },{
       id: "report-are-opportunity-zones-working-what-the-literature-tells-us",
       title: "Are Opportunity Zones Working? What the Literature Tells Us",
-      description: "A synthesis of the empirical literature on Opportunity Zones and what early evidence suggests about program effects.",
+      description: "A synthesis of the empirical literature on Opportunity Zones and what the early evidence says about program effects.",
       section: "Reports",
       handler: () => {
         window.open("https://eig.org/are-opportunity-zones-working/", "_blank");
@@ -85,7 +85,7 @@ ninja.data = [{
     },{
       id: "report-the-effects-of-noncompete-agreement-reforms-on-business-formation-a-comparison-of-hawaii-and-oregon",
       title: "The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii...",
-      description: "A research note comparing business-formation outcomes following noncompete reforms in two states.",
+      description: "A research note comparing business-formation outcomes after noncompete reforms in Hawaii and Oregon.",
       section: "Reports",
       handler: () => {
         window.open("https://eig.org/noncompetes-research-note/", "_blank");
@@ -93,7 +93,7 @@ ninja.data = [{
     },{
       id: "working-paper-the-effectiveness-of-the-food-stamp-program-at-reducing-racial-differences-in-the-intergenerational-persistence-of-poverty",
       title: "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the...",
-      description: "A working paper on how SNAP participation shaped intergenerational mobility and racial inequality in long-run poverty outcomes.",
+      description: "How SNAP participation shaped intergenerational mobility and racial inequality in long-run poverty outcomes.",
       section: "Working Papers",
       handler: () => {
         
@@ -113,7 +113,7 @@ ninja.data = [{
     },{
       id: "writing-looking-for-the-ladder",
       title: "Looking for the Ladder",
-      description: "A short essay on early-career work, occupational ladders, and how AI may be reshaping entry-level opportunity.",
+      description: "Early-career work, occupational ladders, and how AI may be reshaping entry-level opportunity.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/looking-for-the-ladder", "_blank");
@@ -121,7 +121,7 @@ ninja.data = [{
     },{
       id: "writing-a-policy-stack-to-save-america",
       title: "A Policy Stack to Save America",
-      description: "A year-end essay about combining abundance, work, and state capacity into a coherent policy program.",
+      description: "Combining abundance, work, and state capacity into a coherent policy program.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/a-policy-stack-to-save-america", "_blank");
@@ -129,7 +129,7 @@ ninja.data = [{
     },{
       id: "writing-the-jobs-chart-that-really-has-us-worried",
       title: "The jobs chart that really has us worried",
-      description: "An examination of labor-market slack through involuntary part-time work and what it signals about worker bargaining power.",
+      description: "Reading labor-market slack through involuntary part-time work, and what it signals about worker bargaining power.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/the-jobs-chart-that-really-has-us", "_blank");
@@ -137,7 +137,7 @@ ninja.data = [{
     },{
       id: "writing-why-place-matters-more-than-ever",
       title: "Why Place Matters More Than Ever",
-      description: "A short argument for why local labor markets and economic geography remain central to policy analysis.",
+      description: "Why local labor markets and economic geography remain central to policy analysis.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/why-place-matters-more-than-ever", "_blank");
@@ -145,7 +145,7 @@ ninja.data = [{
     },{
       id: "writing-no-governor-desantis-h-1bs-aren-t-going-to-cashiers",
       title: "No, Governor DeSantis, H-1Bs aren’t going to cashiers",
-      description: "A data-driven response to common misconceptions about high-skill immigration and job competition.",
+      description: "Sorting through the data on high-skill immigration and the jobs H-1B holders actually do.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/no-governor-desantis-h-1bs-arent-going-to-cashiers", "_blank");
@@ -153,7 +153,7 @@ ninja.data = [{
     },{
       id: "writing-where-any-snap-lapse-will-bite-hardest",
       title: "Where any SNAP lapse will bite hardest",
-      description: "A place-based look at which communities would feel the sharpest effects from interruptions in SNAP support.",
+      description: "Which communities would feel the sharpest effects of any interruption in SNAP support.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/where-any-snap-lapse-will-bite-hardest", "_blank");
@@ -161,7 +161,7 @@ ninja.data = [{
     },{
       id: "writing-fat-bear-week-and-the-fate-of-the-world",
       title: "Fat Bear Week and the Fate of the World",
-      description: "A reflection on AI, productivity, and the human judgment problems that policy still has to solve.",
+      description: "A reflection on AI, productivity, and the human-judgment problems that policy still has to solve.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/fat-bear-week-and-the-fate-of-the", "_blank");
@@ -169,7 +169,7 @@ ninja.data = [{
     },{
       id: "writing-abundance-the-missing-piece",
       title: "Abundance: the Missing Piece",
-      description: "A short essay on supply, implementation, and what abundance arguments need to say about institutions.",
+      description: "Supply, implementation, and what abundance arguments need to say about institutions.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/abundance-the-missing-piece", "_blank");
@@ -177,7 +177,7 @@ ninja.data = [{
     },{
       id: "writing-how-to-end-low-wage-work-forever",
       title: "How to end low-wage work forever",
-      description: "A concise public-facing introduction to the wage subsidy proposal and the labor-market problem it is designed to solve.",
+      description: "A public-facing introduction to the 80-80 wage subsidy proposal and the labor-market problem it is designed to solve.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/how-to-end-low-wage-work-forever", "_blank");
@@ -185,7 +185,7 @@ ninja.data = [{
     },{
       id: "writing-tariffs-and-manufacturing-jobs-three-big-problems",
       title: "Tariffs and Manufacturing Jobs: Three Big Problems",
-      description: "An evidence-based critique of common claims linking tariffs to durable manufacturing-job gains.",
+      description: "Three problems with the standard claim that tariffs bring back durable manufacturing jobs.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/tariffs-and-manufacturing-jobs-three", "_blank");
@@ -193,7 +193,7 @@ ninja.data = [{
     },{
       id: "writing-opportunity-zones-a-quiet-revolution-in-housing-policy",
       title: "Opportunity Zones: A Quiet Revolution in Housing Policy",
-      description: "A short essay connecting new evidence on Opportunity Zones to broader housing-supply debates.",
+      description: "Connecting new evidence on Opportunity Zones to broader housing-supply debates.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/opportunity-zones-a-quiet-revolution", "_blank");
@@ -201,7 +201,7 @@ ninja.data = [{
     },{
       id: "writing-no-we-are-not-producing-too-many-stem-graduates",
       title: "No, we are not producing too many STEM graduates",
-      description: "A rebuttal to arguments that the U.S. has oversupplied STEM labor.",
+      description: "Why the argument that the U.S. has oversupplied STEM labor does not hold up.",
       section: "Writing",
       handler: () => {
         window.open("https://agglomerations.substack.com/p/no-we-are-not-producing-too-many", "_blank");
