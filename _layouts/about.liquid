@@ -2,31 +2,32 @@
 layout: default
 ---
 <div class="post">
-  <div class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </div>
+  {# Deliberate two-column hero. The lead column carries the title, subtitle, and intro paragraphs from .home-intro; the profile column anchors the
+  visual weight on the right. Sections below render at full width, so the hero is the only place the profile lives — it no longer floats next to the
+  section bands. #}
+  <div class="post-header about-hero">
+    <div class="about-hero__lead">
+      <h1 class="post-title">
+        {% if site.title == 'blank' %}
+          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+          {{ site.last_name }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </h1>
+      <p class="desc">{{ page.subtitle }}</p>
+    </div>
 
-  <article>
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <aside class="about-hero__profile profile">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) 320px, (min-width: 576px) 36vw, 95vw{% endcapture %}
           {% assign profile_image_alt = page.profile.image_alt | default: page.profile.image %}
           {%
             include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile_image_alt
@@ -36,10 +37,12 @@ layout: default
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
-      </div>
+      </aside>
     {% endif %}
+  </div>
 
-    <div class="clearfix">{{ content }}</div>
+  <article>
+    <div class="about-content">{{ content }}</div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}

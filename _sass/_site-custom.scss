@@ -6,7 +6,21 @@ body {
   background:
     radial-gradient(circle at top left, rgba(244, 167, 66, 0.14), transparent 28%),
     radial-gradient(circle at top right, rgba(25, 79, 139, 0.14), transparent 24%), var(--global-bg-color);
-  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  // Inter is the body sans across the site, with system-stack fallbacks
+  // for the brief moment before the webfont arrives (and for any user
+  // who blocks third-party fonts at the browser level).
+  font-family:
+    "Inter",
+    "Avenir Next",
+    "Segoe UI",
+    "Helvetica Neue",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  // Lock body type to the type-scale base for explicit cascade.
+  font-size: var(--type-base, 17px);
+  line-height: var(--type-leading-body, 1.65);
 }
 
 // Dark mode: the warm ember + cool navy radial gradients bleed awkwardly
@@ -19,7 +33,79 @@ html[data-theme="dark"] body {
 }
 
 .post .post-header {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-7);
+}
+
+// About hero — deliberate two-column layout for the home page.
+// Lead text takes the wider column; profile image and contact block
+// anchor the right at a fixed-ish width. The grid collapses to a
+// single column under 768px, with the profile flowing below the lead.
+.about-hero {
+  display: grid;
+  gap: var(--space-7);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  align-items: start;
+  margin-bottom: var(--space-8);
+}
+
+.about-hero__lead {
+  min-width: 0;
+}
+
+.about-hero__lead .post-title {
+  margin-bottom: var(--space-4);
+}
+
+.about-hero__lead .desc {
+  margin-bottom: 0;
+}
+
+.about-hero__profile {
+  // Override the default `.profile { width: 100% }` from _components.scss
+  // because the grid track now controls width.
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  float: none;
+}
+
+.about-hero__profile .more-info {
+  margin-top: var(--space-3);
+  font-family: "Inter", "Avenir Next", system-ui, sans-serif;
+  font-size: var(--type-sm);
+  color: var(--global-text-color-light);
+  line-height: var(--type-leading-snug);
+}
+
+.about-hero__profile .more-info p {
+  display: block;
+  margin: 0 0 var(--space-1);
+}
+
+@media (max-width: 767px) {
+  .about-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+
+  .about-hero__profile {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.about-content {
+  // Tighten the prose measure on the home page below the hero so
+  // long paragraphs don't run to the full 930px container. Card grids
+  // (.insight-grid, .page-card-grid, .quick-links) reset back to full
+  // width below.
+  max-width: 56rem;
+}
+
+.about-content .insight-grid,
+.about-content .page-card-grid,
+.about-content .quick-links {
+  max-width: none;
 }
 
 .post .post-title,
@@ -27,21 +113,45 @@ html[data-theme="dark"] body {
 .post h1,
 .post h2,
 .post h3 {
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  letter-spacing: -0.02em;
+  font-family: "EB Garamond", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  // EB Garamond is darker and tighter than the previous Iowan stack;
+  // pull letter-spacing back from -0.02em to -0.012em so headings do
+  // not crowd at the typeface's natural metrics.
+  letter-spacing: -0.012em;
+  font-feature-settings: "kern", "liga", "onum";
 }
 
 .post .post-title {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  line-height: 1.05;
+  // Explicit literal upper bound (~ --type-6xl + 0.6rem) because sass
+  // simplifies inner calc() and not every browser parses implicit
+  // arithmetic inside clamp() arguments cleanly.
+  font-size: clamp(var(--type-5xl), 5vw, 2.9rem);
+  line-height: var(--type-leading-tight);
+  letter-spacing: var(--type-tracking-display);
+}
+
+// Headings inside .post stepped through the modular scale.
+.post h2 {
+  font-size: var(--type-3xl);
+  line-height: var(--type-leading-snug);
+}
+
+.post h3 {
+  font-size: var(--type-xl);
+  line-height: var(--type-leading-snug);
+}
+
+.post h4 {
+  font-size: var(--type-lg);
+  line-height: var(--type-leading-snug);
 }
 
 .post .desc,
 .post .post-description,
 .page-lead {
   color: var(--global-text-color-light);
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: var(--type-lg);
+  line-height: var(--type-leading-body);
   max-width: 46rem;
 }
 
@@ -71,8 +181,8 @@ html[data-theme="dark"] body {
 }
 
 .section-block {
-  margin: 2.75rem 0 0;
-  padding-top: 1.25rem;
+  margin: var(--space-9) 0 0;
+  padding-top: var(--space-5);
   border-top: 1px solid var(--global-divider-color);
 }
 
@@ -82,12 +192,12 @@ html[data-theme="dark"] body {
 .post h2.section-kicker,
 .section-kicker {
   position: relative;
-  margin-bottom: 1.1rem;
-  padding-bottom: 0.55rem;
-  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-  font-size: 0.78rem;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  font-family: "Inter", "Avenir Next", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+  font-size: var(--type-xs);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--type-tracking-kicker);
   text-transform: uppercase;
   color: var(--global-theme-color);
 }
@@ -109,7 +219,7 @@ html[data-theme="dark"] body {
 .page-card-grid,
 .quick-links {
   display: grid;
-  gap: 1.1rem;
+  gap: var(--space-4);
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
@@ -298,7 +408,7 @@ html[data-theme="dark"] {
 .tool-highlight h4 {
   margin-top: 1.4rem;
   margin-bottom: 0.5rem;
-  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-family: "Inter", "Avenir Next", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -420,19 +530,95 @@ html[data-theme="dark"] {
 
 @media (max-width: 576px) {
   .post .post-title {
-    font-size: 2.2rem;
+    font-size: var(--type-4xl);
   }
 
   .page-card,
   .insight-card,
   .quick-link-card,
   .tool-highlight {
-    padding: 1rem;
+    padding: var(--space-4);
     border-radius: var(--surface-radius-sm);
   }
 
   .tool-highlight {
     border-left-width: 3px;
-    padding: 1.15rem 1.15rem 1.25rem;
+    padding: var(--space-5) var(--space-5);
+  }
+}
+
+// Sidebar TOC — brand-aligned overrides for bootstrap-toc.min.css.
+// The vendor stylesheet ships with hard-coded #563d7c (purple); we
+// rebind every active/hover color to the surface accent so the TOC
+// reads as part of the site rather than an imported widget.
+#toc-sidebar {
+  margin-top: var(--space-4);
+}
+
+#toc-sidebar nav[data-toggle="toc"] {
+  font-family: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  border-left: 1px solid var(--global-divider-color);
+  padding-left: var(--space-4);
+}
+
+#toc-sidebar nav[data-toggle="toc"] > ul.nav > li.nav-item:first-child::before {
+  content: "On this page";
+  display: block;
+  margin-bottom: var(--space-3);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: var(--type-tracking-kicker);
+  text-transform: uppercase;
+  color: var(--global-theme-color);
+}
+
+#toc-sidebar nav[data-toggle="toc"] .nav > li > a {
+  color: var(--global-text-color-light);
+  font-size: var(--type-sm);
+  padding: var(--space-1) var(--space-4);
+  border-left: 1px solid transparent;
+  transition:
+    color 0.18s var(--motion-ease),
+    border-color 0.18s var(--motion-ease),
+    padding-left 0.18s var(--motion-ease);
+}
+
+#toc-sidebar nav[data-toggle="toc"] .nav > li > a:hover,
+#toc-sidebar nav[data-toggle="toc"] .nav > li > a:focus {
+  color: var(--global-theme-color);
+  background: transparent;
+  border-left: 1px solid var(--surface-accent);
+  padding-left: calc(var(--space-4) - 1px);
+}
+
+#toc-sidebar nav[data-toggle="toc"] .nav-link.active,
+#toc-sidebar nav[data-toggle="toc"] .nav-link.active:focus,
+#toc-sidebar nav[data-toggle="toc"] .nav-link.active:hover {
+  color: var(--global-text-color);
+  font-weight: 600;
+  background: transparent;
+  border-left: 2px solid var(--surface-accent);
+  padding-left: calc(var(--space-4) - 2px);
+}
+
+#toc-sidebar nav[data-toggle="toc"] .nav .nav > li > a {
+  font-size: var(--type-xs);
+  padding-left: var(--space-7);
+}
+
+#toc-sidebar nav[data-toggle="toc"] .nav .nav > li > a:hover {
+  padding-left: calc(var(--space-7) - 1px);
+}
+
+#toc-sidebar nav[data-toggle="toc"] .nav .nav > li > .active {
+  padding-left: calc(var(--space-7) - 2px);
+}
+
+@media (max-width: 991px) {
+  // Hide the TOC on small screens where the sidebar collapses to a
+  // top-of-page block — the page table-of-contents widget can be
+  // distracting in mobile reading flow.
+  #toc-sidebar {
+    display: none;
   }
 }

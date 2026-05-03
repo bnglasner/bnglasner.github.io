@@ -20,7 +20,10 @@
   --global-theme-color: var(--brand-forest-green);
   --global-hover-color: var(--brand-sunset-ember);
   --global-hover-text-color: #ffffff;
-  --global-footer-bg-color: var(--brand-forest-green);
+  // Footer is midnight indigo — softer transition off the ivory body
+  // than the original forest-green slab, and ties the footer to the
+  // dark-mode page bg.
+  --global-footer-bg-color: var(--brand-midnight-indigo);
   --global-footer-text-color: var(--brand-ivory-mist);
   --global-footer-link-color: #ffffff;
   --global-distill-app-color: var(--brand-midnight-indigo);
@@ -57,6 +60,42 @@
   --surface-radius: 18px;
   --surface-radius-sm: 12px;
   --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Type scale — modular ratio 1.125 (major-second) anchored to a
+  // 17px base. Heading tokens drive the `.post h1..h5` cascade so
+  // type rhythm is explicit instead of relying on browser defaults.
+  --type-base: 17px;
+  --type-xs: 0.79rem;
+  --type-sm: 0.89rem;
+  --type-md: 1rem;
+  --type-lg: 1.125rem;
+  --type-xl: 1.266rem;
+  --type-2xl: 1.424rem;
+  --type-3xl: 1.602rem;
+  --type-4xl: 1.802rem;
+  --type-5xl: 2.027rem;
+  --type-6xl: 2.281rem;
+  --type-leading-tight: 1.18;
+  --type-leading-snug: 1.35;
+  --type-leading-body: 1.65;
+  --type-leading-loose: 1.85;
+  --type-tracking-display: -0.012em;
+  --type-tracking-kicker: 0.18em;
+
+  // Spacing scale — 4px base, doubled at the upper rungs. Anchors
+  // padding/gap/margin values across cards, section blocks, and the
+  // home hero. New rules should pull from this scale rather than
+  // ad-hoc rem values.
+  --space-1: 0.25rem; // 4px
+  --space-2: 0.5rem; //  8px
+  --space-3: 0.75rem; // 12px
+  --space-4: 1rem; //    16px
+  --space-5: 1.25rem; // 20px
+  --space-6: 1.5rem; //  24px
+  --space-7: 2rem; //    32px
+  --space-8: 2.5rem; //  40px
+  --space-9: 3rem; //    48px
+  --space-10: 4rem; //   64px
 
   #light-toggle-system {
     display: inline-block;

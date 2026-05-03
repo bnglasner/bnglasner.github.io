@@ -8,7 +8,7 @@ nav_order: 4
 ---
 
 <div class="page-lead">
-  <p>This page collects public-facing writing that sits alongside the formal publications listed on the <a href="{{ '/publications/' | relative_url }}">publications</a> page. Reports, essays, and commentary now come from repo-local structured metadata instead of scattered hard-coded markdown.</p>
+  <p>This page collects the public-facing writing that sits alongside the formal publications on the <a href="{{ '/publications/' | relative_url }}">publications</a> page. The sections below cover policy reports, working papers and long-form research, and selected short-form essays.</p>
 </div>
 
 <section class="section-block">

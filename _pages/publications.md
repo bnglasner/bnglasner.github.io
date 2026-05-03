@@ -7,7 +7,7 @@ nav: true
 nav_order: 3
 ---
 
-The formal bibliography on this page is generated from the repo-local source file `_bibliography/papers.bib`. Short-form essays and commentary are curated separately on the [writing]({{ '/writing/' | relative_url }}) page.
+Formal publications are listed below. Short-form essays and commentary are curated separately on the [writing]({{ '/writing/' | relative_url }}) page.
 
 {% include bib_search.liquid %}
 

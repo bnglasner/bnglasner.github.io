@@ -5,29 +5,29 @@
 @use "variables" as v;
 
 .publications {
-  margin-top: 2rem;
+  margin-top: var(--space-7);
 
   h1 {
     color: var(--global-theme-color);
-    font-size: 2rem;
+    font-size: var(--type-4xl);
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
   }
 
   h2 {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
 
     span {
-      font-size: 1.5rem;
+      font-size: var(--type-2xl);
     }
   }
 
   h2.bibliography {
     color: var(--global-divider-color);
     border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2rem;
+    padding-top: var(--space-4);
+    margin-top: var(--space-7);
     text-align: right;
   }
 
@@ -37,20 +37,34 @@
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      // Bibliography list items render through this rule and the
+      // shared card pattern in _site-custom.scss (border, shadow,
+      // hover lift). The values here govern internal layout only.
+      margin-bottom: var(--space-4);
+      display: block;
 
       .preview {
         display: inline-block;
       }
 
+      // Venue chip (e.g. AEJ, JEL). Promoted to a small kicker-style
+      // pill so it reads as metadata before the title rather than
+      // visual noise next to it.
       .abbr {
-        margin-bottom: 0.5rem;
+        margin-bottom: var(--space-3);
 
         abbr {
           display: inline-block;
           background-color: var(--global-theme-color);
-          margin-bottom: 0.5rem;
+          margin-bottom: var(--space-2);
+          padding: var(--space-1) var(--space-3);
           color: #ffffff !important;
+          font-family: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+          font-size: var(--type-xs);
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          border-radius: 999px;
 
           a,
           div {
@@ -68,11 +82,25 @@
         }
       }
 
+      // Title — promoted to the post-serif so the bibliography list
+      // matches the typographic register of section headings.
       .title {
-        font-weight: bolder;
+        font-family: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+        font-size: var(--type-xl);
+        font-weight: 600;
+        line-height: var(--type-leading-snug);
+        letter-spacing: var(--type-tracking-display);
+        margin-bottom: var(--space-2);
       }
 
+      // Authors — quietly sized; keep self-emphasis (italic + underline)
+      // distinct from co-author links.
       .author {
+        font-size: var(--type-sm);
+        line-height: var(--type-leading-snug);
+        color: var(--global-text-color);
+        margin-bottom: var(--space-2);
+
         a {
           border-bottom: 1px dashed var(--global-theme-color);
 
@@ -84,7 +112,8 @@
 
         > em {
           border-bottom: 1px solid;
-          font-style: normal;
+          font-style: italic;
+          font-weight: 600;
         }
 
         > span.more-authors {
@@ -99,15 +128,39 @@
         }
       }
 
+      // Periodical (journal/booktitle + year) — small uppercase tracked
+      // line, matching the .meta-line treatment used on .page-card.
+      .periodical {
+        color: var(--global-text-color-light);
+        font-size: var(--type-xs);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: var(--space-1);
+
+        em {
+          font-style: normal;
+          letter-spacing: 0.04em;
+        }
+      }
+
+      .periodical:empty {
+        display: none;
+      }
+
       .links {
+        margin-top: var(--space-3);
+
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
+          padding-left: 0.85rem;
+          padding-right: 0.85rem;
+          padding-top: 0.2rem;
+          padding-bottom: 0.2rem;
           margin-left: 0;
+          margin-right: var(--space-1);
+          margin-bottom: var(--space-1);
 
           &:hover {
             color: var(--global-theme-color);

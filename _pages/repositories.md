@@ -8,13 +8,13 @@ nav_order: 5
 ---
 
 <div class="page-lead">
-  <p>Most of the code and data I produce — anything I write or collaborate on through work — is published on the <a href="https://github.com/EIG-Research">EIG-Research</a> GitHub organization. Personal experiments, side projects, and the source for this site live on my <a href="https://github.com/bnglasner">personal GitHub page</a>.</p>
+  <p>Most of the code and data I produce — anything I write or collaborate on through work — are published on the <a href="https://github.com/EIG-Research">EIG-Research</a> GitHub organization. Personal experiments, side projects, and the source for this site live on my <a href="https://github.com/bnglasner">personal GitHub page</a>.</p>
 </div>
 
 <section class="section-block">
   <h2 class="section-kicker">Open Research, by Default</h2>
-  <p>I established the open-research standard EIG now uses for its empirical projects. Every analysis — a short memo or a multi-year study — should be readable from raw inputs to final figure, and that expectation now applies across the EIG-Research organization. The aim is straightforward: any researcher, journalist, or policymaker should be able to open one of these repositories and trace the chain from data to claim.</p>
-  <p>I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and documentation practices that make a public repository worth publishing. Pushing for that level of openness on every project I touch — and across every team I work with — is a commitment I intend to carry forward.</p>
+  <p>I established the open-research standard EIG now uses for its empirical projects. Every analysis — a short memo or a multi-year study — should be readable from raw inputs to final figure, and that expectation now applies across the EIG-Research organization. Any researcher, journalist, or policymaker should be able to open one of these repositories and trace the chain from data to claim.</p>
+  <p>I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and documentation practices that make a public repository worth publishing. I intend to carry that commitment forward on every project I touch and across every team I work with.</p>
 </section>
 
 <section class="section-block">
@@ -22,7 +22,7 @@ nav_order: 5
   <div id="eig-research-repos" class="page-card-grid" data-state="loading">
     <article class="page-card">
       <p class="meta-line">Loading</p>
-      <p>Fetching the five most recently pushed repositories from the EIG-Research GitHub organization.</p>
+      <p>Fetching the five most recently updated repositories from the EIG-Research GitHub organization.</p>
     </article>
   </div>
   <p class="meta-line" style="margin-top: 1rem;">

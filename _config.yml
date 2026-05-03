@@ -455,8 +455,14 @@ third_party_libraries:
         dark_theme: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/theme/dark-fresh-cut.js"
     version: "5.5.0"
   google_fonts:
+    # Routed through fonts.bunny.net — a privacy-friendly, drop-in
+    # Google Fonts replacement (no tracking cookies, GDPR-safe).
+    # The original URL pulled Roboto, Roboto Slab, and Material Icons,
+    # none of which are referenced in the current SCSS or templates;
+    # this swap delivers the EB Garamond + Inter pair that the brand
+    # type stack expects on every platform, not only Apple devices.
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.bunny.net/css?family=eb-garamond:400,500,600,700,400i,500i,600i|inter:400,500,600,700&display=swap"
   highlightjs:
     integrity:
       css:
