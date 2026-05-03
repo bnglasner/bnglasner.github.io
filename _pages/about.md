@@ -113,16 +113,4 @@ selected_papers: true
   </div>
 </section>
 
-<section class="section-block">
-  <h2 class="section-kicker">Find Me Elsewhere</h2>
-  <p>The icons above link to the channels I keep professional. Below are the rest — the long-form newsletter, the consumer-creator stack, and the academic discoverability anchors.</p>
-  <ul class="focus-list">
-    <li><strong>Agglomerations</strong> (Substack, EIG newsletter) — <a href="https://agglomerations.eig.org" target="_blank" rel="noopener noreferrer">agglomerations.eig.org</a></li>
-    <li><strong>X / Twitter</strong> — <a href="https://x.com/BenGlasner" target="_blank" rel="noopener noreferrer">@BenGlasner</a></li>
-    <li><strong>Bluesky</strong> — <a href="https://bsky.app/profile/benglasner.bsky.social" target="_blank" rel="noopener noreferrer">@benglasner.bsky.social</a></li>
-    <li><strong>TikTok</strong> — <a href="https://www.tiktok.com/@microfamousben" target="_blank" rel="noopener noreferrer">@microfamousben</a></li>
-    <li><strong>Instagram</strong> — <a href="https://www.instagram.com/microfamousben" target="_blank" rel="noopener noreferrer">@microfamousben</a></li>
-    <li><strong>Threads</strong> — <a href="https://www.threads.com/@microfamousben" target="_blank" rel="noopener noreferrer">@microfamousben</a></li>
-    <li><strong>Linktree</strong> (single-page index) — <a href="https://linktr.ee/bglasner" target="_blank" rel="noopener noreferrer">linktr.ee/bglasner</a></li>
-  </ul>
-</section>
+<p class="meta-line">All channels at a glance: the icons above plus a single-page index at <a href="https://linktr.ee/bglasner" target="_blank" rel="noopener noreferrer">linktr.ee/bglasner</a>.</p>

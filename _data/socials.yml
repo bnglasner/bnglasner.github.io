@@ -7,13 +7,22 @@ linkedin_username: bglasner
 x_username: BenGlasner
 bluesky_url: https://bsky.app/profile/benglasner.bsky.social
 instagram_id: microfamousben
-# Custom keys (TikTok, Threads, Substack are not natively supported by
-# jekyll-socials icons). The {% else %} branch in metadata.liquid renders
-# `key.url` into the schema.org sameAs block, and the about page renders
-# explicit links for each of them in the "Find me elsewhere" block.
+
+# Custom socials. jekyll-socials (george-gca, v0.0.6) handles unknown keys
+# via its `else` branch as long as the entry is a hash with both `url` and
+# `logo`. `logo` accepts either a Font Awesome class (no file extension) or
+# an asset path with a known image extension (png, jpg, jpeg, gif, webp,
+# svg). Bundled FA 7 supplies fa-tiktok, fa-threads, and fa-newspaper.
+# Substack uses a stand-in icon until a brand SVG lands in assets/img/.
 tiktok_url:
   url: https://www.tiktok.com/@microfamousben
+  logo: fa-brands fa-tiktok
+  title: TikTok
 threads_url:
   url: https://www.threads.com/@microfamousben
+  logo: fa-brands fa-threads
+  title: Threads
 substack_url:
   url: https://agglomerations.eig.org
+  logo: fa-solid fa-newspaper
+  title: Agglomerations (Substack)

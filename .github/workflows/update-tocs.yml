@@ -27,6 +27,12 @@ jobs:
         uses: tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c # v46
         with:
           files: ./*.md
+          # Exclude audit / reference docs that gh-md-toc cannot process
+          # cleanly (YAML frontmatter, no `<!-- gh-md-toc -->` insertion
+          # marker, complex headers with em-dashes).
+          files_ignore: |
+            PORTFOLIO_DEEP_DIVE.md
+            REVIEW_REPORT.md
 
       - name: Updated toc on all markdown changed files
         env:
