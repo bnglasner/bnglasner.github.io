@@ -19,11 +19,11 @@ nav: false
   </p>
   <ul class="focus-list">
     <li>Read the companion <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank">report</a> for the policy design, motivation, and topline findings.</li>
-    <li>Use the <a href="{{ '/tools/' | relative_url }}">tools</a> page as the landing page for interactive and prototype work across the site.</li>
+    <li>Use the <a href="{{ '/policy/' | relative_url }}">policy</a> page for the broader 80-80 problem statement, literature, and my role on the proposal.</li>
     <li>Use the <a href="{{ '/writing/' | relative_url }}">writing</a> page for related public-facing essays and policy commentary.</li>
   </ul>
 </div>
 
 <p>
-  For background on the policy design, see the <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank">report</a>. For the broader research and writing context, start with the [tools]({{ '/tools/' | relative_url }}) page and the [writing]({{ '/writing/' | relative_url }}) page.
+  For background on the policy design, see the <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank">report</a>. For the broader research and writing context, start with the [policy]({{ '/policy/' | relative_url }}) page and the [writing]({{ '/writing/' | relative_url }}) page.
 </p>

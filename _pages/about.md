@@ -57,9 +57,9 @@ selected_papers: true
       <strong>Code + Data</strong>
       <span>Selected repositories behind policy reports, research infrastructure, and reproducible analysis.</span>
     </a>
-    <a class="quick-link-card" href="{{ '/tools/' | relative_url }}">
-      <strong>Tools</strong>
-      <span>Interactive work that turns research into something decision-makers can use directly.</span>
+    <a class="quick-link-card" href="{{ '/policy/' | relative_url }}">
+      <strong>Policy</strong>
+      <span>Active policy work — Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal.</span>
     </a>
   </div>
 </section>
@@ -101,9 +101,9 @@ selected_papers: true
       <p>A curated set of public repositories behind research products, policy reports, and reproducible workflows.</p>
     </article>
     <article class="page-card">
-      <p class="meta-line">Decision Support</p>
-      <h3><a href="{{ '/tools/' | relative_url }}">Tools</a></h3>
-      <p>A home for interactive work that makes empirical analysis easier to inspect, share, and apply.</p>
+      <p class="meta-line">Policy Agenda</p>
+      <h3><a href="{{ '/policy/' | relative_url }}">Policy</a></h3>
+      <p>Problem statements, the state of the literature, and my role on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy.</p>
     </article>
   </div>
 </section>

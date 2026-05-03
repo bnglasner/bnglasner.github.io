@@ -67,17 +67,15 @@ ninja.data = [
       },
     },
   {%- endfor -%}
-  {%- for repo in site.data.repositories.featured -%}
-    {
-      id: "repo-{{ repo.organization | slugify }}-{{ repo.name | slugify }}",
-      title: "{{ repo.organization }}/{{ repo.name }}",
-      description: "{{ repo.description | strip_html | strip_newlines | escape | strip }}",
-      section: "Code + Data",
-      handler: () => {
-        window.open("{{ repo.url }}", "_blank");
-      },
+  {
+    id: "repo-eig-research",
+    title: "EIG-Research on GitHub",
+    description: "All code and data I write or collaborate on through work is published on the EIG-Research GitHub organization.",
+    section: "Code + Data",
+    handler: () => {
+      window.open("https://github.com/EIG-Research", "_blank");
     },
-  {%- endfor -%}
+  },
   {%- if site.socials_in_search -%}
     {%- for social in site.data.socials -%}
       {%- case social[0] -%}
