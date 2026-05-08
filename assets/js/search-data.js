@@ -16,21 +16,21 @@ ninja.data = [{
         },
       },{id: "nav-publications",
         title: "publications",
-        description: "Journal articles, working papers, thesis research, and policy reports generated from the repository bibliography.",
+        description: "Peer-reviewed research, working papers, and dissertation or thesis research.",
         section: "Navigation",
         handler: () => {
           window.location.href = "/publications/";
         },
       },{id: "nav-writing",
         title: "writing",
-        description: "Policy reports, working papers, and selected short-form essays.",
+        description: "Policy reports, essays, and public-facing commentary.",
         section: "Navigation",
         handler: () => {
           window.location.href = "/writing/";
         },
       },{id: "nav-media",
         title: "media",
-        description: "Podcast appearances, broadcast and print coverage, and policy-advisory work.",
+        description: "Verified interviews, broadcast appearances, podcasts, and quoted coverage.",
         section: "Navigation",
         handler: () => {
           window.location.href = "/media/";
@@ -104,26 +104,6 @@ ninja.data = [{
       section: "Reports",
       handler: () => {
         window.open("https://eig.org/noncompetes-research-note/", "_blank");
-      },
-    },{
-      id: "working-paper-the-effectiveness-of-the-food-stamp-program-at-reducing-racial-differences-in-the-intergenerational-persistence-of-poverty",
-      title: "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the...",
-      description: "How SNAP participation shaped intergenerational mobility and racial inequality in long-run poverty outcomes.",
-      section: "Working Papers",
-      handler: () => {
-        
-          window.open("https://equitablegrowth.org/working-papers/the-effectiveness-of-the-food-stamp-program-at-reducing-differences-in-the-intergenerational-persistence-of-poverty/", "_blank");
-        
-      },
-    },{
-      id: "working-paper-the-impact-of-public-policy-on-nonstandard-work-arrangements",
-      title: "The Impact of Public Policy on Nonstandard Work Arrangements",
-      description: "Doctoral dissertation on labor-market regulation, worker classification, and the gig economy.",
-      section: "Working Papers",
-      handler: () => {
-        
-          window.location.href = "/writing/";
-        
       },
     },{
       id: "writing-fixing-the-u-s-retirement-system-a-q-a",
