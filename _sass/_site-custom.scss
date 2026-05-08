@@ -360,6 +360,17 @@ html[data-theme="dark"] {
   transform: translateX(3px);
 }
 
+.tiktok-feature {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tiktok-feature .tiktok-embed {
+  margin: 0 auto !important;
+}
+
 .meta-line {
   margin-bottom: 0.45rem;
   color: var(--global-text-color-light);

@@ -13,6 +13,7 @@ profile:
     <p>Senior Economist, Economic Innovation Group</p>
     <p>Affiliate, Center on Poverty and Social Policy, Columbia University</p>
 social: true
+tiktok_profile_embed: true
 ---
 
 <div class="home-intro">
@@ -77,4 +78,9 @@ social: true
       <span>Interviews, broadcast appearances, podcast conversations, and quoted coverage.</span>
     </a>
   </div>
+</section>
+
+<section class="section-block">
+  <h2 class="section-kicker">Latest on TikTok</h2>
+  {% include tiktok-profile-embed.liquid %}
 </section>
