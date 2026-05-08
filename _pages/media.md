@@ -2,7 +2,7 @@
 layout: page
 permalink: /media/
 title: media
-description: Podcast appearances, broadcast and print coverage, and policy-advisory work.
+description: Verified interviews, broadcast appearances, podcasts, and quoted coverage.
 nav: true
 nav_order: 5
 toc:
@@ -10,50 +10,71 @@ toc:
 ---
 
 <div class="page-lead">
-  <p>This page collects public-facing engagement that sits outside the formal research record: podcast appearances, broadcast and print coverage, and policy-advisory work. It is a growing record — additions land here as they happen.</p>
+  <p>This page collects verified media appearances and quoted coverage. I have excluded syndications and duplicative rewrites where a more direct source link was available, so the list below is meant to be a clean record of the original interview, segment, or article.</p>
 </div>
 
 <section class="section-block">
-  <h2 class="section-kicker">Podcast Appearances</h2>
-  <ul class="focus-list">
-    <li><strong>Money with Katie</strong> (Morning Brew) — long-form interview on labor markets, retirement coverage, and what national policy looks like at the household level.</li>
-    <li><strong>The Ross Kaminsky Show</strong> — radio segments on labor-market and economic-policy news.</li>
-    <li><strong>Spotlight on Poverty &amp; Opportunity</strong> — conversation on safety-net design and the empirical evidence on transfer programs.</li>
-    <li><strong>Political Economy Forum Podcast</strong> (University of Washington) — discussion of labor-market regulation and worker classification.</li>
-  </ul>
-</section>
-
-<section class="section-block">
   <h2 class="section-kicker">Broadcast and Video</h2>
-  <ul class="focus-list">
-    <li><strong>CBS MoneyWatch</strong> — &ldquo;<a href="https://www.cbsnews.com/news/retirement-plans-employer-sponsored-not-offered/" target="_blank" rel="noopener noreferrer">More than half of U.S. workers don&rsquo;t have access to employer-sponsored retirement plan</a>&rdquo; — segment on the U.S. retirement coverage gap.</li>
-  </ul>
+  <div class="page-card-grid">
+    <article class="page-card">
+      <p class="meta-line">C-SPAN Washington Journal</p>
+      <h3><a href="https://www.c-span.org/program/washington-journal/benjamin-glasner-on-pres-trumps-proposal-to-create-private-sector-retirement-accounts/675412" target="_blank" rel="noopener noreferrer">Benjamin Glasner on President Trump's Proposal to Create Private-Sector Retirement Accounts</a></h3>
+      <p>Washington Journal interview on retirement-plan access, the gaps in the current system, and the policy logic behind expanding portable retirement accounts for workers without employer coverage.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">CBS News · August 24, 2023</p>
+      <h3><a href="https://www.cbsnews.com/video/more-than-half-of-us-workers-dont-have-access-to-employee-sponsored-retirement-plan/" target="_blank" rel="noopener noreferrer">More than half of U.S. workers don't have access to employer-sponsored retirement plan: Study</a></h3>
+      <p>Live CBS News segment on retirement-plan access, regional disparities, and the long-run consequences of arriving at retirement age with little or no savings.</p>
+    </article>
+  </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-kicker">Print and Online Coverage</h2>
-  <p>Cited or quoted in <em>The New York Times</em>, <em>The Wall Street Journal</em>, <em>The Financial Times</em>, <em>The Washington Post</em>, <em>Bloomberg</em>, <em>CBS News</em>, <em>Yahoo Finance</em>, <em>MarketWatch</em>, and other national outlets.</p>
+  <h2 class="section-kicker">Podcasts</h2>
+  <div class="page-card-grid">
+    <article class="page-card">
+      <p class="meta-line">Money with Katie · December 3, 2025</p>
+      <h3><a href="https://moneywithkatie.com/the_mwk_show/end-low-wage-work-forever/" target="_blank" rel="noopener noreferrer">How to End Low Wage Work—Forever</a></h3>
+      <p>Long-form conversation with Katie Gatti Tassin about low-wage work, wage subsidies, policy targeting, and the logic behind the 80-80 proposal.</p>
+    </article>
+  </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-kicker">Policy-Advisory Work</h2>
-  <article class="tool-highlight">
-    <p class="meta-line">Public Policy Advisor</p>
-    <h3>Seattle Mayor&rsquo;s Office and the advisory team for Senator Mark Warner</h3>
-    <p>Strategic advice on local legislation governing nonstandard work arrangements and the online gig economy. Consultation on COVID-19 impacts on local labor markets, independent contracting, and unemployment insurance.</p>
-  </article>
+  <h2 class="section-kicker">Interviews and Features</h2>
+  <div class="page-card-grid">
+    <article class="page-card">
+      <p class="meta-line">Spotlight on Poverty · July 31, 2024</p>
+      <h3><a href="https://spotlightonpoverty.org/spotlight-exclusives/new-project-looks-to-build-consensus-on-state-of-american-worker/" target="_blank" rel="noopener noreferrer">New Project Looks to Build Consensus on State of American Worker</a></h3>
+      <p>Interview on the American Worker Project, labor-market perception versus measurement, productivity growth, housing costs, and the policy levers that matter most for worker outcomes.</p>
+    </article>
+  </div>
+</section>
 
-  <article class="tool-highlight">
-    <p class="meta-line">Public Policy Advisor</p>
-    <h3>Utah Legislative Session report on SB 233 (Flexible Benefits Working Group)</h3>
-    <p>Co-developed the executive summary for an assessment of Utah&rsquo;s SB 233 portable-benefits law. Identified key implementation challenges and recommendations to strengthen incentives and legal clarity.</p>
-  </article>
-
-  <article class="tool-highlight">
-    <p class="meta-line">Data Tools and Methodology</p>
-    <h3>Washington State Employment Security Department and the World Bank</h3>
-    <p>Contributed to administrative-data tools, including work supporting the Seattle Minimum Wage project. Developed and delivered a random-forest methodology to improve analysis of incomplete survey data.</p>
-  </article>
+<section class="section-block">
+  <h2 class="section-kicker">Quoted in News Coverage</h2>
+  <div class="page-card-grid">
+    <article class="page-card">
+      <p class="meta-line">CBS MoneyWatch · August 21, 2023</p>
+      <h3><a href="https://www.cbsnews.com/news/retirement-plan-access-states-where-it-is-worst/" target="_blank" rel="noopener noreferrer">Half of Americans lack access to a retirement plan. Here are the worst states.</a></h3>
+      <p>Quoted on the geography of retirement-plan access, the barriers facing low-wage workers, and why states with weak coverage are exposed to higher rates of elderly poverty over time.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">Business Insider · March 24, 2025</p>
+      <h3><a href="https://www.businessinsider.com/social-security-policy-changes-harder-to-claim-benefits-retirement-trump-2025-3" target="_blank" rel="noopener noreferrer">Social Security is telling its staff that customer service is about to get a lot worse</a></h3>
+      <p>Quoted on how payment delays and weaker service capacity would fall hardest on retirees with low incomes, limited savings, or less room to absorb administrative shocks.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">Business Insider · September 20, 2025</p>
+      <h3><a href="https://www.businessinsider.com/why-college-educated-men-see-stagnation-in-todays-labor-market-2025-9" target="_blank" rel="noopener noreferrer">The plight of college-educated men shows where the job market is going</a></h3>
+      <p>Quoted on why the labor market was softening more quickly for men in white-collar occupations and what that implied about the broader direction of hiring demand.</p>
+    </article>
+    <article class="page-card">
+      <p class="meta-line">Business Insider · February 25, 2026</p>
+      <h3><a href="https://www.businessinsider.com/millennial-first-time-homebuyers-getting-younger-exclusive-data-2026-2" target="_blank" rel="noopener noreferrer">The death of the 30-something homebuyer was greatly exaggerated</a></h3>
+      <p>Quoted on homeownership, housing scarcity, and why affordability pressures depend less on demographics alone than on whether the country builds enough homes where people want to live.</p>
+    </article>
+  </div>
 </section>
 
 <section class="section-block">

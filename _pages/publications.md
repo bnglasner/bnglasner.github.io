@@ -2,17 +2,17 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Journal articles, working papers, thesis research, and policy reports generated from the repository bibliography.
+description: Peer-reviewed research, working papers, and dissertation or thesis research.
 nav: true
 nav_order: 3
 ---
 
-Formal publications are listed below. Short-form essays and commentary are curated separately on the [writing]({{ '/writing/' | relative_url }}) page.
+This page covers the formal research record: peer-reviewed publications, working papers, and dissertation or thesis research. Policy reports, essays, and commentary are collected separately on the [writing]({{ '/writing/' | relative_url }}) page.
 
 {% include bib_search.liquid %}
 
 <div class="publications">
-  <h2>Peer-Reviewed Publications</h2>
+  <h2>Peer-Reviewed Research</h2>
   {% bibliography --group_by none --query @*[entry_group=peer_reviewed]* %}
 
   <h2>Working Papers</h2>
@@ -23,7 +23,4 @@ Formal publications are listed below. Short-form essays and commentary are curat
   {% bibliography --group_by none --query @*[entry_group=dissertation]* %}
   <h3>Senior Thesis</h3>
   {% bibliography --group_by none --query @*[entry_group=thesis]* %}
-
-  <h2>Policy Reports and Research Notes</h2>
-  {% bibliography --group_by none --query @*[entry_group=policy_report]* %}
 </div>

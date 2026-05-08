@@ -45,19 +45,6 @@ reports:
     published: 2023-03-22
     description: "A research note comparing business-formation outcomes after noncompete reforms in Hawaii and Oregon."
 
-working_papers:
-  - title: "The Effectiveness of the Food Stamp Program at Reducing Racial Differences in the Intergenerational Persistence of Poverty"
-    url: "https://equitablegrowth.org/working-papers/the-effectiveness-of-the-food-stamp-program-at-reducing-differences-in-the-intergenerational-persistence-of-poverty/"
-    outlet: "Washington Center for Equitable Growth"
-    authors: ["Benjamin Glasner", "Ronald B. Mincy", "Zachary Parolin", "Christopher Wimer"]
-    published: 2023-05-30
-    description: "How SNAP participation shaped intergenerational mobility and racial inequality in long-run poverty outcomes."
-  - title: "The Impact of Public Policy on Nonstandard Work Arrangements"
-    outlet: "University of Washington"
-    authors: ["Benjamin Glasner"]
-    published: 2021-01-01
-    description: "Doctoral dissertation on labor-market regulation, worker classification, and the gig economy."
-
 # Short-form entries are limited to posts on which Ben is a published byline
 # per Substack's profile API for profile_user_id 219318610. EIG-newsletter
 # posts authored by other EIG staff (e.g., the Looking for the Ladder TAWP by
