@@ -22,6 +22,45 @@ Optional:
 
 A pre-commit hook (`bin/check_writing_authors.py`) blocks commits that introduce a `short_form` or `reports` entry without an `authors` field.
 
+## `_data/media_page.yml`
+
+Curated source of truth for the `/media/` page. Required top-level keys:
+
+- `lead.primary` (string)
+- `lead.coverage` (string)
+- `sections` (list)
+- `coverage_groups` (list)
+
+Each entry in `sections` requires:
+
+- `title` (string)
+- `items` (list)
+
+Each media item in `sections[*].items` requires:
+
+- `outlet` (string)
+- `title` (string)
+- `url` (absolute URL)
+- `description` (one sentence)
+
+Optional:
+
+- `published` (ISO 8601 date; omit if only month/year is known)
+
+Each entry in `coverage_groups` requires:
+
+- `title` (string)
+- `description` (string)
+- `items` (list)
+
+Each cited-coverage item in `coverage_groups[*].items` requires:
+
+- `outlet` (string)
+- `published` (ISO 8601 date)
+- `title` (string)
+- `url` (absolute URL)
+- `description` (one sentence explaining the relation to Ben's work)
+
 ## `_bibliography/papers.bib`
 
 Every entry uses one of: `@article`, `@techreport`, `@phdthesis`, `@mastersthesis`, `@inproceedings`, `@book`, `@incollection`. Required fields by entry type:

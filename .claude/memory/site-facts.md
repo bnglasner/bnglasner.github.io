@@ -58,7 +58,7 @@ Four titles surface in `_data/citations.yml` (Google Scholar) but are not in `pa
 
 ## Data file authority
 
-- **Authoritative, hand-edited**: `_data/writing.yml`, `_data/socials.yml`, `_data/cv.yml`, `_data/venues.yml`, `_data/coauthors.yml`, `_bibliography/papers.bib`.
+- **Authoritative, hand-edited**: `_data/writing.yml`, `_data/media_page.yml`, `_data/socials.yml`, `_data/cv.yml`, `_data/venues.yml`, `_data/coauthors.yml`, `_bibliography/papers.bib`.
 - **Cron-managed**: `_data/citations.yml` (Scholar Mon/Wed/Fri).
 - **Repo-authoritative but pipeline-history**: `_data/publications.json`, `_data/mentions.json`, `_data/media.json`, `_data/cv_assets.json`, `_data/repositories.json`. The external profile-sync pipeline that produced these is retired (`.profile_payload_sync_manifest.json` reads `"status": "retired"`). Edits are allowed when explicitly requested; no automation should overwrite them.
 
@@ -66,6 +66,8 @@ Four titles surface in `_data/citations.yml` (Google Scholar) but are not in `pa
 
 Real, intentional pages in `_pages/`:
 `about.md`, `cv.md`, `media.md`, `policy.md`, `publications.md`, `repositories.md`, `wage-subsidy-sim.md`, `writing.md`, `404.md`.
+
+`_pages/media.md` now renders from `_data/media_page.yml`, which separates direct appearances and quoted coverage from selected cited coverage of Ben's research.
 
 Auto-generated and listed in `.prettierignore` (do not edit by hand): `blog.md`, `media.md` (the underscore-prefix variant), `media_full_snapshot.md`, `repositories_full_snapshot.md`, `research.md`.
 

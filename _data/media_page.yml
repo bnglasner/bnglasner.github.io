@@ -1,0 +1,132 @@
+lead:
+  primary: "This page collects verified interviews, broadcast appearances, podcasts, and quoted coverage. I have excluded syndications, mirrors, and duplicative rewrites where a more direct source link was available, so the sections below are meant to be a clean record of original appearances and original outlet links."
+  coverage: "The final section tracks selected cited coverage of Ben's research, grouped by work stream. It is intentionally selective rather than exhaustive and favors the original outlet link over archive pages, mirrors, or transcript hosts."
+
+sections:
+  - title: "Broadcast and Video"
+    items:
+      - outlet: "C-SPAN Washington Journal"
+        title: "Benjamin Glasner on President Trump's Proposal to Create Private-Sector Retirement Accounts"
+        url: "https://www.c-span.org/program/washington-journal/benjamin-glasner-on-pres-trumps-proposal-to-create-private-sector-retirement-accounts/675412"
+        description: "Washington Journal interview on retirement-plan access, the gaps in the current system, and the policy logic behind expanding portable retirement accounts for workers without employer coverage."
+      - outlet: "CBS News"
+        published: 2023-08-24
+        title: "More than half of U.S. workers don't have access to employer-sponsored retirement plan: Study"
+        url: "https://www.cbsnews.com/video/more-than-half-of-us-workers-dont-have-access-to-employee-sponsored-retirement-plan/"
+        description: "Live CBS News segment on retirement-plan access, regional disparities, and the long-run consequences of arriving at retirement age with little or no savings."
+
+  - title: "Podcasts and Radio"
+    items:
+      - outlet: "Money with Katie"
+        published: 2025-12-03
+        title: "How to End Low Wage Work—Forever"
+        url: "https://moneywithkatie.com/the_mwk_show/end-low-wage-work-forever/"
+        description: "Long-form conversation with Katie Gatti Tassin about low-wage work, wage subsidies, policy targeting, and the logic behind the 80-80 proposal."
+      - outlet: "KOA Colorado / iHeart"
+        published: 2024-10-07
+        title: "Economist Ben Glasner on 'The Great Transfer-mation' (and it's NOT great!)"
+        url: "https://koacolorado.iheart.com/featured/ross-kaminsky/content/2024-10-07-economist-ben-glasner-the-great-transfer-mation-project-2024/"
+        description: 'Ross Kaminsky interview on The Great "Transfer"-mation, county-level transfer dependence, and what the report implies about the changing economic base of many U.S. communities.'
+
+  - title: "Interviews and Features"
+    items:
+      - outlet: "Spotlight on Poverty"
+        published: 2024-07-31
+        title: "New Project Looks to Build Consensus on State of American Worker"
+        url: "https://spotlightonpoverty.org/spotlight-exclusives/new-project-looks-to-build-consensus-on-state-of-american-worker/"
+        description: "Interview on the American Worker Project, labor-market perception versus measurement, productivity growth, housing costs, and the policy levers that matter most for worker outcomes."
+
+  - title: "Quoted in News Coverage"
+    items:
+      - outlet: "WUSF / WLRN"
+        published: 2023-11-30
+        title: "Is that sand in your keyboard? Billions of income dollars moved to South Florida"
+        url: "https://www.wusf.org/economy-business/2023-11-30/sand-your-keyboard-billions-income-dollars-moved-south-florida"
+        description: "Quoted on IRS-based income migration, the scale of adjusted-gross-income flows into Florida, and why South Florida gained such a large share of pandemic-era taxable income."
+      - outlet: "CBS MoneyWatch"
+        published: 2023-08-21
+        title: "Half of Americans lack access to a retirement plan. Here are the worst states."
+        url: "https://www.cbsnews.com/news/retirement-plan-access-states-where-it-is-worst/"
+        description: "Quoted on the geography of retirement-plan access, the barriers facing low-wage workers, and why states with weak coverage are exposed to higher rates of elderly poverty over time."
+      - outlet: "Business Insider"
+        published: 2024-10-26
+        title: "A battle over the future of US retirement is playing out in Pennsylvania as the election looms"
+        url: "https://www.businessinsider.com/retirement-pennsylvania-social-security-medicare-trump-harris-election-2024-10"
+        description: "Quoted on why the most transfer-reliant counties tend to be older, poorer, and more rural, and how retirement dependence shapes local political economy."
+      - outlet: "Business Insider"
+        published: 2025-03-24
+        title: "Social Security is telling its staff that customer service is about to get a lot worse"
+        url: "https://www.businessinsider.com/social-security-policy-changes-harder-to-claim-benefits-retirement-trump-2025-3"
+        description: "Quoted on how payment delays and weaker service capacity would fall hardest on retirees with low incomes, limited savings, or less room to absorb administrative shocks."
+      - outlet: "Business Insider"
+        published: 2025-09-20
+        title: "The plight of college-educated men shows where the job market is going"
+        url: "https://www.businessinsider.com/why-college-educated-men-see-stagnation-in-todays-labor-market-2025-9"
+        description: "Quoted on why the labor market was softening more quickly for men in white-collar occupations and what that implied about the broader direction of hiring demand."
+      - outlet: "Business Insider"
+        published: 2026-02-25
+        title: "The death of the 30-something homebuyer was greatly exaggerated"
+        url: "https://www.businessinsider.com/millennial-first-time-homebuyers-getting-younger-exclusive-data-2026-2"
+        description: "Quoted on homeownership, housing scarcity, and why affordability pressures depend less on demographics alone than on whether the country builds enough homes where people want to live."
+
+coverage_groups:
+  - title: "Retirement Access and Reform"
+    description: "Selected cited coverage of Ben's retirement-access research and related policy work on portable, automatically enrolled savings accounts."
+    items:
+      - outlet: "The Washington Post"
+        published: 2026-02-25
+        title: "Trump floats new retirement benefit for 54 million workers"
+        url: "https://www.washingtonpost.com/business/2026/02/25/private-sector-workers-retirement-benefit/"
+        description: "Cites EIG research on the number of workers without workplace retirement benefits and the policy case for expanding access."
+      - outlet: "The Wall Street Journal"
+        published: 2026-02-25
+        title: "What to Know About Trump's New Retirement Plan Idea"
+        url: "https://www.wsj.com/politics/policy/what-to-know-about-trumps-new-retirement-plan-idea-b9cc3aa8"
+        description: "Uses EIG's retirement-access research to frame the size of the coverage gap and the design logic behind a new portable-account proposal."
+      - outlet: "Axios"
+        published: 2026-04-30
+        title: "Trump signs order expanding access to retirement accounts"
+        url: "https://www.axios.com/2026/04/30/trump-retirement-accounts"
+        description: "Credits EIG's estimate of workers without employer-based retirement plans and links the policy debate to the underlying coverage gap."
+
+  - title: "Transfer Dependence and Local Political Economy"
+    description: 'Selected cited coverage of The Great "Transfer"-mation and related reporting on how transfer income has reshaped local economies.'
+    items:
+      - outlet: "The Wall Street Journal"
+        published: 2024-09-30
+        title: "Americans Are More Reliant Than Ever on Government Aid"
+        url: "https://www.wsj.com/politics/elections/americans-government-aid-social-security-medicare-unemployment-34e92b19"
+        description: 'Uses The Great "Transfer"-mation to document the growth of government transfer income as a central component of many local economies.'
+      - outlet: "Reason"
+        published: 2024-10-04
+        title: "Americans Grow Increasingly Dependent on Government Payments"
+        url: "https://reason.com/2024/10/04/americans-grow-increasingly-dependent-on-government-payments/"
+        description: "Cites EIG's county-level transfer dependence data and names Ben as one of the report's authors."
+
+  - title: "Opportunity Zones and Housing Supply"
+    description: "Selected cited coverage of Ben's Opportunity Zones research, especially the housing-supply results."
+    items:
+      - outlet: "MSCI"
+        published: 2025-07-09
+        title: "Apartment Development in Opportunity Zones May Matter for Inflation"
+        url: "https://www.msci.com/research-and-insights/quick-take/apartment-development-in-opportunity-zones-may-matter-for-inflation"
+        description: "Uses the housing-supply study's core empirical finding to connect Opportunity Zones to apartment production and inflation pressures."
+      - outlet: "Multi-Housing News"
+        published: 2025-08-13
+        title: "Opportunity Zones: New and Improved?"
+        url: "https://www.multihousingnews.com/opportunity-zones-new-and-improved/"
+        description: "Summarizes the study's findings and uses them to assess how a revised Opportunity Zones framework could affect housing development."
+
+  - title: "The American Worker and Labor-Market Conditions"
+    description: "Selected cited coverage of Ben's work on labor-market conditions, worker sentiment, and the gap between aggregate indicators and lived experience."
+    items:
+      - outlet: "Reuters"
+        published: 2024-06-26
+        title: "Are you better off today? A question for voters as Biden, Trump debate"
+        url: "https://www.reuters.com/world/us/are-you-better-off-today-question-voters-biden-trump-debate-2024-06-26/"
+        description: "Draws on The American Worker to explain why headline macroeconomic strength did not map cleanly onto how many workers felt about the economy."
+      - outlet: "Axios"
+        published: 2024-07-03
+        title: "The case against the doom-and-gloom view for American workers"
+        url: "https://www.axios.com/2024/07/03/american-workers-economic-discontent"
+        description: "Uses The American Worker to argue that worker discontent can coexist with strong fundamentals, and that the key gap is often between aggregate performance and distributional experience."

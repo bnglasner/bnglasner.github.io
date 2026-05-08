@@ -6,12 +6,13 @@ The site is intentionally opinionated: it prioritizes a small set of real public
 
 ## What Lives Here
 
-The public site centers on six areas:
+The public site centers on seven areas:
 
 - `about` — research focus, selected outputs, and public profile
 - `cv` — structured CV rendered from `_data/cv.yml`
 - `publications` — formal bibliography rendered from `_bibliography/papers.bib`
 - `writing` — policy reports, working papers, and curated short-form essays from `_data/writing.yml`
+- `media` — curated appearances, quoted coverage, and selected cited coverage from `_data/media_page.yml`
 - `code + data` — selected repositories from `_data/repositories.yml`
 - `tools` — interactive tools, including the 80-80 wage subsidy simulator
 
@@ -23,6 +24,7 @@ The repository now treats repo-local files as authoritative:
 - `_data/cv_assets.json` — published PDF variants for the CV
 - `_bibliography/papers.bib` — formal publications, working papers, and reports
 - `_data/writing.yml` — public-facing reports, essays, and commentary
+- `_data/media_page.yml` — curated media appearances and selected cited coverage
 - `_data/repositories.yml` — curated repository metadata
 - `_data/socials.yml` — public contact/profile links
 
