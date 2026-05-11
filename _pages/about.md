@@ -3,6 +3,10 @@ layout: about
 title: about
 permalink: /
 subtitle: Research on U.S. labor markets, place-based policy, and the design of the social safety net.
+hero_intro: |
+  I am Benjamin Glasner, a Senior Economist at the Economic Innovation Group in Washington, D.C., and an affiliate at the Center on Poverty and Social Policy at Columbia University. I study U.S. labor markets, place-based policy, and the design of social policy, with a focus on worker well-being, economic mobility, and how national policy choices play out in local economies.
+
+  My work combines applied microeconomics, policy evaluation, and public communication. The aim is straightforward: produce research that is empirically defensible, clear enough to travel outside academia, and useful to the policymakers, journalists, and practitioners who have to act on it.
 profile:
   align: right
   image: prof_pic_color.jpg
@@ -15,11 +19,6 @@ profile:
 social: true
 tiktok_profile_embed: true
 ---
-
-<div class="home-intro">
-  <p>I am Benjamin Glasner, a Senior Economist at the Economic Innovation Group in Washington, D.C., and an affiliate at the Center on Poverty and Social Policy at Columbia University. I study U.S. labor markets, place-based policy, and the design of social policy, with a focus on worker well-being, economic mobility, and how national policy choices play out in local economies.</p>
-  <p>My work combines applied microeconomics, policy evaluation, and public communication. The aim is straightforward: produce research that is empirically defensible, clear enough to travel outside academia, and useful to the policymakers, journalists, and practitioners who have to act on it.</p>
-</div>
 
 <section class="section-block">
   <h2 class="section-kicker">What I Work On</h2>

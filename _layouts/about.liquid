@@ -18,6 +18,9 @@ layout: default
         {% endif %}
       </h1>
       <p class="desc">{{ page.subtitle }}</p>
+      {% if page.hero_intro %}
+        <div class="home-intro">{{ page.hero_intro | markdownify }}</div>
+      {% endif %}
     </div>
 
     {% if page.profile %}
