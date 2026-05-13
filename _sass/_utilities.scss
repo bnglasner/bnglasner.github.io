@@ -26,6 +26,7 @@ pre {
   color: var(--global-theme-color);
   background-color: var(--global-code-bg-color);
   border-radius: 6px;
+  font-size: var(--type-meta);
   padding: 6px 12px;
 
   // Responsive behavior for code blocks
@@ -48,6 +49,7 @@ code {
   color: var(--global-theme-color);
   background-color: var(--global-code-bg-color);
   border-radius: 3px;
+  font-size: 1em;
   padding: 3px 3px;
 
   // Inline code should wrap
@@ -133,7 +135,7 @@ html.transition *:after {
     border-radius: 0.3rem;
     border-style: none;
     color: var(--global-text-color);
-    font-size: medium;
+    font-size: var(--type-meta);
     opacity: 0;
     position: absolute;
     right: 0.2rem;
@@ -181,12 +183,12 @@ nav[data-toggle="toc"] {
   top: 5rem;
 
   .nav .nav > li > a {
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
   }
 
   .nav > li > a {
     color: var(--global-text-color);
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
 
     &:hover {
       color: var(--global-hover-color);
@@ -197,7 +199,7 @@ nav[data-toggle="toc"] {
   .nav-link.active {
     color: var(--global-theme-color);
     border-left-color: var(--global-theme-color);
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
 
     &:hover {
       color: var(--global-hover-color);
@@ -217,7 +219,7 @@ nav[data-toggle="toc"] {
 
   /* Responsive code blocks for mobile */
   pre {
-    font-size: 0.875rem;
+    font-size: var(--type-meta);
     padding: 8px 10px;
     margin: 0.5rem 0;
   }
@@ -226,13 +228,13 @@ nav[data-toggle="toc"] {
     margin: 0.5rem 0;
 
     pre {
-      font-size: 0.875rem;
+      font-size: var(--type-meta);
       padding: 8px 10px;
     }
   }
 
   code {
-    font-size: 0.875rem;
+    font-size: 1em;
     padding: 2px 4px;
   }
 }
@@ -240,19 +242,19 @@ nav[data-toggle="toc"] {
 /* Extra small screens */
 @media (max-width: 400px) {
   pre {
-    font-size: 0.8rem;
+    font-size: var(--type-meta);
     padding: 6px 8px;
   }
 
   figure.highlight {
     pre {
-      font-size: 0.8rem;
+      font-size: var(--type-meta);
       padding: 6px 8px;
     }
   }
 
   code {
-    font-size: 0.8rem;
+    font-size: 1em;
     padding: 1px 3px;
   }
 }
@@ -260,13 +262,13 @@ nav[data-toggle="toc"] {
 /* Medium screens - optimize for tablets */
 @media (min-width: 577px) and (max-width: 768px) {
   pre {
-    font-size: 0.9rem;
+    font-size: var(--type-meta);
     padding: 8px 12px;
   }
 
   figure.highlight {
     pre {
-      font-size: 0.9rem;
+      font-size: var(--type-meta);
       padding: 8px 12px;
     }
   }
@@ -378,7 +380,7 @@ nav[data-toggle="toc"] {
   .newsletter-loading-button,
   .newsletter-success,
   .newsletter-error {
-    font-size: 16px !important;
+    font-size: var(--type-body) !important;
   }
   .newsletter-form-container {
     margin-right: 20px;

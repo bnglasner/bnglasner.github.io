@@ -10,7 +10,7 @@
 
   h1 {
     color: var(--global-theme-color);
-    font-size: 5rem;
+    font-size: var(--type-display);
   }
 }
 
@@ -52,13 +52,13 @@
 
     .post-meta {
       color: var(--global-text-color-light);
-      font-size: 0.875rem;
+      font-size: var(--type-meta);
       margin-bottom: 0;
     }
 
     .post-tags {
       color: var(--global-text-color-light);
-      font-size: 0.875rem;
+      font-size: var(--type-meta);
       padding-top: 0.25rem;
       padding-bottom: 0;
     }
@@ -103,13 +103,13 @@
 .post {
   .post-meta {
     color: var(--global-text-color-light);
-    font-size: 0.875rem;
+    font-size: var(--type-meta);
     margin-bottom: 0;
   }
 
   .post-tags {
     color: var(--global-text-color-light);
-    font-size: 0.875rem;
+    font-size: var(--type-meta);
     padding-top: 0.25rem;
     padding-bottom: 1rem;
 
@@ -146,7 +146,7 @@
 
   .post-meta {
     color: var(--global-text-color-light);
-    font-size: 0.875rem;
+    font-size: var(--type-meta);
     margin-bottom: 0;
     padding-top: 0.5rem;
   }
@@ -154,7 +154,7 @@
 
 .post-description {
   margin-bottom: 2rem;
-  font-size: 0.875rem;
+  font-size: var(--type-body);
 
   a {
     color: inherit;

@@ -19,7 +19,7 @@ body {
     sans-serif;
   font-feature-settings: "ss01", "cv11";
   // Lock body type to the type-scale base for explicit cascade.
-  font-size: var(--type-base, 17px);
+  font-size: var(--type-body, 17px);
   line-height: var(--type-leading-body, 1.65);
 }
 
@@ -72,7 +72,7 @@ html[data-theme="dark"] body {
 .about-hero__profile .more-info {
   margin-top: var(--space-3);
   font-family: "Inter", "Avenir Next", system-ui, sans-serif;
-  font-size: var(--type-sm);
+  font-size: var(--type-meta);
   color: var(--global-text-color-light);
   line-height: var(--type-leading-snug);
 }
@@ -112,7 +112,10 @@ html[data-theme="dark"] body {
 .post .post-title a,
 .post h1,
 .post h2,
-.post h3 {
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
   font-family: "EB Garamond", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   // EB Garamond is darker and tighter than the previous Iowan stack;
   // pull letter-spacing back from -0.02em to -0.012em so headings do
@@ -122,27 +125,20 @@ html[data-theme="dark"] body {
 }
 
 .post .post-title {
-  // Explicit literal upper bound (~ --type-6xl + 0.6rem) because sass
-  // simplifies inner calc() and not every browser parses implicit
-  // arithmetic inside clamp() arguments cleanly.
-  font-size: clamp(var(--type-5xl), 5vw, 2.9rem);
+  font-size: var(--type-display);
   line-height: var(--type-leading-tight);
   letter-spacing: var(--type-tracking-display);
 }
 
-// Headings inside .post stepped through the modular scale.
-.post h2 {
-  font-size: var(--type-3xl);
-  line-height: var(--type-leading-snug);
-}
-
-.post h3 {
-  font-size: var(--type-xl);
-  line-height: var(--type-leading-snug);
-}
-
-.post h4 {
-  font-size: var(--type-lg);
+// Everything below the page title sits on the shared body size. Visual
+// hierarchy now comes from family, spacing, case, and weight.
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  font-size: var(--type-body);
   line-height: var(--type-leading-snug);
 }
 
@@ -150,7 +146,7 @@ html[data-theme="dark"] body {
 .post .post-description,
 .page-lead {
   color: var(--global-text-color-light);
-  font-size: var(--type-lg);
+  font-size: var(--type-body);
   line-height: var(--type-leading-body);
   max-width: 46rem;
 }
@@ -171,7 +167,7 @@ html[data-theme="dark"] body {
 
 .home-intro p:first-child,
 .page-lead p:first-child {
-  font-size: 1.18rem;
+  font-size: var(--type-body);
   line-height: 1.7;
 }
 
@@ -195,7 +191,7 @@ html[data-theme="dark"] body {
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-2);
   font-family: "Inter", "Avenir Next", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
-  font-size: var(--type-xs);
+  font-size: var(--type-meta);
   font-weight: 700;
   letter-spacing: var(--type-tracking-kicker);
   text-transform: uppercase;
@@ -295,6 +291,10 @@ html[data-theme="dark"] {
 .insight-card h3,
 .quick-link-card strong,
 .tool-highlight h3 {
+  font-family: "EB Garamond", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: var(--type-body);
+  line-height: var(--type-leading-snug);
+  letter-spacing: var(--type-tracking-display);
   margin-bottom: 0.4rem;
 }
 
@@ -328,7 +328,7 @@ html[data-theme="dark"] {
   display: block;
   margin-top: 0.45rem;
   color: var(--global-text-color-light);
-  font-size: 0.95rem;
+  font-size: var(--type-body);
   line-height: 1.55;
 }
 
@@ -374,7 +374,7 @@ html[data-theme="dark"] {
 .meta-line {
   margin-bottom: 0.45rem;
   color: var(--global-text-color-light);
-  font-size: 0.82rem;
+  font-size: var(--type-meta);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -420,7 +420,7 @@ html[data-theme="dark"] {
   margin-top: 1.4rem;
   margin-bottom: 0.5rem;
   font-family: "Inter", "Avenir Next", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
-  font-size: 0.78rem;
+  font-size: var(--type-meta);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -466,7 +466,8 @@ html[data-theme="dark"] {
 .publications h2 {
   margin-top: 2.5rem;
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  font-size: 1.6rem;
+  font-size: var(--type-body);
+  line-height: var(--type-leading-snug);
   letter-spacing: -0.01em;
   border-bottom: 1px solid var(--global-divider-color);
   padding-bottom: 0.5rem;
@@ -474,14 +475,14 @@ html[data-theme="dark"] {
 
 .publications h3 {
   margin-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: var(--type-body);
 }
 
 // Publication action buttons: align corner radius with the rest of the
 // card system and add a subtle hover background.
 .publications .bibliography li .links a.btn {
   border-radius: 999px;
-  font-size: 0.78rem;
+  font-size: var(--type-meta);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition:
@@ -501,7 +502,7 @@ html[data-theme="dark"] {
 .cv .btn,
 article .btn.btn-sm {
   border-radius: 999px;
-  font-size: 0.72rem;
+  font-size: var(--type-meta);
   letter-spacing: 0.06em;
   transition:
     background-color 0.18s var(--motion-ease),
@@ -540,10 +541,6 @@ html[data-theme="dark"] {
 }
 
 @media (max-width: 576px) {
-  .post .post-title {
-    font-size: var(--type-4xl);
-  }
-
   .page-card,
   .insight-card,
   .quick-link-card,
@@ -576,7 +573,7 @@ html[data-theme="dark"] {
   content: "On this page";
   display: block;
   margin-bottom: var(--space-3);
-  font-size: var(--type-xs);
+  font-size: var(--type-meta);
   font-weight: 700;
   letter-spacing: var(--type-tracking-kicker);
   text-transform: uppercase;
@@ -585,7 +582,7 @@ html[data-theme="dark"] {
 
 #toc-sidebar nav[data-toggle="toc"] .nav > li > a {
   color: var(--global-text-color-light);
-  font-size: var(--type-sm);
+  font-size: var(--type-meta);
   padding: var(--space-1) var(--space-4);
   border-left: 1px solid transparent;
   transition:
@@ -613,7 +610,7 @@ html[data-theme="dark"] {
 }
 
 #toc-sidebar nav[data-toggle="toc"] .nav .nav > li > a {
-  font-size: var(--type-xs);
+  font-size: var(--type-meta);
   padding-left: var(--space-7);
 }
 

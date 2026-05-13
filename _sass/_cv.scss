@@ -27,7 +27,7 @@ a.btncv {
   padding-bottom: 0.25rem;
   text-decoration: none;
   font-weight: 400;
-  font-size: 0.7rem;
+  font-size: var(--type-meta);
   text-align: center;
   vertical-align: middle;
   text-transform: uppercase;
@@ -45,7 +45,7 @@ a.btncv:hover {
  *****************************/
 
 p.location {
-  font-size: 0.7rem;
+  font-size: var(--type-meta);
   white-space: nowrap;
 }
 
@@ -71,7 +71,7 @@ table.institution {
 }
 
 td.department {
-  font-size: 0.8rem;
+  font-size: var(--type-meta);
 }
 
 div.container-links {
@@ -129,23 +129,32 @@ td.list-group-category-icon {
 }
 
 td.list-group-name {
-  font-size: 0.8rem;
+  font-size: var(--type-body);
 }
 
 td.list-group-level {
-  font-size: 0.8rem;
+  font-size: var(--type-meta);
   padding-left: 0.5rem;
 }
 
 td.list-group-school {
-  font-size: 0.7rem;
+  font-size: var(--type-meta);
   padding-left: 0.5rem;
   text-align: center;
 }
 
 p.list-group-time {
-  font-size: 0.7rem;
+  font-size: var(--type-meta);
   padding-left: 0.5rem;
+}
+
+.cv-entry-detail {
+  font-size: var(--type-body);
+  line-height: var(--type-leading-snug);
+}
+
+.cv-entry-detail--italic {
+  font-style: italic;
 }
 
 td.list-group-link {
@@ -180,9 +189,15 @@ span.badge-toc {
   background-color: var(--global-theme-color);
   border-radius: 0.125rem;
   padding: 0.125rem 0.5rem 0.125rem 0.5rem;
+  font-size: var(--type-meta);
   font-weight: 700 !important;
   display: inline-block;
   inline-size: fit-content;
+}
+
+table.table-cv .badge {
+  font-size: var(--type-meta);
+  letter-spacing: 0.04em;
 }
 
 ul.timeline li::before {

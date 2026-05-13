@@ -9,7 +9,7 @@
 
   h1 {
     color: var(--global-theme-color);
-    font-size: var(--type-4xl);
+    font-size: var(--type-display);
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -19,7 +19,7 @@
     margin-bottom: var(--space-4);
 
     span {
-      font-size: var(--type-2xl);
+      font-size: var(--type-body);
     }
   }
 
@@ -60,7 +60,7 @@
           padding: var(--space-1) var(--space-3);
           color: #ffffff !important;
           font-family: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-          font-size: var(--type-xs);
+          font-size: var(--type-meta);
           font-weight: 600;
           letter-spacing: 0.08em;
           text-transform: uppercase;
@@ -86,7 +86,7 @@
       // matches the typographic register of section headings.
       .title {
         font-family: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-        font-size: var(--type-xl);
+        font-size: var(--type-body);
         font-weight: 600;
         line-height: var(--type-leading-snug);
         letter-spacing: var(--type-tracking-display);
@@ -96,7 +96,7 @@
       // Authors — quietly sized; keep self-emphasis (italic + underline)
       // distinct from co-author links.
       .author {
-        font-size: var(--type-sm);
+        font-size: var(--type-body);
         line-height: var(--type-leading-snug);
         color: var(--global-text-color);
         margin-bottom: var(--space-2);
@@ -132,7 +132,7 @@
       // line, matching the .meta-line treatment used on .page-card.
       .periodical {
         color: var(--global-text-color-light);
-        font-size: var(--type-xs);
+        font-size: var(--type-meta);
         font-weight: 600;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -188,7 +188,7 @@
       }
 
       .hidden {
-        font-size: 0.875rem;
+        font-size: var(--type-body);
         max-height: 0px;
         overflow: hidden;
         text-align: justify;
@@ -199,12 +199,12 @@
         transition: all 0.15s ease;
 
         p {
-          line-height: 1.4em;
+          line-height: var(--type-leading-body);
           margin: 10px;
         }
 
         pre {
-          font-size: 1em;
+          font-size: inherit;
           line-height: 1.4em;
           padding: 10px;
         }

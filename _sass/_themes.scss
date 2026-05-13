@@ -61,20 +61,26 @@
   --surface-radius-sm: 12px;
   --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
 
-  // Type scale — modular ratio 1.125 (major-second) anchored to a
-  // 17px base. Heading tokens drive the `.post h1..h5` cascade so
-  // type rhythm is explicit instead of relying on browser defaults.
-  --type-base: 17px;
-  --type-xs: 0.79rem;
-  --type-sm: 0.89rem;
-  --type-md: 1rem;
-  --type-lg: 1.125rem;
-  --type-xl: 1.266rem;
-  --type-2xl: 1.424rem;
-  --type-3xl: 1.602rem;
-  --type-4xl: 1.802rem;
-  --type-5xl: 2.027rem;
-  --type-6xl: 2.281rem;
+  // Type system — three deliberate sizes only. Hierarchy now comes
+  // mostly from serif vs sans, weight, spacing, and casing instead of
+  // a long ladder of incremental font-size changes.
+  --type-display: 2.2rem;
+  --type-body: 1.0625rem;
+  --type-meta: 0.82rem;
+
+  // Compatibility aliases for older partials. The previous modular
+  // scale is intentionally collapsed into the three canonical sizes.
+  --type-base: var(--type-body);
+  --type-xs: var(--type-meta);
+  --type-sm: var(--type-meta);
+  --type-md: var(--type-body);
+  --type-lg: var(--type-body);
+  --type-xl: var(--type-body);
+  --type-2xl: var(--type-body);
+  --type-3xl: var(--type-body);
+  --type-4xl: var(--type-display);
+  --type-5xl: var(--type-display);
+  --type-6xl: var(--type-display);
   --type-leading-tight: 1.18;
   --type-leading-snug: 1.35;
   --type-leading-body: 1.65;
@@ -125,6 +131,14 @@
     height: v.$back-to-top-height;
     width: v.$back-to-top-width;
     z-index: v.$back-to-top-z-index;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --type-display: 2rem;
+    --type-body: 1rem;
+    --type-meta: 0.8rem;
   }
 }
 

@@ -38,7 +38,7 @@
 }
 
 .course-meta {
-  font-size: 0.9rem;
+  font-size: var(--type-meta);
   color: var(--global-text-color-light);
   margin-bottom: 10px;
 }
@@ -49,7 +49,7 @@
 }
 
 .course-description {
-  font-size: 0.9rem;
+  font-size: var(--type-body);
   margin-bottom: 15px;
 
   p {
