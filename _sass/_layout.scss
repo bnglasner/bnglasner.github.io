@@ -17,13 +17,6 @@ body {
   }
 }
 
-// Pages not yet migrated to the 2026 redesign keep the old palette here;
-// body.redesign-2026 (see _sass/_system.scss) supplies its own.
-body:not(.redesign-2026) {
-  color: var(--global-text-color);
-  background-color: var(--global-bg-color);
-}
-
 body.fixed-top-nav {
   // Add some padding for the nav-bar.
   padding-top: 57px;

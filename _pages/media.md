@@ -15,18 +15,18 @@ toc:
 <p class="research-intro">{{ media_page.lead.primary }}</p>
 
 {% for section in media_page.sections %}
-  {% case section.title %}
-    {% when "Broadcast and Video" %}
-      {% assign type_label = "BROADCAST" %}
-    {% when "Podcasts and Radio" %}
-      {% assign type_label = "PODCAST" %}
-    {% when "Interviews and Features" %}
-      {% assign type_label = "INTERVIEW" %}
-    {% when "Quoted in News Coverage" %}
-      {% assign type_label = "QUOTED" %}
-    {% else %}
-      {% assign type_label = "MEDIA" %}
-  {% endcase %}
+{% case section.title %}
+{% when "Broadcast and Video" %}
+{% assign type_label = "BROADCAST" %}
+{% when "Podcasts and Radio" %}
+{% assign type_label = "PODCAST" %}
+{% when "Interviews and Features" %}
+{% assign type_label = "INTERVIEW" %}
+{% when "Quoted in News Coverage" %}
+{% assign type_label = "QUOTED" %}
+{% else %}
+{% assign type_label = "MEDIA" %}
+{% endcase %}
 
   <h2>{{ section.title }}</h2>
   <div class="work-card-grid">

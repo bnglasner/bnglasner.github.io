@@ -69,9 +69,9 @@ Four titles surface in `_data/citations.yml` (Google Scholar) but are not in `pa
 Real, intentional pages in `_pages/`:
 `about.md`, `cv.md`, `media.md`, `policy.md`, `publications.md`, `repositories.md`, `wage-subsidy-sim.md`, `writing.md`, `404.md`.
 
-`_pages/media.md` now renders from `_data/media_page.yml`, which separates direct appearances and quoted coverage from selected cited coverage of Ben's research.
+`_pages/media.md` now renders from `_data/media_page.yml`, which separates direct appearances and quoted coverage from selected cited coverage of Ben's research. It is genuinely hand-authored — `.prettierignore` no longer lists it (fixed 2026-08-10; it had wrongly carried a "do not edit, auto-generated" marker left over from an earlier pipeline iteration).
 
-Auto-generated and listed in `.prettierignore` (do not edit by hand): `blog.md`, `media.md` (the underscore-prefix variant), `media_full_snapshot.md`, `repositories_full_snapshot.md`, `research.md`.
+`blog.md`, `media_full_snapshot.md`, `repositories_full_snapshot.md`, and `research.md` do not exist in this repo — they were removed in an earlier cleanup along with the rest of the al-folio template residue. If you see them referenced elsewhere (an old audit report, a stale `.prettierignore` entry), that reference is stale.
 
 `_news/`, `_posts/`, `_projects/`, `_books/`, `_teachings/` are empty as of 2026-05-03. Template residue was removed in May 2026.
 
