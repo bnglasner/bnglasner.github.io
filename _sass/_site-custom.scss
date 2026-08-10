@@ -569,67 +569,72 @@ html[data-theme="dark"] {
 // The vendor stylesheet ships with hard-coded #563d7c (purple); we
 // rebind every active/hover color to the surface accent so the TOC
 // reads as part of the site rather than an imported widget.
-#toc-sidebar {
-  margin-top: var(--space-4);
-}
+// Pre-redesign pages only — see _sass/_system.scss for the
+// body.redesign-2026 equivalent (same handoff pattern as the rest of this
+// file: :not(.redesign-2026) here, a scoped rule there).
+body:not(.redesign-2026) {
+  #toc-sidebar {
+    margin-top: var(--space-4);
+  }
 
-#toc-sidebar nav[data-toggle="toc"] {
-  font-family: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  border-left: 1px solid var(--global-divider-color);
-  padding-left: var(--space-4);
-}
+  #toc-sidebar[data-toggle="toc"] {
+    font-family: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    border-left: 1px solid var(--global-divider-color);
+    padding-left: var(--space-4);
+  }
 
-#toc-sidebar nav[data-toggle="toc"] > ul.nav > li.nav-item:first-child::before {
-  content: "On this page";
-  display: block;
-  margin-bottom: var(--space-3);
-  font-size: var(--type-meta);
-  font-weight: 700;
-  letter-spacing: var(--type-tracking-kicker);
-  text-transform: uppercase;
-  color: var(--global-theme-color);
-}
+  #toc-sidebar[data-toggle="toc"] > ul.nav > li.nav-item:first-child::before {
+    content: "On this page";
+    display: block;
+    margin-bottom: var(--space-3);
+    font-size: var(--type-meta);
+    font-weight: 700;
+    letter-spacing: var(--type-tracking-kicker);
+    text-transform: uppercase;
+    color: var(--global-theme-color);
+  }
 
-#toc-sidebar nav[data-toggle="toc"] .nav > li > a {
-  color: var(--global-text-color-light);
-  font-size: var(--type-meta);
-  padding: var(--space-1) var(--space-4);
-  border-left: 1px solid transparent;
-  transition:
-    color 0.18s var(--motion-ease),
-    border-color 0.18s var(--motion-ease),
-    padding-left 0.18s var(--motion-ease);
-}
+  #toc-sidebar[data-toggle="toc"] .nav > li > a {
+    color: var(--global-text-color-light);
+    font-size: var(--type-meta);
+    padding: var(--space-1) var(--space-4);
+    border-left: 1px solid transparent;
+    transition:
+      color 0.18s var(--motion-ease),
+      border-color 0.18s var(--motion-ease),
+      padding-left 0.18s var(--motion-ease);
+  }
 
-#toc-sidebar nav[data-toggle="toc"] .nav > li > a:hover,
-#toc-sidebar nav[data-toggle="toc"] .nav > li > a:focus {
-  color: var(--global-theme-color);
-  background: transparent;
-  border-left: 1px solid var(--surface-accent);
-  padding-left: calc(var(--space-4) - 1px);
-}
+  #toc-sidebar[data-toggle="toc"] .nav > li > a:hover,
+  #toc-sidebar[data-toggle="toc"] .nav > li > a:focus {
+    color: var(--global-theme-color);
+    background: transparent;
+    border-left: 1px solid var(--surface-accent);
+    padding-left: calc(var(--space-4) - 1px);
+  }
 
-#toc-sidebar nav[data-toggle="toc"] .nav-link.active,
-#toc-sidebar nav[data-toggle="toc"] .nav-link.active:focus,
-#toc-sidebar nav[data-toggle="toc"] .nav-link.active:hover {
-  color: var(--global-text-color);
-  font-weight: 600;
-  background: transparent;
-  border-left: 2px solid var(--surface-accent);
-  padding-left: calc(var(--space-4) - 2px);
-}
+  #toc-sidebar[data-toggle="toc"] .nav-link.active,
+  #toc-sidebar[data-toggle="toc"] .nav-link.active:focus,
+  #toc-sidebar[data-toggle="toc"] .nav-link.active:hover {
+    color: var(--global-text-color);
+    font-weight: 600;
+    background: transparent;
+    border-left: 2px solid var(--surface-accent);
+    padding-left: calc(var(--space-4) - 2px);
+  }
 
-#toc-sidebar nav[data-toggle="toc"] .nav .nav > li > a {
-  font-size: var(--type-meta);
-  padding-left: var(--space-7);
-}
+  #toc-sidebar[data-toggle="toc"] .nav .nav > li > a {
+    font-size: var(--type-meta);
+    padding-left: var(--space-7);
+  }
 
-#toc-sidebar nav[data-toggle="toc"] .nav .nav > li > a:hover {
-  padding-left: calc(var(--space-7) - 1px);
-}
+  #toc-sidebar[data-toggle="toc"] .nav .nav > li > a:hover {
+    padding-left: calc(var(--space-7) - 1px);
+  }
 
-#toc-sidebar nav[data-toggle="toc"] .nav .nav > li > .active {
-  padding-left: calc(var(--space-7) - 2px);
+  #toc-sidebar[data-toggle="toc"] .nav .nav > li > .active {
+    padding-left: calc(var(--space-7) - 2px);
+  }
 }
 
 @media (max-width: 991px) {

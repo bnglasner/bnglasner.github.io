@@ -4,21 +4,37 @@ permalink: /wage-subsidy-sim/
 title: 80-80 wage subsidy simulator
 description: Interactive simulation of the EIG 80-80 Rule wage subsidy proposal, estimating fiscal and distributional effects for U.S. workers.
 nav: false
+redesign_2026: true
 ---
 
-<p>
-  This tool simulates the fiscal and distributional effects of the <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank">EIG 80-80 Rule</a> wage subsidy proposal. It combines Current Population Survey (CPS) microdata with pre-computed PolicyEngine-US household income schedules to estimate eligibility, gross cost, and safety-net interactions at the individual and population level.
+<p class="research-intro">
+  This tool simulates the fiscal and distributional effects of the
+  <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank" rel="noopener noreferrer">EIG 80-80 Rule</a>
+  wage subsidy proposal. It combines Current Population Survey (CPS) microdata with pre-computed PolicyEngine-US
+  household income schedules to estimate eligibility, gross cost, and safety-net interactions at the individual and
+  population level.
 </p>
 
-<div class="tool-highlight mt-4">
-  <p class="meta-line">Status</p>
+<div class="policy-section">
+  <span class="work-card__eyebrow work-card__eyebrow--policy">Status</span>
   <h2>Public Prototype Offline</h2>
   <p>
-    The previous public Streamlit deployment for this simulator is no longer live. Rather than embed a broken application, this page documents the model and the proposal it supports.
+    The previous public Streamlit deployment for this simulator is no longer live. Rather than embed a broken
+    application, this page documents the model and the proposal it supports.
   </p>
-  <ul class="focus-list">
-    <li>Read the companion <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank">report</a> for the policy design, motivation, and headline findings.</li>
-    <li>See the <a href="{{ '/policy/' | relative_url }}">policy</a> page for the broader 80-80 problem statement, literature, and my role on the proposal.</li>
-    <li>See the <a href="{{ '/writing/' | relative_url }}">writing</a> page for related public-facing essays and policy commentary.</li>
+  <ul class="policy-section__links">
+    <li>
+      Read the companion
+      <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank" rel="noopener noreferrer">report</a>
+      for the policy design, motivation, and headline findings.
+    </li>
+    <li>
+      See the <a href="{{ '/policy/' | relative_url }}">Policy</a> page for the broader 80-80 problem statement,
+      literature, and my role on the proposal.
+    </li>
+    <li>
+      See <a href="{{ '/writing/' | relative_url }}">Policy writing</a> for related public-facing essays and policy
+      commentary.
+    </li>
   </ul>
 </div>
