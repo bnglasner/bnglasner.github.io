@@ -5,7 +5,7 @@ description: |
   bib-and-citations sync, and build-and-preview. Produces a single dated readiness report.
   Triggers on "release readiness", "is the site ready to ship", "do a full audit pass",
   or before any deliberate site refresh.
-tools: Read, Write, Edit, Grep, Glob, Bash, web_fetch
+tools: Read, Write, Edit, Grep, Glob, Bash, WebFetch
 ---
 
 # Agent: release readiness

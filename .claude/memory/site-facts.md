@@ -2,6 +2,8 @@
 
 This file is the first thing any agent walking into the repo cold should read. It captures facts about Ben's portfolio that should not have to be rediscovered every session. Update — do not append — when a fact changes.
 
+**Last verified: 2026-08-10** (structure reconciled against the repo; source-facing facts last verified by the 2026-05-03 audit). The final step of the `portfolio-audit` skill refreshes this stamp and any changed facts.
+
 ## Identity and current role (as of 2026-05-03)
 
 - **Name on the site**: Benjamin Glasner. Substack and informal contexts use "Ben Glasner". Both forms are correct.
@@ -60,7 +62,7 @@ Four titles surface in `_data/citations.yml` (Google Scholar) but are not in `pa
 
 - **Authoritative, hand-edited**: `_data/writing.yml`, `_data/media_page.yml`, `_data/socials.yml`, `_data/cv.yml`, `_data/venues.yml`, `_data/coauthors.yml`, `_bibliography/papers.bib`.
 - **Cron-managed**: `_data/citations.yml` (Scholar Mon/Wed/Fri).
-- **Repo-authoritative but pipeline-history**: `_data/publications.json`, `_data/mentions.json`, `_data/media.json`, `_data/cv_assets.json`, `_data/repositories.json`. The external profile-sync pipeline that produced these is retired (`.profile_payload_sync_manifest.json` reads `"status": "retired"`). Edits are allowed when explicitly requested; no automation should overwrite them.
+- **Repo-authoritative but pipeline-history**: `_data/publications.json`, `_data/mentions.json`, `_data/media.json`, `_data/cv_assets.json`. (No `_data/repositories.*` file exists — the code + data page is `_pages/repositories.md`: a live GitHub API call for EIG-Research plus hand-curated personal-repo HTML.) The external profile-sync pipeline that produced these is retired (`.profile_payload_sync_manifest.json` reads `"status": "retired"`). Edits are allowed when explicitly requested; no automation should overwrite them.
 
 ## Page roster (as of 2026-05-03)
 
@@ -76,9 +78,10 @@ Auto-generated and listed in `.prettierignore` (do not edit by hand): `blog.md`,
 ## Build and CI
 
 - Dev: `docker compose up --build`, runs at `http://localhost:8080`.
-- Format: `npx prettier . --write`.
+- Headless verify: `bash bin/verify_site.sh` (authors check, schema validation via `bin/validate_data.py`, headless Jekyll build into `_site_verify/`, internal link check).
+- Format: `npx prettier . --write` (also automated per-edit by the PostToolUse hook in `.claude/settings.json`).
 - CI: Prettier, lychee broken-link check, axe accessibility, CodeQL, Lighthouse (scheduled), `update-citations.yml` (Mon/Wed/Fri Scholar cron).
-- Pre-commit: trailing-whitespace, end-of-file-fixer, check-yaml, check-added-large-files, plus the local `bin/check_writing_authors.py` hook (added 2026-05-03).
+- Pre-commit: trailing-whitespace, end-of-file-fixer, check-yaml, check-added-large-files, plus two local hooks: `bin/check_writing_authors.py` (added 2026-05-03) and `bin/validate_data.py` (added 2026-08-10, full schema validation).
 
 ## Audits
 

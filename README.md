@@ -13,7 +13,7 @@ The public site centers on seven areas:
 - `publications` — formal bibliography rendered from `_bibliography/papers.bib`
 - `writing` — policy reports, working papers, and curated short-form essays from `_data/writing.yml`
 - `media` — curated appearances, quoted coverage, and selected cited coverage from `_data/media_page.yml`
-- `code + data` — selected repositories from `_data/repositories.yml`
+- `code + data` — a live listing of the EIG-Research GitHub organization plus a hand-curated personal-repository section, both maintained directly in `_pages/repositories.md`
 - `tools` — interactive tools, including the 80-80 wage subsidy simulator
 
 ## Source Of Truth
@@ -25,10 +25,10 @@ The repository now treats repo-local files as authoritative:
 - `_bibliography/papers.bib` — formal publications, working papers, and reports
 - `_data/writing.yml` — public-facing reports, essays, and commentary
 - `_data/media_page.yml` — curated media appearances and selected cited coverage
-- `_data/repositories.yml` — curated repository metadata
+- `_pages/repositories.md` — the code + data page: a live GitHub API call for EIG-Research plus a hand-curated personal-repository section
 - `_data/socials.yml` — public contact/profile links
 
-Legacy generated snapshots such as `_data/media.json`, `_data/repos.json`, and `_data/repositories.json` may still exist, but they are not the primary editorial source for the live site.
+Legacy generated snapshots (`_data/media.json`, `_data/mentions.json`, `_data/publications.json`, `_data/cv_assets.json`) still exist, but they are not the primary editorial source for the live site.
 
 ## Demo Content Policy
 
@@ -92,7 +92,7 @@ Edit:
 
 Edit:
 
-- `_data/repositories.yml`
+- `_pages/repositories.md` — the EIG-Research section updates itself via a live GitHub API call; the personal-repository section is hand-curated HTML in the same file
 
 ## Search Behavior
 

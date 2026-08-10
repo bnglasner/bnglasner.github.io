@@ -6,7 +6,7 @@ description: |
   generated prose, then runs build-and-preview before handing the diff back. Triggers on
   "publish this", "add this to the site", "I just put out a new piece", or when Ben hands
   over a URL without specifying which list it goes on.
-tools: Read, Write, Edit, Grep, Glob, Bash, web_fetch
+tools: Read, Write, Edit, Grep, Glob, Bash, WebFetch
 ---
 
 # Agent: content publisher

@@ -46,9 +46,12 @@ network: yes — fetches EIG staff page, Substack profile, Linktree, NBER, Equit
 
 5. **Write the report.** Create `docs/audits/YYYY-MM-DD-portfolio-deep-dive.md` (today's date). Mirror the structure of the May 2026 audit: identity & bio inputs, full publication and writing portfolio (peer-reviewed, working papers, policy reports, Substack, guest), code and data portfolio, public profiles. End with a punch list of recommended additions/corrections, ranked by integrity weight.
 
+6. **Refresh repo memory.** Update `.claude/memory/site-facts.md`: correct any fact the audit found stale (role, affiliation, channels, repo mappings, Scholar-only candidates) and set the **Last verified** stamp to today's date. Update — do not append.
+
 ## Outputs
 
 - `docs/audits/YYYY-MM-DD-portfolio-deep-dive.md`.
+- An updated `.claude/memory/site-facts.md` with today's **Last verified** stamp.
 - A short note for Ben naming the deltas vs. the prior audit.
 
 ## Stop and ask

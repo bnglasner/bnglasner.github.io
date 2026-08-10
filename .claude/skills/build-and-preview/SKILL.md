@@ -14,6 +14,16 @@ network: no (Docker pulls the image once; everything else is local)
 
 # Skill: build and preview
 
+## Fast path (headless)
+
+For a non-interactive verification — after a data-file or bibliography edit, or as the check step inside another skill — run:
+
+```bash
+bash bin/verify_site.sh
+```
+
+It runs the authors check, the schema validator (`bin/validate_data.py`), a headless Jekyll build into `_site_verify/`, and an internal link check. Use the interactive procedure below only when the change needs visual inspection (layout, images, dark mode) or Lighthouse/axe numbers.
+
 ## Procedure
 
 1. **Format.** Run `npx prettier . --write` from the repo root.

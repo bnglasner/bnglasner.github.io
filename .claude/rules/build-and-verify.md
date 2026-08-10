@@ -12,7 +12,15 @@ The site is built locally with Docker (the al-folio prebuilt image) and deployed
 
    First-time setup: `npm install --save-dev prettier @shopify/prettier-plugin-liquid`. The `.prettierrc` configures the Shopify Liquid plugin with `printWidth: 150` and `trailingComma: "es5"`.
 
-2. **Build.** Run:
+2. **Validate data.** If the commit touches `_data/` or `_bibliography/`, run:
+
+   ```bash
+   python3 bin/validate_data.py
+   ```
+
+   It enforces the schemas in `schema-invariants.md` (also enforced at commit time by pre-commit). For a full non-interactive pass — schema validation, headless build, internal link check — run `bash bin/verify_site.sh` instead of steps 3–4.
+
+3. **Build.** Run:
 
    ```bash
    docker compose up --build
@@ -20,20 +28,20 @@ The site is built locally with Docker (the al-folio prebuilt image) and deployed
 
    The site renders at `http://localhost:8080`. Wait for "Server running… press ctrl-c to stop." If the build errors, do not commit.
 
-3. **Spot-check.** In the running site, verify:
+4. **Spot-check.** In the running site, verify:
    - Top-level navigation renders every page in `_pages/`.
    - Dark-mode toggle works on the page you edited.
    - Any new internal links resolve (no 404).
    - Any new image renders at the correct size.
    - The publications page bibliography filter still works if you touched `papers.bib`.
 
-4. **Stop the container.** `docker compose down` to free port 8080.
+5. **Stop the container.** `docker compose down` to free port 8080.
 
 ## Files that must not be committed
 
 `.gitignore` already excludes `_site/`, `.jekyll-cache/`, `.jekyll-metadata`, `.bundle/`, `node_modules/`, and `Gemfile.lock`. If you find one of these in `git status`, stop and check why before committing.
 
-`.prettierignore` excludes a longer list of generated and template-residue files. The auto-generated data files (`_data/citations.yml`, `_data/publications.json`, `_data/mentions.json`, `_data/media.json`, `_data/cv_assets.json`, `_data/repositories.json`) are listed there because their contents are pipeline outputs — Prettier should not touch them and Claude should not edit them by hand.
+`.prettierignore` excludes a longer list of generated and template-residue files. The auto-generated data files (`_data/citations.yml`, `_data/publications.json`, `_data/mentions.json`, `_data/media.json`, `_data/cv_assets.json`) are listed there because their contents are pipeline outputs — Prettier should not touch them and Claude should not edit them by hand.
 
 ## `_config.yml` invariants
 

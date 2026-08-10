@@ -1,0 +1,59 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx prettier:*)",
+      "Bash(docker compose:*)",
+      "Bash(python3 bin/validate_data.py:*)",
+      "Bash(python3 bin/check_writing_authors.py:*)",
+      "Bash(bash bin/verify_site.sh:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "WebFetch(domain:api.crossref.org)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:eig.org)",
+      "WebFetch(domain:agglomerations.eig.org)",
+      "WebFetch(domain:www.nber.org)",
+      "WebFetch(domain:scholar.google.com)",
+      "WebFetch(domain:equitablegrowth.org)",
+      "WebFetch(domain:linktr.ee)"
+    ],
+    "ask": [
+      "Edit(_data/publications.json)",
+      "Write(_data/publications.json)",
+      "Edit(_data/mentions.json)",
+      "Write(_data/mentions.json)",
+      "Edit(_data/media.json)",
+      "Write(_data/media.json)",
+      "Edit(_data/cv_assets.json)",
+      "Write(_data/cv_assets.json)"
+    ],
+    "deny": [
+      "Edit(_data/citations.yml)",
+      "Write(_data/citations.yml)",
+      "Edit(_site/**)",
+      "Write(_site/**)",
+      "Edit(_site_verify/**)",
+      "Write(_site_verify/**)",
+      "Edit(.jekyll-cache/**)",
+      "Write(.jekyll-cache/**)",
+      "Edit(node_modules/**)",
+      "Write(node_modules/**)",
+      "Edit(assets/libs/**)",
+      "Write(assets/libs/**)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/bin/claude_prettier_hook.py\""
+          }
+        ]
+      }
+    ]
+  }
+}
