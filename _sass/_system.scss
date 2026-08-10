@@ -323,6 +323,14 @@ footer .axis-rule {
   }
 }
 
+.headline-wheel__credit {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--paper-muted);
+}
+
 .headline-wheel__dots {
   display: flex;
   gap: 0.5rem;
