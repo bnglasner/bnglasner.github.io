@@ -316,6 +316,25 @@ body.redesign-2026 {
   }
 }
 
+// Links inside a running block of prose need a non-color cue too (WCAG
+// 1.4.1) — axe-core's link-in-text-block rule flags .research-intro,
+// .measure, and .policy-section__links specifically. Bootstrap's base
+// reset sets text-decoration: none on every <a>; restore it here rather
+// than sitewide because card titles, CTAs, and nav are exempt from this
+// rule — those are already visually distinct as headings, buttons, and
+// chrome, not text a reader could mistake for a link only by its color.
+:where(body.redesign-2026 .site-main)
+  :is(.research-intro, .measure, .policy-section p, .policy-section__links, .work-detail__abstract, .post-description)
+  a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Home page.
 // ---------------------------------------------------------------------------
@@ -514,6 +533,14 @@ ol.bibliography > li {
   line-height: 1.5;
   white-space: pre-wrap;
   word-break: break-word;
+
+  // Overrides _sass/_utilities.scss's global `code { color:
+  // var(--global-theme-color) }` — that amber does not meet 4.5:1 on this
+  // background (axe-core color-contrast). Plain ink reads fine for a
+  // BibTeX block, which isn't trying to look like a link.
+  code {
+    color: var(--paper-text);
+  }
 }
 
 // Standalone eyebrow (not inside a .work-card, so --card-accent is never
