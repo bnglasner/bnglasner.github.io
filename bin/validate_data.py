@@ -5,6 +5,7 @@
 #           A missing required field silently drops an entry from the rendered
 #           page; this script turns that silent failure into a blocked commit.
 # Scope   - _data/writing.yml, _data/media_page.yml, _data/socials.yml,
+#           _data/homepage.yml, _data/highlights.yml (incl. asset existence),
 #           _bibliography/papers.bib <-> _data/venues.yml abbr cross-check,
 #           and ISO 8601 date checks throughout.
 # Note    - bin/check_writing_authors.py remains the focused authors-field guard;
@@ -51,6 +52,7 @@ SOCIALS_REQUIRED_KEYS = {
     "substack_url",
 }
 SOCIALS_NESTED_KEYS = {"tiktok_url", "threads_url", "substack_url"}
+HIGHLIGHTS_REQUIRED = {"name", "eyebrow", "title", "hook", "alt", "date"}
 BIB_ENTRY_GROUPS = {
     "peer_reviewed",
     "working_paper",
@@ -198,7 +200,43 @@ def check_homepage() -> None:
             fail("homepage.yml: open_to, when present, must be a non-empty string")
 
 
-# 5) papers.bib <-> venues.yml abbr cross-check, plus basic bib field checks
+# 5) _data/highlights.yml — homepage headline wheel
+def check_highlights() -> None:
+    data = load_yaml(DATA / "highlights.yml")
+    if not isinstance(data, list):
+        fail("highlights.yml: did not parse to a list")
+        return
+    if not (3 <= len(data) <= 7):
+        fail(f"highlights.yml: expected 3-7 entries, found {len(data)}")
+    names: set[str] = set()
+    for idx, entry in enumerate(data):
+        if not isinstance(entry, dict):
+            fail(f"highlights.yml [{idx}]: expected a mapping")
+            continue
+        label = f"highlights.yml [{idx}] '{entry.get('title', '<no title>')}'"
+        missing = HIGHLIGHTS_REQUIRED - set(entry)
+        if missing:
+            fail(f"{label}: missing required fields {sorted(missing)}")
+        name = entry.get("name")
+        if isinstance(name, str) and name:
+            if name in names:
+                fail(f"{label}: duplicate name `{name}`")
+            names.add(name)
+            # The include builds four asset paths from `name`; a missing file
+            # renders as a broken slide, so check all four exist.
+            for suffix in ("_light.mp4", "_dark.mp4", "_light.png", "_dark.png"):
+                asset = REPO_ROOT / "assets" / "video" / "highlights" / f"{name}{suffix}"
+                if not asset.exists():
+                    fail(f"{label}: missing asset {asset.relative_to(REPO_ROOT)}")
+        if "date" in entry and not is_iso_date(entry["date"]):
+            fail(f"{label}: date must be an ISO 8601 date (YYYY-MM-DD)")
+        for text_field in ("eyebrow", "title", "hook", "alt"):
+            value = entry.get(text_field)
+            if text_field in entry and (not isinstance(value, str) or not value.strip()):
+                fail(f"{label}: {text_field} must be a non-empty string")
+
+
+# 6) papers.bib <-> venues.yml abbr cross-check, plus basic bib field checks
 def check_bib_and_venues() -> None:
     venues = load_yaml(DATA / "venues.yml")
     venue_keys = set(venues.keys()) if isinstance(venues, dict) else set()
@@ -243,12 +281,13 @@ def check_bib_and_venues() -> None:
             )
 
 
-# 6) run everything
+# 7) run everything
 def main() -> int:
     check_writing()
     check_media_page()
     check_socials()
     check_homepage()
+    check_highlights()
     check_bib_and_venues()
 
     if failures:

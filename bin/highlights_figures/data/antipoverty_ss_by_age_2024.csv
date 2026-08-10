@@ -1,0 +1,4 @@
+group,order,count_thousands,label
+seniors,1,20100,older Americans (65+)
+working_age,2,7241,working-age adults 18-64
+children,3,1358,children

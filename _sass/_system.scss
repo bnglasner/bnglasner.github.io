@@ -9,7 +9,7 @@
  * migrated (body font/color, heading font, link color) are scoped under
  * `.redesign-2026`, a class the layout only adds when a page's front matter
  * sets `redesign_2026: true` — i.e. once that page has actually been
- * rebuilt. New component classes (.work-card, .hero-figure, .site-eyebrow,
+ * rebuilt. New component classes (.work-card, .headline-wheel, .site-eyebrow,
  * etc.) are new names with no old-page collision risk, so they are also
  * unscoped.
  ******************************************************************************/
@@ -200,51 +200,151 @@ footer .axis-rule {
 }
 
 // ---------------------------------------------------------------------------
-// Hero figure — the sitewide motion budget's one animation: the treatment
-// line draws on load via stroke-dashoffset, disabled entirely under
-// prefers-reduced-motion.
+// Headline wheel — the homepage carousel of five findings from the reels,
+// replacing the illustrative hero figure. It inherits that figure's motion
+// budget: the slide videos are the site's only animation, they play only
+// while visible, and never under prefers-reduced-motion (enforced in the
+// include's script — each slide then shows its poster frame). The wheel
+// itself is user-driven scroll-snap; it never advances on its own.
 // ---------------------------------------------------------------------------
 
-.hero-figure {
-  display: block;
+.headline-wheel {
   width: 100%;
-  height: auto;
   margin: 0 auto;
 }
 
-.hero-figure__line {
-  stroke-dasharray: var(--line-length, 1000);
-  stroke-dashoffset: var(--line-length, 1000);
-  animation: hero-figure-draw 1.6s ease-out 0.2s forwards;
-}
+.headline-wheel__track {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
 
-.hero-figure__label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  fill: var(--paper-muted-soft);
-  letter-spacing: 0.04em;
-}
-
-.hero-figure__label--teal {
-  fill: var(--accent-teal);
-  font-weight: 500;
-}
-
-.hero-figure__label--amber {
-  fill: var(--accent-amber);
-  font-weight: 500;
-}
-
-@keyframes hero-figure-draw {
-  to {
-    stroke-dashoffset: 0;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-figure__line {
-    animation: none;
-    stroke-dashoffset: 0;
+.headline-wheel__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.headline-wheel__figure {
+  margin: 0;
+}
+
+.headline-wheel__media {
+  border: 1px solid var(--paper-hairline-soft);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--paper-bg);
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  // .only-light / .only-dark (from _themes.scss) hide one variant per
+  // theme with display: none; the block rule above applies to the one
+  // the theme shows.
+  video.only-light,
+  video.only-dark {
+    width: 100%;
+  }
+}
+
+.headline-wheel__caption {
+  padding: 0.9rem 0.15rem 0;
+}
+
+.headline-wheel__eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper-muted);
+}
+
+.headline-wheel__title {
+  margin: 0.35rem 0 0.3rem;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-card-title);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.headline-wheel__hook {
+  margin: 0;
+  max-width: 62ch;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--paper-muted);
+}
+
+.headline-wheel__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.headline-wheel__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--paper-hairline);
+  border-radius: 50%;
+  background: var(--paper-bg);
+  color: var(--paper-muted);
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--accent-teal);
+    border-color: var(--accent-teal);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+}
+
+.headline-wheel__dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.headline-wheel__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 1px solid var(--paper-muted-soft);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+
+  &[aria-current="true"] {
+    background: var(--accent-teal);
+    border-color: var(--accent-teal);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
   }
 }
 

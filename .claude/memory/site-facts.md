@@ -60,7 +60,8 @@ Four titles surface in `_data/citations.yml` (Google Scholar) but are not in `pa
 
 ## Data file authority
 
-- **Authoritative, hand-edited**: `_data/writing.yml`, `_data/media_page.yml`, `_data/socials.yml`, `_data/cv.yml`, `_data/venues.yml`, `_data/coauthors.yml`, `_bibliography/papers.bib`.
+- **Authoritative, hand-edited**: `_data/writing.yml`, `_data/media_page.yml`, `_data/socials.yml`, `_data/cv.yml`, `_data/venues.yml`, `_data/coauthors.yml`, `_data/highlights.yml`, `_bibliography/papers.bib`.
+- **Generated from source scripts, never retouched**: `assets/video/highlights/` (the homepage headline wheel's MP4/PNG pairs). Regenerate with `bash bin/highlights_figures/render_all.sh`; see `bin/highlights_figures/README.md` for provenance (each figure is a re-themed port of a fact-checked reel from the Style Guide repo).
 - **Cron-managed**: `_data/citations.yml` (Scholar Mon/Wed/Fri).
 - **Repo-authoritative but pipeline-history**: `_data/publications.json`, `_data/mentions.json`, `_data/media.json`, `_data/cv_assets.json`. (No `_data/repositories.*` file exists — the code + data page is `_pages/repositories.md`: a live GitHub API call for EIG-Research plus hand-curated personal-repo HTML.) The external profile-sync pipeline that produced these is retired (`.profile_payload_sync_manifest.json` reads `"status": "retired"`). Edits are allowed when explicitly requested; no automation should overwrite them.
 
@@ -74,6 +75,8 @@ Real, intentional pages in `_pages/`:
 `blog.md`, `media_full_snapshot.md`, `repositories_full_snapshot.md`, and `research.md` do not exist in this repo — they were removed in an earlier cleanup along with the rest of the al-folio template residue. If you see them referenced elsewhere (an old audit report, a stale `.prettierignore` entry), that reference is stale.
 
 `_news/`, `_posts/`, `_projects/`, `_books/`, `_teachings/` are empty as of 2026-05-03. Template residue was removed in May 2026.
+
+The homepage hero's illustrative event-study SVG (`_includes/hero-figure.liquid`) was replaced on 2026-08-10 by the **headline wheel** (`_includes/headline-wheel.liquid` + `_data/highlights.yml`): a user-driven scroll-snap carousel of five findings from Ben's short-form reels, rendered as site-token animated figures in light/dark MP4 pairs. The sitewide motion-budget rule now lives there — videos play only while visible and never under prefers-reduced-motion; the wheel never advances on its own.
 
 All 9 real pages (plus jekyll-scholar's per-paper permalink layout) carry `redesign_2026: true` as of the 2026-08-10 visual/structural redesign — see `docs/audits/2026-08-10-2026-redesign-completion.md`. Because every generatable page has the flag, the pre-redesign CSS branch (`body:not(.redesign-2026)` in `_sass/_layout.scss`/`_typography.scss`/`_site-custom.scss`) was removed rather than kept as a fallback. A future page added without the flag (e.g. a blog post, since `_posts/` is empty but not disabled) will render with un-restyled Bootstrap defaults, not the old palette.
 

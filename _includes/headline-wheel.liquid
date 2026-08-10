@@ -1,0 +1,163 @@
+{% comment %}
+  Homepage headline wheel — replaces the illustrative hero-figure SVG with
+  five real findings from Ben's short-form reel work, re-rendered as
+  site-token animated figures (light + dark MP4 pairs with poster PNGs,
+  built from the Style Guide repo's reel pipeline data — see
+  _data/highlights.yml for the asset contract).
+
+  Motion policy: this component inherits the sitewide motion budget the old
+  hero line-draw carried. The wheel itself never moves on its own — no
+  autoplay rotation; slides advance only on user scroll, button press, or
+  keyboard input. Videos play only while their slide is in view
+  (IntersectionObserver below) and never under prefers-reduced-motion,
+  where each slide shows its resolved poster frame instead.
+
+  Theme swap: the light/dark video pairs use the existing .only-light /
+  .only-dark display classes from _sass/_themes.scss, so the toggle swaps
+  them with no JS of its own.
+{% endcomment %}
+<div class="headline-wheel" role="group" aria-roledescription="carousel" aria-label="Five findings from recent short-form work">
+  <ul class="headline-wheel__track">
+    {% for item in site.data.highlights %}
+      <li class="headline-wheel__slide" aria-label="Slide {{ forloop.index }} of {{ forloop.length }}: {{ item.title }}">
+        <figure class="headline-wheel__figure">
+          <div class="headline-wheel__media">
+            <video
+              class="only-light"
+              muted
+              loop
+              playsinline
+              disablepictureinpicture
+              preload="{% if forloop.first %}auto{% else %}none{% endif %}"
+              poster="{{ '/assets/video/highlights/' | append: item.name | append: '_light.png' | relative_url }}"
+              aria-label="{{ item.alt }}"
+            >
+              <source src="{{ '/assets/video/highlights/' | append: item.name | append: '_light.mp4' | relative_url }}" type="video/mp4">
+            </video>
+            <video
+              class="only-dark"
+              muted
+              loop
+              playsinline
+              disablepictureinpicture
+              preload="none"
+              poster="{{ '/assets/video/highlights/' | append: item.name | append: '_dark.png' | relative_url }}"
+              aria-label="{{ item.alt }}"
+            >
+              <source src="{{ '/assets/video/highlights/' | append: item.name | append: '_dark.mp4' | relative_url }}" type="video/mp4">
+            </video>
+          </div>
+          <figcaption class="headline-wheel__caption">
+            <span class="headline-wheel__eyebrow">{{ item.eyebrow }}</span>
+            <h3 class="headline-wheel__title">{{ item.title }}</h3>
+            <p class="headline-wheel__hook">{{ item.hook }}</p>
+          </figcaption>
+        </figure>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="headline-wheel__nav">
+    <button type="button" class="headline-wheel__btn" data-wheel-prev aria-label="Previous slide">&#8592;</button>
+    <div class="headline-wheel__dots" role="tablist" aria-label="Slide position">
+      {% for item in site.data.highlights %}
+        <button
+          type="button"
+          class="headline-wheel__dot"
+          data-wheel-dot="{{ forloop.index0 }}"
+          aria-label="Go to slide {{ forloop.index }}: {{ item.title }}"
+          {% if forloop.first %}
+            aria-current="true"
+          {% endif %}
+        ></button>
+      {% endfor %}
+    </div>
+    <button type="button" class="headline-wheel__btn" data-wheel-next aria-label="Next slide">&#8594;</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var wheel = document.querySelector('.headline-wheel');
+    if (!wheel) return;
+    var track = wheel.querySelector('.headline-wheel__track');
+    var slides = Array.prototype.slice.call(track.children);
+    var dots = Array.prototype.slice.call(wheel.querySelectorAll('[data-wheel-dot]'));
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function slideIndex() {
+      return Math.round(track.scrollLeft / track.clientWidth);
+    }
+
+    function goTo(i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({
+        left: i * track.clientWidth,
+        behavior: reduceMotion.matches ? 'auto' : 'smooth',
+      });
+    }
+
+    wheel.querySelector('[data-wheel-prev]').addEventListener('click', function () {
+      goTo(slideIndex() - 1);
+    });
+    wheel.querySelector('[data-wheel-next]').addEventListener('click', function () {
+      goTo(slideIndex() + 1);
+    });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        goTo(i);
+      });
+    });
+
+    var scrollTimer;
+    track.addEventListener('scroll', function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () {
+        var i = slideIndex();
+        dots.forEach(function (dot, j) {
+          if (j === i) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+        // Re-assert playback on the settled slide. During a snap scroll the
+        // observer can fire play-then-pause out of order (the slide crosses
+        // the threshold twice), leaving the current slide paused; the
+        // observer alone is not enough.
+        if (!reduceMotion.matches) {
+          slides[i].querySelectorAll('video').forEach(function (v) {
+            v.play().catch(function () {});
+          });
+        }
+      }, 120);
+    });
+
+    // Play only the visible slide's videos; never play under reduced motion.
+    // Both theme variants get play/pause together — the hidden one is
+    // display:none, which browsers treat as cheap, and this keeps the theme
+    // toggle instant without re-observing.
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          var videos = entry.target.querySelectorAll('video');
+          videos.forEach(function (v) {
+            if (entry.isIntersecting && !reduceMotion.matches) {
+              v.play().catch(function () {});
+            } else {
+              v.pause();
+            }
+          });
+        });
+      },
+      { root: track, threshold: 0.6 }
+    );
+    slides.forEach(function (s) {
+      io.observe(s);
+    });
+
+    reduceMotion.addEventListener('change', function () {
+      slides.forEach(function (s) {
+        s.querySelectorAll('video').forEach(function (v) {
+          if (reduceMotion.matches) v.pause();
+        });
+      });
+    });
+  })();
+</script>

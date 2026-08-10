@@ -1,0 +1,48 @@
+# Homepage headline wheel — five findings from Ben's short-form reel work,
+# re-rendered as site-native animated figures (see assets/video/highlights/).
+#
+# Each entry maps to four assets produced from the Style Guide repo's reel
+# pipeline data, re-themed to the site palette:
+#   assets/video/highlights/<name>_light.mp4 + <name>_dark.mp4
+#   assets/video/highlights/<name>_light.png + <name>_dark.png (posters)
+# Numbers in `hook` lines are the reels' fact-checked claims — see each
+# reel's source-notes in the Style Guide repo. Do not edit a number here
+# without re-checking it there.
+#
+# Schema (enforced by bin/validate_data.py): name, eyebrow, title, hook,
+# alt, date — all required. 3-7 entries.
+
+- name: ladder
+  eyebrow: "Generational mobility"
+  title: "The generation wage ladder"
+  hook: "At the same age, each generation of U.S. wage earners has out-earned the last — at 35, the typical Millennial earned about 32 percent more than the typical Boomer did, in 2025 dollars."
+  alt: "Animated line chart of median wage income by age for four generations. Lines for Boomer, Gen X, Millennial, and Gen Z draw in one at a time, with each later generation tracing a higher path at the same ages. Dashed stretches mark partly observed data. Source: IPUMS CPS ASEC 1962 to 2025 and FRED PCEPI."
+  date: 2026-08-03
+
+- name: wages
+  eyebrow: "July 2026 jobs report"
+  title: "Raises are the smallest in five years"
+  hook: "Average hourly earnings grew 3.2 percent year over year in July 2026 — the slowest pace since May 2021."
+  alt: "Animated line chart of year-over-year growth in private-sector average hourly earnings from 2021 to 2026. The line surges above 5.9 percent in 2022, then declines to 3.2 percent in July 2026. A dashed reference line marks that May 2021 was the last month below this level. Source: BLS Employment Situation, August 7, 2026."
+  date: 2026-08-07
+
+- name: rpp
+  eyebrow: "Cost of living · 2024 election"
+  title: "One dot breaks the 2024 election chart"
+  hook: "Democratic vote share fell 4.35 points in the 27 most expensive U.S. counties — nearly four times the decline the trend across all other counties predicts."
+  alt: "Animated scatter plot of the change in Democratic vote share from 2020 to 2024 against county price level, with dot area scaled to population. A trend line slopes gently downward, then the top price bin drops far below it to negative 4.35 percentage points against a predicted negative 1.14. Source: EIG analysis of county returns and BEA Regional Price Parities."
+  date: 2026-07-17
+
+- name: socsec
+  eyebrow: "Social Security"
+  title: "The largest anti-poverty program"
+  hook: "Social Security lifted 28.7 million Americans out of poverty in 2024 — more than any other program, and 20.1 million of them were 65 or older."
+  alt: "Animated stacked bar chart counting up to 28.7 million people lifted out of poverty by Social Security in 2024, split by age group: 20.1 million older Americans, 7.2 million working-age adults, and 1.4 million children. Source: Census Bureau P60-287, Table B-7, Supplemental Poverty Measure."
+  date: 2026-06-23
+
+- name: california
+  eyebrow: "State economies"
+  title: "Take out healthcare and California shrank"
+  hook: "California employment grew 3.4 percent over the four years to March 2026, but excluding healthcare it fell 0.3 percent — healthcare is carrying the state's job market."
+  alt: "Animated grouped bar chart comparing California and U.S. employment growth from March 2022 to March 2026. Healthcare grew 25.3 percent in California against 16.3 percent nationally; all jobs grew 3.4 versus 4.7 percent; excluding healthcare, California fell 0.3 percent while the U.S. grew 2.9 percent. Source: EIG analysis of BLS State and Area Employment data."
+  date: 2026-05-28

@@ -31,7 +31,7 @@
 // 2026 redesign — loaded last so it wins the cascade over the pre-redesign
 // rules above while pages are migrated one at a time. new-fonts declares
 // the self-hosted @font-face rules; system holds the shared axis-rule,
-// card-anatomy, hero-figure, skip-link, and focus-ring styles introduced
+// card-anatomy, headline-wheel, skip-link, and focus-ring styles introduced
 // by the redesign.
 @use "new-fonts";
 @use "system";
