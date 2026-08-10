@@ -75,6 +75,8 @@ Real, intentional pages in `_pages/`:
 
 `_news/`, `_posts/`, `_projects/`, `_books/`, `_teachings/` are empty as of 2026-05-03. Template residue was removed in May 2026.
 
+All 9 real pages (plus jekyll-scholar's per-paper permalink layout) carry `redesign_2026: true` as of the 2026-08-10 visual/structural redesign — see `docs/audits/2026-08-10-2026-redesign-completion.md`. Because every generatable page has the flag, the pre-redesign CSS branch (`body:not(.redesign-2026)` in `_sass/_layout.scss`/`_typography.scss`/`_site-custom.scss`) was removed rather than kept as a fallback. A future page added without the flag (e.g. a blog post, since `_posts/` is empty but not disabled) will render with un-restyled Bootstrap defaults, not the old palette.
+
 ## Build and CI
 
 - Dev: `docker compose up --build`, runs at `http://localhost:8080`.
@@ -91,3 +93,5 @@ Dated audit reports live in `docs/audits/`. The two anchor reports:
 - `2026-05-03-front-facing-review.md` (formerly `REVIEW_REPORT.md` at repo root).
 
 Both are reference documents — do not edit; re-run the corresponding skill to produce a new dated report.
+
+A third report, `2026-08-10-2026-redesign-completion.md`, closes out the visual/structural redesign (design system, per-page definition-of-done, verified contrast ratios, axe-core accessibility results). It is not an "anchor" in the above sense — no skill regenerates it — but is otherwise the same do-not-edit reference-document convention.
