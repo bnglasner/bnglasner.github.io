@@ -102,7 +102,11 @@ Added in the 2026 redesign for the homepage's one personal note (headshot + a si
 - `currently_working_on` (string, non-empty) — one sentence, present tense.
 - `currently_working_on_updated` (ISO 8601 date) — bump whenever the line changes, so staleness is visible in the file itself.
 
-Keep this to the one line the design calls for; do not grow it into a second bio or a projects list.
+Optional keys:
+
+- `open_to` (string, non-empty when present) — one sentence signaling availability for collaborations, press, podcasts, and panels, rendered as the second line of the same home note. The template appends the "Email me or see past appearances" links; do not duplicate them in the sentence.
+
+Keep this to the one note the design calls for (the working-on line plus at most the availability line); do not grow it into a second bio or a projects list.
 
 ## `_data/citations.yml`
 

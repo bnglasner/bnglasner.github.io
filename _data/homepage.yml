@@ -6,3 +6,8 @@
 # verify — update the line itself whenever what he's actually doing changes.
 currently_working_on: "Shaping EIG's research pipeline on labor markets, place-based policy, and retirement security — from framing new questions to publication-ready analysis."
 currently_working_on_updated: 2026-08-10
+
+# Optional second line of the same note: the availability signal. Keep it a
+# casual statement of fact, not a plea — the media page carries the proof.
+# The template appends the "Email me or see past appearances" links.
+open_to: "Collaborations, press interviews, podcasts, and panels are a regular part of the work — requests welcome."

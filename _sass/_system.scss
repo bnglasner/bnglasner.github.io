@@ -434,11 +434,18 @@ body.redesign-2026 {
   border: 1px solid var(--paper-hairline);
 }
 
+.home-note__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
 .home-note__text {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   color: var(--paper-muted);
   line-height: 1.4;
+  margin-bottom: 0;
 }
 
 .home-selected-work h2 {

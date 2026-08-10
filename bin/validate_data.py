@@ -192,6 +192,10 @@ def check_homepage() -> None:
         fail("homepage.yml: currently_working_on must be a non-empty string")
     if not is_iso_date(data.get("currently_working_on_updated")):
         fail("homepage.yml: currently_working_on_updated must be an ISO 8601 date (YYYY-MM-DD)")
+    if "open_to" in data:
+        open_to = data.get("open_to")
+        if not isinstance(open_to, str) or not open_to.strip():
+            fail("homepage.yml: open_to, when present, must be a non-empty string")
 
 
 # 5) papers.bib <-> venues.yml abbr cross-check, plus basic bib field checks

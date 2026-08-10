@@ -23,7 +23,15 @@ layout: default
         {% assign profile_image_path = page.profile_image | prepend: 'assets/img/' | relative_url %}
         <img class="home-note__photo" src="{{ profile_image_path }}" alt="" width="40" height="40" loading="eager">
       {% endif %}
-      <p class="home-note__text">Currently: {{ site.data.homepage.currently_working_on }}</p>
+      <div class="home-note__body">
+        <p class="home-note__text">Currently: {{ site.data.homepage.currently_working_on }}</p>
+        {% if site.data.homepage.open_to %}
+          <p class="home-note__text">
+            {{ site.data.homepage.open_to }}
+            <a href="mailto:{{ site.data.socials.email }}">Email me</a> or <a href="{{ '/media/' | relative_url }}">see past appearances</a>.
+          </p>
+        {% endif %}
+      </div>
     </div>
   {% endif %}
 
