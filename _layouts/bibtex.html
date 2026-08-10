@@ -1,0 +1,53 @@
+---
+layout: default
+redesign_2026: true
+---
+
+{%- comment -%} Per-paper permalink page. jekyll-scholar's DetailsGenerator creates one of these per papers.bib entry automatically: this file's mere
+existence at _layouts/bibtex.html activates it (details_layout in _config.yml's scholar block already points here), one page per entry under
+/bibliography/ (details_dir + details_permalink, both already configured), named after the entry's citekey. page.entry.* exposes every bibtex field
+directly (see .claude/rules/schema-invariants.md). Highwire citation_* meta tags for this page are added in _includes/metadata.liquid, gated on
+page.entry existing, so every generated page gets them for free. {%- endcomment -%}
+<div class="post work-detail">
+  <a class="work-detail__back" href="{{ '/publications/' | relative_url }}">&larr; Research</a>
+
+  <span class="work-card__eyebrow">
+    {% include entry-type-label.liquid type=page.type entry_group=page.entry.entry_group %} · {{ page.entry.year }}
+  </span>
+
+  <h1 class="work-detail__title">{{ page.entry.title }}</h1>
+
+  {% if page.entry.author_array %}
+  <p class="work-detail__byline">
+    {%- for author in page.entry.author_array -%} {{- author.first }} {{ author.last -}} {%- unless forloop.last %}, {% endunless -%} {%- endfor -%}
+  </p>
+  {% endif %}
+
+  <p class="work-detail__venue">
+    {%- if page.entry.journal -%} {{ page.entry.journal }} {%- elsif page.entry.institution -%} {{ page.entry.institution }} {%- elsif
+    page.entry.school -%} {{ page.entry.school }} {%- endif -%} {%- if page.entry.volume %}, vol. {{ page.entry.volume }}{% endif -%} {%- if
+    page.entry.number %}, no. {{ page.entry.number }}{% endif -%} {%- if page.entry.pages %}, pp. {{ page.entry.pages }}{% endif -%}
+  </p>
+
+  {% include axis-rule.liquid class="axis-rule--tight" %} {% if page.entry.abstract %}
+  <h2>Abstract</h2>
+  <p class="work-detail__abstract">{{ page.entry.abstract }}</p>
+  {% else %}
+  <p class="work-detail__abstract">{{ page.entry.finding }}</p>
+  {% endif %}
+
+  <div class="work-detail__links">
+    {% if page.entry.pdf %}
+    <a class="btn-cta btn-cta--secondary" href="{{ page.entry.pdf }}" target="_blank" rel="noopener noreferrer">PDF</a>
+    {% endif %} {% if page.entry.website %}
+    <a class="btn-cta btn-cta--secondary" href="{{ page.entry.website }}" target="_blank" rel="noopener noreferrer"> Website </a>
+    {% endif %} {% if page.entry.doi %}
+    <a class="btn-cta btn-cta--secondary" href="https://doi.org/{{ page.entry.doi }}" target="_blank" rel="noopener noreferrer"> DOI </a>
+    {% endif %} {% if page.entry.code %}
+    <a class="btn-cta btn-cta--secondary" href="{{ page.entry.code }}" target="_blank" rel="noopener noreferrer">Code</a>
+    {% endif %}
+  </div>
+
+  <h2>BibTeX</h2>
+  <pre class="work-detail__bibtex"><code>{{ page.entry.bibtex | hideCustomBibtex }}</code></pre>
+</div>

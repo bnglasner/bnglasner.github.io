@@ -39,9 +39,40 @@
   {% endif %}
 </title>
 <meta name="author" content="{{ author_name }}">
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta
+  name="description"
+  content="{% if page.description %}{{ page.description }}{% elsif page.entry.finding %}{{ page.entry.finding }}{% else %}{{ site.description }}{% endif %}"
+>
 {% if page.keywords or site.keywords %}
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+{% endif %}
+
+{% if page.entry %}
+  <!--
+    Google Scholar indexing (Highwire Press tags) — present on every
+    jekyll-scholar-generated permalink page (see _layouts/bibtex.html).
+  -->
+  <meta name="citation_title" content="{{ page.entry.title }}">
+  {% for author in page.entry.author_array %}
+    <meta name="citation_author" content="{{ author.last }}, {{ author.first }}">
+  {% endfor %}
+  {% if page.entry.month %}
+    <meta
+      name="citation_publication_date"
+      content="{{ page.entry.month | append: ' 1, ' | append: page.entry.year | date: '%Y/%m' }}"
+    >
+  {% else %}
+    <meta name="citation_publication_date" content="{{ page.entry.year }}">
+  {% endif %}
+  {% if page.entry.journal %}
+    <meta name="citation_journal_title" content="{{ page.entry.journal }}">
+  {% endif %}
+  {% if page.entry.doi %}
+    <meta name="citation_doi" content="{{ page.entry.doi }}">
+  {% endif %}
+  {% if page.entry.pdf %}
+    <meta name="citation_pdf_url" content="{{ page.entry.pdf }}">
+  {% endif %}
 {% endif %}
 
 {% assign is_blog_post = false %}
@@ -57,7 +88,10 @@
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{% if page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta
+    property="og:description"
+    content="{% if page.description %}{{ page.description }}{% elsif page.entry.finding %}{{ page.entry.finding }}{% else %}{{ site.description }}{% endif %}"
+  >
   {% if page.og_image or site.og_image %}
     <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}
@@ -66,7 +100,10 @@
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta
+    name="twitter:description"
+    content="{% if page.description %}{{ page.description }}{% elsif page.entry.finding %}{{ page.entry.finding }}{% else %}{{ site.description }}{% endif %}"
+  >
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}

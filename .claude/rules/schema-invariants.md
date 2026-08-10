@@ -75,6 +75,10 @@ Every entry uses one of: `@article`, `@techreport`, `@phdthesis`, `@mastersthesi
 
 The `author = {…}` field uses `and` (lowercase, spaces) as the separator between names. Match the convention already in the file ("Last, First", e.g., `Glasner, Ben and Ozimek, Adam`); confirm before adding.
 
+**`finding`** (added in the 2026 redesign, required on every entry regardless of type): one sentence, present tense, plain-language — the work-card anatomy's finding line and the permalink page's fallback when no abstract exists. Must be genuinely sourced (the paper's own abstract, or its institutional landing page) — never fabricated. For the two entries with no locatable source (`glasner2021impact`, `glasnerchinese`), `finding` is a purely descriptive, metadata-only line (topic and institution, not a claimed result) rather than an invented finding — this is the sanctioned exception, not a precedent for skipping sourcing elsewhere.
+
+**`abstract`** (added in the 2026 redesign, optional): a short paraphrased summary — not a verbatim copy of the published abstract — for the per-paper permalink page generated automatically by jekyll-scholar's `DetailsGenerator` (see `_layouts/bibtex.html`; it activates on the presence of that layout file, keyed off `details_layout` in `_config.yml`'s `scholar:` block, no other wiring needed). `bibtex_skip_fields` already excludes `abstract` from the raw "view BibTeX" text dump, so adding it does not clutter the copy-paste citation. Omit rather than fabricate when no real source exists — `finding` alone is required, `abstract` is not.
+
 ## `_data/socials.yml`
 
 Single flat map. Existing keys (do not rename; templates reference them by these names): `cv_pdf`, `email`, `rss_icon`, `scholar_userid`, `github_username`, `linkedin_username`, `x_username`, `bluesky_url`, `instagram_id`, `tiktok_url`, `threads_url`, `substack_url`. The last three use the nested `{ url: <string> }` form because `jekyll-socials` does not natively support those platforms; the about-page "Find me elsewhere" block renders explicit links for each.

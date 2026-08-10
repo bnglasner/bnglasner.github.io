@@ -1,0 +1,24 @@
+{%- comment -%}
+  Shared mono eyebrow type label for a papers.bib entry, used by both
+  _layouts/bib.liquid (listing card) and _layouts/bibtex.html (detail page)
+  so the two never drift apart. Params: type (bibtex entry type), entry_group.
+  Usage: {% include entry-type-label.liquid type=type entry_group=entry.entry_group %}
+{%- endcomment -%}
+{%- case include.type -%}
+  {%- when 'article' -%}
+    PEER-REVIEWED
+  {%- when 'techreport' -%}
+    {%- if include.entry_group == 'working_paper' -%}
+      WORKING PAPER
+    {%- else -%}
+      POLICY REPORT
+    {%- endif -%}
+  {%- when 'phdthesis' -%}
+    DISSERTATION
+  {%- when 'mastersthesis' -%}
+    MASTER'S THESIS
+  {%- when 'misc' -%}
+    SENIOR THESIS
+  {%- else -%}
+    {{- include.type | upcase -}}
+{%- endcase -%}

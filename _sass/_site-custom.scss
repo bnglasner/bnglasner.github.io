@@ -111,47 +111,54 @@ html[data-theme="dark"] body:not(.redesign-2026) {
   max-width: none;
 }
 
-.post .post-title,
-.post .post-title a,
-.post h1,
-.post h2,
-.post h3,
-.post h4,
-.post h5,
-.post h6 {
-  font-family: "EB Garamond", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  // EB Garamond is darker and tighter than the previous Iowan stack;
-  // pull letter-spacing back from -0.02em to -0.012em so headings do
-  // not crowd at the typeface's natural metrics.
-  letter-spacing: -0.012em;
-  font-feature-settings: "kern", "liga", "onum";
-}
+// The .post/.post-title/.post-description rules below style every page
+// using `layout: page` (page.liquid). Scoped to pre-redesign pages only —
+// body.redesign-2026 supplies its own heading font/color in _sass/_system.scss
+// (.work-detail__title etc. and the h1/h2 rules there), the same handoff
+// pattern used for body background/font above.
+body:not(.redesign-2026) {
+  .post .post-title,
+  .post .post-title a,
+  .post h1,
+  .post h2,
+  .post h3,
+  .post h4,
+  .post h5,
+  .post h6 {
+    font-family: "EB Garamond", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    // EB Garamond is darker and tighter than the previous Iowan stack;
+    // pull letter-spacing back from -0.02em to -0.012em so headings do
+    // not crowd at the typeface's natural metrics.
+    letter-spacing: -0.012em;
+    font-feature-settings: "kern", "liga", "onum";
+  }
 
-.post .post-title {
-  font-size: var(--type-display);
-  line-height: var(--type-leading-tight);
-  letter-spacing: var(--type-tracking-display);
-}
+  .post .post-title {
+    font-size: var(--type-display);
+    line-height: var(--type-leading-tight);
+    letter-spacing: var(--type-tracking-display);
+  }
 
-// Everything below the page title sits on the shared body size. Visual
-// hierarchy now comes from family, spacing, case, and weight.
-.post h1,
-.post h2,
-.post h3,
-.post h4,
-.post h5,
-.post h6 {
-  font-size: var(--type-body);
-  line-height: var(--type-leading-snug);
-}
+  // Everything below the page title sits on the shared body size. Visual
+  // hierarchy now comes from family, spacing, case, and weight.
+  .post h1,
+  .post h2,
+  .post h3,
+  .post h4,
+  .post h5,
+  .post h6 {
+    font-size: var(--type-body);
+    line-height: var(--type-leading-snug);
+  }
 
-.post .desc,
-.post .post-description,
-.page-lead {
-  color: var(--global-text-color-light);
-  font-size: var(--type-body);
-  line-height: var(--type-leading-body);
-  max-width: 46rem;
+  .post .desc,
+  .post .post-description,
+  .page-lead {
+    color: var(--global-text-color-light);
+    font-size: var(--type-body);
+    line-height: var(--type-leading-body);
+    max-width: 46rem;
+  }
 }
 
 // Profile image: lift with the standard elevation token and a warmer

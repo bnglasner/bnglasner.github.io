@@ -219,9 +219,13 @@ def check_bib_and_venues() -> None:
         seen_keys.add(citekey)
 
         fields = dict(re.findall(r"(\w+)\s*=\s*\{(.*?)\}\s*,?\s*\n", body, flags=re.DOTALL))
-        for required in ("title", "author", "year"):
+        for required in ("title", "author", "year", "finding"):
             if required not in fields:
                 fail(f"{label}: missing required field `{required}`")
+        if "finding" in fields and not fields["finding"].strip():
+            fail(f"{label}: finding must be non-empty")
+        if "abstract" in fields and not fields["abstract"].strip():
+            fail(f"{label}: abstract must be non-empty if present (omit the field instead of leaving it blank)")
         entry_group = fields.get("entry_group")
         if entry_group and entry_group not in BIB_ENTRY_GROUPS:
             fail(
