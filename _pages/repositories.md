@@ -5,67 +5,109 @@ title: Code
 description: The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.
 nav: true
 nav_order: 4
+redesign_2026: true
 ---
 
-<div class="page-lead">
-  <p>Most of the code and data I produce — anything I write or collaborate on through work — are published on the <a href="https://github.com/EIG-Research">EIG-Research</a> GitHub organization. Personal experiments, side projects, and the source for this site live on my <a href="https://github.com/bnglasner">personal GitHub page</a>.</p>
+<p class="research-intro">
+  Most of the code and data I produce, anything I write or collaborate on through work, is published on the
+  <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">EIG-Research</a>
+  GitHub organization. Personal experiments, side projects, and the source for this site live on my
+  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">personal GitHub page</a>.
+</p>
+
+<h2>Open Research, by Default</h2>
+<p class="measure">
+  I established the open-research standard EIG now uses for its empirical projects. Every analysis, a short memo or
+  a multi-year study, should be readable from raw inputs to final figure, and that expectation now applies across
+  the EIG-Research organization. Any researcher, journalist, or policymaker should be able to open one of these
+  repositories and trace the chain from data to claim.
+</p>
+<p class="measure">
+  I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and
+  documentation practices that make a public repository worth publishing. I intend to carry that commitment forward
+  on every project I touch and across every team I work with.
+</p>
+
+{% include axis-rule.liquid %}
+
+<h2>Recently Updated on EIG-Research</h2>
+<div id="eig-research-repos" class="work-card-grid" data-state="loading">
+  <div class="work-card work-card--policy">
+    <span class="work-card__eyebrow">Loading</span>
+    <p class="work-card__finding">Fetching the five most recently updated repositories from the EIG-Research GitHub organization.</p>
+  </div>
 </div>
+<p class="work-card__meta" style="margin-top: 1rem;">
+  For the full catalog, browse
+  <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">github.com/EIG-Research</a>.
+</p>
 
-<section class="section-block">
-  <h2 class="section-kicker">Open Research, by Default</h2>
-  <p>I established the open-research standard EIG now uses for its empirical projects. Every analysis — a short memo or a multi-year study — should be readable from raw inputs to final figure, and that expectation now applies across the EIG-Research organization. Any researcher, journalist, or policymaker should be able to open one of these repositories and trace the chain from data to claim.</p>
-  <p>I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and documentation practices that make a public repository worth publishing. I intend to carry that commitment forward on every project I touch and across every team I work with.</p>
-</section>
+{% include axis-rule.liquid %}
 
-<section class="section-block">
-  <h2 class="section-kicker">Recently Updated on EIG-Research</h2>
-  <div id="eig-research-repos" class="page-card-grid" data-state="loading">
-    <article class="page-card">
-      <p class="meta-line">Loading</p>
-      <p>Fetching the five most recently updated repositories from the EIG-Research GitHub organization.</p>
-    </article>
+<h2>Personal Research Code</h2>
+<p class="research-intro">
+  Side projects and earlier replication code, on the personal account at
+  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">github.com/bnglasner</a>. The
+  repositories below are research-bearing; experimental forks and infrastructure (the source of this site, course
+  material, third-party plugin forks) are not listed here.
+</p>
+<div class="work-card-grid">
+  <div class="work-card work-card--academic">
+    <span class="work-card__eyebrow">Python</span>
+    <h3 class="work-card__title">
+      <a href="https://github.com/bnglasner/eig-wagesubsidy-policy-sim" target="_blank" rel="noopener noreferrer">
+        eig-wagesubsidy-policy-sim
+      </a>
+    </h3>
+    <p class="work-card__finding">
+      The microsimulation engine behind the 80-80 wage subsidy methods page: combines CPS microdata with
+      PolicyEngine-US household income schedules to estimate eligibility, fiscal cost, and distributional effects.
+    </p>
   </div>
-  <p class="meta-line" style="margin-top: 1rem;">
-    For the full catalog, browse <a href="https://github.com/EIG-Research">github.com/EIG-Research</a>.
-  </p>
-</section>
-
-<section class="section-block">
-  <h2 class="section-kicker">Personal Research Code</h2>
-  <p>Side projects and earlier replication code, on the personal account at <a href="https://github.com/bnglasner">github.com/bnglasner</a>. The repositories below are research-bearing; experimental forks and infrastructure (the source of this site, course material, third-party plugin forks) are not listed here.</p>
-  <div class="page-card-grid">
-    <article class="page-card">
-      <p class="meta-line">Python · 80-80 wage subsidy</p>
-      <h3><a href="https://github.com/bnglasner/eig-wagesubsidy-policy-sim" target="_blank" rel="noopener noreferrer">eig-wagesubsidy-policy-sim</a></h3>
-      <p>The microsimulation engine behind the 80-80 wage subsidy methods page: combines CPS microdata with PolicyEngine-US household income schedules to estimate eligibility, fiscal cost, and distributional effects.</p>
-    </article>
-    <article class="page-card">
-      <p class="meta-line">HTML · Housing affordability</p>
-      <h3><a href="https://github.com/bnglasner/hours-working-for-median-home" target="_blank" rel="noopener noreferrer">hours-working-for-median-home</a></h3>
-      <p>Hours of work required to afford the median home, by metro area and over time.</p>
-    </article>
-    <article class="page-card">
-      <p class="meta-line">HTML · Remote work</p>
-      <h3><a href="https://github.com/bnglasner/telework-ASEC-analysis" target="_blank" rel="noopener noreferrer">telework-ASEC-analysis</a></h3>
-      <p>Telework microdata work merging CPS-ASEC and contemporary remote-work supplements.</p>
-    </article>
-    <article class="page-card">
-      <p class="meta-line">R · Replication</p>
-      <h3><a href="https://github.com/bnglasner/MinimumWage-SelfEmp" target="_blank" rel="noopener noreferrer">MinimumWage-SelfEmp</a></h3>
-      <p>Replication code for "The Minimum Wage, Self-Employment, and the Online Gig Economy," <i>Journal of Labor Economics</i>, 2023.</p>
-    </article>
-    <article class="page-card">
-      <p class="meta-line">HTML · QCEW</p>
-      <h3><a href="https://github.com/bnglasner/QCEW" target="_blank" rel="noopener noreferrer">QCEW</a></h3>
-      <p>Summary tooling and visualizations built on the BLS Quarterly Census of Employment and Wages.</p>
-    </article>
-    <article class="page-card">
-      <p class="meta-line">Stata · Replication</p>
-      <h3><a href="https://github.com/bnglasner/CTC-MentalHealth" target="_blank" rel="noopener noreferrer">CTC-MentalHealth</a></h3>
-      <p>Replication code for "No Evidence the Child Tax Credit Expansion Had an Effect on the Well-Being and Mental Health of Parents," <i>Health Affairs</i>, 2022.</p>
-    </article>
+  <div class="work-card work-card--academic">
+    <span class="work-card__eyebrow">HTML</span>
+    <h3 class="work-card__title">
+      <a href="https://github.com/bnglasner/hours-working-for-median-home" target="_blank" rel="noopener noreferrer">
+        hours-working-for-median-home
+      </a>
+    </h3>
+    <p class="work-card__finding">Hours of work required to afford the median home, by metro area and over time.</p>
   </div>
-</section>
+  <div class="work-card work-card--academic">
+    <span class="work-card__eyebrow">HTML</span>
+    <h3 class="work-card__title">
+      <a href="https://github.com/bnglasner/telework-ASEC-analysis" target="_blank" rel="noopener noreferrer">telework-ASEC-analysis</a>
+    </h3>
+    <p class="work-card__finding">Telework microdata work merging CPS-ASEC and contemporary remote-work supplements.</p>
+  </div>
+  <div class="work-card work-card--academic">
+    <span class="work-card__eyebrow">R</span>
+    <h3 class="work-card__title">
+      <a href="https://github.com/bnglasner/MinimumWage-SelfEmp" target="_blank" rel="noopener noreferrer">MinimumWage-SelfEmp</a>
+    </h3>
+    <p class="work-card__finding">
+      Replication code for "The Minimum Wage, Self-Employment, and the Online Gig Economy," Journal of Labor
+      Economics, 2023.
+    </p>
+  </div>
+  <div class="work-card work-card--academic">
+    <span class="work-card__eyebrow">HTML</span>
+    <h3 class="work-card__title">
+      <a href="https://github.com/bnglasner/QCEW" target="_blank" rel="noopener noreferrer">QCEW</a>
+    </h3>
+    <p class="work-card__finding">Summary tooling and visualizations built on the BLS Quarterly Census of Employment and Wages.</p>
+  </div>
+  <div class="work-card work-card--academic">
+    <span class="work-card__eyebrow">Stata</span>
+    <h3 class="work-card__title">
+      <a href="https://github.com/bnglasner/CTC-MentalHealth" target="_blank" rel="noopener noreferrer">CTC-MentalHealth</a>
+    </h3>
+    <p class="work-card__finding">
+      Replication code for "No Evidence the Child Tax Credit Expansion Had an Effect on the Well-Being and Mental
+      Health of Parents," Health Affairs, 2022.
+    </p>
+  </div>
+</div>
 
 <script>
   (function () {
@@ -103,13 +145,13 @@ nav_order: 4
     function renderError(message) {
       container.setAttribute('data-state', 'error');
       container.innerHTML =
-        '<article class="page-card">' +
-        '<p class="meta-line">Could not load</p>' +
-        '<p>' +
+        '<div class="work-card work-card--policy">' +
+        '<span class="work-card__eyebrow">Could not load</span>' +
+        '<p class="work-card__finding">' +
         escapeHtml(message) +
         ' Browse the organization directly at ' +
-        '<a href="https://github.com/EIG-Research">github.com/EIG-Research</a>.</p>' +
-        '</article>';
+        '<a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">github.com/EIG-Research</a>.</p>' +
+        '</div>';
     }
 
     function renderRepos(repos) {
@@ -119,31 +161,25 @@ nav_order: 4
       }
       var cards = repos
         .map(function (repo) {
-          var meta = [];
-          if (repo.language) {
-            meta.push(escapeHtml(repo.language));
-          }
+          var eyebrow = escapeHtml(repo.language) || 'Repository';
           var pushed = formatDate(repo.pushed_at);
-          if (pushed) {
-            meta.push('updated ' + escapeHtml(pushed));
-          }
-          var description = repo.description
-            ? escapeHtml(repo.description)
-            : '<em>No description provided.</em>';
+          var meta = pushed ? 'Updated ' + escapeHtml(pushed) : '';
+          var description = repo.description ? escapeHtml(repo.description) : 'No description provided.';
           return (
-            '<article class="page-card">' +
-            '<p class="meta-line">' +
-            (meta.join(' &middot; ') || 'Repository') +
-            '</p>' +
-            '<h3><a href="' +
+            '<div class="work-card work-card--policy">' +
+            '<span class="work-card__eyebrow">' +
+            eyebrow +
+            '</span>' +
+            '<h3 class="work-card__title"><a href="' +
             escapeHtml(repo.html_url) +
-            '">' +
+            '" target="_blank" rel="noopener noreferrer">' +
             escapeHtml(repo.full_name) +
             '</a></h3>' +
-            '<p>' +
+            '<p class="work-card__finding">' +
             description +
             '</p>' +
-            '</article>'
+            (meta ? '<div class="work-card__meta"><span>' + meta + '</span></div>' : '') +
+            '</div>'
           );
         })
         .join('');
