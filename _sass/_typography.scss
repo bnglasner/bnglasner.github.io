@@ -58,17 +58,26 @@ table {
   }
 }
 
-a,
-table.table a {
-  color: var(--global-theme-color);
-
-  &:hover {
+// table.table a exists because Bootstrap tables (e.g. the CV's General
+// Information table, which carries both .table and .table-cv) otherwise
+// out-specificity a bare `a` rule. Pre-redesign only — _sass/_system.scss's
+// :where(body.redesign-2026 .site-main) a intentionally stays at (0,0,1)
+// so any component-specific link color can override it without a fight;
+// scoping this away is what makes that possible instead of a second
+// specificity contest here.
+body:not(.redesign-2026) {
+  a,
+  table.table a {
     color: var(--global-theme-color);
-    text-decoration: underline;
-  }
 
-  &:hover:after :not(.nav-item.dropdown) {
-    width: 100%;
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: underline;
+    }
+
+    &:hover:after :not(.nav-item.dropdown) {
+      width: 100%;
+    }
   }
 }
 

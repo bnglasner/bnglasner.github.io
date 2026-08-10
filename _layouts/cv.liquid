@@ -30,9 +30,9 @@ layout: default
     {{ content }}
 
     {% if site.data.cv_assets and site.data.cv_assets.variants %}
-      <div class="mt-3 mb-4 d-flex flex-wrap gap-2">
+      <div class="cv__pdf-variants">
         {% for variant in site.data.cv_assets.variants %}
-          <a class="btn btn-sm z-depth-0 mr-2 mb-2" href="{{ variant.pdf | relative_url }}" target="_blank" rel="noopener noreferrer">
+          <a class="btn-cta btn-cta--secondary" href="{{ variant.pdf | relative_url }}" target="_blank" rel="noopener noreferrer">
             {{ variant.label }}
           </a>
         {% endfor %}

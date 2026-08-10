@@ -626,3 +626,81 @@ body.redesign-2026 {
     border-left: 2px solid var(--accent-teal);
   }
 }
+
+// ---------------------------------------------------------------------------
+// CV page (_layouts/cv.liquid) — keeps cv.liquid's existing Bootstrap
+// structure (.card, .table, .list-group-item) since that machinery already
+// handles five different section shapes (map/time_table/nested_list/list/
+// default) correctly; this reskins it rather than replacing it, same
+// approach as the axis-rule/card-anatomy work everywhere else.
+// ---------------------------------------------------------------------------
+
+body.redesign-2026 {
+  .cv__pdf-variants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0 2rem;
+  }
+
+  .cv .card {
+    background: var(--paper-bg);
+    border: 1px solid var(--paper-hairline-soft);
+    border-radius: 4px;
+    box-shadow: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .cv .card:hover {
+    border-color: var(--paper-hairline);
+    transform: none;
+  }
+
+  .cv .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--paper-hairline-soft);
+  }
+
+  .cv h3 {
+    font-size: 1.05rem;
+  }
+
+  .cv .text-muted {
+    color: var(--paper-muted) !important;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+
+  .cv table.table-cv td {
+    color: var(--paper-text);
+    border-color: var(--paper-hairline-soft);
+    padding: 0.5rem 0.75rem 0.5rem 0;
+  }
+
+  // Explicit, not relying on the generic :where(.site-main) a fallback —
+  // MDB's table styles reach this link with enough specificity that the
+  // zero-specificity :where() rule loses even after the old brand-color
+  // rule was scoped away. Same reasoning as .work-card__meta a elsewhere:
+  // a component in a deeply-nested context gets its own direct rule.
+  .cv table.table-cv td a {
+    color: var(--accent-teal);
+  }
+
+  .cv .list-group-item {
+    background: transparent;
+    border-color: var(--paper-hairline-soft);
+    color: var(--paper-text);
+    font-size: 0.95rem;
+    line-height: var(--line-height-body);
+  }
+
+  .cv .list-group-item a {
+    color: var(--accent-teal);
+  }
+
+  .cv .anchor {
+    scroll-margin-top: 80px;
+  }
+}

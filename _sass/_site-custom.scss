@@ -278,12 +278,14 @@ html[data-theme="dark"] {
   // Brighten in-card links so they meet WCAG AA contrast (>= 4.5:1) on
   // the dark navy card background. The default --global-theme-color
   // (#f4a742) only reaches ~4.12:1 on #194f8b, which axe-core flags.
-  .cv .card a,
+  // Pre-redesign pages only — _sass/_system.scss has the .redesign-2026
+  // equivalent (same handoff pattern used throughout this file).
+  body:not(.redesign-2026) .cv .card a,
   .publications .bibliography li a {
     color: #ffc680;
   }
 
-  .cv .card a:hover,
+  body:not(.redesign-2026) .cv .card a:hover,
   .publications .bibliography li a:hover {
     color: #ffd9a8;
   }
@@ -291,7 +293,7 @@ html[data-theme="dark"] {
   // Bootstrap's .text-muted (#6c757d) drops to 1.76:1 on the dark navy
   // card background; force a lighter muted shade in dark mode for
   // CV institution/date lines and similar muted text inside cards.
-  .cv .card .text-muted,
+  body:not(.redesign-2026) .cv .card .text-muted,
   .publications .bibliography li .text-muted {
     color: #c0d3e8 !important;
   }
@@ -443,8 +445,9 @@ html[data-theme="dark"] {
 
 // CV cards and bibliography entries: pull from the same elevation token
 // system so the publications page reads as a list of cards rather than
-// a flat dump.
-.cv .card,
+// a flat dump. .cv .card rules are pre-redesign only — _sass/_system.scss
+// has the .redesign-2026 equivalent.
+body:not(.redesign-2026) .cv .card,
 .publications .bibliography li,
 .publications ol.bibliography li {
   border-color: var(--surface-border);
@@ -456,7 +459,7 @@ html[data-theme="dark"] {
     border-color 0.18s var(--motion-ease);
 }
 
-.cv .card:hover,
+body:not(.redesign-2026) .cv .card:hover,
 .publications .bibliography li:hover,
 .publications ol.bibliography li:hover {
   transform: translateY(-1px);
