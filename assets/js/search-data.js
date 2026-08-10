@@ -1,53 +1,46 @@
 const ninja = document.querySelector("ninja-keys");
 
 ninja.data = [{
-    id: "nav-about",
-    title: "about",
+    id: "nav-home",
+    title: "Home",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-cv",
-        title: "CV",
-        description: "Full academic and policy CV maintained from repo-local structured data.",
-        section: "Navigation",
-        handler: () => {
-          window.location.href = "/cv/";
-        },
-      },{id: "nav-publications",
-        title: "publications",
+  },{id: "nav-research",
+        title: "Research",
         description: "Peer-reviewed research, working papers, and dissertation or thesis research.",
         section: "Navigation",
         handler: () => {
           window.location.href = "/publications/";
         },
-      },{id: "nav-writing",
-        title: "writing",
+      },{id: "nav-policy-writing",
+        title: "Policy writing",
         description: "Policy reports, essays, and public-facing commentary.",
         section: "Navigation",
         handler: () => {
           window.location.href = "/writing/";
         },
       },{id: "nav-media",
-        title: "media",
+        title: "Media",
         description: "Verified interviews, broadcast appearances, podcasts, and quoted coverage.",
         section: "Navigation",
         handler: () => {
           window.location.href = "/media/";
         },
-      },{id: "nav-code-data",
-        title: "code + data",
+      },{id: "nav-code",
+        title: "Code",
         description: "The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.",
         section: "Navigation",
         handler: () => {
           window.location.href = "/repositories/";
         },
-      },{id: "nav-policy",
-        title: "policy",
-        description: "Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal.",
+      },{id: "nav-cv",
+        title: "CV",
+        description: "Full academic and policy CV maintained from repo-local structured data.",
         section: "Navigation",
         handler: () => {
-          window.location.href = "/policy/";
+          window.location.href = "/cv/";
         },
       },{
       id: "report-how-to-end-low-wage-work-forever-an-80-80-wage-subsidy-proposal",
