@@ -9,6 +9,7 @@
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
+      "Bash(cp node_modules/@fontsource:*)",
       "WebFetch(domain:api.crossref.org)",
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:eig.org)",

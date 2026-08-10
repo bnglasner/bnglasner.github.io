@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /media/
-title: media
+title: Media
 description: Verified interviews, broadcast appearances, podcasts, and quoted coverage.
 nav: true
-nav_order: 5
+nav_order: 3
 toc:
   sidebar: right
 ---

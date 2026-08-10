@@ -132,6 +132,38 @@
     width: v.$back-to-top-width;
     z-index: v.$back-to-top-z-index;
   }
+
+  // ---------------------------------------------------------------------
+  // 2026 redesign tokens. Additive alongside the --global-*/--brand-*
+  // set above: pages are being migrated to this system one at a time
+  // (see docs/audits — the redesign ships one finished page per commit),
+  // so both token sets stay live until every consumer of the old one is
+  // gone. Two accents only; every value here is contrast-verified against
+  // --paper-bg (see the commit message for ratios) — do not add a third
+  // hue or reintroduce a color outside this set.
+  --paper-bg: #fcfcfa;
+  --paper-text: #1a1f24;
+  --paper-hairline: #c9c6bc;
+  --paper-hairline-soft: #d8d6ce;
+  --paper-muted: #4a5158;
+  --paper-muted-soft: #6b7178;
+  --accent-teal: #116a5f; // primary: academic / peer-reviewed
+  --accent-amber: #9c610d; // secondary: policy / media (darkened from the
+  // #B97318 design brief — that value is 3.70:1 on --paper-bg, below the
+  // 4.5:1 AA floor for normal text; this hue at this depth is 4.95:1)
+
+  --font-serif: "Newsreader Variable", "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Public Sans Variable", "Public Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  --measure: 68ch;
+  --font-size-hero: clamp(2.1rem, 1.7rem + 1.8vw, 3.1rem);
+  --font-size-h2: 1.75rem;
+  --font-size-card-title: 1.375rem;
+  --font-size-body: 1.0625rem; // 17px
+  --line-height-body: 1.6;
+
+  --focus-ring: 0 0 0 3px var(--paper-bg), 0 0 0 5px var(--accent-teal);
 }
 
 @media (max-width: 576px) {
@@ -184,6 +216,26 @@ html[data-theme="dark"] {
   --surface-elev-2: 0 16px 30px rgba(0, 0, 0, 0.24);
   --surface-elev-3: 0 22px 42px rgba(0, 0, 0, 0.32);
   --surface-accent: var(--brand-golden-hour);
+
+  // 2026 redesign tokens, dark complement. --paper-bg/--paper-text simply
+  // swap (same two neutrals, same design language); the two accents get
+  // brighter variants because the light-mode values are too dark to clear
+  // 4.5:1 against this navy-ink background (--accent-teal at #116a5f is
+  // only 2.57:1 here). Ratios verified against --paper-bg below:
+  //   paper-text on paper-bg:  16.16:1
+  //   accent-teal on paper-bg:  5.52:1
+  //   accent-amber on paper-bg: 5.09:1
+  //   paper-muted on paper-bg:  7.24:1
+  //   paper-muted-soft on paper-bg: 5.24:1
+  --paper-bg: #1a1f24;
+  --paper-text: #fcfcfa;
+  --paper-hairline: rgba(252, 252, 250, 0.16);
+  --paper-hairline-soft: rgba(252, 252, 250, 0.1);
+  --paper-muted: #a6acb2;
+  --paper-muted-soft: #899299;
+  --accent-teal: #2ba694;
+  --accent-amber: #c97d1d;
+  --focus-ring: 0 0 0 3px var(--paper-bg), 0 0 0 5px var(--accent-teal);
 
   .only-light {
     display: none;

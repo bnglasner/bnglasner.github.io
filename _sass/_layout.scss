@@ -6,8 +6,6 @@
 
 body {
   padding-bottom: 70px;
-  color: var(--global-text-color);
-  background-color: var(--global-bg-color);
 
   h1,
   h2,
@@ -17,6 +15,13 @@ body {
   h6 {
     scroll-margin-top: 66px;
   }
+}
+
+// Pages not yet migrated to the 2026 redesign keep the old palette here;
+// body.redesign-2026 (see _sass/_system.scss) supplies its own.
+body:not(.redesign-2026) {
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
 }
 
 body.fixed-top-nav {

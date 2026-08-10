@@ -2,7 +2,10 @@
  * Site-specific presentation layer
  ******************************************************************************/
 
-body {
+// Pre-redesign pages only (see _sass/_system.scss for body.redesign-2026,
+// which supplies its own background/font-family and wins on migrated pages
+// via :not(.redesign-2026) here rather than a specificity fight).
+body:not(.redesign-2026) {
   background:
     radial-gradient(circle at top left, rgba(244, 167, 66, 0.14), transparent 28%),
     radial-gradient(circle at top right, rgba(25, 79, 139, 0.14), transparent 24%), var(--global-bg-color);
@@ -26,7 +29,7 @@ body {
 // Dark mode: the warm ember + cool navy radial gradients bleed awkwardly
 // against the navy bg, so swap in a softer single-source wash that keeps
 // the upper canvas alive without pulling against the navy.
-html[data-theme="dark"] body {
+html[data-theme="dark"] body:not(.redesign-2026) {
   background:
     radial-gradient(circle at 12% -10%, rgba(244, 167, 66, 0.1), transparent 32%),
     radial-gradient(circle at 88% -8%, rgba(71, 154, 128, 0.1), transparent 30%), var(--global-bg-color);

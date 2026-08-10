@@ -34,15 +34,32 @@
 <link defer rel="stylesheet" href="{{ '/assets/css/scholar-icons.css' | relative_url | bust_file_cache }}">
 
 <!--
-  Preconnect to the bunny.net font CDN so the font CSS request and
-  the WOFF2 fetch can begin in parallel with the main HTML parse.
-  Saves ~80–150ms on first paint.
+  Self-hosted variable fonts (2026 redesign) — Newsreader, Public Sans,
+  IBM Plex Mono. No remote font request: replaces the former fonts.bunny.net
+  link entirely. Preload only the three fonts needed for above-the-fold text
+  on first paint (serif headline, sans body, mono meta); everything else the
+  @font-face rules in _sass/_new-fonts.scss declare is fetched on demand.
 -->
-<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
 <link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ site.third_party_libraries.google_fonts.url.fonts }}"
+  rel="preload"
+  href="{{ '/assets/fonts/newsreader/newsreader-latin-wght-normal.woff2' | relative_url }}"
+  as="font"
+  type="font/woff2"
+  crossorigin
+>
+<link
+  rel="preload"
+  href="{{ '/assets/fonts/public-sans/public-sans-latin-wght-normal.woff2' | relative_url }}"
+  as="font"
+  type="font/woff2"
+  crossorigin
+>
+<link
+  rel="preload"
+  href="{{ '/assets/fonts/ibm-plex-mono/ibm-plex-mono-latin-400-normal.woff2' | relative_url }}"
+  as="font"
+  type="font/woff2"
+  crossorigin
 >
 
 <!-- Code Syntax Highlighting -->

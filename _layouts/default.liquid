@@ -16,12 +16,21 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body
+    class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %} {% if page.redesign_2026 %}redesign-2026{% endif %}"
+  >
+    <!--
+      Skip link: 2026 redesign quality-floor requirement. Sitewide since
+      it costs nothing on pages not yet migrated and every page shares the
+      same #main-content target below.
+    -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <!-- Header -->
     {% include header.liquid %}
 
     <!-- Content -->
-    <div class="container mt-5" role="main">
+    <div class="container mt-5 site-main" role="main" id="main-content">
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">

@@ -1,10 +1,9 @@
 ---
 layout: page
 permalink: /policy/
-title: policy
+title: Policy
 description: Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal.
-nav: true
-nav_order: 7
+nav: false
 toc:
   sidebar: right
 ---

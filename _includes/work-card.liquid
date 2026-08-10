@@ -1,0 +1,43 @@
+{% comment %}
+  Shared card anatomy for every "work" listing on the site (home selected
+  work, research, policy writing, media): mono eyebrow -> serif title ->
+  sans finding line -> optional mono metadata row. Left border 3px in the
+  category color (teal = academic/peer-reviewed, amber = policy/media).
+
+  The container is a <div>, not an <a>, because the metadata row is allowed
+  to hold its own links (PDF / code / BibTeX) — nesting an <a> inside an <a>
+  is invalid HTML, so the title itself carries the primary link instead.
+
+  Params:
+    url      - required. Title links here.
+    category - "academic" (teal) or "policy" (amber).
+    eyebrow  - mono eyebrow text, e.g. "PEER-REVIEWED · 2024".
+    title    - serif technical title (plain text or markdown-safe HTML).
+    finding  - sans plain-language finding line.
+    meta     - optional raw HTML for the metadata row (venue, coauthors,
+               PDF/code/BibTeX links). May contain its own <a> tags.
+    external - optional. Set true if `url` leaves the site (adds
+               rel="noopener noreferrer" and target="_blank").
+
+  Usage:
+    {% include work-card.liquid url=paper.url category="academic"
+       eyebrow="PEER-REVIEWED · 2024" title=paper.title finding=paper.finding %}
+{% endcomment %}
+<div class="work-card work-card--{{ include.category }}">
+  <span class="work-card__eyebrow">{{ include.eyebrow }}</span>
+  <h3 class="work-card__title">
+    <a
+      href="{{ include.url }}"
+      {% if include.external %}
+        target="_blank"
+        rel="noopener noreferrer"
+      {% endif %}
+    >
+      {{- include.title -}}
+    </a>
+  </h3>
+  <p class="work-card__finding">{{ include.finding }}</p>
+  {% if include.meta %}
+    <div class="work-card__meta">{{ include.meta }}</div>
+  {% endif %}
+</div>

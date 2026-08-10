@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
+title: Research
 description: Peer-reviewed research, working papers, and dissertation or thesis research.
 nav: true
-nav_order: 3
+nav_order: 1
 ---
 
 This page covers the formal research record: peer-reviewed publications, working papers, and dissertation or thesis research. Policy reports, essays, and commentary are collected separately on the [writing]({{ '/writing/' | relative_url }}) page.

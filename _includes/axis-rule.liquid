@@ -1,0 +1,35 @@
+{% comment %}
+  Axis rule: the site's signature divider — a 1px hairline with small tick
+  marks, like the axis of a chart. Used under the nav, between major page
+  sections, and above the footer. Purely decorative (aria-hidden); color
+  comes from `currentColor` so it follows the `color` set on `.axis-rule`
+  (see _sass/_system.scss), which already tracks light/dark mode via the
+  --paper-hairline token.
+
+  Usage: {% include axis-rule.liquid %}
+         {% include axis-rule.liquid class="axis-rule--tight" %}
+{% endcomment %}
+<div class="axis-rule {{ include.class }}" role="separator" aria-hidden="true">
+  <svg viewBox="0 0 1000 16" preserveAspectRatio="none" focusable="false">
+    <line x1="0" y1="8" x2="1000" y2="8" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"></line>
+    {% for i in (0..40) %}
+      {% assign x = i | times: 25 %}
+      {% assign tick_top = 5 %}
+      {% assign tick_bottom = 11 %}
+      {% assign remainder = i | modulo: 5 %}
+      {% if remainder == 0 %}
+        {% assign tick_top = 3 %}
+        {% assign tick_bottom = 13 %}
+      {% endif %}
+      <line
+        x1="{{ x }}"
+        y1="{{ tick_top }}"
+        x2="{{ x }}"
+        y2="{{ tick_bottom }}"
+        stroke="currentColor"
+        stroke-width="1"
+        vector-effect="non-scaling-stroke"
+      ></line>
+    {% endfor %}
+  </svg>
+</div>

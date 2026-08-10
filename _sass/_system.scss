@@ -1,0 +1,418 @@
+/*******************************************************************************
+ * 2026 redesign — shared system styles.
+ *
+ * Scoping strategy: this file is loaded last (see assets/css/main.scss), so
+ * anything here wins the cascade over the pre-redesign partials above it.
+ * Nav, footer, the axis rule, and focus rings are sitewide chrome with no
+ * "old version" worth preserving, so they apply unscoped, immediately, on
+ * every page. Base element rules that WOULD bleed into pages not yet
+ * migrated (body font/color, heading font, link color) are scoped under
+ * `.redesign-2026`, a class the layout only adds when a page's front matter
+ * sets `redesign_2026: true` — i.e. once that page has actually been
+ * rebuilt. New component classes (.work-card, .hero-figure, .site-eyebrow,
+ * etc.) are new names with no old-page collision risk, so they are also
+ * unscoped.
+ ******************************************************************************/
+
+// ---------------------------------------------------------------------------
+// Skip link + focus rings — sitewide accessibility floor, not a "look".
+// ---------------------------------------------------------------------------
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  z-index: 1100;
+  padding: 0.6rem 1rem;
+  background: var(--paper-bg);
+  color: var(--paper-text);
+  border: 1px solid var(--paper-hairline);
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: top 0.15s ease;
+
+  &:focus {
+    top: 1rem;
+  }
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 2px;
+}
+
+// Bootstrap sets `.btn:focus`/`.form-control:focus` box-shadows of its own;
+// make sure the redesign's ring wins for the interactive elements it styles.
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+// ---------------------------------------------------------------------------
+// Axis rule — the signature divider (see _includes/axis-rule.liquid).
+// ---------------------------------------------------------------------------
+
+.axis-rule {
+  display: block;
+  width: 100%;
+  height: 16px;
+  margin: 2.5rem 0;
+  color: var(--paper-hairline);
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.axis-rule--tight {
+  margin: 1.25rem 0;
+}
+
+header .axis-rule {
+  margin: 0;
+  color: var(--paper-hairline-soft);
+}
+
+footer .axis-rule {
+  margin: 0 0 1.5rem;
+}
+
+// ---------------------------------------------------------------------------
+// Reduced motion — the sitewide motion budget is exactly one animation
+// (the hero figure's draw-on-load). Anything else that ever gets a
+// transition in this file is a trivial hover/focus affordance, which
+// prefers-reduced-motion does not need to strip.
+// ---------------------------------------------------------------------------
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Work-card anatomy — identical everywhere a piece of work is listed:
+// mono eyebrow -> serif title -> sans finding line -> optional mono meta
+// row. Left border 3px in the category color (teal = academic, amber =
+// policy/media). New class names, safe to ship unscoped.
+// ---------------------------------------------------------------------------
+
+.work-card-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 1.5rem 0;
+}
+
+.work-card {
+  height: 100%;
+  padding: 1.1rem 1.3rem 1.3rem;
+  background: var(--paper-bg);
+  border: 1px solid var(--paper-hairline-soft);
+  border-left: 3px solid var(--card-accent, var(--accent-teal));
+  border-radius: 4px;
+  transition: border-color 0.15s ease;
+}
+
+.work-card:hover {
+  border-color: var(--paper-hairline);
+  border-left-color: var(--card-accent, var(--accent-teal));
+}
+
+.work-card--academic {
+  --card-accent: var(--accent-teal);
+}
+
+.work-card--policy {
+  --card-accent: var(--accent-amber);
+}
+
+.work-card__eyebrow {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--accent-teal));
+  font-variant-numeric: tabular-nums;
+}
+
+.work-card__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-card-title);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--paper-text);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.15s ease;
+  }
+
+  a:hover,
+  a:focus-visible {
+    background-size: 100% 1px;
+  }
+}
+
+.work-card__finding {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: var(--line-height-body);
+  color: var(--paper-muted);
+}
+
+.work-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.7rem;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--paper-muted-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.work-card__meta a {
+  color: var(--paper-muted-soft);
+  text-decoration-color: var(--paper-hairline);
+  text-underline-offset: 0.15em;
+}
+
+.work-card__meta a:hover {
+  color: var(--card-accent, var(--accent-teal));
+  text-decoration-color: currentColor;
+}
+
+// ---------------------------------------------------------------------------
+// Hero figure — the sitewide motion budget's one animation: the treatment
+// line draws on load via stroke-dashoffset, disabled entirely under
+// prefers-reduced-motion.
+// ---------------------------------------------------------------------------
+
+.hero-figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.hero-figure__line {
+  stroke-dasharray: var(--line-length, 1000);
+  stroke-dashoffset: var(--line-length, 1000);
+  animation: hero-figure-draw 1.6s ease-out 0.2s forwards;
+}
+
+.hero-figure__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--paper-muted-soft);
+  letter-spacing: 0.04em;
+}
+
+.hero-figure__label--teal {
+  fill: var(--accent-teal);
+  font-weight: 500;
+}
+
+.hero-figure__label--amber {
+  fill: var(--accent-amber);
+  font-weight: 500;
+}
+
+@keyframes hero-figure-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-figure__line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Base element rules, scoped to migrated pages only.
+// ---------------------------------------------------------------------------
+
+body.redesign-2026 {
+  background: var(--paper-bg);
+  color: var(--paper-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    color: var(--paper-text);
+    font-weight: 500;
+  }
+
+  p,
+  li,
+  span,
+  div {
+    color: inherit;
+  }
+
+  .measure {
+    max-width: var(--measure);
+  }
+}
+
+// Generic in-content link color for migrated pages, scoped to .site-main
+// so it doesn't leak into header/footer (shared chrome with their own
+// already-correct link colors in _navbar.scss/_footer.scss — both are DOM
+// siblings of .site-main inside body). The gate is wrapped in :where() so
+// it contributes zero specificity: the effective selector is just `a`
+// (0,0,1), which any component rule (.btn-cta--primary, .work-card__title
+// a, etc. — all >= 0,1,0) naturally outranks with no exclusion list to
+// maintain and no specificity arms race.
+:where(body.redesign-2026 .site-main) a {
+  color: var(--accent-teal);
+
+  &:hover {
+    color: var(--accent-teal);
+    text-decoration-color: currentColor;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Home page.
+// ---------------------------------------------------------------------------
+
+.home-hero {
+  padding: 2.5rem 0 1rem;
+}
+
+.site-eyebrow {
+  display: block;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper-muted);
+}
+
+.home-hero__headline {
+  max-width: 22ch;
+  margin-bottom: 1.25rem;
+  font-size: var(--font-size-hero);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.home-hero__description {
+  max-width: 58ch;
+  margin-bottom: 1.75rem;
+  font-size: 1.15rem;
+  line-height: var(--line-height-body);
+  color: var(--paper-muted);
+}
+
+.home-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.3rem;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn-cta--primary {
+  background: var(--accent-teal);
+  color: var(--paper-bg);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--accent-teal);
+    color: var(--paper-bg);
+    opacity: 0.88;
+  }
+}
+
+.btn-cta--secondary {
+  background: transparent;
+  color: var(--paper-text);
+  border-color: var(--paper-hairline);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+  }
+}
+
+.home-note {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.home-note__photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--paper-hairline);
+}
+
+.home-note__text {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--paper-muted);
+  line-height: 1.4;
+}
+
+.home-selected-work h2 {
+  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 576px) {
+  .home-hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

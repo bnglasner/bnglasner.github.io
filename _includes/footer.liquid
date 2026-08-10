@@ -18,13 +18,53 @@
     </div>
   </footer>
 {% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
-    {% if site.newsletter.enabled %}
-      {% include newsletter.liquid %}
-    {% endif %}
+  <footer class="sticky-bottom" role="contentinfo">
+    {% include axis-rule.liquid %}
 
     <div class="container">
-      {{ footer_contents }}
+      <div class="site-footer__links">
+        <a href="mailto:{{ site.data.socials.email }}" aria-label="Email {{ site.first_name }} {{ site.last_name }}">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        </a>
+        <a
+          href="https://x.com/{{ site.data.socials.x_username }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ site.first_name }} {{ site.last_name }} on X"
+        >
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ site.first_name }} {{ site.last_name }} on LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a
+          href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ site.first_name }} {{ site.last_name }} on Google Scholar"
+        >
+          <i class="fa-brands fa-google-scholar" aria-hidden="true"></i>
+        </a>
+        <a
+          href="https://github.com/{{ site.data.socials.github_username }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ site.first_name }} {{ site.last_name }} on GitHub"
+        >
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      {% if site.newsletter.enabled %}
+        {% include newsletter.liquid %}
+      {% endif %}
+
+      <div class="site-footer__copyright">{{ footer_contents }}</div>
     </div>
   </footer>
 {% endif %}

@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /repositories/
-title: code + data
+title: Code
 description: The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.
 nav: true
-nav_order: 6
+nav_order: 4
 ---
 
 <div class="page-lead">

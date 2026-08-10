@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /writing/
-title: writing
+title: Policy writing
 description: Policy reports, essays, and public-facing commentary.
 nav: true
-nav_order: 4
+nav_order: 2
 ---
 
 <div class="page-lead">

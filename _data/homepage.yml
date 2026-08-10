@@ -1,0 +1,8 @@
+# The homepage's one personal note (headshot + this line), per the 2026
+# redesign's negative-space principle: exactly one such note, sourced from
+# data so it stays current without touching page templates. Deliberately
+# conservative and sourced from the current-role description already in
+# _data/cv.yml rather than a specific in-progress claim nobody but Ben can
+# verify — update the line itself whenever what he's actually doing changes.
+currently_working_on: "Shaping EIG's research pipeline on labor markets, place-based policy, and retirement security — from framing new questions to publication-ready analysis."
+currently_working_on_updated: 2026-08-10

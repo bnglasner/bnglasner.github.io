@@ -181,7 +181,20 @@ def check_socials() -> None:
             fail(f"socials.yml {key}: must be a mapping with an absolute `url` (nested form)")
 
 
-# 4) papers.bib <-> venues.yml abbr cross-check, plus basic bib field checks
+# 4) _data/homepage.yml
+def check_homepage() -> None:
+    data = load_yaml(DATA / "homepage.yml")
+    if not isinstance(data, dict):
+        fail("homepage.yml: did not parse to a mapping")
+        return
+    note = data.get("currently_working_on")
+    if not isinstance(note, str) or not note.strip():
+        fail("homepage.yml: currently_working_on must be a non-empty string")
+    if not is_iso_date(data.get("currently_working_on_updated")):
+        fail("homepage.yml: currently_working_on_updated must be an ISO 8601 date (YYYY-MM-DD)")
+
+
+# 5) papers.bib <-> venues.yml abbr cross-check, plus basic bib field checks
 def check_bib_and_venues() -> None:
     venues = load_yaml(DATA / "venues.yml")
     venue_keys = set(venues.keys()) if isinstance(venues, dict) else set()
@@ -222,11 +235,12 @@ def check_bib_and_venues() -> None:
             )
 
 
-# 5) run everything
+# 6) run everything
 def main() -> int:
     check_writing()
     check_media_page()
     check_socials()
+    check_homepage()
     check_bib_and_venues()
 
     if failures:
