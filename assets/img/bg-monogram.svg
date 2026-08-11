@@ -7,9 +7,13 @@
     live <text> element would silently fall back to a system serif. Do not
     convert this back to <text>.
 
-    Colors are the 2026 design tokens (--paper-text / --accent-teal) inlined,
+    Colors are the 2026 design tokens (paper-text and accent-teal) inlined,
     with the dark-mode complement behind prefers-color-scheme so the mark
     inverts in dark browser chrome instead of disappearing.
+
+    Note: this is an XML comment, so it must never contain a double hyphen.
+    Writing the token names with their leading dashes makes the whole file
+    fail to parse, and a standalone SVG is parsed strictly.
   -->
   <style>
     :root {
