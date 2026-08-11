@@ -14,8 +14,8 @@ footer_text: >
   Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme, and <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: labor markets, place-based policy, social policy, economics
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-logo: bg-hex-logo.svg # logo image in /assets/img/
-icon: bg-hex-logo.svg # favicon image in /assets/img/
+logo: bg-monogram.svg # logo image in /assets/img/
+icon: bg-monogram.svg # favicon image in /assets/img/
 
 url: https://bnglasner.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
