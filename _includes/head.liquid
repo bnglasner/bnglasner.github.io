@@ -9,14 +9,70 @@
   content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"
 >
 
-<!-- Bootstrap & MDB -->
+<!-- Bootstrap -->
 <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
-<link
-  rel="stylesheet"
-  href="{{ site.third_party_libraries.mdb.url.css }}"
-  integrity="{{ site.third_party_libraries.mdb.integrity.css }}"
-  crossorigin="anonymous"
->
+<!--
+  MDB carry-over (2026-09). The render-blocking mdbootstrap@4.20.0 CDN
+  stylesheet (277 KB, 99.8 percent unused) was removed. These are the only
+  MDB declarations that still won the cascade on any page, found by diffing
+  computed styles (every property plus layout boxes) on all 10 page types in
+  light and dark, at 1440, 800, and 390 px with the menu open, plus a scan of
+  MDB :hover/:focus rules whose base selector matches. They sit where the MDB <link> was, so cascade
+  order is unchanged. Design track: move these into _sass and delete this block.
+-->
+<style>
+  body,
+  h1,
+  .navbar,
+  table td {
+    font-weight: 300;
+  }
+  .card {
+    font-weight: 400;
+  }
+  a {
+    cursor: pointer;
+  }
+  a,
+  a:hover {
+    transition: 0.2s ease-in-out;
+  }
+  .list-group a,
+  .list-group button {
+    transition: 0.5s;
+  }
+  .list-group .list-group-item:first-child {
+    border-top-left-radius: 0.125rem;
+    border-top-right-radius: 0.125rem;
+  }
+  .list-group .list-group-item:last-child {
+    border-bottom-right-radius: 0.125rem;
+    border-bottom-left-radius: 0.125rem;
+  }
+  .navbar .navbar-toggler {
+    border-width: 0;
+    outline: 0;
+  }
+  .navbar.navbar-light .navbar-toggler {
+    color: #000;
+  }
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    color: #000;
+    transition: 0.35s;
+  }
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link:hover {
+    color: #000;
+  }
+  @media (max-width: 992px) {
+    .navbar .nav-item .nav-link {
+      padding-right: 6px;
+      padding-left: 6px;
+    }
+  }
+</style>
 
 {% if page.pretty_table %}
   <!-- Bootstrap Table -->
