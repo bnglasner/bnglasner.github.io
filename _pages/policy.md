@@ -18,7 +18,7 @@ toc:
 <div class="policy-section">
   <span class="work-card__eyebrow work-card__eyebrow--policy">Place-Based Tax Incentive</span>
   <h2>Opportunity Zones</h2>
-  <p class="policy-section__lede">Capital gains incentives for investment in low-income census tracts</p>
+  <p class="policy-section__lede">Capital-gains incentives for investment in low-income census tracts</p>
 
   <h3>The problem</h3>
   <p>
@@ -34,7 +34,7 @@ toc:
   <h3>The state of research</h3>
   <p>
     Early empirical work on Opportunity Zones produced cautious or null findings on employment, earnings, and housing
-    prices, in part because outcomes were measured very soon after designation and in part because the program sets
+    prices, in part because outcomes were measured soon after designation and in part because the program sets
     a low bar for what counts as a qualifying investment. More recent work, using better data on construction
     permits, address activity, business formation, and capital flows, has documented meaningful effects on the built
     environment and on investment volume in designated tracts. The literature now reads more affirmatively on
@@ -62,10 +62,10 @@ toc:
       (EIG, 2023), co-author with Kenan Fikri. A synthesis of the empirical literature five years into the program.
     </li>
     <li>
+      A short-form essay connecting the housing-supply evidence to broader debates about housing scarcity:
       <a href="https://agglomerations.eig.org/p/opportunity-zones-a-quiet-revolution" target="_blank" rel="noopener noreferrer">
         Opportunity Zones: A Quiet Revolution in Housing Policy
       </a>
-      , a short-form essay connecting the housing-supply evidence to broader debates about housing scarcity.
     </li>
   </ul>
 </div>
@@ -98,7 +98,7 @@ toc:
     participation effects when they are simple and salient. Evidence from state auto-IRA programs such as
     OregonSaves and CalSavers shows large take-up among workers newly offered access, and Australia's Superannuation
     Guarantee provides a long-running natural experiment in universal, portable, employment-linked retirement saving.
-    The Retirement Savings for Americans Act is designed around this evidence base: a federally administered,
+    The Retirement Savings for Americans Act (RSAA) is designed around this evidence base: a federally administered,
     portable account, automatic enrollment for workers without an employer plan, and a federal match aimed at low-
     and moderate-income earners. Open empirical questions concern crowd-out of existing employer plans, the design of
     the federal match, and the long-run distributional consequences of building a parallel federal account structure.
@@ -132,7 +132,6 @@ toc:
       >
         A Retirement Fix For 69 Million American Workers: Australia Inspired
       </a>
-      .
     </li>
     <li>Ongoing internal analysis at EIG supporting the institution's policy work on RSAA design and implementation.</li>
   </ul>
@@ -148,7 +147,7 @@ toc:
   <h3>The problem</h3>
   <p>
     A large share of U.S. workers spend their careers in jobs that pay too little to support a household, even at
-    full-time hours. The Earned Income Tax Credit is the largest existing wage-side transfer, but its structure
+    full-time hours. The Earned Income Tax Credit (EITC) is the largest existing wage-side transfer, but its structure
     leaves childless workers and many primary earners with only modest support, and its annual lump-sum delivery
     undermines its function as ongoing wage support. Minimum-wage policy can raise the floor but cannot target
     subsidies precisely to the workers and hours where earnings gains are most valuable. The 80-80 wage subsidy
@@ -159,7 +158,7 @@ toc:
   <h3>The state of research</h3>
   <p>
     The empirical literature on existing earnings subsidies is large and broadly supportive. EITC expansions are
-    associated with sizable increases in labor-force participation among single mothers and modest increases in
+    associated with sizable increases in labor force participation among single mothers and modest increases in
     earnings, with little evidence of large negative effects on hours among current workers. Evaluations of
     state-level EITC supplements and child credit expansions corroborate the basic finding: well-designed wage and
     family subsidies raise after-tax income at the bottom without unwinding work incentives. International

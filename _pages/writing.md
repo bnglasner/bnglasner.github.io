@@ -33,7 +33,7 @@ redesign_2026: true
 <h2>Essays and Commentary</h2>
 <p class="research-intro">
   Agglomerations is the EIG newsletter; pieces are sometimes solo, sometimes co-authored with EIG colleagues.
-  Co-bylines are noted on each card.
+  Co-authors are listed on each card.
 </p>
 <div class="work-card-grid">
   {% for item in site.data.writing.short_form %}

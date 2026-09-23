@@ -2,14 +2,14 @@
 layout: page
 permalink: /wage-subsidy-sim/
 title: 80-80 wage subsidy simulator
-description: Interactive simulation of the EIG 80-80 Rule wage subsidy proposal, estimating fiscal and distributional effects for U.S. workers.
+description: Interactive simulation of the EIG 80-80 wage subsidy proposal, estimating fiscal and distributional effects for U.S. workers.
 nav: false
 redesign_2026: true
 ---
 
 <p class="research-intro">
-  This tool simulates the fiscal and distributional effects of the
-  <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank" rel="noopener noreferrer">EIG 80-80 Rule</a>
+  The simulator behind this page estimates the fiscal and distributional effects of the
+  <a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank" rel="noopener noreferrer">EIG 80-80</a>
   wage subsidy proposal. It combines Current Population Survey (CPS) microdata with pre-computed PolicyEngine-US
   household income schedules to estimate eligibility, gross cost, and safety-net interactions at the individual and
   population level.
