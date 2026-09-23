@@ -30,7 +30,7 @@ proof:
   - label: "Research covered in"
     kind: coverage
     url: /media/#coverage
-    items: ["The Wall Street Journal", "The Washington Post", "Reuters", "Axios", "Business Insider"]
+    items: ["The Wall Street Journal", "The Washington Post", "Reuters", "Axios"]
   - label: "Published in"
     kind: journals
     url: /publications/
