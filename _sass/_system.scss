@@ -722,6 +722,38 @@ body.redesign-2026 {
 
 // "Selected work" is a mono eyebrow label (.site-eyebrow), not a serif
 // section heading; keep it at the eyebrow size.
+// Proof strip under the hero CTAs (_data/homepage.yml `proof`): each line
+// is a mono eyebrow label (the link, underlined for WCAG 1.4.1) followed by
+// outlet names in muted sans. The eyebrow voice matches the hero eyebrow
+// and card eyebrows. Accent discipline: the labels are links, so teal.
+.home-proof {
+  max-width: 64ch;
+  gap: 0.4rem;
+}
+
+.home-proof .home-note__text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.home-proof a {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent-teal);
+  text-decoration: none;
+
+  u {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+
+  &:hover u {
+    text-decoration-thickness: 2px;
+  }
+}
+
 .home-selected-work h2 {
   margin: 0 0 1.25rem;
   font-size: 0.85rem;

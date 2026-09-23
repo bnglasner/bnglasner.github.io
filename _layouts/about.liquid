@@ -27,10 +27,10 @@ layout: default
       {% comment %}
         Proof strip: text-only credibility lines from _data/homepage.yml `proof`.
         bin/validate_data.py checks every item against media_page.yml or papers.bib.
-        Styling reuses .home-note__* plus Bootstrap utilities; no new SCSS. The <u>
+        Styled by .home-note__* plus .home-proof (_sass/_system.scss). The <u>
         gives each label link a non-color cue (WCAG 1.4.1, axe link-in-text-block).
       {% endcomment %}
-      <ul class="home-note__body list-unstyled mt-n3 mb-5" aria-label="Appearances, coverage, and journals">
+      <ul class="home-proof home-note__body list-unstyled mt-n3 mb-5" aria-label="Appearances, coverage, and journals">
         {% for line in site.data.homepage.proof %}
           <li class="home-note__text">
             <a class="text-uppercase" href="{{ line.url | relative_url }}"
@@ -75,7 +75,9 @@ layout: default
         {% if site.data.homepage.open_to %}
           <p class="home-note__text">
             {{ site.data.homepage.open_to }}
-            <a href="mailto:{{ site.data.socials.email }}"><u>Email me</u></a> or <a href="{{ '/media/' | relative_url }}"><u>see past appearances</u></a>.
+            <a href="mailto:{{ site.data.socials.email }}"><u>Email me</u></a> or
+            <a href="{{ '/media/' | relative_url }}"><u>see past appearances</u></a
+            >.
           </p>
         {% endif %}
       </div>
