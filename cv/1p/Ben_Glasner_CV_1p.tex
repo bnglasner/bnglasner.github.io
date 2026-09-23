@@ -1,0 +1,55 @@
+% Ben_Glasner_CV_1p.tex -- Curriculum Vitae (One-Page); built by cv/build.sh
+% Template: LianTze Lim's curve-based CV (cv/shared/settings.sty). Publications
+% print from _bibliography/papers.bib; gen-*.tex rubrics are generated from
+% _data/writing.yml and _data/media_page.yml by cv/gen_sections.py.
+\documentclass[a4paper,skipsamekey,10pt,english]{curve}
+\PassOptionsToPackage{style=ieee,sorting=ydnt,uniquename=init,defernumbers=true}{biblatex}
+\usepackage{settings}
+\DefineBibliographyStrings{english}{url={\textsc{url}}}
+\addbibresource{papers.bib}
+% papers.bib groups entries with the site-specific entry_group field; expose it
+% to biblatex as a keyword so each section can filter on it.
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=entry_group, final]
+      \step[fieldset=keywords, origfieldval]
+    }
+  }
+}
+\defbibfilter{theses}{keyword=dissertation or keyword=thesis}
+\mynames{Glasner/Benjamin,Glasner/Ben}
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage[medium,bold]{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+\includecomment{fullonly}
+\leftheader{%
+  {\LARGE\bfseries\sffamily Benjamin Glasner, Ph.D.}
+
+  \makefield{\faEnvelope[regular]}{\href{mailto:benjamin@eig.org}{\texttt{benjamin@eig.org}}}
+  \makefield{\faGlobe}{\href{https://bnglasner.github.io}{\texttt{bnglasner.github.io}}}
+
+  \makefield{\faLinkedin}{\href{https://www.linkedin.com/in/bglasner/}{\texttt{bglasner}}}
+  \makefield{\faLink}{\href{https://linktr.ee/bglasner}{\texttt{linktr.ee/bglasner}}}
+}
+\rightheader{~}
+\begin{fullonly}
+\photo[r]{photo}
+\photoscale{0.13}
+\end{fullonly}
+\title{Curriculum Vitae (One-Page)}
+\begin{document}
+\makeheaders[c]
+\makerubric{employment}
+\makerubric{affiliations}
+\makerubric{education}
+\input{publications}
+\end{document}
