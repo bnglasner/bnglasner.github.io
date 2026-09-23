@@ -48,6 +48,7 @@ Each media item in `sections[*].items` requires:
 Optional:
 
 - `published` (ISO 8601 date; omit if only month/year is known)
+- `related_work` (list of `papers.bib` citekeys) — see below
 
 Each entry in `coverage_groups` requires:
 
@@ -63,12 +64,16 @@ Each cited-coverage item in `coverage_groups[*].items` requires:
 - `url` (absolute URL)
 - `description` (one sentence explaining the relation to Ben's work)
 
+Optional on any item in `sections` or `coverage_groups`:
+
+- `related_work` (list of `papers.bib` citekeys) — the paper(s) the item is about. Each listed paper's permalink page renders the item under "Coverage and interviews". Add a key only when the item itself verifiably discusses that specific work (its title or description names the work, or the item is an interview about it); a thematic match is not enough. Every key must exist in `papers.bib`.
+
 ## `_bibliography/papers.bib`
 
 Every entry uses one of: `@article`, `@techreport`, `@phdthesis`, `@mastersthesis`, `@misc` (used for the Vassar senior thesis), `@inproceedings`, `@book`, `@incollection`. Required fields by entry type:
 
 - **`@article`** (peer-reviewed): `title`, `author`, `journal`, `year`, `month` (where known), `volume`, `number`, `pages`, plus `abbr` (the journal's short tag for the bib filter), `entry_group = {peer_reviewed}`, `bibtex_show = {true}`. Add `selected = {true}` for landing-page selected-papers display. Add `pdf` and/or `website` if a stable URL exists.
-- **`@techreport`** (working paper or policy report): `title`, `author`, `institution`, `year`, `month`, `website`, `entry_group = {policy_report}` or `entry_group = {working_paper}`, `bibtex_show = {true}`.
+- **`@techreport`** (working paper or policy report): `title`, `author`, `institution`, `year`, `month`, `website`, `entry_group = {policy_report}` or `entry_group = {working_paper}`, `bibtex_show = {true}`. **Never `journal`** — the templates prefer `journal` over `institution` as the displayed venue, and it leaks into exported BibTeX and the Highwire `citation_journal_title` tag. The validator rejects it.
 - **`@phdthesis`** / **`@mastersthesis`**: `title`, `author`, `school`, `year`.
 
 `abbr` controls the colored journal/institution tag rendered next to the entry. Reuse the existing tag if one is already in use (e.g., `JPubE`, `JLE`, `Health Affairs`, `EIG`). Adding a new `abbr` value may require a corresponding entry in `_data/venues.yml`.
@@ -77,7 +82,17 @@ The `author = {…}` field uses `and` (lowercase, spaces) as the separator betwe
 
 **`finding`** (added in the 2026 redesign, required on every entry regardless of type): one sentence, present tense, plain-language — the work-card anatomy's finding line and the permalink page's fallback when no abstract exists. Must be genuinely sourced (the paper's own abstract, or its institutional landing page) — never fabricated. For the two entries with no locatable source (`glasner2021impact`, `glasnerchinese`), `finding` is a purely descriptive, metadata-only line (topic and institution, not a claimed result) rather than an invented finding — this is the sanctioned exception, not a precedent for skipping sourcing elsewhere.
 
+**`theme`** (required on every entry): exactly one key from `_data/research_themes.yml`. The Research page renders one section per theme, and within it orders cards peer-reviewed → working paper → policy report → dissertation → thesis, newest first. `theme` is in `_config.yml`'s `filtered_bibtex_keywords`, so it never appears in the exported BibTeX.
+
+**`code`** (optional): absolute URL of the entry's replication repository, rendered as a Code link on the card and permalink page. Add it only for a confirmed match (the repository is the one behind this specific work, and it holds no co-author work outside Ben's scope). Already in `filtered_bibtex_keywords`.
+
 **`abstract`** (added in the 2026 redesign, optional): a short paraphrased summary — not a verbatim copy of the published abstract — for the per-paper permalink page generated automatically by jekyll-scholar's `DetailsGenerator` (see `_layouts/bibtex.html`; it activates on the presence of that layout file, keyed off `details_layout` in `_config.yml`'s `scholar:` block, no other wiring needed). `bibtex_skip_fields` already excludes `abstract` from the raw "view BibTeX" text dump, so adding it does not clutter the copy-paste citation. Omit rather than fabricate when no real source exists — `finding` alone is required, `abstract` is not.
+
+The permalink page labels `abstract` **"Summary"** with a note that it is a plain-language summary rather than the published abstract, and adds a formatted "Cite this" citation plus the BibTeX, each with a copy button.
+
+## `_data/research_themes.yml`
+
+Research agenda themes for the Research page. A list; each entry requires `key` (lowercase letters, digits, underscores; used in bib queries and `#theme-<key>` anchors), `title`, and `description` (a topic list, not a claimed finding). Keys are unique; every theme must be used by at least one `papers.bib` entry, and every entry's `theme` must be a key here. Order in the file is order on the page.
 
 ## `_data/socials.yml`
 

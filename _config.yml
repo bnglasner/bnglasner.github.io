@@ -340,6 +340,7 @@ filtered_bibtex_keywords:
     selected,
     slides,
     supp,
+    theme,
     video,
     website,
   ]

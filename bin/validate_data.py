@@ -7,6 +7,8 @@
 # Scope   - _data/writing.yml, _data/media_page.yml, _data/socials.yml,
 #           _data/homepage.yml, _data/highlights.yml (incl. asset existence),
 #           _bibliography/papers.bib <-> _data/venues.yml abbr cross-check,
+#           papers.bib <-> _data/research_themes.yml theme cross-check,
+#           media_page.yml related_work -> papers.bib citekey cross-check,
 #           and ISO 8601 date checks throughout.
 # Note    - bin/check_writing_authors.py remains the focused authors-field guard;
 #           this script is the broader schema check. Both run in pre-commit.
@@ -53,6 +55,7 @@ SOCIALS_REQUIRED_KEYS = {
 }
 SOCIALS_NESTED_KEYS = {"tiktok_url", "threads_url", "substack_url"}
 HIGHLIGHTS_REQUIRED = {"name", "eyebrow", "title", "hook", "alt", "date"}
+THEME_REQUIRED = {"key", "title", "description"}
 BIB_ENTRY_GROUPS = {
     "peer_reviewed",
     "working_paper",
@@ -62,6 +65,20 @@ BIB_ENTRY_GROUPS = {
 }
 
 failures: list[str] = []
+
+
+def parse_bib() -> list[tuple[str, str, dict[str, str]]]:
+    """Return (entry_type, citekey, fields) for every uncommented papers.bib entry."""
+    if not BIB.exists():
+        return []
+    text = BIB.read_text(encoding="utf-8")
+    # Strip comment lines so commented-out candidates are not parsed as entries.
+    text = "\n".join(line for line in text.splitlines() if not line.lstrip().startswith("%"))
+    parsed = []
+    for entry_type, citekey, body in re.findall(r"@(\w+)\s*\{\s*([^,\s]+)\s*,(.*?)\n\}", text, flags=re.DOTALL):
+        fields = dict(re.findall(r"(\w+)\s*=\s*\{(.*?)\}\s*,?\s*\n", body, flags=re.DOTALL))
+        parsed.append((entry_type, citekey, fields))
+    return parsed
 
 
 def fail(msg: str) -> None:
@@ -166,6 +183,18 @@ def check_media_page() -> None:
                     fail(f"{i_label}: published must be an ISO 8601 date (YYYY-MM-DD)")
                 if published_required and "published" not in item:
                     pass  # already caught by the missing-fields check above
+                if "related_work" in item:
+                    # Optional: citekeys of papers.bib entries this item covers or
+                    # discusses. Rendered as "Coverage and interviews" on each
+                    # paper's permalink page, so every key must exist.
+                    related = item["related_work"]
+                    bib_keys = {key for _, key, _ in parse_bib()}
+                    if not isinstance(related, list) or not related or not all(isinstance(k, str) for k in related):
+                        fail(f"{i_label}: related_work must be a non-empty list of papers.bib citekeys")
+                    else:
+                        for key in related:
+                            if key not in bib_keys:
+                                fail(f"{i_label}: related_work citekey `{key}` is not in papers.bib")
 
 
 # 3) _data/socials.yml
@@ -241,27 +270,25 @@ def check_bib_and_venues() -> None:
     venues = load_yaml(DATA / "venues.yml")
     venue_keys = set(venues.keys()) if isinstance(venues, dict) else set()
 
+    theme_keys = load_theme_keys()
+
     if not BIB.exists():
         fail("_bibliography/papers.bib: expected file not found")
         return
-    text = BIB.read_text(encoding="utf-8")
-    # Strip comment lines so commented-out candidates are not parsed as entries.
-    text = "\n".join(line for line in text.splitlines() if not line.lstrip().startswith("%"))
-
-    entries = re.findall(r"@(\w+)\s*\{\s*([^,\s]+)\s*,(.*?)\n\}", text, flags=re.DOTALL)
+    entries = parse_bib()
     if not entries:
         fail("papers.bib: no BibTeX entries parsed — check for syntax damage")
         return
 
     seen_keys: set[str] = set()
-    for entry_type, citekey, body in entries:
+    used_themes: set[str] = set()
+    for entry_type, citekey, fields in entries:
         label = f"papers.bib @{entry_type}{{{citekey}}}"
         if citekey in seen_keys:
             fail(f"{label}: duplicate citekey")
         seen_keys.add(citekey)
 
-        fields = dict(re.findall(r"(\w+)\s*=\s*\{(.*?)\}\s*,?\s*\n", body, flags=re.DOTALL))
-        for required in ("title", "author", "year", "finding"):
+        for required in ("title", "author", "year", "finding", "theme"):
             if required not in fields:
                 fail(f"{label}: missing required field `{required}`")
         if "finding" in fields and not fields["finding"].strip():
@@ -279,6 +306,50 @@ def check_bib_and_venues() -> None:
                 f"{label}: abbr `{abbr}` has no matching key in _data/venues.yml "
                 "(add one so the tag renders with a display name/color)"
             )
+        theme = fields.get("theme")
+        if theme is not None:
+            used_themes.add(theme)
+            if theme_keys and theme not in theme_keys:
+                fail(f"{label}: theme `{theme}` is not a key in _data/research_themes.yml")
+        if entry_type.lower() == "techreport" and "journal" in fields:
+            fail(
+                f"{label}: @techreport must not carry `journal` (it overrides `institution` "
+                "as the displayed venue and leaks into exported BibTeX)"
+            )
+        code = fields.get("code")
+        if code is not None and not is_absolute_url(code):
+            fail(f"{label}: code must be an absolute URL to the replication repository")
+
+    for unused in sorted(theme_keys - used_themes):
+        fail(f"research_themes.yml: theme `{unused}` is used by no papers.bib entry (it would render an empty section)")
+
+
+def load_theme_keys() -> set[str]:
+    """Validate _data/research_themes.yml and return its keys."""
+    data = load_yaml(DATA / "research_themes.yml")
+    if not isinstance(data, list) or not data:
+        fail("research_themes.yml: did not parse to a non-empty list")
+        return set()
+    keys: set[str] = set()
+    for idx, theme in enumerate(data):
+        if not isinstance(theme, dict):
+            fail(f"research_themes.yml [{idx}]: expected a mapping")
+            continue
+        label = f"research_themes.yml [{idx}] '{theme.get('key', '<no key>')}'"
+        missing = THEME_REQUIRED - set(theme)
+        if missing:
+            fail(f"{label}: missing required fields {sorted(missing)}")
+        for field in THEME_REQUIRED & set(theme):
+            if not isinstance(theme[field], str) or not theme[field].strip():
+                fail(f"{label}: {field} must be a non-empty string")
+        key = theme.get("key")
+        if isinstance(key, str):
+            if not re.fullmatch(r"[a-z][a-z0-9_]*", key):
+                fail(f"{label}: key must be lowercase letters, digits, and underscores (it is used in bib queries and anchors)")
+            if key in keys:
+                fail(f"{label}: duplicate key `{key}`")
+            keys.add(key)
+    return keys
 
 
 # 7) run everything
