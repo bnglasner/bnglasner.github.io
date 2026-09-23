@@ -875,6 +875,13 @@ ol.bibliography > li {
   padding-left: 1.3rem;
 }
 
+// Breathing room when sections follow prose or each other directly (the
+// press page stacks them with no axis rule between). Margins collapse, so
+// where an axis rule (2.5rem) precedes a section nothing changes.
+* + .policy-section {
+  margin-top: 2.25rem;
+}
+
 .policy-section h2 {
   margin: 0.5rem 0 0.35rem;
   font-size: var(--font-size-h2);
