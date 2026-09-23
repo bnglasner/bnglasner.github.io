@@ -36,6 +36,10 @@ DATA = REPO_ROOT / "_data"
 BIB = REPO_ROOT / "_bibliography" / "papers.bib"
 
 ISO_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# Month precision for `published` when the source gives only a month
+# ("August 2023"): a quoted "YYYY-MM" string. Templates render it through
+# _includes/pub-date.liquid, and _layouts/bibtex.html sorts it among full dates.
+ISO_MONTH_RE = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
 
 WRITING_REQUIRED = {"title", "url", "outlet", "authors", "published", "description"}
 MEDIA_ITEM_REQUIRED = {"outlet", "title", "url", "description"}
@@ -101,6 +105,18 @@ def is_iso_date(value) -> bool:
     return isinstance(value, str) and bool(ISO_DATE_RE.match(value))
 
 
+def is_published_date(value) -> bool:
+    """`published` accepts a full ISO date or a quoted month-precision YYYY-MM."""
+    return is_iso_date(value) or (isinstance(value, str) and bool(ISO_MONTH_RE.match(value)))
+
+
+def published_sort_key(value) -> str:
+    """Comparable YYYY-MM-DD string for a `published` value (month precision -> day 00)."""
+    if isinstance(value, datetime.date):
+        return value.isoformat()
+    return value if ISO_DATE_RE.match(value) else f"{value}-00"
+
+
 def is_absolute_url(value) -> bool:
     return isinstance(value, str) and value.startswith(("http://", "https://"))
 
@@ -124,8 +140,8 @@ def check_writing() -> None:
             missing = WRITING_REQUIRED - set(entry)
             if missing:
                 fail(f"{label}: missing required fields {sorted(missing)}")
-            if "published" in entry and not is_iso_date(entry["published"]):
-                fail(f"{label}: published must be an ISO 8601 date (YYYY-MM-DD)")
+            if "published" in entry and not is_published_date(entry["published"]):
+                fail(f"{label}: published must be an ISO 8601 date (YYYY-MM-DD) or a quoted month (\"YYYY-MM\")")
             if "url" in entry and not is_absolute_url(entry["url"]):
                 fail(f"{label}: url must be an absolute URL")
             authors = entry.get("authors")
@@ -140,6 +156,19 @@ def check_writing() -> None:
                 # page's Reports cards link that entry's permalink page.
                 if entry["bib_key"] not in {key for _, key, _ in parse_bib()}:
                     fail(f"{label}: bib_key `{entry['bib_key']}` is not a papers.bib citekey")
+
+    # The Policy (reports) and Writing pages render each list in file order as
+    # "newest first", so enforce that order. A month-precision "YYYY-MM" keys
+    # as day 00: it sorts just after every full date in the same month.
+    for list_name in ("reports", "short_form", "guest_posts"):
+        entries = [e for e in (data.get(list_name) or []) if isinstance(e, dict) and is_published_date(e.get("published"))]
+        keys = [published_sort_key(e["published"]) for e in entries]
+        for idx in range(1, len(keys)):
+            if keys[idx] > keys[idx - 1]:
+                fail(
+                    f"writing.yml {list_name}: '{entries[idx].get('title')}' ({keys[idx]}) is newer than the entry "
+                    f"above it ({keys[idx - 1]}); keep each list newest first"
+                )
 
 
 # 2) _data/media_page.yml
@@ -185,8 +214,8 @@ def check_media_page() -> None:
                     fail(f"{i_label}: missing required fields {sorted(missing)}")
                 if "url" in item and not is_absolute_url(item["url"]):
                     fail(f"{i_label}: url must be an absolute URL")
-                if "published" in item and not is_iso_date(item["published"]):
-                    fail(f"{i_label}: published must be an ISO 8601 date (YYYY-MM-DD)")
+                if "published" in item and not is_published_date(item["published"]):
+                    fail(f"{i_label}: published must be an ISO 8601 date (YYYY-MM-DD) or a quoted month (\"YYYY-MM\")")
                 if published_required and "published" not in item:
                     pass  # already caught by the missing-fields check above
                 if "related_work" in item:

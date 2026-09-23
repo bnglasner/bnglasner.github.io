@@ -225,7 +225,7 @@ and citation). The replace filter shows one form of Ben's name, as on /writing/.
   {% for item in site.data.writing.reports %}
     {% if item.outlet == "Economic Innovation Group" %}{% assign publisher = "EIG" %}{% else %}{% assign publisher = item.outlet %}{% endif %}
     <div class="work-card work-card--policy">
-      <span class="work-card__eyebrow">{{ publisher }} · {{ item.published | date: "%Y" }}</span>
+      <span class="work-card__eyebrow">{{ publisher }} · {% include pub-date.liquid date=item.published format="%Y" %}</span>
       <h3 class="work-card__title">
         <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
       </h3>

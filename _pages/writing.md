@@ -23,7 +23,7 @@ redesign_2026: true
 <div class="work-card-grid">
   {% for item in site.data.writing.short_form %}
     <div class="work-card work-card--policy">
-      <span class="work-card__eyebrow">ESSAY · {{ item.published | date: "%Y" }}</span>
+      <span class="work-card__eyebrow">ESSAY · {% include pub-date.liquid date=item.published format="%Y" %}</span>
       <h3 class="work-card__title">
         <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
       </h3>
@@ -43,7 +43,7 @@ redesign_2026: true
   <div class="work-card-grid">
     {% for item in site.data.writing.guest_posts %}
       <div class="work-card work-card--policy">
-        <span class="work-card__eyebrow">GUEST ESSAY · {{ item.published | date: "%Y" }}</span>
+        <span class="work-card__eyebrow">GUEST ESSAY · {% include pub-date.liquid date=item.published format="%Y" %}</span>
         <h3 class="work-card__title">
           <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
         </h3>

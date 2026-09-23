@@ -83,16 +83,13 @@ reports:
     authors: ["Benjamin Glasner"]
     published: 2023-08-10
     description: "In 2021, 69 million workers — 55.5 percent — lacked any employer-provided retirement plan, a gap concentrated among low-income earners and uneven across states."
-  # Source (PDF cover and CPSP listing) gives only "August 2023"; the day is a
-  # placeholder (the writing page renders the year only). Needs Ben for the
-  # exact publication day.
   - title: "Liquid Assets, Financial Shocks, and Entrances into Material Hardship"
     bib_key: maury_jia_yera_glasner_2023_liquid_assets
     url: "https://robinhood.org/wp-content/uploads/2024/01/poverty-tracker_2023.08_spotlight-on-liquid-assets-financial-shocks-and-entrances-into-material-hardship.pdf"
     outlet: "Robin Hood Poverty Tracker"
     co_outlet: "Center on Poverty and Social Policy, Columbia University"
     authors: ["Matthew Maury", "Sophie Collyer", "Benjamin Glasner", "Yajun Jia", "Christopher Wimer", "Christopher Yera"]
-    published: 2023-08-01
+    published: "2023-08"
     description: "New Yorkers with $2,000 in liquid assets are substantially less likely to fall into material hardship after a financial shock than those with none, and the protective effect levels off above that amount."
   - title: "Business Establishments Bloom in Booming Georgia"
     url: "https://eig.org/georgia-business-establishments/"
