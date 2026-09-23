@@ -19,3 +19,6 @@ _site_verify_prod
 # headline-wheel figure pipeline build products (bin/highlights_figures/README.md)
 bin/highlights_figures/fonts/
 bin/highlights_figures/out/
+
+# CV build products (cv/build.sh)
+cv/_build/

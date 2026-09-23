@@ -178,6 +178,8 @@ exclude:
   - assets/plotly/
   - assets/rendercv/
   - bin/
+  # CV LaTeX sources and build products (cv/build.sh publishes to assets/pdf/)
+  - cv/
   - AGENTS.md
   - ANALYTICS.md
   - CLAUDE.md
