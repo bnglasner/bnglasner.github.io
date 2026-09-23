@@ -1,23 +1,17 @@
 <header>
   <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" aria-label="Main">
     <div class="container">
-      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-        {% if site.title == 'blank' %}
-          {% if site.first_name %}
-            <span class="font-weight-bold">
-              {{- site.first_name -}}
-            </span>
-          {% endif %}
-          {% if site.middle_name %}
-            {{- site.middle_name -}}
-          {% endif %}
-          {% if site.last_name %}
-            {{- site.last_name -}}
-          {% endif %}
-        {% else %}
-          {{- site.title -}}
-        {% endif %}
+      <a class="navbar-brand title site-wordmark" href="{{ site.baseurl }}/">
+        {% include site-mark.liquid %}
+        {%- comment -%}
+          Wordmark is the name alone; the degree lives on the CV and in
+          site.title (page titles, Open Graph), which are unchanged.
+        {%- endcomment -%}
+        <span class="site-wordmark__name">
+          {{- site.first_name }}
+          {{ site.last_name -}}
+        </span>
       </a>
       <!-- Navbar Toggle -->
       <button
@@ -43,11 +37,14 @@
 
           <!-- Home -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- home_title }}
+            <a
+              class="nav-link"
+              href="{{ '/' | relative_url }}"
               {% if page.permalink == '/' %}
-                <span class="sr-only">(current)</span>
+                aria-current="page"
               {% endif %}
+            >
+              {{- home_title }}
             </a>
           </li>
 
@@ -66,11 +63,14 @@
                 {%- else -%}
                   {%- assign url = p.url -%}
                 {%- endif %}
-                <a class="nav-link" href="{{ url | relative_url }}">
-                  {{- p.title }}
+                <a
+                  class="nav-link"
+                  href="{{ url | relative_url }}"
                   {% if page.url contains p.url %}
-                    <span class="sr-only">(current)</span>
+                    aria-current="page"
                   {% endif %}
+                >
+                  {{- p.title }}
                 </a>
               </li>
             {% endif %}
@@ -86,7 +86,7 @@
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
+              <button id="light-toggle" type="button" title="Change theme" aria-label="Change theme">
                 <i class="fa-half-sun-moon" id="light-toggle-system"></i>
                 <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
                 <i class="fa-solid fa-sun" id="light-toggle-light"></i>
@@ -106,4 +106,33 @@
       </div>
     </progress>
   {% endif %}
+  <script>
+    // Theme toggle: name the current setting and the next one, since the
+    // button cycles light -> dark -> system (assets/js/theme.js) and its
+    // icon alone does not announce state.
+    (function () {
+      var btn = document.getElementById('light-toggle');
+      if (!btn) return;
+      var next = { light: 'dark', dark: 'system', system: 'light' };
+      function label() {
+        var cur = document.documentElement.getAttribute('data-theme-setting') || 'system';
+        var text = 'Theme: ' + cur + '. Switch to ' + (next[cur] || 'light');
+        btn.setAttribute('aria-label', text);
+        btn.setAttribute('title', text);
+      }
+      label();
+      new MutationObserver(label).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme-setting'] });
+    })();
+
+    // Mobile nav: Escape closes the expanded menu and returns focus to the
+    // toggle (Bootstrap's collapse has no keyboard dismiss of its own).
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var menu = document.getElementById('navbarNav');
+      var toggler = document.querySelector('.navbar-toggler');
+      if (!menu || !toggler || !menu.classList.contains('show')) return;
+      if (window.jQuery) window.jQuery(menu).collapse('hide');
+      toggler.focus();
+    });
+  </script>
 </header>

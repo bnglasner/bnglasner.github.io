@@ -141,16 +141,30 @@
   // gone. Two accents only; every value here is contrast-verified against
   // --paper-bg (see the commit message for ratios) — do not add a third
   // hue or reintroduce a color outside this set.
-  --paper-bg: #fcfcfa;
-  --paper-text: #1a1f24;
-  --paper-hairline: #c9c6bc;
-  --paper-hairline-soft: #d8d6ce;
-  --paper-muted: #4a5158;
-  --paper-muted-soft: #6b7178;
-  --accent-teal: #116a5f; // primary: academic / peer-reviewed
-  --accent-amber: #9c610d; // secondary: policy / media (darkened from the
-  // #B97318 design brief — that value is 3.70:1 on --paper-bg, below the
-  // 4.5:1 AA floor for normal text; this hue at this depth is 4.95:1)
+  //
+  // Warm "newsprint" palette (2026-09-23): the paper moved off near-white
+  // toward a warm off-white, and the teal and amber deepened to read as ink
+  // rather than UI. WCAG 2.x ratios, recomputed with a script from these
+  // exact values (text pairs must be >= 4.5:1):
+  //   paper-text on paper-bg          15.64:1
+  //   paper-muted on paper-bg          7.65:1
+  //   paper-muted-soft on paper-bg     4.76:1
+  //   accent-teal on paper-bg          6.97:1  (links, eyebrows, active nav)
+  //   accent-amber on paper-bg         5.24:1  (policy/media eyebrows)
+  //   paper-bg on accent-teal          6.97:1  (primary button text)
+  //   ... same at 0.88 hover opacity   5.30:1
+  //   paper-text on paper-hairline-soft 11.86:1 (BibTeX block)
+  // Hairlines are decorative only (1.66:1 and 1.32:1), never text.
+  // The amber stays darker than the #B97318 design brief, which is below
+  // 4.5:1 on the paper; do not lighten it back.
+  --paper-bg: #f8f6f0;
+  --paper-text: #1b1d1f;
+  --paper-hairline: #c6c1b4;
+  --paper-hairline-soft: #dcd8cc;
+  --paper-muted: #4a4f55;
+  --paper-muted-soft: #696e73;
+  --accent-teal: #0f5f55; // primary: academic / peer-reviewed
+  --accent-amber: #935a0b; // secondary: policy / media
 
   --font-serif: "Newsreader Variable", "Newsreader", "Iowan Old Style", Georgia, serif;
   --font-sans: "Public Sans Variable", "Public Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
@@ -164,6 +178,18 @@
   --line-height-body: 1.6;
 
   --focus-ring: 0 0 0 3px var(--paper-bg), 0 0 0 5px var(--accent-teal);
+
+  // Legacy-token bridge: chrome that still reads the pre-redesign
+  // --global-* names (the search modal, the theme-toggle icon, inline code,
+  // leftover al-folio partials) follows the paper palette instead of the
+  // retired ivory/forest/navy brand set.
+  --global-bg-color: var(--paper-bg);
+  --global-text-color: var(--paper-text);
+  --global-text-color-light: var(--paper-muted);
+  --global-theme-color: var(--accent-teal);
+  --global-hover-color: var(--accent-teal);
+  --global-card-bg-color: var(--paper-bg);
+  --global-divider-color: var(--paper-hairline);
 }
 
 @media (max-width: 576px) {
@@ -174,75 +200,93 @@
   }
 }
 
-html[data-theme="dark"] {
-  color-scheme: dark;
-  --global-bg-color: #123a66;
-  --global-code-bg-color: rgba(247, 244, 239, 0.1);
-  --global-text-color: #f7f4ef;
-  --global-text-color-light: #9fc8b8;
-  --global-theme-color: #f4a742;
-  --global-hover-color: #e16e19;
-  --global-hover-text-color: #ffffff;
-  --global-footer-bg-color: #10723b;
-  --global-footer-text-color: #f7f4ef;
-  --global-footer-link-color: #ffffff;
-  --global-distill-app-color: #f7f4ef;
-  --global-divider-color: rgba(247, 244, 239, 0.22);
-  --global-card-bg-color: #194f8b;
-  --global-back-to-top-bg-color: rgba(244, 167, 66, 0.85);
-  --global-back-to-top-text-color: #123a66;
-  --global-newsletter-bg-color: #194f8b;
-  --global-newsletter-text-color: #f7f4ef;
+// Dark tokens apply on screen only. Printing with the dark theme selected
+// would otherwise put near-white ink on white paper (browsers drop page
+// backgrounds by default), so print always falls back to the light tokens.
+@media screen {
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --global-bg-color: #123a66;
+    --global-code-bg-color: rgba(247, 244, 239, 0.1);
+    --global-text-color: #f7f4ef;
+    --global-text-color-light: #9fc8b8;
+    --global-theme-color: #f4a742;
+    --global-hover-color: #e16e19;
+    --global-hover-text-color: #ffffff;
+    --global-footer-bg-color: #10723b;
+    --global-footer-text-color: #f7f4ef;
+    --global-footer-link-color: #ffffff;
+    --global-distill-app-color: #f7f4ef;
+    --global-divider-color: rgba(247, 244, 239, 0.22);
+    --global-card-bg-color: #194f8b;
+    --global-back-to-top-bg-color: rgba(244, 167, 66, 0.85);
+    --global-back-to-top-text-color: #123a66;
+    --global-newsletter-bg-color: #194f8b;
+    --global-newsletter-text-color: #f7f4ef;
 
-  --global-tip-block: #42b983;
-  --global-tip-block-bg: #215d42;
-  --global-tip-block-text: #beffe2;
-  --global-tip-block-title: #e2f5ec;
-  --global-warning-block: #e7c000;
-  --global-warning-block-bg: #6b5900;
-  --global-warning-block-text: #fff2af;
-  --global-warning-block-title: #fff8d8;
-  --global-danger-block: #c00;
-  --global-danger-block-bg: #600;
-  --global-danger-block-text: #ffb9b9;
-  --global-danger-block-title: #ffe0e0;
+    --global-tip-block: #42b983;
+    --global-tip-block-bg: #215d42;
+    --global-tip-block-text: #beffe2;
+    --global-tip-block-title: #e2f5ec;
+    --global-warning-block: #e7c000;
+    --global-warning-block-bg: #6b5900;
+    --global-warning-block-text: #fff2af;
+    --global-warning-block-title: #fff8d8;
+    --global-danger-block: #c00;
+    --global-danger-block-bg: #600;
+    --global-danger-block-text: #ffb9b9;
+    --global-danger-block-title: #ffe0e0;
 
-  // Dark-mode surface/elevation tokens. Shadows are deeper and more
-  // saturated against the navy background; the accent color shifts to
-  // golden hour, which has stronger contrast on dark navy than ember.
-  --surface-border: rgba(247, 244, 239, 0.12);
-  --surface-border-strong: rgba(247, 244, 239, 0.22);
-  --surface-elev-1: 0 8px 18px rgba(0, 0, 0, 0.18);
-  --surface-elev-2: 0 16px 30px rgba(0, 0, 0, 0.24);
-  --surface-elev-3: 0 22px 42px rgba(0, 0, 0, 0.32);
-  --surface-accent: var(--brand-golden-hour);
+    // Dark-mode surface/elevation tokens. Shadows are deeper and more
+    // saturated against the navy background; the accent color shifts to
+    // golden hour, which has stronger contrast on dark navy than ember.
+    --surface-border: rgba(247, 244, 239, 0.12);
+    --surface-border-strong: rgba(247, 244, 239, 0.22);
+    --surface-elev-1: 0 8px 18px rgba(0, 0, 0, 0.18);
+    --surface-elev-2: 0 16px 30px rgba(0, 0, 0, 0.24);
+    --surface-elev-3: 0 22px 42px rgba(0, 0, 0, 0.32);
+    --surface-accent: var(--brand-golden-hour);
 
-  // 2026 redesign tokens, dark complement. --paper-bg/--paper-text simply
-  // swap (same two neutrals, same design language); the two accents get
-  // brighter variants because the light-mode values are too dark to clear
-  // 4.5:1 against this navy-ink background (--accent-teal at #116a5f is
-  // only 2.57:1 here). Ratios verified against --paper-bg below:
-  //   paper-text on paper-bg:  16.16:1
-  //   accent-teal on paper-bg:  5.52:1
-  //   accent-amber on paper-bg: 5.09:1
-  //   paper-muted on paper-bg:  7.24:1
-  //   paper-muted-soft on paper-bg: 5.24:1
-  --paper-bg: #1a1f24;
-  --paper-text: #fcfcfa;
-  --paper-hairline: rgba(252, 252, 250, 0.16);
-  --paper-hairline-soft: rgba(252, 252, 250, 0.1);
-  --paper-muted: #a6acb2;
-  --paper-muted-soft: #899299;
-  --accent-teal: #2ba694;
-  --accent-amber: #c97d1d;
-  --focus-ring: 0 0 0 3px var(--paper-bg), 0 0 0 5px var(--accent-teal);
+    // 2026 redesign tokens, dark complement: "warm ink". The background is a
+    // near-neutral charcoal and the text an off-white (#ece9e1) rather than
+    // pure white, which cuts glare against the old 16:1 white-on-navy while
+    // staying far above AAA. The accents get brighter variants because the
+    // light-mode values are too dark to clear 4.5:1 here. Ratios (script-
+    // verified from these exact values):
+    //   paper-text on paper-bg          14.41:1
+    //   paper-muted on paper-bg          7.63:1
+    //   paper-muted-soft on paper-bg     5.54:1
+    //   accent-teal on paper-bg          6.80:1
+    //   accent-amber on paper-bg         6.20:1
+    //   paper-bg on accent-teal          6.80:1  (primary button text)
+    //   ... same at 0.88 hover opacity   5.56:1
+    //   paper-text on paper-hairline-soft 11.12:1 (BibTeX block, blended)
+    --paper-bg: #171a1c;
+    --paper-text: #ece9e1;
+    --paper-hairline: rgba(236, 233, 225, 0.16);
+    --paper-hairline-soft: rgba(236, 233, 225, 0.1);
+    --paper-muted: #a9aca9;
+    --paper-muted-soft: #8e928f;
+    --accent-teal: #3fb3a0;
+    --accent-amber: #d38a2c;
+    --focus-ring: 0 0 0 3px var(--paper-bg), 0 0 0 5px var(--accent-teal);
 
-  .only-light {
-    display: none;
-  }
+    // Legacy-token bridge (see the light block).
+    --global-bg-color: var(--paper-bg);
+    --global-text-color: var(--paper-text);
+    --global-text-color-light: var(--paper-muted);
+    --global-theme-color: var(--accent-teal);
+    --global-hover-color: var(--accent-teal);
+    --global-card-bg-color: var(--paper-bg);
+    --global-divider-color: var(--paper-hairline);
 
-  .only-dark {
-    display: block;
+    .only-light {
+      display: none;
+    }
+
+    .only-dark {
+      display: block;
+    }
   }
 }
 

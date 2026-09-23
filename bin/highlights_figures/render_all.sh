@@ -25,7 +25,7 @@ root = sys.argv[1]
 fonts_dir = os.path.join(root, "assets", "fonts")
 out_dir = os.path.join(os.getcwd(), "fonts")  # cwd is bin/highlights_figures
 jobs = [
-    ("newsreader/newsreader-latin-wght-normal.woff2", "newsreader", [400, 500]),
+    ("newsreader/newsreader-latin-opsz-normal.woff2", "newsreader", [400, 500]),
     ("public-sans/public-sans-latin-wght-normal.woff2", "public-sans", [400, 500, 600]),
     ("ibm-plex-mono/ibm-plex-mono-latin-400-normal.woff2", "ibm-plex-mono-400", None),
     ("ibm-plex-mono/ibm-plex-mono-latin-500-normal.woff2", "ibm-plex-mono-500", None),
@@ -39,7 +39,12 @@ for rel, stem, weights in jobs:
     for w in weights:
         f = TTFont(src); f.flavor = None
         if "fvar" in f:
-            instantiateVariableFont(f, {"wght": w}, inplace=True)
+            limits = {"wght": w}
+            # Newsreader ships an opsz axis too: pin it at the font's default
+            # (None) so the static TTF matches the old wght-only instance.
+            if any(a.axisTag == "opsz" for a in f["fvar"].axes):
+                limits["opsz"] = None
+            instantiateVariableFont(f, limits, inplace=True)
         f.save(os.path.join(out_dir, f"{stem}-{w}.ttf"))
 print("fonts ready")
 EOF
