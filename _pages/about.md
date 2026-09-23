@@ -3,11 +3,12 @@ layout: about
 title: Home
 permalink: /
 redesign_2026: true
-description: "Benjamin Glasner is a Senior Economist at the Economic Innovation Group studying U.S. labor markets, place-based policy, and social-policy design."
+description: "Benjamin Glasner is a Senior Economist at the Economic Innovation Group studying how policy shapes U.S. labor markets, places, and economic mobility."
+seo_title: "Benjamin Glasner — Economist, Economic Innovation Group"
 eyebrow: "Senior Economist · Economic Innovation Group"
 eyebrow_affiliation: "Affiliate · Center on Poverty and Social Policy, Columbia University"
 headline: "Evidence on how policy reshapes work, place, and mobility."
-hero_description: "My research combines applied microeconomics and policy evaluation to study U.S. labor markets, place-based policy, and the design of social programs. The focus is worker well-being and economic mobility, and how national policy choices play out in local economies."
+hero_description: "I study how policy changes work, pay, and opportunity across U.S. places — from minimum wages and the gig economy to Opportunity Zones, the Child Tax Credit, and retirement coverage. The through-line is how national policy choices play out in local economies, and what that means for worker well-being and economic mobility."
 cta_primary:
   label: "Read the research"
   url: /publications/
