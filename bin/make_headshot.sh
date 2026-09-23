@@ -24,11 +24,23 @@ IM="$(command -v magick || command -v convert || true)"
   exit 1
 }
 
+# Crop geometry. Default: a centered square (the full-width top-to-bottom
+# middle of a portrait). A full-length photo leaves the face a few pixels
+# wide at 40 px, so HEADSHOT_CROP (ImageMagick WxH+X+Y, in source pixels)
+# can name a head-and-shoulders square instead. For the current
+# prof_pic_color.jpg (1765x2648, face upper right), use
+#   HEADSHOT_CROP=820x820+905+590 bash bin/make_headshot.sh
+if [[ -n "${HEADSHOT_CROP:-}" ]]; then
+  CROP=(-crop "$HEADSHOT_CROP" +repage)
+else
+  CROP=(-gravity center -crop "%[fx:min(w,h)]x%[fx:min(w,h)]+0+0" +repage)
+fi
+
 for px in 40 80 120; do
-  "$IM" "$SRC" -auto-orient -gravity center -crop "%[fx:min(w,h)]x%[fx:min(w,h)]+0+0" +repage \
+  "$IM" "$SRC" -auto-orient "${CROP[@]}" \
     -resize "${px}x${px}" -strip -quality 82 "${STEM}-sq${px}.webp"
 done
-"$IM" "$SRC" -auto-orient -gravity center -crop "%[fx:min(w,h)]x%[fx:min(w,h)]+0+0" +repage \
+"$IM" "$SRC" -auto-orient "${CROP[@]}" \
   -resize 80x80 -strip -quality 82 -interlace Plane "${STEM}-sq80.jpg"
 
 ls -l "${STEM}"-sq*.{webp,jpg}

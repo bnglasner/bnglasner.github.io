@@ -695,15 +695,12 @@ body.redesign-2026 {
 }
 
 .home-note__photo {
-  width: 48px;
-  height: 48px;
+  // 40px matches the pre-cropped head-and-shoulders squares that
+  // bin/make_headshot.sh writes (sq40/sq80/sq120 for 1x/2x/3x).
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  // The source is a full-length photo; a centered cover crop leaves the
-  // face about 8px wide. object-view-box (Chromium) crops to head and
-  // shoulders; other engines fall back to the plain cover crop. Remove
-  // once a proper square portrait replaces prof_pic_color.jpg.
-  object-view-box: inset(25.6% 8.5% 51.6% 57.5%);
   flex-shrink: 0;
   border: 1px solid var(--paper-hairline);
 }
