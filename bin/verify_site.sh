@@ -2,7 +2,8 @@
 # verify_site.sh -- headless, non-interactive verification of the site
 # Author - Ben Glasner (scaffolded 2026-08-10)
 # Purpose - Give agents (and Ben) a single command that validates data schemas,
-#           builds the site without starting a server, and checks internal links.
+#           builds the site without starting a server, checks internal links, and
+#           checks that the Font Awesome subset covers every icon in use.
 #           Complements the interactive `bundle exec jekyll serve` path in
 #           .claude/rules/build-and-verify.md, which remains the tool for visual
 #           spot-checks (dark mode, images, layout).
@@ -13,13 +14,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-echo "==> 1/4 writing.yml authors check"
+echo "==> 1/5 writing.yml authors check"
 python3 bin/check_writing_authors.py
 
-echo "==> 2/4 data schema validation"
+echo "==> 2/5 data schema validation"
 python3 bin/validate_data.py
 
-echo "==> 3/4 headless Jekyll build (no server)"
+echo "==> 3/5 headless Jekyll build (no server)"
 # Builds into _site_verify (gitignored) so the dev server's _site/ is untouched.
 # Primary path: the local Ruby toolchain (bundle). Fallback: the al-folio Docker
 # image, for machines that have Docker but no local Ruby.
@@ -38,7 +39,10 @@ else
   exit 1
 fi
 
-echo "==> 4/4 internal link check over the built site"
+echo "==> 4/5 internal link check over the built site"
 python3 bin/check_internal_links.py _site_verify
+
+echo "==> 5/5 Font Awesome subset covers every icon used"
+python3 bin/check_fa_icons.py _site_verify
 
 echo "verify_site.sh: all checks passed"

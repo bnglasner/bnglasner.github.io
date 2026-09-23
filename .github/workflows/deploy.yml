@@ -99,6 +99,10 @@ jobs:
       # published. (Replaces the post-deploy broken-links-site.yml rebuild.)
       - name: Check internal links 🔗
         run: python3 bin/check_internal_links.py _site
+      # The Font Awesome webfonts are subset (bin/subset_fontawesome.sh); an icon
+      # missing from bin/fontawesome-icons.txt would render as an empty box.
+      - name: Check Font Awesome subset 🔣
+        run: python3 bin/check_fa_icons.py _site
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
