@@ -485,6 +485,10 @@ body.redesign-2026 {
   }
 }
 
+// PurgeCSS (deploy.yml) drops selectors whose only class sits inside
+// :where()/:is(), which unstyled every heading in production. The loud
+// comments survive Sass's compressed output and fence this block off.
+/*! purgecss start ignore */
 // Base heading and text-color rules. The gate is wrapped in :where() so the
 // effective specificity is just the element selector (0,0,1): it still beats
 // _typography.scss's legacy `p, h1, ..., span { color: var(--global-text-color) }`
@@ -553,6 +557,8 @@ body.redesign-2026 {
   font-style: italic;
   color: var(--accent-teal);
 }
+
+/*! purgecss end ignore */
 
 // Drop cap: the policy narratives only (the first paragraph under each
 // section's first h3, "The problem"). The wage-subsidy-sim status box
