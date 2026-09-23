@@ -12,6 +12,12 @@
 #           Provenance: imported 2026-09-23 from the retired job-market-materials
 #           pipeline's resume/build/overleaf_variants/, whose compiled PDFs were
 #           byte-identical to the 2026-02-22 assets.
+# TeX     - Prefers the user-owned TinyTeX (~/Library/TinyTeX/bin/<arch>) when
+#           present, where the packages below were installed on 2026-09-23 with
+#           `tlmgr install biber curve biblatex biblatex-ieee cochineal cabin
+#           inconsolata fontawesome5 silence relsize comment csquotes xpatch
+#           fontaxes mweights`; falls back to /Library/TeX/texbin (MacTeX /
+#           BasicTeX), which must then carry the same packages.
 # Needs   - TeX Live with pdflatex + biber and the packages curve, biblatex
 #           (+ biblatex-ieee), cochineal, cabin, inconsolata (zi4), fontawesome5,
 #           silence, relsize, comment, csquotes, xpatch, pgf/tikz; python3 + PyYAML.
@@ -29,7 +35,13 @@ OUT="$REPO/assets/pdf"
 COPY=1
 [[ "${1:-}" == "--no-copy" ]] && COPY=0
 
-export PATH="/Library/TeX/texbin:$PATH"
+TINYTEX_BIN="$(ls -d "$HOME"/Library/TinyTeX/bin/*/ 2>/dev/null | head -n 1 || true)"
+if [[ -n "$TINYTEX_BIN" && -x "${TINYTEX_BIN}pdflatex" ]]; then
+  export PATH="${TINYTEX_BIN%/}:$PATH"
+else
+  export PATH="/Library/TeX/texbin:$PATH"
+fi
+echo "build.sh: using $(command -v pdflatex)"
 
 for tool in pdflatex biber kpsewhich python3 pdfinfo; do
   command -v "$tool" >/dev/null 2>&1 || { echo "build.sh: missing required tool: $tool" >&2; exit 1; }
