@@ -34,12 +34,15 @@ def load_scholar_user_id() -> str:
 
 SCHOLAR_USER_ID: str = load_scholar_user_id()
 OUTPUT_FILE: str = "_data/citations.yml"
+# --dry-run: fetch and report changes, but never write OUTPUT_FILE.
+DRY_RUN: bool = "--dry-run" in sys.argv[1:]
 
 
 def get_scholar_citations() -> None:
     """Fetch and update Google Scholar citation data."""
     print(f"Fetching citations for Google Scholar ID: {SCHOLAR_USER_ID}")
     today = datetime.now().strftime("%Y-%m-%d")
+    existing_data = None
 
     # Check if the output file was already updated today
     if os.path.exists(OUTPUT_FILE):
@@ -52,7 +55,7 @@ def get_scholar_citations() -> None:
                 and "last_updated" in existing_data["metadata"]
             ):
                 print(f"Last updated on: {existing_data['metadata']['last_updated']}")
-                if existing_data["metadata"]["last_updated"] == today:
+                if existing_data["metadata"]["last_updated"] == today and not DRY_RUN:
                     print("Citations data is already up-to-date. Skipping fetch.")
                     return
         except Exception as e:
@@ -111,6 +114,17 @@ def get_scholar_citations() -> None:
     # Compare new data with existing data
     if existing_data and existing_data.get("papers") == citation_data["papers"]:
         print("No changes in citation data. Skipping file update.")
+        return
+
+    if DRY_RUN:
+        old = (existing_data or {}).get("papers") or {}
+        new = citation_data["papers"]
+        for pid in sorted(set(old) | set(new)):
+            before = old.get(pid, {}).get("citations")
+            after = new.get(pid, {}).get("citations")
+            if before != after:
+                print(f"  {pid}: {before} -> {after}")
+        print(f"Dry run: {OUTPUT_FILE} left unchanged ({len(new)} papers fetched).")
         return
 
     try:
