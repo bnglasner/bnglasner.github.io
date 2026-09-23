@@ -85,6 +85,29 @@
   }
 }
 
+// MDB carry-over (the MDB CDN stylesheet was removed in 2026-09). These
+// are the only MDB rules worth keeping. The rest of the inlined carry-over
+// block was dropped because the design system already overrides it: the
+// 300 weights on body/h1/.navbar/table td (body is 400 by design), the
+// #000 nav-link colors, the global link transitions, and the list-group
+// radii (CV lists are list-group-flush, which has no radius).
+.navbar .navbar-toggler {
+  border-width: 0;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  transition: color 0.15s ease;
+}
+
+// Tighter nav-link padding below 992px keeps the flat nav on one line at
+// tablet widths (this was MDB's value, now owned here).
+@media (max-width: 992px) {
+  .navbar .nav-item .nav-link {
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+}
+
 .navbar-toggler {
   .icon-bar {
     display: block;
