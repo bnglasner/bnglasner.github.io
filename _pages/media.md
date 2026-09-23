@@ -4,7 +4,7 @@ permalink: /media/
 title: Media
 description: Verified interviews, broadcast appearances, podcasts, and quoted coverage.
 nav: true
-nav_order: 3
+nav_order: 4
 redesign_2026: true
 toc:
   sidebar: right

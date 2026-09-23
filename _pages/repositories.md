@@ -3,8 +3,7 @@ layout: page
 permalink: /repositories/
 title: Code
 description: The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.
-nav: true
-nav_order: 4
+nav: false
 redesign_2026: true
 ---
 

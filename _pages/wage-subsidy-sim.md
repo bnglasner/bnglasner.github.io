@@ -33,7 +33,7 @@ redesign_2026: true
       literature, and my role on the proposal.
     </li>
     <li>
-      See <a href="{{ '/writing/' | relative_url }}">Policy writing</a> for related public-facing essays and policy
+      See <a href="{{ '/writing/' | relative_url }}">Writing</a> for related public-facing essays and policy
       commentary.
     </li>
   </ul>

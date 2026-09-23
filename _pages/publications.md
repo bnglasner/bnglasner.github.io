@@ -28,8 +28,9 @@ entry_group keeps the type order fixed (peer-reviewed first); the per-query
 {%- assign research_groups = "peer_reviewed,working_paper,policy_report,dissertation,thesis" | split: "," -%}
 
 <p class="research-intro">
-  Each card is labeled peer-reviewed, working paper, policy report, or thesis research, and lists every coauthor. Essays
-  and commentary are on the <a href="{{ '/writing/' | relative_url }}">Policy writing</a> page, and replication code is on the
+  Each card is labeled peer-reviewed, working paper, policy report, or thesis research, and lists every coauthor. The full list
+  of reports and analyses is on the <a href="{{ '/policy/' | relative_url }}#reports">Policy</a> page, essays and commentary
+  are on the <a href="{{ '/writing/' | relative_url }}">Writing</a> page, and replication code is on the
   <a href="{{ '/repositories/' | relative_url }}">Code</a> page.
 </p>
 

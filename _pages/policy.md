@@ -2,8 +2,9 @@
 layout: page
 permalink: /policy/
 title: Policy
-description: Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal.
-nav: false
+description: Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal, plus my reports and analyses.
+nav: true
+nav_order: 2
 redesign_2026: true
 toc:
   sidebar: right
@@ -11,8 +12,9 @@ toc:
 
 <p class="research-intro">
   I work most actively on three policy designs. Each entry below lays out the problem the policy is meant to solve,
-  what the relevant empirical literature says, and my contribution to the evidence base. For the reports and essays
-  themselves, see <a href="{{ '/writing/' | relative_url }}">Policy writing</a>.
+  what the relevant empirical literature says, and my contribution to the evidence base. The full list of my reports
+  and analyses is <a href="#reports">below</a>; essays and commentary are on the
+  <a href="{{ '/writing/' | relative_url }}">Writing</a> page.
 </p>
 
 <div class="policy-section">
@@ -192,4 +194,34 @@ toc:
       offline.
     </li>
   </ul>
+</div>
+
+{% include axis-rule.liquid %}
+
+{% comment %}
+Every writing.yml `reports:` entry, newest first (moved here from /writing/ in the
+2026-09 IA change). The eyebrow names the publisher rather than a document type,
+because the list mixes EIG reports, EIG analysis posts, and one Robin Hood spotlight.
+`bib_key`, when present, links the entry's permalink page (summary, coverage, code,
+and citation). The replace filter shows one form of Ben's name, as on /writing/.
+{% endcomment %}
+
+<h2 id="reports">Reports</h2>
+<p class="research-intro">Reports and analyses I wrote or co-wrote, newest first. Co-authors are listed on each card.</p>
+<div class="work-card-grid">
+  {% for item in site.data.writing.reports %}
+    {% if item.outlet == "Economic Innovation Group" %}{% assign publisher = "EIG" %}{% else %}{% assign publisher = item.outlet %}{% endif %}
+    <div class="work-card work-card--policy">
+      <span class="work-card__eyebrow">{{ publisher }} · {{ item.published | date: "%Y" }}</span>
+      <h3 class="work-card__title">
+        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+      </h3>
+      <p class="work-card__finding">{{ item.description }}</p>
+      <div class="work-card__meta">
+        <span>{{ item.outlet }}</span>
+        {% if item.authors.size > 1 %}<span>{{ item.authors | join: ", " | replace: "Ben Glasner", "Benjamin Glasner" }}</span>{% endif %}
+        {% if item.bib_key %}<a href="{{ '/bibliography/' | append: item.bib_key | append: '/' | relative_url }}">Summary and citation</a>{% endif %}
+      </div>
+    </div>
+  {% endfor %}
 </div>
