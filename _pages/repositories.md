@@ -32,12 +32,15 @@ redesign_2026: true
 {% include axis-rule.liquid %}
 
 <h2>Recently Updated on EIG-Research</h2>
-<div id="eig-research-repos" class="work-card-grid" data-state="loading">
+<div id="eig-research-repos" class="work-card-grid" data-state="loading" aria-live="polite" aria-busy="true">
   <div class="work-card work-card--policy">
     <span class="work-card__eyebrow">Loading</span>
     <p class="work-card__finding">Fetching the five most recently updated repositories from the EIG-Research GitHub organization.</p>
   </div>
 </div>
+<noscript>
+  <p class="work-card__finding">This list loads from the GitHub API with JavaScript. Browse the organization directly at <a href="https://github.com/EIG-Research">github.com/EIG-Research</a>.</p>
+</noscript>
 <p class="work-card__meta" style="margin-top: 1rem;">
   For the full catalog, browse
   <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">github.com/EIG-Research</a>.
@@ -188,16 +191,44 @@ redesign_2026: true
       container.innerHTML = cards;
     }
 
-    fetch(endpoint, { headers: { Accept: 'application/vnd.github+json' } })
+    var cacheKey = 'eig-research-repos';
+    try {
+      var cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        renderRepos(JSON.parse(cached));
+        container.setAttribute('aria-busy', 'false');
+        return;
+      }
+    } catch (e) {}
+
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = controller
+      ? setTimeout(function () {
+          controller.abort();
+        }, 8000)
+      : null;
+
+    fetch(endpoint, { headers: { Accept: 'application/vnd.github+json' }, signal: controller ? controller.signal : undefined })
       .then(function (response) {
         if (!response.ok) {
-          throw new Error('GitHub API returned status ' + response.status + '.');
+          throw new Error(
+            response.status === 403 || response.status === 429 ? 'GitHub is limiting requests right now.' : 'GitHub did not respond as expected.'
+          );
         }
         return response.json();
       })
-      .then(renderRepos)
+      .then(function (repos) {
+        renderRepos(repos);
+        try {
+          sessionStorage.setItem(cacheKey, JSON.stringify(repos));
+        } catch (e) {}
+      })
       .catch(function (error) {
-        renderError(error && error.message ? error.message : 'Unknown error.');
+        renderError(error && error.name === 'AbortError' ? 'GitHub took too long to respond.' : error && error.message ? error.message : 'The list could not load.');
+      })
+      .finally(function () {
+        if (timer) clearTimeout(timer);
+        container.setAttribute('aria-busy', 'false');
       });
   })();
 </script>
