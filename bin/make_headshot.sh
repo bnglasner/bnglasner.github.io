@@ -7,11 +7,13 @@
 #           script center-crops the source to a square (matching the CSS
 #           `object-fit: cover`) and writes 1x/2x/3x WebP files plus a 2x JPEG
 #           fallback. _layouts/about.liquid picks them via <picture>/srcset.
+#           The 240 px WebP is the 2x source for the 120 px headshot on
+#           /press/ (_pages/press.md), which also links the full original.
 #           When the portrait is replaced, re-run this script. The large
 #           original stays in place as the Open Graph image.
 # Usage   - bash bin/make_headshot.sh [source.jpg]
 #           (default source: assets/img/prof_pic_color.jpg; outputs sit next to
-#           the source as <stem>-sq{40,80,120}.webp and <stem>-sq80.jpg)
+#           the source as <stem>-sq{40,80,120,240}.webp and <stem>-sq80.jpg)
 # Requires - ImageMagick 7 (`magick`) or 6 (`convert`).
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -36,7 +38,7 @@ else
   CROP=(-gravity center -crop "%[fx:min(w,h)]x%[fx:min(w,h)]+0+0" +repage)
 fi
 
-for px in 40 80 120; do
+for px in 40 80 120 240; do
   "$IM" "$SRC" -auto-orient "${CROP[@]}" \
     -resize "${px}x${px}" -strip -quality 82 "${STEM}-sq${px}.webp"
 done
