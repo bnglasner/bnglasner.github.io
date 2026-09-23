@@ -1,4 +1,3 @@
-nbconvert
 pyyaml
 scholarly==1.7.11
 # scholarly 1.7.x imports bibtexparser.bibdatabase, which bibtexparser 2.x removed.

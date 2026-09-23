@@ -79,7 +79,7 @@ jobs:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
       - name: Install Python tools 🧰
-        run: pip3 install --upgrade nbconvert pyyaml
+        run: pip3 install --upgrade pyyaml
       # Gate 1: the same schema checks pre-commit runs locally, so a web edit or
       # a --no-verify commit cannot ship a malformed _data file or papers.bib.
       - name: Validate data schemas 📋
@@ -88,7 +88,6 @@ jobs:
           python3 bin/validate_data.py
       - name: Install and Build 🔧
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
           export JEKYLL_ENV=production
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
