@@ -1,11 +1,12 @@
 lead:
   primary: "This page collects verified interviews, broadcast appearances, podcasts, and quoted coverage. I have excluded syndications, mirrors, and duplicative rewrites where a more direct source link was available, so the sections below are meant to be a clean record of original appearances and original outlet links."
-  coverage: "The final section tracks selected cited coverage of Ben's research, grouped by work stream. It is intentionally selective rather than exhaustive and favors the original outlet link over archive pages, mirrors, or transcript hosts."
+  coverage: "The final section tracks selected cited coverage of my research, grouped by work stream. It is intentionally selective rather than exhaustive and favors the original outlet link over archive pages, mirrors, or transcript hosts."
 
 sections:
   - title: "Broadcast and Video"
     items:
       - outlet: "C-SPAN Washington Journal"
+        published: 2026-03-13
         title: "Benjamin Glasner on President Trump's Proposal to Create Private-Sector Retirement Accounts"
         url: "https://www.c-span.org/program/washington-journal/benjamin-glasner-on-pres-trumps-proposal-to-create-private-sector-retirement-accounts/675412"
         description: "Washington Journal interview on retirement-plan access, the gaps in the current system, and the policy logic behind expanding portable retirement accounts for workers without employer coverage."
@@ -22,11 +23,13 @@ sections:
         title: "How to End Low Wage Work—Forever"
         url: "https://moneywithkatie.com/the_mwk_show/end-low-wage-work-forever/"
         description: "Long-form conversation with Katie Gatti Tassin about low-wage work, wage subsidies, policy targeting, and the logic behind the 80-80 proposal."
+        related_work: [ozimek_glasner_2025_wage_subsidy]
       - outlet: "KOA Colorado / iHeart"
         published: 2024-10-07
         title: "Economist Ben Glasner on 'The Great Transfer-mation' (and it's NOT great!)"
         url: "https://koacolorado.iheart.com/featured/ross-kaminsky/content/2024-10-07-economist-ben-glasner-the-great-transfer-mation-project-2024/"
         description: 'Ross Kaminsky interview on The Great "Transfer"-mation, county-level transfer dependence, and what the report implies about the changing economic base of many U.S. communities.'
+        related_work: [fikri_eckhardt_glasner_2024_transfermation]
 
   - title: "Interviews and Features"
     items:
@@ -35,6 +38,7 @@ sections:
         title: "New Project Looks to Build Consensus on State of American Worker"
         url: "https://spotlightonpoverty.org/spotlight-exclusives/new-project-looks-to-build-consensus-on-state-of-american-worker/"
         description: "Interview on the American Worker Project, labor-market perception versus measurement, productivity growth, housing costs, and the policy levers that matter most for worker outcomes."
+        related_work: [ozimek_lettieri_glasner_2024_american_worker]
 
   - title: "Quoted in News Coverage"
     items:
@@ -71,8 +75,18 @@ sections:
 
 coverage_groups:
   - title: "Retirement Access and Reform"
-    description: "Selected cited coverage of Ben's retirement-access research and related policy work on portable, automatically enrolled savings accounts."
+    description: "Selected cited coverage of my retirement-access research and related policy work on portable, automatically enrolled savings accounts."
     items:
+      - outlet: "401(k) Specialist"
+        published: 2026-09-22
+        title: "Over Half of Working-Age Americans Lack Access to Employer-Provided Retirement Plans: EIG Analysis"
+        url: "https://401kspecialistmag.com/over-half-of-working-age-americans-lack-access-to-employer-provided-retirement-plans-eig-analysis/"
+        description: "Reports the updated Retirement Fast Facts estimate that 76 million workers lack plan access and quotes me, as the analysis author, on the access gap and the cost of tax-advantaged saving."
+      - outlet: "USA Today"
+        published: 2026-05-01
+        title: "TrumpIRA offers up to $1,000 in free retirement savings. How to enroll"
+        url: "https://www.usatoday.com/story/money/2026/05/01/trump-executive-order-retirement-401k-ira-enroll/89888594007/"
+        description: "Cites EIG's estimate of the share of full-time and part-time workers without workplace retirement access to frame the TrumpIRA executive order."
       - outlet: "The Washington Post"
         published: 2026-02-25
         title: "Trump floats new retirement benefit for 54 million workers"
@@ -97,36 +111,42 @@ coverage_groups:
         title: "Americans Are More Reliant Than Ever on Government Aid"
         url: "https://www.wsj.com/politics/elections/americans-government-aid-social-security-medicare-unemployment-34e92b19"
         description: 'Uses The Great "Transfer"-mation to document the growth of government transfer income as a central component of many local economies.'
+        related_work: [fikri_eckhardt_glasner_2024_transfermation]
       - outlet: "Reason"
         published: 2024-10-04
         title: "Americans Grow Increasingly Dependent on Government Payments"
         url: "https://reason.com/2024/10/04/americans-grow-increasingly-dependent-on-government-payments/"
-        description: "Cites EIG's county-level transfer dependence data and names Ben as one of the report's authors."
+        description: "Cites EIG's county-level transfer dependence data and names me as one of the report's authors."
+        related_work: [fikri_eckhardt_glasner_2024_transfermation]
 
   - title: "Opportunity Zones and Housing Supply"
-    description: "Selected cited coverage of Ben's Opportunity Zones research, especially the housing-supply results."
+    description: "Selected cited coverage of my Opportunity Zones research, especially the housing-supply results."
     items:
       - outlet: "MSCI"
         published: 2025-07-09
         title: "Apartment Development in Opportunity Zones May Matter for Inflation"
         url: "https://www.msci.com/research-and-insights/quick-take/apartment-development-in-opportunity-zones-may-matter-for-inflation"
         description: "Uses the housing-supply study's core empirical finding to connect Opportunity Zones to apartment production and inflation pressures."
+        related_work: [glasner_2025_oz_housing_supply]
       - outlet: "Multi-Housing News"
         published: 2025-08-13
         title: "Opportunity Zones: New and Improved?"
         url: "https://www.multihousingnews.com/opportunity-zones-new-and-improved/"
         description: "Summarizes the study's findings and uses them to assess how a revised Opportunity Zones framework could affect housing development."
+        related_work: [glasner_2025_oz_housing_supply]
 
   - title: "The American Worker and Labor-Market Conditions"
-    description: "Selected cited coverage of Ben's work on labor-market conditions, worker sentiment, and the gap between aggregate indicators and lived experience."
+    description: "Selected cited coverage of my work on labor-market conditions, worker sentiment, and the gap between aggregate indicators and lived experience."
     items:
       - outlet: "Reuters"
         published: 2024-06-26
         title: "Are you better off today? A question for voters as Biden, Trump debate"
         url: "https://www.reuters.com/world/us/are-you-better-off-today-question-voters-biden-trump-debate-2024-06-26/"
         description: "Draws on The American Worker to explain why headline macroeconomic strength did not map cleanly onto how many workers felt about the economy."
+        related_work: [ozimek_lettieri_glasner_2024_american_worker]
       - outlet: "Axios"
         published: 2024-07-03
         title: "The case against the doom-and-gloom view for American workers"
         url: "https://www.axios.com/2024/07/03/american-workers-economic-discontent"
         description: "Uses The American Worker to argue that worker discontent can coexist with strong fundamentals, and that the key gap is often between aggregate performance and distributional experience."
+        related_work: [ozimek_lettieri_glasner_2024_american_worker]

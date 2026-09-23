@@ -3,22 +3,23 @@ layout: page
 permalink: /repositories/
 title: Code
 description: The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.
-nav: true
-nav_order: 4
+nav: false
 redesign_2026: true
 ---
 
 <p class="research-intro">
-  Most of the code and data I produce, anything I write or collaborate on through work, is published on the
+  Most of the code and data I produce — anything I write or collaborate on through work — are published on the
   <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">EIG-Research</a>
   GitHub organization. Personal experiments, side projects, and the source for this site live on my
-  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">personal GitHub page</a>.
+  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">personal GitHub account</a>. When a
+  paper or report has public replication code, its entry on the <a href="{{ '/publications/' | relative_url }}">Research</a>
+  page links to the repository.
 </p>
 
 <h2>Open Research, by Default</h2>
 <p class="measure">
-  I established the open-research standard EIG now uses for its empirical projects. Every analysis, a short memo or
-  a multi-year study, should be readable from raw inputs to final figure, and that expectation now applies across
+  I established the open-research standard EIG now uses for its empirical projects. Every analysis — whether a short memo or
+  a multi-year study — should be readable from raw inputs to final figure, and that expectation applies across
   the EIG-Research organization. Any researcher, journalist, or policymaker should be able to open one of these
   repositories and trace the chain from data to claim.
 </p>
@@ -46,7 +47,7 @@ redesign_2026: true
 
 <h2>Personal Research Code</h2>
 <p class="research-intro">
-  Side projects and earlier replication code, on the personal account at
+  Side projects and earlier replication code live on my personal account at
   <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">github.com/bnglasner</a>. The
   repositories below are research-bearing; experimental forks and infrastructure (the source of this site, course
   material, third-party plugin forks) are not listed here.

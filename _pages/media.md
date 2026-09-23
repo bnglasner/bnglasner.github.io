@@ -4,7 +4,7 @@ permalink: /media/
 title: Media
 description: Verified interviews, broadcast appearances, podcasts, and quoted coverage.
 nav: true
-nav_order: 3
+nav_order: 4
 redesign_2026: true
 toc:
   sidebar: right
@@ -13,6 +13,9 @@ toc:
 {% assign media_page = site.data.media_page %}
 
 <p class="research-intro">{{ media_page.lead.primary }}</p>
+<p class="research-intro">
+  For bios, speaking topics, and contact details, see <a href="{{ '/press/' | relative_url }}">Press and speaking</a>.
+</p>
 
 {% for section in media_page.sections %}
 {% case section.title %}
@@ -41,16 +44,17 @@ toc:
         <p class="work-card__finding">{{ item.description }}</p>
         <div class="work-card__meta">
           <span>{{ item.outlet }}</span>
+          {% for key in item.related_work %}<a href="{{ '/bibliography/' | append: key | append: '/' | relative_url }}">Related research</a>{% endfor %}
         </div>
       </div>
     {% endfor %}
   </div>
 {% endfor %}
 
-<h2>Selected Coverage of Research</h2>
+<h2 id="coverage">Selected Coverage of Research</h2>
 <p class="research-intro">{{ media_page.lead.coverage }}</p>
 {% for group in media_page.coverage_groups %}
-  <h3>{{ group.title }}</h3>
+  <h3 id="coverage-{{ group.title | slugify }}">{{ group.title }}</h3>
   <p class="research-intro">{{ group.description }}</p>
   <div class="work-card-grid">
     {% for item in group.items %}
@@ -62,6 +66,7 @@ toc:
         <p class="work-card__finding">{{ item.description }}</p>
         <div class="work-card__meta">
           <span>{{ item.outlet }}</span>
+          {% for key in item.related_work %}<a href="{{ '/bibliography/' | append: key | append: '/' | relative_url }}">Related research</a>{% endfor %}
         </div>
       </div>
     {% endfor %}
@@ -71,7 +76,8 @@ toc:
 <h2>Connect</h2>
 <p class="research-intro measure">
   For media inquiries, podcast invitations, or speaking engagements, reach out at
-  <a href="mailto:benjamin@eig.org">benjamin@eig.org</a>. For short-form commentary as it lands, the
+  <a href="mailto:benjamin@eig.org">benjamin@eig.org</a>; bios and topics are on the
+  <a href="{{ '/press/' | relative_url }}">Press and speaking</a> page. For short-form commentary as it lands, the
   <a href="https://agglomerations.eig.org" target="_blank" rel="noopener noreferrer">Agglomerations</a>
   newsletter and <a href="https://x.com/BenGlasner" target="_blank" rel="noopener noreferrer">X</a> are the most
   up-to-date channels.

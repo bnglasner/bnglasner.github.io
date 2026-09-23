@@ -11,3 +11,27 @@ currently_working_on_updated: 2026-08-10
 # casual statement of fact, not a plea — the media page carries the proof.
 # The template appends the "Email me or see past appearances" links.
 open_to: "Collaborations, press interviews, podcasts, and panels are a regular part of the work — requests welcome."
+
+# Optional proof strip under the homepage hero buttons: three short, text-only
+# credibility lines (no logos). Every item is cross-checked by
+# bin/validate_data.py against its source, so the strip can never claim more
+# than the site documents:
+#   kind: appearances -> an outlet in media_page.yml `sections` other than
+#                        "Quoted in News Coverage" (a direct appearance)
+#   kind: coverage    -> an outlet anywhere in media_page.yml (coverage of the
+#                        work, including quotes) — label it "covered", never
+#                        "quoted in" or "featured in"
+#   kind: journals    -> the `journal` of a peer_reviewed entry in papers.bib
+proof:
+  - label: "Appeared on"
+    kind: appearances
+    url: /media/
+    items: ["C-SPAN Washington Journal", "CBS News"]
+  - label: "Research covered in"
+    kind: coverage
+    url: /media/#coverage
+    items: ["The Wall Street Journal", "The Washington Post", "Reuters", "Axios", "Business Insider"]
+  - label: "Published in"
+    kind: journals
+    url: /publications/
+    items: ["Journal of Labor Economics", "Journal of Public Economics", "Health Affairs"]

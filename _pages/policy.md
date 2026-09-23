@@ -2,8 +2,9 @@
 layout: page
 permalink: /policy/
 title: Policy
-description: Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal.
-nav: false
+description: Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal, plus my reports and analyses.
+nav: true
+nav_order: 2
 redesign_2026: true
 toc:
   sidebar: right
@@ -11,14 +12,15 @@ toc:
 
 <p class="research-intro">
   I work most actively on three policy designs. Each entry below lays out the problem the policy is meant to solve,
-  what the relevant empirical literature says, and my contribution to the evidence base. For the reports and essays
-  themselves, see <a href="{{ '/writing/' | relative_url }}">Policy writing</a>.
+  what the relevant empirical literature says, and my contribution to the evidence base. The full list of my reports
+  and analyses is <a href="#reports">below</a>; essays and commentary are on the
+  <a href="{{ '/writing/' | relative_url }}">Writing</a> page.
 </p>
 
-<div class="policy-section">
+<div class="policy-section" id="opportunity-zones">
   <span class="work-card__eyebrow work-card__eyebrow--policy">Place-Based Tax Incentive</span>
   <h2>Opportunity Zones</h2>
-  <p class="policy-section__lede">Capital gains incentives for investment in low-income census tracts</p>
+  <p class="policy-section__lede">Capital-gains incentives for investment in low-income census tracts</p>
 
   <h3>The problem</h3>
   <p>
@@ -34,7 +36,7 @@ toc:
   <h3>The state of research</h3>
   <p>
     Early empirical work on Opportunity Zones produced cautious or null findings on employment, earnings, and housing
-    prices, in part because outcomes were measured very soon after designation and in part because the program sets
+    prices, in part because outcomes were measured soon after designation and in part because the program sets
     a low bar for what counts as a qualifying investment. More recent work, using better data on construction
     permits, address activity, business formation, and capital flows, has documented meaningful effects on the built
     environment and on investment volume in designated tracts. The literature now reads more affirmatively on
@@ -62,25 +64,31 @@ toc:
       (EIG, 2023), co-author with Kenan Fikri. A synthesis of the empirical literature five years into the program.
     </li>
     <li>
+      A short-form essay connecting the housing-supply evidence to broader debates about housing scarcity:
       <a href="https://agglomerations.eig.org/p/opportunity-zones-a-quiet-revolution" target="_blank" rel="noopener noreferrer">
         Opportunity Zones: A Quiet Revolution in Housing Policy
       </a>
-      , a short-form essay connecting the housing-supply evidence to broader debates about housing scarcity.
     </li>
   </ul>
+  <p class="policy-section__related mt-3">
+    Related: <a href="{{ '/publications/' | relative_url }}#theme-place">Place-based policy and housing</a> research and
+    <a href="{{ '/media/' | relative_url }}#coverage-opportunity-zones-and-housing-supply">press coverage</a> of this work.
+  </p>
 </div>
 
 {% include axis-rule.liquid %}
 
-<div class="policy-section">
+<div class="policy-section" id="retirement">
   <span class="work-card__eyebrow work-card__eyebrow--policy">Retirement Coverage</span>
   <h2>Retirement Savings for Americans Act</h2>
   <p class="policy-section__lede">A federal, portable retirement account with auto-enrollment and a low-income match</p>
 
   <h3>The problem</h3>
   <p>
-    Roughly half of U.S. private-sector workers, on the order of 54 million people, do not have access to a workplace
-    retirement plan. The coverage gap concentrates among low-wage workers, part-time workers, independent
+    Nearly half of U.S. private-sector employees, about 55 million people, do not have access to an employer-provided
+    retirement plan, according to my
+    <a href="https://eig.org/retirement-fast-facts/" target="_blank" rel="noopener noreferrer">September 2026 update</a> of
+    EIG's retirement fast facts. The coverage gap concentrates among low-wage workers, part-time workers, independent
     contractors, and employees of small firms. The result is a two-tier retirement system: middle- and higher-income
     workers accumulate substantial tax-advantaged wealth over a career, while the bottom half of the earnings
     distribution arrives at retirement with little outside Social Security. State-level auto-IRA programs have begun
@@ -96,7 +104,7 @@ toc:
     participation effects when they are simple and salient. Evidence from state auto-IRA programs such as
     OregonSaves and CalSavers shows large take-up among workers newly offered access, and Australia's Superannuation
     Guarantee provides a long-running natural experiment in universal, portable, employment-linked retirement saving.
-    The Retirement Savings for Americans Act is designed around this evidence base: a federally administered,
+    The Retirement Savings for Americans Act (RSAA) is designed around this evidence base: a federally administered,
     portable account, automatic enrollment for workers without an employer plan, and a federal match aimed at low-
     and moderate-income earners. Open empirical questions concern crowd-out of existing employer plans, the design of
     the federal match, and the long-run distributional consequences of building a parallel federal account structure.
@@ -110,9 +118,13 @@ toc:
   </p>
   <ul class="policy-section__links">
     <li>
-      Public commentary on the coverage gap, including a
-      <a href="https://www.cbsnews.com/news/retirement-plans-employer-sponsored-not-offered/" target="_blank" rel="noopener noreferrer">
-        CBS MoneyWatch
+      Public commentary on the coverage gap, including a live
+      <a
+        href="https://www.cbsnews.com/video/more-than-half-of-us-workers-dont-have-access-to-employee-sponsored-retirement-plan/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CBS News
       </a>
       segment on the share of U.S. workers without an employer-sponsored retirement plan.
     </li>
@@ -126,15 +138,18 @@ toc:
       >
         A Retirement Fix For 69 Million American Workers: Australia Inspired
       </a>
-      .
     </li>
     <li>Ongoing internal analysis at EIG supporting the institution's policy work on RSAA design and implementation.</li>
   </ul>
+  <p class="policy-section__related mt-3">
+    Related: <a href="{{ '/media/' | relative_url }}#coverage-retirement-access-and-reform">press coverage</a> of this
+    work.
+  </p>
 </div>
 
 {% include axis-rule.liquid %}
 
-<div class="policy-section">
+<div class="policy-section" id="wage-subsidy">
   <span class="work-card__eyebrow work-card__eyebrow--policy">Earnings and Labor-Market Attachment</span>
   <h2>80-80 Wage Subsidy</h2>
   <p class="policy-section__lede">A targeted wage subsidy to raise earnings for low-wage workers</p>
@@ -142,7 +157,7 @@ toc:
   <h3>The problem</h3>
   <p>
     A large share of U.S. workers spend their careers in jobs that pay too little to support a household, even at
-    full-time hours. The Earned Income Tax Credit is the largest existing wage-side transfer, but its structure
+    full-time hours. The Earned Income Tax Credit (EITC) is the largest existing wage-side transfer, but its structure
     leaves childless workers and many primary earners with only modest support, and its annual lump-sum delivery
     undermines its function as ongoing wage support. Minimum-wage policy can raise the floor but cannot target
     subsidies precisely to the workers and hours where earnings gains are most valuable. The 80-80 wage subsidy
@@ -153,7 +168,7 @@ toc:
   <h3>The state of research</h3>
   <p>
     The empirical literature on existing earnings subsidies is large and broadly supportive. EITC expansions are
-    associated with sizable increases in labor-force participation among single mothers and modest increases in
+    associated with sizable increases in labor force participation among single mothers and modest increases in
     earnings, with little evidence of large negative effects on hours among current workers. Evaluations of
     state-level EITC supplements and child credit expansions corroborate the basic finding: well-designed wage and
     family subsidies raise after-tax income at the bottom without unwinding work incentives. International
@@ -187,4 +202,39 @@ toc:
       offline.
     </li>
   </ul>
+  <p class="policy-section__related mt-3">
+    Related: <a href="{{ '/bibliography/ozimek_glasner_2025_wage_subsidy/' | relative_url }}">summary and citation</a>
+    for the proposal, and
+    <a href="{{ '/publications/' | relative_url }}#theme-work">Work, wages, and labor-market institutions</a> research.
+  </p>
+</div>
+
+{% include axis-rule.liquid %}
+
+{% comment %}
+Every writing.yml `reports:` entry, newest first (moved here from /writing/ in the
+2026-09 IA change). The eyebrow names the publisher rather than a document type,
+because the list mixes EIG reports, EIG analysis posts, and one Robin Hood spotlight.
+`bib_key`, when present, links the entry's permalink page (summary, coverage, code,
+and citation). The replace filter shows one form of Ben's name, as on /writing/.
+{% endcomment %}
+
+<h2 id="reports">Reports</h2>
+<p class="research-intro">Reports and analyses I wrote or co-wrote, newest first. Co-authors are listed on each card.</p>
+<div class="work-card-grid">
+  {% for item in site.data.writing.reports %}
+    {% if item.outlet == "Economic Innovation Group" %}{% assign publisher = "EIG" %}{% else %}{% assign publisher = item.outlet %}{% endif %}
+    <div class="work-card work-card--policy">
+      <span class="work-card__eyebrow">{{ publisher }} · {{ item.published | date: "%Y" }}</span>
+      <h3 class="work-card__title">
+        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+      </h3>
+      <p class="work-card__finding">{{ item.description }}</p>
+      <div class="work-card__meta">
+        <span>{{ item.outlet }}</span>
+        {% if item.authors.size > 1 %}<span>{{ item.authors | join: ", " | replace: "Ben Glasner", "Benjamin Glasner" }}</span>{% endif %}
+        {% if item.bib_key %}<a href="{{ '/bibliography/' | append: item.bib_key | append: '/' | relative_url }}">Summary and citation</a>{% endif %}
+      </div>
+    </div>
+  {% endfor %}
 </div>
