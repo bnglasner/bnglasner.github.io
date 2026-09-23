@@ -29,7 +29,7 @@
 - name: rpp
   eyebrow: "Cost of living · 2024 election"
   title: "One dot breaks the 2024 election chart"
-  hook: "Democratic vote share fell 4.35 points in the 27 most expensive U.S. counties — nearly four times the decline the trend across all other counties predicts."
+  hook: "Democratic vote share fell 4.35 percentage points in the 27 most expensive U.S. counties — nearly four times the decline the trend across all other counties predicts."
   alt: "Animated scatter plot of the change in Democratic vote share from 2020 to 2024 against county price level, with dot area scaled to population. A trend line slopes gently downward, then the top price bin drops far below it to negative 4.35 percentage points against a predicted negative 1.14. Source: EIG analysis of county returns and BEA Regional Price Parities."
   date: 2026-07-17
 

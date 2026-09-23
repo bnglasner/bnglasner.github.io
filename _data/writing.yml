@@ -186,7 +186,7 @@ short_form:
     outlet: "Agglomerations"
     authors: ["Sarah Eckhardt", "Ben Glasner", "Cardiff Garcia"]
     published: 2025-02-07
-    description: "An interactive tour of the county-level transfer dependence behind the Great Transfer-mation report."
+    description: 'An interactive tour of the county-level transfer dependence behind the Great "Transfer"-mation report.'
   - title: "No, we are not producing too many STEM graduates"
     url: "https://agglomerations.eig.org/p/no-we-are-not-producing-too-many"
     outlet: "Agglomerations"
