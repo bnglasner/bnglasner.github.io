@@ -79,8 +79,10 @@ toc:
 
   <h3>The problem</h3>
   <p>
-    Roughly half of U.S. private-sector workers, on the order of 54 million people, do not have access to a workplace
-    retirement plan. The coverage gap concentrates among low-wage workers, part-time workers, independent
+    Nearly half of U.S. private-sector employees, about 55 million people, do not have access to an employer-provided
+    retirement plan, according to my
+    <a href="https://eig.org/retirement-fast-facts/" target="_blank" rel="noopener noreferrer">September 2026 update</a> of
+    EIG's retirement fast facts. The coverage gap concentrates among low-wage workers, part-time workers, independent
     contractors, and employees of small firms. The result is a two-tier retirement system: middle- and higher-income
     workers accumulate substantial tax-advantaged wealth over a career, while the bottom half of the earnings
     distribution arrives at retirement with little outside Social Security. State-level auto-IRA programs have begun
@@ -110,9 +112,13 @@ toc:
   </p>
   <ul class="policy-section__links">
     <li>
-      Public commentary on the coverage gap, including a
-      <a href="https://www.cbsnews.com/news/retirement-plans-employer-sponsored-not-offered/" target="_blank" rel="noopener noreferrer">
-        CBS MoneyWatch
+      Public commentary on the coverage gap, including a live
+      <a
+        href="https://www.cbsnews.com/video/more-than-half-of-us-workers-dont-have-access-to-employee-sponsored-retirement-plan/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CBS News
       </a>
       segment on the share of U.S. workers without an employer-sponsored retirement plan.
     </li>
