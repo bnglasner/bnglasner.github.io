@@ -181,7 +181,6 @@ exclude:
   - purgecss.config.js
   - QUICKSTART.md
   - README.md
-  - readme_preview/
   - requirements.txt
   - SEO.md
   - TROUBLESHOOTING.md
