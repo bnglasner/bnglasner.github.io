@@ -20,8 +20,26 @@ layout: default
   {% if site.data.homepage.currently_working_on %}
     <div class="home-note">
       {% if page.profile_image %}
-        {% assign profile_image_path = page.profile_image | prepend: 'assets/img/' | relative_url %}
-        <img class="home-note__photo" src="{{ profile_image_path }}" alt="" width="40" height="40" loading="eager">
+        {% comment %}
+          40px slot: serve the square crops from bin/make_headshot.sh (1x/2x/3x WebP,
+          2x JPEG fallback), not the full-size portrait. display:contents keeps the
+          <img> as the flex item that .home-note__photo styles.
+        {% endcomment %}
+        {% assign profile_image_stem = page.profile_image | prepend: 'assets/img/' | split: '.' | first %}
+        <picture style="display: contents">
+          <source
+            type="image/webp"
+            srcset="{{ profile_image_stem | append: '-sq40.webp' | relative_url }} 1x, {{ profile_image_stem | append: '-sq80.webp' | relative_url }} 2x, {{ profile_image_stem | append: '-sq120.webp' | relative_url }} 3x"
+          >
+          <img
+            class="home-note__photo"
+            src="{{ profile_image_stem | append: '-sq80.jpg' | relative_url }}"
+            alt=""
+            width="40"
+            height="40"
+            loading="eager"
+          >
+        </picture>
       {% endif %}
       <div class="home-note__body">
         <p class="home-note__text">Currently: {{ site.data.homepage.currently_working_on }}</p>
