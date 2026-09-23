@@ -24,7 +24,7 @@
     - title: Ph.D. and M.Sc., Public Policy &amp; Management
       institution: Evans School of Public Policy and Governance, University of Washington
       location: Seattle, WA
-      year: 2016 - 2021
+      year: 2016–2021
       description:
         - "Dissertation: The Impact of Public Policy on Nonstandard Work Arrangements."
         - "Research: labor-market regulation and worker classification; benefits and nonstandard work; minimum wage, overtime, employer-provided health insurance, monopsony, and tax evasion."
@@ -33,7 +33,7 @@
     - title: B.A., Economics
       institution: Vassar College
       location: Poughkeepsie, NY
-      year: 2012 - 2016
+      year: 2012–2016
       description:
         - "Thesis: The Chinese Hukou System: Structural Change and Political Reform."
         - "Research: political reform, urbanization, and structural change in modern China."
@@ -46,7 +46,7 @@
       institution_url: https://eig.org/
       url: https://eig.org/about-us/executive-team-staff/ben-glasner/
       location: Washington, D.C.
-      year: Jan 2026 - present
+      year: Jan 2026–present
       description:
         - Help shape and prioritize EIG's research pipeline by generating new ideas, assessing fit with strategic priorities, and tracking key economic, academic, and policy developments.
         - "Lead end-to-end research projects: frame questions, select data, design and defend identification strategies, run quantitative analysis, and write publication-ready outputs with institutional rigor."
@@ -58,16 +58,16 @@
       institution: Economic Innovation Group (EIG)
       institution_url: https://eig.org/
       location: Washington, D.C.
-      year: Sep 2024 - Jan 2026
+      year: Sep 2024–Jan 2026
       description:
         - Economic research with large datasets; advanced statistical and spatial analysis.
-        - Translate empirical results into policy writing, data visualization, and stakeholder outreach.
+        - Translated empirical results into policy writing, data visualization, and stakeholder outreach.
 
     - title: Associate Economist
       institution: Economic Innovation Group (EIG)
       institution_url: https://eig.org/
       location: Washington, D.C.
-      year: Jan 2023 - Sep 2024
+      year: Jan 2023–Sep 2024
       description:
         - Applied empirical methods to EIG research on labor markets, place-based policy, and economic mobility.
         - Supported report production, data engineering, and policy communication for public-facing publications.
@@ -77,7 +77,7 @@
       institution_url: https://povertycenter.columbia.edu/people
       url: https://povertycenter.columbia.edu/people
       location: New York, NY
-      year: 2021 - 2022
+      year: 2021–2022
       description:
         - Empirical analyses of major U.S. social policies and reforms.
         - Work on intergenerational poverty, material hardship, and employment impacts of the Child Tax Credit.
@@ -85,10 +85,10 @@
     - title: Dean's Research Assistant
       institution: University of Washington
       location: Seattle, WA
-      year: 2020 - 2021
+      year: 2020–2021
       description:
         - Supported faculty transition to technology-enhanced learning.
-        - Conducted DEI and course design assessments; developed action plans informed by interviews and surveys.
+        - Conducted DEI and course-design assessments; developed action plans informed by interviews and surveys.
 
     - title: Predoctoral Instructor
       institution: University of Washington
@@ -102,8 +102,8 @@
       location: Seattle, WA
       year: 2018
       description:
-        - Expenditure analysis across household surveys in Malawi, Tanzania, Ghana, Peru, and Cote d'Ivoire.
-        - Developed seasonality estimates using parametric, semi-parametric, and machine learning approaches.
+        - Expenditure analysis across household surveys in Malawi, Tanzania, Ghana, Peru, and Côte d'Ivoire.
+        - Developed seasonality estimates using parametric, semiparametric, and machine-learning approaches.
 
 - title: Affiliations
   type: time_table
@@ -112,7 +112,7 @@
       institution: Center on Poverty and Social Policy, Columbia University
       institution_url: https://povertycenter.columbia.edu/people
       location: New York, NY
-      year: 2022 - present
+      year: 2022–present
       description:
         - Continuing research collaboration with the Center on social-policy evaluation, poverty measurement, and the long-run effects of safety-net programs.
 
@@ -127,20 +127,29 @@
 
     - title: Reports and working papers
       items:
+        - '<a href="https://eig.org/full-vs-hybrid-remote-work/" target="_blank" rel="noopener noreferrer">Full vs. Hybrid: Examining the Consequences of How Americans Work Remotely</a> (EIG, November 2023)'
         - '<a href="https://eig.org/american-worker/" target="_blank" rel="noopener noreferrer">The American Worker Project: Toward a New Consensus</a> (EIG, June 2024)'
         - <a href="https://eig.org/great-transfermation/" target="_blank" rel="noopener noreferrer">The Great &ldquo;Transfer&rdquo;-mation</a> (EIG, September 2024)
         - <a href="https://eig.org/opportunity-zones-housing-supply/" target="_blank" rel="noopener noreferrer">The Impact of Opportunity Zones on Housing Supply</a> (EIG, March 2025)
         - '<a href="https://eig.org/how-to-end-low-wage-work-forever/" target="_blank" rel="noopener noreferrer">How to end low-wage work forever: An 80-80 wage subsidy proposal</a> (EIG, September 2025)'
+        - <a href="https://www.inet.ox.ac.uk/publications/no-2025-22-the-earned-income-tax-credit-and-the-intergenerational-persistence-of-poverty" target="_blank" rel="noopener noreferrer">The Earned Income Tax Credit and the Intergenerational Persistence of Poverty</a> (INET Oxford Working Paper 2025-22, October 2025)
+        - '<a href="https://eig.org/retirement-fast-facts/" target="_blank" rel="noopener noreferrer">The U.S. Retirement System: Fast Facts</a> (EIG, September 2026)'
 
     - title: Agglomerations (selected short-form writing)
       items:
         - '<a href="https://agglomerations.eig.org/p/how-to-end-low-wage-work-forever" target="_blank" rel="noopener noreferrer">How to end low-wage work forever, Part 1</a> (September 2025)'
         - '<a href="https://agglomerations.eig.org/p/how-to-end-low-wage-work-forever-4a4" target="_blank" rel="noopener noreferrer">How to end low-wage work forever, Part 2: the FAQ</a> (December 2025)'
         - '<a href="https://agglomerations.eig.org/p/the-jobs-chart-that-really-has-us" target="_blank" rel="noopener noreferrer">The jobs chart that really has us worried</a> (December 2025)'
+        - '<a href="https://agglomerations.eig.org/p/fixing-the-us-retirement-system-a" target="_blank" rel="noopener noreferrer">Fixing the U.S. Retirement System: A Q&amp;A</a> (April 2026)'
+        - '<a href="https://agglomerations.eig.org/p/the-babysitter-clause-and-the-problem" target="_blank" rel="noopener noreferrer">The Babysitter Clause and the Problem of Partial Noncompete Bans</a> (with Thomas Cronin, May 2026)'
+
+    - title: Guest writing
+      items:
+        - '<a href="https://www.labormarketmatters.com/p/minimum-wage-laws-and-app-based-workers" target="_blank" rel="noopener noreferrer">Minimum Wage Laws and App-Based Workers</a> (Labor Market Matters, March 2024)'
 
     - title: Full list
       items:
-        - See <a href="/publications/">Publications</a> or <a href="https://scholar.google.com/citations?user=ZvG1rc8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>.
+        - See <a href="/publications/">Research</a> or <a href="https://scholar.google.com/citations?user=ZvG1rc8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>.
 
 - title: Code and Data (Selected)
   type: time_table
@@ -217,14 +226,15 @@
       institution: Washington State Employment Security Department &amp; World Bank
       description:
         - Contributed to administrative data tools (including work supporting the Seattle Minimum Wage project).
-        - Developed and delivered a random forest methodology to improve analysis of incomplete survey data.
+        - Developed and delivered a random-forest methodology to improve analysis of incomplete survey data.
 
 - title: Policy, News, and Media
   type: nested_list
   contents:
     - title: Television
       items:
-        - CBS MoneyWatch &mdash; "More than half of U.S. workers don't have access to employer-sponsored retirement plan"
+        - C-SPAN Washington Journal &mdash; "Benjamin Glasner on President Trump's Proposal to Create Private-Sector Retirement Accounts" (2026)
+        - CBS News &mdash; "More than half of U.S. workers don't have access to employer-sponsored retirement plan"
     - title: Podcasts
       items:
         - Money with Katie (Morning Brew)
@@ -233,13 +243,13 @@
         - Political Economy Forum Podcast (University of Washington)
     - title: Print / Online
       items:
-        - New York Times; Wall Street Journal; Financial Times; Washington Post; Bloomberg; CBS News; Yahoo Finance; MarketWatch; and others.
+        - The New York Times, The Wall Street Journal, the Financial Times, The Washington Post, Bloomberg, CBS News, Yahoo Finance, MarketWatch, and others.
 
 - title: Research and Policy Areas
   type: list
   contents:
     - Wages, work, and labor-market institutions (including wage-subsidy design)
     - Economic geography and place-based policy
-    - Transfers, safety net programs, and poverty dynamics
+    - Transfers, safety-net programs, and poverty dynamics
     - Opportunity Zones and housing supply
     - Gig economy and the future of work

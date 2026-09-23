@@ -88,7 +88,7 @@ layout: default
                       {% endif %}
                     </div>
                     {% if entry.year %}
-                      <p class="mb-1 text-muted">{{ entry.year }}</p>
+                      <p class="mb-1 text-muted">{{ entry.year | replace: ' - ', ' – ' }}</p>
                     {% endif %}
                   </div>
 

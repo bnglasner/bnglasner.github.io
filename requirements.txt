@@ -1,3 +1,5 @@
-nbconvert
 pyyaml
-scholarly
+scholarly==1.7.11
+# scholarly 1.7.x imports bibtexparser.bibdatabase, which bibtexparser 2.x removed.
+# Unpinned, pip resolved 2.0.1 and every citations run since 2026-09-09 failed on import.
+bibtexparser>=1.4,<2

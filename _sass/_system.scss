@@ -39,9 +39,27 @@
 }
 
 :focus-visible {
-  outline: none;
+  // Transparent, not `none`: invisible normally, but forced-colors mode
+  // (Windows High Contrast) paints it in the system color, while it strips
+  // the box-shadow ring entirely.
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   box-shadow: var(--focus-ring);
   border-radius: 2px;
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 2px solid CanvasText !important;
+    outline-offset: 2px;
+  }
+}
+
+// The navbar is fixed-top (~57px). Without this, focusing a link by keyboard
+// (or following an in-page anchor) scrolls it to y=0 — under the bar
+// (WCAG 2.4.11 Focus Not Obscured).
+html {
+  scroll-padding-top: 5rem;
 }
 
 // Bootstrap sets `.btn:focus`/`.form-control:focus` box-shadows of its own;
@@ -68,6 +86,18 @@ button:focus-visible,
     width: 100%;
     height: 100%;
   }
+}
+
+// The origin (zero) tick: taller, 2px, accent teal. In-content rules only;
+// the full-bleed header/footer rules are chrome that meets the viewport
+// edge, where a zero mark would be clipped and mean nothing.
+.axis-rule .axis-rule__origin {
+  stroke: var(--accent-teal);
+}
+
+header .axis-rule .axis-rule__origin,
+footer .axis-rule .axis-rule__origin {
+  display: none;
 }
 
 .axis-rule--tight {
@@ -111,6 +141,8 @@ footer .axis-rule {
 }
 
 .work-card {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: 1.1rem 1.3rem 1.3rem;
   background: var(--paper-bg);
@@ -181,11 +213,23 @@ footer .axis-rule {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem 0.7rem;
-  margin-top: 0.75rem;
+  // Pinned to the card's bottom edge so meta rows align across a grid row
+  // (cards stretch to the row height; content is a flex column).
+  margin-top: auto;
+  padding-top: 0.75rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--paper-muted-soft);
   font-variant-numeric: tabular-nums;
+}
+
+// Cards with more than one meta row (the byline row, then venue and
+// links) keep them together at the bottom. Only the first row takes the
+// auto margin; otherwise the free space splits between them and the byline
+// floats mid-card.
+.work-card__meta + .work-card__meta {
+  margin-top: 0.35rem;
+  padding-top: 0;
 }
 
 .work-card__meta a {
@@ -292,6 +336,7 @@ footer .axis-rule {
 
 .headline-wheel__nav {
   display: flex;
+  flex-wrap: wrap; // keeps the row inside the viewport at large text zoom
   align-items: center;
   gap: 0.75rem;
   margin-top: 0.9rem;
@@ -318,13 +363,41 @@ footer .axis-rule {
   }
 
   &:focus-visible {
-    outline: none;
+    outline: 2px solid transparent;
     box-shadow: var(--focus-ring);
+  }
+
+  &[hidden] {
+    display: none;
   }
 }
 
+// Pause/play: two bars while playing, a triangle once paused. Drawn in CSS
+// so the glyph inherits currentColor in both themes and forced colors.
+.headline-wheel__pause {
+  margin-left: auto;
+}
+
+.headline-wheel__pause-icon {
+  display: block;
+  width: 0.6rem;
+  height: 0.7rem;
+  border-style: solid;
+  border-color: currentColor;
+  border-width: 0 0.2rem;
+  box-sizing: border-box;
+}
+
+.headline-wheel__pause.is-paused .headline-wheel__pause-icon {
+  width: 0;
+  height: 0;
+  margin-left: 0.15rem;
+  border-width: 0.36rem 0 0.36rem 0.6rem;
+  border-color: transparent transparent transparent currentColor;
+}
+
 .headline-wheel__credit {
-  margin: 0.75rem 0 0;
+  margin: 0.75rem 0 1.75rem;
   font-family: var(--font-sans);
   font-size: 0.85rem;
   line-height: 1.5;
@@ -333,26 +406,45 @@ footer .axis-rule {
 
 .headline-wheel__dots {
   display: flex;
-  gap: 0.5rem;
+  gap: 0;
 }
 
+// 24x24 hit area (WCAG 2.5.8) around the same 9px visible dot, drawn with
+// ::before so the row keeps its compact look.
 .headline-wheel__dot {
-  width: 0.55rem;
-  height: 0.55rem;
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: 0;
-  border: 1px solid var(--paper-muted-soft);
+  border: 0;
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
 
-  &[aria-current="true"] {
+  &::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    border: 1px solid var(--paper-muted-soft);
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+
+  &[aria-current="true"]::before {
     background: var(--accent-teal);
     border-color: var(--accent-teal);
   }
 
   &:focus-visible {
-    outline: none;
+    outline: 2px solid transparent;
     box-shadow: var(--focus-ring);
+  }
+}
+
+@media (forced-colors: active) {
+  .headline-wheel__dot[aria-current="true"]::before {
+    background: CanvasText;
   }
 }
 
@@ -365,25 +457,11 @@ body.redesign-2026 {
   color: var(--paper-text);
   font-family: var(--font-sans);
   font-size: var(--font-size-body);
+  // MDB's base stylesheet sets body text to 300. Public Sans is drawn for
+  // 400 text, and IBM Plex Mono ships no 300 file at all (browsers were
+  // silently substituting 400 for the mono meta lines).
+  font-weight: 400;
   line-height: var(--line-height-body);
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-serif);
-    color: var(--paper-text);
-    font-weight: 500;
-  }
-
-  p,
-  li,
-  span,
-  div {
-    color: inherit;
-  }
 
   .measure {
     max-width: var(--measure);
@@ -402,9 +480,98 @@ body.redesign-2026 {
     max-width: var(--measure);
     margin-top: 0.5rem;
     color: var(--paper-muted);
-    font-size: 1.05rem;
-    line-height: var(--line-height-body);
+    font-size: 1.25rem; // Newsreader italic deck; see "Editorial accents"
+    line-height: 1.45;
   }
+}
+
+// PurgeCSS (deploy.yml) drops selectors whose only class sits inside
+// :where()/:is(), which unstyled every heading in production. The loud
+// comments survive Sass's compressed output and fence this block off.
+/*! purgecss start ignore */
+// Base heading and text-color rules. The gate is wrapped in :where() so the
+// effective specificity is just the element selector (0,0,1): it still beats
+// _typography.scss's legacy `p, h1, ..., span { color: var(--global-text-color) }`
+// (same specificity, earlier in the cascade), but every single-class component
+// rule (.work-card__eyebrow, .site-eyebrow, .policy-section h3, ...) now wins.
+// Nesting these inside `body.redesign-2026 {}` compiled to (0,1,2), which
+// silently forced every eyebrow, finding line, and muted caption to ink.
+:where(body.redesign-2026) :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-serif);
+  color: var(--paper-text);
+  font-weight: 500;
+}
+
+:where(body.redesign-2026) :is(p, li, span, div) {
+  color: inherit;
+}
+
+// Section heading scale. _typography.scss collapses every h1-h6 to
+// --type-body (17px), which left section headings ("Peer-Reviewed
+// Research", "Policy Reports") smaller than the 22px card titles under
+// them. One ladder: hero > h2 section > card title/h3 > body. Zero-
+// specificity gate limited to unclassed headings, so component headings
+// (.policy-section h2,
+// .work-card__title, .cv .card-title, .site-eyebrow) keep their own sizes.
+:where(body.redesign-2026 .site-main) h2:where(:not([class])) {
+  font-size: var(--font-size-h2);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 3rem 0 1rem;
+}
+
+:where(body.redesign-2026 .site-main) h3:where(:not([class])) {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 2rem 0 0.75rem;
+}
+
+@media (max-width: 576px) {
+  :where(body.redesign-2026 .site-main) h2:where(:not([class])) {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+}
+
+// Line breaking: balance short display lines (no one-word last lines in
+// card titles or the hero), and let prose avoid widows. Both degrade to
+// normal wrapping where unsupported.
+:where(body.redesign-2026) :is(h1, h2, h3, h4, .work-card__title, .headline-wheel__title, .home-hero__headline) {
+  text-wrap: balance;
+}
+
+:where(body.redesign-2026) :is(p, li, .work-card__finding, .headline-wheel__hook) {
+  text-wrap: pretty;
+}
+
+// Editorial accents. Newsreader italic is the site's second voice: page
+// decks (.post-description) and the policy ledes read as a magazine
+// standfirst under the headline, and any <em> in a display headline takes
+// the accent color. Italic is used only at these points.
+:where(body.redesign-2026) :is(.post-description, .policy-section__lede) {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+:where(body.redesign-2026) :is(.home-hero__headline, .post-title) em {
+  font-style: italic;
+  color: var(--accent-teal);
+}
+
+/*! purgecss end ignore */
+
+// Drop cap: the policy narratives only (the first paragraph under each
+// section's first h3, "The problem"). The wage-subsidy-sim status box
+// reuses .policy-section but has no h3, so it never matches. Two lines
+// deep in Newsreader at its display optical size, in the section's amber.
+.policy-section > h3:first-of-type + p::first-letter {
+  float: left;
+  margin: 0.08em 0.1em 0 0;
+  font-family: var(--font-serif);
+  font-size: 3.35em;
+  font-weight: 500;
+  line-height: 0.82;
+  color: var(--accent-amber);
 }
 
 // Generic in-content link color for migrated pages, scoped to .site-main
@@ -432,7 +599,16 @@ body.redesign-2026 {
 // rule — those are already visually distinct as headings, buttons, and
 // chrome, not text a reader could mistake for a link only by its color.
 :where(body.redesign-2026 .site-main)
-  :is(.research-intro, .measure, .policy-section p, .policy-section__links, .work-detail__abstract, .post-description)
+  :is(
+    .research-intro,
+    .measure,
+    .policy-section p,
+    .policy-section__links,
+    .work-detail__abstract,
+    .post-description,
+    .home-note__text,
+    .headline-wheel__credit
+  )
   a {
   text-decoration: underline;
   text-underline-offset: 0.15em;
@@ -527,13 +703,15 @@ body.redesign-2026 {
 
 .home-note {
   display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-top: -1rem;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 
 .home-note__photo {
+  // 40px matches the pre-cropped head-and-shoulders squares that
+  // bin/make_headshot.sh writes (sq40/sq80/sq120 for 1x/2x/3x).
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -549,16 +727,51 @@ body.redesign-2026 {
 }
 
 .home-note__text {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  max-width: 64ch;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
   color: var(--paper-muted);
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: 0;
 }
 
+// "Selected work" is a mono eyebrow label (.site-eyebrow), not a serif
+// section heading; keep it at the eyebrow size.
+// Proof strip under the hero CTAs (_data/homepage.yml `proof`): each line
+// is a mono eyebrow label (the link, underlined for WCAG 1.4.1) followed by
+// outlet names in muted sans. The eyebrow voice matches the hero eyebrow
+// and card eyebrows. Accent discipline: the labels are links, so teal.
+.home-proof {
+  max-width: 64ch;
+  gap: 0.4rem;
+}
+
+.home-proof .home-note__text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.home-proof a {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent-teal);
+  text-decoration: none;
+
+  u {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+
+  &:hover u {
+    text-decoration-thickness: 2px;
+  }
+}
+
 .home-selected-work h2 {
-  margin-bottom: 1.25rem;
-  font-size: 1.1rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 576px) {
@@ -677,16 +890,24 @@ ol.bibliography > li {
   padding-left: 1.3rem;
 }
 
+// Breathing room when sections follow prose or each other directly (the
+// press page stacks them with no axis rule between). Margins collapse, so
+// where an axis rule (2.5rem) precedes a section nothing changes.
+* + .policy-section {
+  margin-top: 2.25rem;
+}
+
 .policy-section h2 {
   margin: 0.5rem 0 0.35rem;
   font-size: var(--font-size-h2);
 }
 
-.policy-section__lede {
+// Doubled class: outranks `.policy-section p` (0,1,1) below.
+.policy-section .policy-section__lede {
   margin: 0 0 1.5rem;
   color: var(--paper-muted);
-  font-size: 1.1rem;
-  line-height: var(--line-height-body);
+  font-size: 1.25rem; // Newsreader italic standfirst; see "Editorial accents"
+  line-height: 1.45;
 }
 
 .policy-section h3 {
@@ -816,6 +1037,7 @@ body.redesign-2026 {
   }
 
   .cv table.table-cv td {
+    overflow-wrap: anywhere; // long URLs/emails wrap instead of widening the page at high text zoom
     color: var(--paper-text);
     border-color: var(--paper-hairline-soft);
     padding: 0.5rem 0.75rem 0.5rem 0;
@@ -844,5 +1066,85 @@ body.redesign-2026 {
 
   .cv .anchor {
     scroll-margin-top: 80px;
+  }
+
+  // The title-row PDF glyph duplicates the three PDF buttons directly
+  // below it and was the only oversized icon on the site.
+  // display: none on the link itself (not just the icon) so no invisible,
+  // still-focusable link is left behind.
+  .post-title a[aria-label="Download CV PDF"] {
+    display: none;
+  }
+
+  // Map-section labels (Full Name, Current Role, ...) read as field
+  // labels: mono eyebrow style instead of 700-weight sans.
+  .cv table.table-cv td:first-child,
+  .cv table.table-cv td:first-child b {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500 !important; // beats Bootstrap's .font-weight-bold !important
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--paper-muted);
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+
+  // Bootstrap's .font-weight-light (!important, 300) on CV body text.
+  .cv .font-weight-light {
+    font-weight: 400 !important;
+  }
+
+  // Date columns line up digit-for-digit.
+  .cv .text-muted {
+    font-variant-numeric: tabular-nums;
+  }
+
+  // Employer links: keep the teal link cue but drop to muted weight so the
+  // role title leads.
+  .cv .text-muted a {
+    color: var(--accent-teal);
+    font-weight: 400;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Print — mainly the CV page. Dark tokens are screen-only (_themes.scss), so
+// print always renders in light ink. Here: drop interactive chrome, keep the
+// content, and show where external links go.
+// ---------------------------------------------------------------------------
+
+@media print {
+  #navbar,
+  footer,
+  #back-to-top,
+  .skip-link,
+  .axis-rule,
+  .cv__pdf-variants,
+  .headline-wheel__nav {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+    background: none;
+  }
+
+  .site-main {
+    margin-top: 0 !important;
+  }
+
+  // Individual entries stay whole; whole cards may split across pages
+  // (keeping a long card intact leaves half-blank pages).
+  .cv .list-group-item,
+  .cv table.table-cv tr {
+    break-inside: avoid;
+  }
+
+  .cv a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: var(--paper-muted);
+    overflow-wrap: anywhere;
   }
 }

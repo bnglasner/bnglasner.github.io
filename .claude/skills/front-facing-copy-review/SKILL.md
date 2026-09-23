@@ -33,7 +33,7 @@ outputs:
 
 5. **Write the report.** Create `docs/audits/YYYY-MM-DD-front-facing-review.md` mirroring the structure of the May 2026 review: per-file findings, edits, rubric scoring (Voice match / Argument integrity / Product fit / Precision and accuracy / Coaching value).
 
-6. **Verify build.** Run `docker compose up --build` to confirm no Liquid or YAML break.
+6. **Verify build.** Run `bash bin/verify_site.sh` to confirm no Liquid or YAML break.
 
 ## Outputs
 

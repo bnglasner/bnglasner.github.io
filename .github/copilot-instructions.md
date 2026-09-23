@@ -38,9 +38,11 @@
 
 ## Building & Local Development
 
-### Docker (Recommended Approach)
+> **This fork (bnglasner.github.io):** CI does not use Docker; `deploy.yml` builds with `ruby/setup-ruby` (Ruby 3.3.5). Locally, use `bundle install` then `LC_ALL=en_US.UTF-8 bundle exec jekyll serve --port 4000`, or `bash bin/verify_site.sh` for a headless check. The Docker instructions below are upstream al-folio guidance and optional here. See `.claude/rules/build-and-verify.md`.
 
-**Always use Docker for local development.** This ensures consistency with CI/CD and avoids Ruby/Python environment issues.
+### Docker (upstream al-folio approach; optional in this fork)
+
+Upstream al-folio recommends Docker for local development to avoid Ruby/Python environment issues.
 
 **Initial Setup:**
 

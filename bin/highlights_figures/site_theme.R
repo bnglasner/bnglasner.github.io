@@ -13,23 +13,23 @@ suppressPackageStartupMessages({ library(ggplot2); library(ragg) })
 THEME <- Sys.getenv("SITE_THEME", "light")
 
 if (THEME == "dark") {
-  FIELD      <- "#1a1f24"   # --paper-bg
-  INK        <- "#fcfcfa"   # --paper-text
-  MUTED      <- "#a6acb2"   # --paper-muted
-  MUTED_SOFT <- "#899299"   # --paper-muted-soft
-  GRID       <- "#fcfcfa1A" # hairline-soft (10% white)
-  RULE       <- "#fcfcfa29" # hairline (16% white)
-  TEAL       <- "#2ba694"   # --accent-teal
-  AMBER      <- "#c97d1d"   # --accent-amber
+  FIELD      <- "#171a1c"   # --paper-bg (warm ink, 2026-09-23)
+  INK        <- "#ece9e1"   # --paper-text
+  MUTED      <- "#a9aca9"   # --paper-muted
+  MUTED_SOFT <- "#8e928f"   # --paper-muted-soft
+  GRID       <- "#ece9e11A" # hairline-soft (10% paper-text)
+  RULE       <- "#ece9e129" # hairline (16% paper-text)
+  TEAL       <- "#3fb3a0"   # --accent-teal
+  AMBER      <- "#d38a2c"   # --accent-amber
 } else {
-  FIELD      <- "#fcfcfa"
-  INK        <- "#1a1f24"
-  MUTED      <- "#4a5158"
-  MUTED_SOFT <- "#6b7178"
-  GRID       <- "#d8d6ce"
-  RULE       <- "#c9c6bc"
-  TEAL       <- "#116a5f"
-  AMBER      <- "#9c610d"
+  FIELD      <- "#f8f6f0"   # --paper-bg (warm newsprint, 2026-09-23)
+  INK        <- "#1b1d1f"   # --paper-text
+  MUTED      <- "#4a4f55"   # --paper-muted
+  MUTED_SOFT <- "#696e73"   # --paper-muted-soft
+  GRID       <- "#dcd8cc"   # --paper-hairline-soft
+  RULE       <- "#c6c1b4"   # --paper-hairline
+  TEAL       <- "#0f5f55"   # --accent-teal
+  AMBER      <- "#935a0b"   # --accent-amber
 }
 
 # ---- fonts: the site's own faces, instanced to static TTFs -------------------

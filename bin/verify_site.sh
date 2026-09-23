@@ -2,8 +2,9 @@
 # verify_site.sh -- headless, non-interactive verification of the site
 # Author - Ben Glasner (scaffolded 2026-08-10)
 # Purpose - Give agents (and Ben) a single command that validates data schemas,
-#           builds the site without starting a server, and checks internal links.
-#           Complements the interactive `docker compose up` path in
+#           builds the site without starting a server, checks internal links, and
+#           checks that the Font Awesome subset covers every icon in use.
+#           Complements the interactive `bundle exec jekyll serve` path in
 #           .claude/rules/build-and-verify.md, which remains the tool for visual
 #           spot-checks (dark mode, images, layout).
 # Usage   - bash bin/verify_site.sh          (from the repo root)
@@ -13,19 +14,58 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-echo "==> 1/4 writing.yml authors check"
+echo "==> 1/6 writing.yml authors check"
 python3 bin/check_writing_authors.py
 
-echo "==> 2/4 data schema validation"
+echo "==> 2/6 data schema validation"
 python3 bin/validate_data.py
 
-echo "==> 3/4 headless Jekyll build (docker compose run, no server)"
+echo "==> 3/6 headless Jekyll build (no server)"
 # Builds into _site_verify (gitignored) so the dev server's _site/ is untouched.
-docker compose run --rm jekyll bundle exec jekyll build \
-  --strict_front_matter \
-  --destination _site_verify
+# Primary path: the local Ruby toolchain (bundle). Fallback: the al-folio Docker
+# image, for machines that have Docker but no local Ruby.
+if command -v bundle >/dev/null 2>&1 && bundle check >/dev/null 2>&1; then
+  # UTF-8 locale: under LANG=C, jekyll-terser raises "\xE2 on US-ASCII" and
+  # silently skips minifying the affected scripts.
+  LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 bundle exec jekyll build \
+    --strict_front_matter \
+    --destination _site_verify
+elif command -v docker >/dev/null 2>&1; then
+  docker compose run --rm jekyll bundle exec jekyll build \
+    --strict_front_matter \
+    --destination _site_verify
+else
+  echo "verify_site.sh: need either a local Ruby toolchain ('bundle install') or Docker" >&2
+  exit 1
+fi
 
-echo "==> 4/4 internal link check over the built site"
+echo "==> 4/6 internal link check over the built site"
 python3 bin/check_internal_links.py _site_verify
+
+echo "==> 5/6 Font Awesome subset covers every icon used"
+python3 bin/check_fa_icons.py _site_verify
+
+echo "==> 6/6 production build + PurgeCSS keeps the redesign's base rules"
+# deploy.yml builds with JEKYLL_ENV=production and then runs PurgeCSS. Both
+# steps have silently broken styling before (minified clamp(), purged
+# :where() rules), and neither runs in the dev build above. Needs npx.
+if command -v npx >/dev/null 2>&1; then
+  PROD=_site_verify_prod
+  rm -rf "$PROD"
+  JEKYLL_ENV=production LC_ALL=en_US.UTF-8 bundle exec jekyll build --destination "$PROD" >/dev/null
+  sed "s#_site/#$PROD/#g" purgecss.config.js >"$PROD/.purgecss.config.js"
+  npx --yes purgecss -c "$PROD/.purgecss.config.js" >/dev/null
+  css="$PROD/assets/css/main.css"
+  if ! grep -q ':where(body.redesign-2026) :is(h1,h2,h3,h4,h5,h6)' "$css"; then
+    echo "verify_site.sh: PurgeCSS removed the redesign's heading rules" >&2
+    exit 1
+  fi
+  if grep -Eq 'clamp\([^)]*[0-9a-z]\+[0-9]' "$css"; then
+    echo "verify_site.sh: a clamp()/calc() lost the spaces around +" >&2
+    exit 1
+  fi
+else
+  echo "    (skipped: npx not found)"
+fi
 
 echo "verify_site.sh: all checks passed"

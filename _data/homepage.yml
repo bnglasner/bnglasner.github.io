@@ -1,13 +1,37 @@
 # The homepage's one personal note (headshot + this line), per the 2026
 # redesign's negative-space principle: exactly one such note, sourced from
-# data so it stays current without touching page templates. Deliberately
-# conservative and sourced from the current-role description already in
-# _data/cv.yml rather than a specific in-progress claim nobody but Ben can
-# verify — update the line itself whenever what he's actually doing changes.
-currently_working_on: "Shaping EIG's research pipeline on labor markets, place-based policy, and retirement security — from framing new questions to publication-ready analysis."
-currently_working_on_updated: 2026-08-10
+# data so it stays current without touching page templates. Approved by Ben
+# 2026-09-23 (retirement coverage work and the short-form video series, both
+# documented on the site) — update the line itself, and the date below,
+# whenever what he's actually doing changes.
+currently_working_on: "Research on the U.S. retirement coverage gap and the Retirement Savings for Americans Act, plus a short-form video series on what the latest labor-market data show."
+currently_working_on_updated: 2026-09-23
 
 # Optional second line of the same note: the availability signal. Keep it a
 # casual statement of fact, not a plea — the media page carries the proof.
 # The template appends the "Email me or see past appearances" links.
 open_to: "Collaborations, press interviews, podcasts, and panels are a regular part of the work — requests welcome."
+
+# Optional proof strip under the homepage hero buttons: three short, text-only
+# credibility lines (no logos). Every item is cross-checked by
+# bin/validate_data.py against its source, so the strip can never claim more
+# than the site documents:
+#   kind: appearances -> an outlet in media_page.yml `sections` other than
+#                        "Quoted in News Coverage" (a direct appearance)
+#   kind: coverage    -> an outlet anywhere in media_page.yml (coverage of the
+#                        work, including quotes) — label it "covered", never
+#                        "quoted in" or "featured in"
+#   kind: journals    -> the `journal` of a peer_reviewed entry in papers.bib
+proof:
+  - label: "Appeared on"
+    kind: appearances
+    url: /media/
+    items: ["C-SPAN Washington Journal", "CBS News"]
+  - label: "Research covered in"
+    kind: coverage
+    url: /media/#coverage
+    items: ["The Wall Street Journal", "The Washington Post", "Reuters", "Axios"]
+  - label: "Published in"
+    kind: journals
+    url: /publications/
+    items: ["Journal of Labor Economics", "Journal of Public Economics", "Health Affairs"]

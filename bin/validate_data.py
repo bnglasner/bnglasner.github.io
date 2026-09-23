@@ -5,8 +5,11 @@
 #           A missing required field silently drops an entry from the rendered
 #           page; this script turns that silent failure into a blocked commit.
 # Scope   - _data/writing.yml, _data/media_page.yml, _data/socials.yml,
-#           _data/homepage.yml, _data/highlights.yml (incl. asset existence),
+#           _data/homepage.yml (incl. proof-strip source cross-check),
+#           _data/highlights.yml (incl. asset existence),
 #           _bibliography/papers.bib <-> _data/venues.yml abbr cross-check,
+#           papers.bib <-> _data/research_themes.yml theme cross-check,
+#           media_page.yml related_work -> papers.bib citekey cross-check,
 #           and ISO 8601 date checks throughout.
 # Note    - bin/check_writing_authors.py remains the focused authors-field guard;
 #           this script is the broader schema check. Both run in pre-commit.
@@ -33,6 +36,10 @@ DATA = REPO_ROOT / "_data"
 BIB = REPO_ROOT / "_bibliography" / "papers.bib"
 
 ISO_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# Month precision for `published` when the source gives only a month
+# ("August 2023"): a quoted "YYYY-MM" string. Templates render it through
+# _includes/pub-date.liquid, and _layouts/bibtex.html sorts it among full dates.
+ISO_MONTH_RE = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
 
 WRITING_REQUIRED = {"title", "url", "outlet", "authors", "published", "description"}
 MEDIA_ITEM_REQUIRED = {"outlet", "title", "url", "description"}
@@ -53,6 +60,7 @@ SOCIALS_REQUIRED_KEYS = {
 }
 SOCIALS_NESTED_KEYS = {"tiktok_url", "threads_url", "substack_url"}
 HIGHLIGHTS_REQUIRED = {"name", "eyebrow", "title", "hook", "alt", "date"}
+THEME_REQUIRED = {"key", "title", "description"}
 BIB_ENTRY_GROUPS = {
     "peer_reviewed",
     "working_paper",
@@ -62,6 +70,20 @@ BIB_ENTRY_GROUPS = {
 }
 
 failures: list[str] = []
+
+
+def parse_bib() -> list[tuple[str, str, dict[str, str]]]:
+    """Return (entry_type, citekey, fields) for every uncommented papers.bib entry."""
+    if not BIB.exists():
+        return []
+    text = BIB.read_text(encoding="utf-8")
+    # Strip comment lines so commented-out candidates are not parsed as entries.
+    text = "\n".join(line for line in text.splitlines() if not line.lstrip().startswith("%"))
+    parsed = []
+    for entry_type, citekey, body in re.findall(r"@(\w+)\s*\{\s*([^,\s]+)\s*,(.*?)\n\}", text, flags=re.DOTALL):
+        fields = dict(re.findall(r"(\w+)\s*=\s*\{(.*?)\}\s*,?\s*\n", body, flags=re.DOTALL))
+        parsed.append((entry_type, citekey, fields))
+    return parsed
 
 
 def fail(msg: str) -> None:
@@ -81,6 +103,18 @@ def is_iso_date(value) -> bool:
     if isinstance(value, datetime.date):
         return True
     return isinstance(value, str) and bool(ISO_DATE_RE.match(value))
+
+
+def is_published_date(value) -> bool:
+    """`published` accepts a full ISO date or a quoted month-precision YYYY-MM."""
+    return is_iso_date(value) or (isinstance(value, str) and bool(ISO_MONTH_RE.match(value)))
+
+
+def published_sort_key(value) -> str:
+    """Comparable YYYY-MM-DD string for a `published` value (month precision -> day 00)."""
+    if isinstance(value, datetime.date):
+        return value.isoformat()
+    return value if ISO_DATE_RE.match(value) else f"{value}-00"
 
 
 def is_absolute_url(value) -> bool:
@@ -106,8 +140,8 @@ def check_writing() -> None:
             missing = WRITING_REQUIRED - set(entry)
             if missing:
                 fail(f"{label}: missing required fields {sorted(missing)}")
-            if "published" in entry and not is_iso_date(entry["published"]):
-                fail(f"{label}: published must be an ISO 8601 date (YYYY-MM-DD)")
+            if "published" in entry and not is_published_date(entry["published"]):
+                fail(f"{label}: published must be an ISO 8601 date (YYYY-MM-DD) or a quoted month (\"YYYY-MM\")")
             if "url" in entry and not is_absolute_url(entry["url"]):
                 fail(f"{label}: url must be an absolute URL")
             authors = entry.get("authors")
@@ -117,6 +151,24 @@ def check_writing() -> None:
                 or not all(isinstance(a, str) and a.strip() for a in authors)
             ):
                 fail(f"{label}: authors must be a non-empty list of non-empty strings")
+            if "bib_key" in entry:
+                # Optional: the papers.bib citekey for the same work. The Policy
+                # page's Reports cards link that entry's permalink page.
+                if entry["bib_key"] not in {key for _, key, _ in parse_bib()}:
+                    fail(f"{label}: bib_key `{entry['bib_key']}` is not a papers.bib citekey")
+
+    # The Policy (reports) and Writing pages render each list in file order as
+    # "newest first", so enforce that order. A month-precision "YYYY-MM" keys
+    # as day 00: it sorts just after every full date in the same month.
+    for list_name in ("reports", "short_form", "guest_posts"):
+        entries = [e for e in (data.get(list_name) or []) if isinstance(e, dict) and is_published_date(e.get("published"))]
+        keys = [published_sort_key(e["published"]) for e in entries]
+        for idx in range(1, len(keys)):
+            if keys[idx] > keys[idx - 1]:
+                fail(
+                    f"writing.yml {list_name}: '{entries[idx].get('title')}' ({keys[idx]}) is newer than the entry "
+                    f"above it ({keys[idx - 1]}); keep each list newest first"
+                )
 
 
 # 2) _data/media_page.yml
@@ -162,10 +214,22 @@ def check_media_page() -> None:
                     fail(f"{i_label}: missing required fields {sorted(missing)}")
                 if "url" in item and not is_absolute_url(item["url"]):
                     fail(f"{i_label}: url must be an absolute URL")
-                if "published" in item and not is_iso_date(item["published"]):
-                    fail(f"{i_label}: published must be an ISO 8601 date (YYYY-MM-DD)")
+                if "published" in item and not is_published_date(item["published"]):
+                    fail(f"{i_label}: published must be an ISO 8601 date (YYYY-MM-DD) or a quoted month (\"YYYY-MM\")")
                 if published_required and "published" not in item:
                     pass  # already caught by the missing-fields check above
+                if "related_work" in item:
+                    # Optional: citekeys of papers.bib entries this item covers or
+                    # discusses. Rendered as "Coverage and interviews" on each
+                    # paper's permalink page, so every key must exist.
+                    related = item["related_work"]
+                    bib_keys = {key for _, key, _ in parse_bib()}
+                    if not isinstance(related, list) or not related or not all(isinstance(k, str) for k in related):
+                        fail(f"{i_label}: related_work must be a non-empty list of papers.bib citekeys")
+                    else:
+                        for key in related:
+                            if key not in bib_keys:
+                                fail(f"{i_label}: related_work citekey `{key}` is not in papers.bib")
 
 
 # 3) _data/socials.yml
@@ -198,6 +262,68 @@ def check_homepage() -> None:
         open_to = data.get("open_to")
         if not isinstance(open_to, str) or not open_to.strip():
             fail("homepage.yml: open_to, when present, must be a non-empty string")
+    if "proof" in data:
+        check_homepage_proof(data.get("proof"))
+
+
+PROOF_KINDS = {"appearances", "coverage", "journals"}
+QUOTED_SECTION_TITLE = "Quoted in News Coverage"
+
+
+def check_homepage_proof(proof) -> None:
+    """The homepage proof strip may only name outlets and journals the site documents."""
+    if not isinstance(proof, list) or not proof:
+        fail("homepage.yml: proof, when present, must be a non-empty list")
+        return
+    if len(proof) > 3:
+        fail(f"homepage.yml: proof has {len(proof)} lines; the strip is capped at three")
+    media = load_yaml(DATA / "media_page.yml") or {}
+    appearance_outlets: set[str] = set()
+    all_outlets: set[str] = set()
+    for section in media.get("sections") or []:
+        for item in (section or {}).get("items") or []:
+            outlet = (item or {}).get("outlet")
+            all_outlets.add(outlet)
+            if section.get("title") != QUOTED_SECTION_TITLE:
+                appearance_outlets.add(outlet)
+    for group in media.get("coverage_groups") or []:
+        for item in (group or {}).get("items") or []:
+            all_outlets.add((item or {}).get("outlet"))
+    journals = {
+        fields.get("journal", "").strip()
+        for _, _, fields in parse_bib()
+        if fields.get("entry_group") == "peer_reviewed" and fields.get("journal")
+    }
+    allowed = {"appearances": appearance_outlets, "coverage": all_outlets, "journals": journals}
+    sources = {
+        "appearances": "a direct-appearance outlet in media_page.yml sections",
+        "coverage": "an outlet in media_page.yml",
+        "journals": "the journal of a peer_reviewed papers.bib entry",
+    }
+    for idx, line in enumerate(proof):
+        label = f"homepage.yml proof[{idx}]"
+        if not isinstance(line, dict):
+            fail(f"{label}: expected a mapping")
+            continue
+        missing = {"label", "kind", "url", "items"} - set(line)
+        if missing:
+            fail(f"{label}: missing required fields {sorted(missing)}")
+        if not isinstance(line.get("label"), str) or not line.get("label", "").strip():
+            fail(f"{label}: label must be a non-empty string")
+        url = line.get("url")
+        if not isinstance(url, str) or not (url.startswith("/") or is_absolute_url(url)):
+            fail(f"{label}: url must be a site-relative path (/...) or an absolute URL")
+        kind = line.get("kind")
+        if kind not in PROOF_KINDS:
+            fail(f"{label}: kind must be one of {sorted(PROOF_KINDS)}")
+            continue
+        items = line.get("items")
+        if not isinstance(items, list) or not items or not all(isinstance(i, str) and i.strip() for i in items):
+            fail(f"{label}: items must be a non-empty list of strings")
+            continue
+        for item in items:
+            if item not in allowed[kind]:
+                fail(f"{label}: `{item}` is not {sources[kind]}")
 
 
 # 5) _data/highlights.yml — homepage headline wheel
@@ -241,27 +367,25 @@ def check_bib_and_venues() -> None:
     venues = load_yaml(DATA / "venues.yml")
     venue_keys = set(venues.keys()) if isinstance(venues, dict) else set()
 
+    theme_keys = load_theme_keys()
+
     if not BIB.exists():
         fail("_bibliography/papers.bib: expected file not found")
         return
-    text = BIB.read_text(encoding="utf-8")
-    # Strip comment lines so commented-out candidates are not parsed as entries.
-    text = "\n".join(line for line in text.splitlines() if not line.lstrip().startswith("%"))
-
-    entries = re.findall(r"@(\w+)\s*\{\s*([^,\s]+)\s*,(.*?)\n\}", text, flags=re.DOTALL)
+    entries = parse_bib()
     if not entries:
         fail("papers.bib: no BibTeX entries parsed — check for syntax damage")
         return
 
     seen_keys: set[str] = set()
-    for entry_type, citekey, body in entries:
+    used_themes: set[str] = set()
+    for entry_type, citekey, fields in entries:
         label = f"papers.bib @{entry_type}{{{citekey}}}"
         if citekey in seen_keys:
             fail(f"{label}: duplicate citekey")
         seen_keys.add(citekey)
 
-        fields = dict(re.findall(r"(\w+)\s*=\s*\{(.*?)\}\s*,?\s*\n", body, flags=re.DOTALL))
-        for required in ("title", "author", "year", "finding"):
+        for required in ("title", "author", "year", "finding", "theme"):
             if required not in fields:
                 fail(f"{label}: missing required field `{required}`")
         if "finding" in fields and not fields["finding"].strip():
@@ -279,6 +403,50 @@ def check_bib_and_venues() -> None:
                 f"{label}: abbr `{abbr}` has no matching key in _data/venues.yml "
                 "(add one so the tag renders with a display name/color)"
             )
+        theme = fields.get("theme")
+        if theme is not None:
+            used_themes.add(theme)
+            if theme_keys and theme not in theme_keys:
+                fail(f"{label}: theme `{theme}` is not a key in _data/research_themes.yml")
+        if entry_type.lower() == "techreport" and "journal" in fields:
+            fail(
+                f"{label}: @techreport must not carry `journal` (it overrides `institution` "
+                "as the displayed venue and leaks into exported BibTeX)"
+            )
+        code = fields.get("code")
+        if code is not None and not is_absolute_url(code):
+            fail(f"{label}: code must be an absolute URL to the replication repository")
+
+    for unused in sorted(theme_keys - used_themes):
+        fail(f"research_themes.yml: theme `{unused}` is used by no papers.bib entry (it would render an empty section)")
+
+
+def load_theme_keys() -> set[str]:
+    """Validate _data/research_themes.yml and return its keys."""
+    data = load_yaml(DATA / "research_themes.yml")
+    if not isinstance(data, list) or not data:
+        fail("research_themes.yml: did not parse to a non-empty list")
+        return set()
+    keys: set[str] = set()
+    for idx, theme in enumerate(data):
+        if not isinstance(theme, dict):
+            fail(f"research_themes.yml [{idx}]: expected a mapping")
+            continue
+        label = f"research_themes.yml [{idx}] '{theme.get('key', '<no key>')}'"
+        missing = THEME_REQUIRED - set(theme)
+        if missing:
+            fail(f"{label}: missing required fields {sorted(missing)}")
+        for field in THEME_REQUIRED & set(theme):
+            if not isinstance(theme[field], str) or not theme[field].strip():
+                fail(f"{label}: {field} must be a non-empty string")
+        key = theme.get("key")
+        if isinstance(key, str):
+            if not re.fullmatch(r"[a-z][a-z0-9_]*", key):
+                fail(f"{label}: key must be lowercase letters, digits, and underscores (it is used in bib queries and anchors)")
+            if key in keys:
+                fail(f"{label}: duplicate key `{key}`")
+            keys.add(key)
+    return keys
 
 
 # 7) run everything

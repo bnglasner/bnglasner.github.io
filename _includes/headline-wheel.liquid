@@ -8,44 +8,54 @@
   Motion policy: this component inherits the sitewide motion budget the old
   hero line-draw carried. The wheel itself never moves on its own — no
   autoplay rotation; slides advance only on user scroll, button press, or
-  keyboard input. Videos play only while their slide is in view
-  (IntersectionObserver below) and never under prefers-reduced-motion,
-  where each slide shows its resolved poster frame instead.
+  keyboard input (Left/Right/Home/End on the focused track). Videos play
+  only while their slide is in view (IntersectionObserver below), never
+  under prefers-reduced-motion (the pause button is hidden there, since
+  nothing moves), and never after the visitor presses Pause (WCAG 2.2.2 —
+  the choice is remembered in localStorage).
 
-  Theme swap: the light/dark video pairs use the existing .only-light /
-  .only-dark display classes from _sass/_themes.scss, so the toggle swaps
-  them with no JS of its own.
+  Accessibility pattern: WAI-ARIA APG carousel with slide-picker buttons.
+  The outer group carries aria-roledescription="carousel"; each slide is a
+  role="group" aria-roledescription="slide". Scrolling does not change the
+  DOM, so a visually hidden polite status line announces the settled slide.
+
+  Asset loading: sources and posters are written as data-src/data-poster
+  and attached by the script only for the variant the current theme shows
+  (.only-light / .only-dark from _sass/_themes.scss), and only for the
+  current slide and its neighbours. A theme switch attaches the newly
+  visible variant. Without JavaScript, the <noscript> poster image stands in.
 {% endcomment %}
+{% assign theme_variants = 'light,dark' | split: ',' %}
 <div class="headline-wheel" role="group" aria-roledescription="carousel" aria-label="Five findings from recent short-form work">
-  <ul class="headline-wheel__track">
+  <h2 class="sr-only">Recent findings</h2>
+  <div class="headline-wheel__track" role="group" aria-label="Slides" tabindex="0">
     {% for item in site.data.highlights %}
-      <li class="headline-wheel__slide" aria-label="Slide {{ forloop.index }} of {{ forloop.length }}: {{ item.title }}">
+      {% assign asset_base = '/assets/video/highlights/' | append: item.name %}
+      <div
+        class="headline-wheel__slide"
+        role="group"
+        aria-roledescription="slide"
+        aria-label="{{ forloop.index }} of {{ forloop.length }}: {{ item.title }}"
+      >
         <figure class="headline-wheel__figure">
           <div class="headline-wheel__media">
-            <video
-              class="only-light"
-              muted
-              loop
-              playsinline
-              disablepictureinpicture
-              preload="{% if forloop.first %}auto{% else %}none{% endif %}"
-              poster="{{ '/assets/video/highlights/' | append: item.name | append: '_light.png' | relative_url }}"
-              aria-label="{{ item.alt }}"
-            >
-              <source src="{{ '/assets/video/highlights/' | append: item.name | append: '_light.mp4' | relative_url }}" type="video/mp4">
-            </video>
-            <video
-              class="only-dark"
-              muted
-              loop
-              playsinline
-              disablepictureinpicture
-              preload="none"
-              poster="{{ '/assets/video/highlights/' | append: item.name | append: '_dark.png' | relative_url }}"
-              aria-label="{{ item.alt }}"
-            >
-              <source src="{{ '/assets/video/highlights/' | append: item.name | append: '_dark.mp4' | relative_url }}" type="video/mp4">
-            </video>
+            {% for variant in theme_variants %}
+              <video
+                class="only-{{ variant }}"
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+                preload="none"
+                data-poster="{{ asset_base | append: '_' | append: variant | append: '.png' | relative_url }}"
+                aria-label="{{ item.alt }}"
+              >
+                <source data-src="{{ asset_base | append: '_' | append: variant | append: '.mp4' | relative_url }}" type="video/mp4">
+              </video>
+            {% endfor %}
+            <noscript>
+              <img src="{{ asset_base | append: '_light.png' | relative_url }}" alt="{{ item.alt }}" width="1280" height="720" loading="lazy">
+            </noscript>
           </div>
           <figcaption class="headline-wheel__caption">
             <span class="headline-wheel__eyebrow">{{ item.eyebrow }}</span>
@@ -53,12 +63,12 @@
             <p class="headline-wheel__hook">{{ item.hook }}</p>
           </figcaption>
         </figure>
-      </li>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
   <div class="headline-wheel__nav">
     <button type="button" class="headline-wheel__btn" data-wheel-prev aria-label="Previous slide">&#8592;</button>
-    <div class="headline-wheel__dots" role="tablist" aria-label="Slide position">
+    <div class="headline-wheel__dots" role="group" aria-label="Choose slide">
       {% for item in site.data.highlights %}
         <button
           type="button"
@@ -72,7 +82,11 @@
       {% endfor %}
     </div>
     <button type="button" class="headline-wheel__btn" data-wheel-next aria-label="Next slide">&#8594;</button>
+    <button type="button" class="headline-wheel__btn headline-wheel__pause" data-wheel-pause aria-label="Pause animations" hidden>
+      <span class="headline-wheel__pause-icon" aria-hidden="true"></span>
+    </button>
   </div>
+  <p class="sr-only" aria-live="polite" aria-atomic="true" data-wheel-status></p>
   <p class="headline-wheel__credit">
     Figures adapted from my short-form video series &mdash; full reels on
     <a href="https://www.instagram.com/{{ site.data.socials.instagram_id }}/" rel="me">Instagram</a> and
@@ -87,10 +101,72 @@
     var track = wheel.querySelector('.headline-wheel__track');
     var slides = Array.prototype.slice.call(track.children);
     var dots = Array.prototype.slice.call(wheel.querySelectorAll('[data-wheel-dot]'));
+    var pauseBtn = wheel.querySelector('[data-wheel-pause]');
+    var status = wheel.querySelector('[data-wheel-status]');
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var STORE_KEY = 'headline-wheel-paused';
+    var userPaused = false;
+    try {
+      userPaused = localStorage.getItem(STORE_KEY) === '1';
+    } catch (e) {}
+    var current = 0;
+    var wheelVisible = true;
+
+    function motionAllowed() {
+      return !reduceMotion.matches && !userPaused && wheelVisible;
+    }
+
+    // The variant the current theme shows (the other is display: none).
+    function shownVideo(slide) {
+      var vids = slide.querySelectorAll('video');
+      for (var k = 0; k < vids.length; k++) {
+        if (getComputedStyle(vids[k]).display !== 'none') return vids[k];
+      }
+      return null;
+    }
+
+    // Attach poster + source for the shown variant only. Idempotent.
+    function attach(slide) {
+      if (!slide) return null;
+      var v = shownVideo(slide);
+      if (!v) return null;
+      if (!v.hasAttribute('poster')) v.setAttribute('poster', v.getAttribute('data-poster'));
+      var src = v.querySelector('source');
+      if (src && !src.hasAttribute('src')) {
+        src.setAttribute('src', src.getAttribute('data-src'));
+        v.load();
+      }
+      return v;
+    }
+
+    function syncPlayback() {
+      slides.forEach(function (slide, i) {
+        slide.querySelectorAll('video').forEach(function (v) {
+          var shown = getComputedStyle(v).display !== 'none';
+          if (i === current && shown && motionAllowed()) {
+            attach(slide);
+            if (v.paused) v.play().catch(function () {});
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      });
+    }
+
+    function prime(i) {
+      // Current slide gets its poster (and source) now; neighbours get
+      // posters so a swipe never lands on an empty frame.
+      [i - 1, i, i + 1].forEach(function (j) {
+        var slide = slides[j];
+        if (!slide) return;
+        var v = shownVideo(slide);
+        if (v && !v.hasAttribute('poster')) v.setAttribute('poster', v.getAttribute('data-poster'));
+      });
+      if (motionAllowed()) attach(slides[i]);
+    }
 
     function slideIndex() {
-      return Math.round(track.scrollLeft / track.clientWidth);
+      return Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
     }
 
     function goTo(i) {
@@ -99,6 +175,28 @@
         left: i * track.clientWidth,
         behavior: reduceMotion.matches ? 'auto' : 'smooth',
       });
+    }
+
+    function settle() {
+      var i = slideIndex();
+      var changed = i !== current;
+      current = i;
+      dots.forEach(function (dot, j) {
+        if (j === i) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+      prime(i);
+      syncPlayback();
+      if (changed && status) {
+        status.textContent = 'Slide ' + (i + 1) + ' of ' + slides.length + ': ' + slides[i].querySelector('.headline-wheel__title').textContent;
+      }
+    }
+
+    function renderPause() {
+      if (!pauseBtn) return;
+      pauseBtn.hidden = reduceMotion.matches;
+      pauseBtn.setAttribute('aria-label', userPaused ? 'Play animations' : 'Pause animations');
+      pauseBtn.classList.toggle('is-paused', userPaused);
     }
 
     wheel.querySelector('[data-wheel-prev]').addEventListener('click', function () {
@@ -112,44 +210,47 @@
         goTo(i);
       });
     });
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', function () {
+        userPaused = !userPaused;
+        try {
+          localStorage.setItem(STORE_KEY, userPaused ? '1' : '0');
+        } catch (e) {}
+        renderPause();
+        syncPlayback();
+      });
+    }
+
+    track.addEventListener('keydown', function (e) {
+      if (e.target !== track) return;
+      var i = slideIndex();
+      var next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: slides.length - 1 }[e.key];
+      if (next === undefined) return;
+      e.preventDefault();
+      goTo(next);
+    });
 
     var scrollTimer;
     track.addEventListener('scroll', function () {
       clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(function () {
-        var i = slideIndex();
-        dots.forEach(function (dot, j) {
-          if (j === i) dot.setAttribute('aria-current', 'true');
-          else dot.removeAttribute('aria-current');
-        });
-        // Re-assert playback on the settled slide. During a snap scroll the
-        // observer can fire play-then-pause out of order (the slide crosses
-        // the threshold twice), leaving the current slide paused; the
-        // observer alone is not enough.
-        if (!reduceMotion.matches) {
-          slides[i].querySelectorAll('video').forEach(function (v) {
-            v.play().catch(function () {});
-          });
-        }
-      }, 120);
+      // Re-assert state on the settled slide. During a snap scroll the
+      // observer can fire play-then-pause out of order, so settle() is the
+      // single source of truth for which video plays.
+      scrollTimer = setTimeout(settle, 120);
     });
 
-    // Play only the visible slide's videos; never play under reduced motion.
-    // Both theme variants get play/pause together — the hidden one is
-    // display:none, which browsers treat as cheap, and this keeps the theme
-    // toggle instant without re-observing.
+    // Play only the visible slide; the observer covers slides scrolled into
+    // view by means other than the track's own scroll event (e.g. resize).
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          var videos = entry.target.querySelectorAll('video');
-          videos.forEach(function (v) {
-            if (entry.isIntersecting && !reduceMotion.matches) {
-              v.play().catch(function () {});
-            } else {
+          if (!entry.isIntersecting) {
+            entry.target.querySelectorAll('video').forEach(function (v) {
               v.pause();
-            }
-          });
+            });
+          }
         });
+        settle();
       },
       { root: track, threshold: 0.6 }
     );
@@ -157,12 +258,25 @@
       io.observe(s);
     });
 
-    reduceMotion.addEventListener('change', function () {
-      slides.forEach(function (s) {
-        s.querySelectorAll('video').forEach(function (v) {
-          if (reduceMotion.matches) v.pause();
-        });
-      });
+    // Pause everything when the wheel itself leaves the viewport.
+    var pageIo = new IntersectionObserver(function (entries) {
+      wheelVisible = entries[0].isIntersecting;
+      syncPlayback();
     });
+    pageIo.observe(wheel);
+
+    // Theme toggle: attach the newly shown variant and move playback to it.
+    new MutationObserver(function () {
+      prime(current);
+      syncPlayback();
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    reduceMotion.addEventListener('change', function () {
+      renderPause();
+      syncPlayback();
+    });
+
+    renderPause();
+    prime(0);
   })();
 </script>

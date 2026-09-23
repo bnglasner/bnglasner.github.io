@@ -2,41 +2,44 @@
 layout: page
 permalink: /repositories/
 title: Code
-description: The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.
-nav: true
-nav_order: 4
+description: "Code and data behind my research: the EIG-Research GitHub organization and research repositories on my personal account."
+nav: false
 redesign_2026: true
 ---
 
 <p class="research-intro">
-  Most of the code and data I produce, anything I write or collaborate on through work, is published on the
+  Most of the code and data I produce — anything I write or collaborate on through work — are published on the
   <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">EIG-Research</a>
   GitHub organization. Personal experiments, side projects, and the source for this site live on my
-  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">personal GitHub page</a>.
+  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">personal GitHub account</a>. When a
+  paper or report has public replication code, its entry on the <a href="{{ '/publications/' | relative_url }}">Research</a>
+  page links to the repository.
 </p>
 
 <h2>Open Research, by Default</h2>
 <p class="measure">
-  I established the open-research standard EIG now uses for its empirical projects. Every analysis, a short memo or
-  a multi-year study, should be readable from raw inputs to final figure, and that expectation now applies across
+  I established the open-research standard EIG now uses for its empirical projects. Every analysis — whether a short memo or
+  a multi-year study — should be readable from raw inputs to final figure, and that expectation applies across
   the EIG-Research organization. Any researcher, journalist, or policymaker should be able to open one of these
   repositories and trace the chain from data to claim.
 </p>
 <p class="measure">
   I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and
-  documentation practices that make a public repository worth publishing. I intend to carry that commitment forward
-  on every project I touch and across every team I work with.
+  documentation practices that make a public repository worth publishing.
 </p>
 
 {% include axis-rule.liquid %}
 
 <h2>Recently Updated on EIG-Research</h2>
-<div id="eig-research-repos" class="work-card-grid" data-state="loading">
+<div id="eig-research-repos" class="work-card-grid" data-state="loading" aria-live="polite" aria-busy="true">
   <div class="work-card work-card--policy">
     <span class="work-card__eyebrow">Loading</span>
     <p class="work-card__finding">Fetching the five most recently updated repositories from the EIG-Research GitHub organization.</p>
   </div>
 </div>
+<noscript>
+  <p class="work-card__finding">This list loads from the GitHub API with JavaScript. Browse the organization directly at <a href="https://github.com/EIG-Research">github.com/EIG-Research</a>.</p>
+</noscript>
 <p class="work-card__meta" style="margin-top: 1rem;">
   For the full catalog, browse
   <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">github.com/EIG-Research</a>.
@@ -46,10 +49,9 @@ redesign_2026: true
 
 <h2>Personal Research Code</h2>
 <p class="research-intro">
-  Side projects and earlier replication code, on the personal account at
-  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">github.com/bnglasner</a>. The
-  repositories below are research-bearing; experimental forks and infrastructure (the source of this site, course
-  material, third-party plugin forks) are not listed here.
+  Replication code for published papers and research side projects live on my personal account at
+  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">github.com/bnglasner</a>. Forks,
+  course material, and the source for this site are not listed.
 </p>
 <div class="work-card-grid">
   <div class="work-card work-card--academic">
@@ -187,16 +189,44 @@ redesign_2026: true
       container.innerHTML = cards;
     }
 
-    fetch(endpoint, { headers: { Accept: 'application/vnd.github+json' } })
+    var cacheKey = 'eig-research-repos';
+    try {
+      var cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        renderRepos(JSON.parse(cached));
+        container.setAttribute('aria-busy', 'false');
+        return;
+      }
+    } catch (e) {}
+
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = controller
+      ? setTimeout(function () {
+          controller.abort();
+        }, 8000)
+      : null;
+
+    fetch(endpoint, { headers: { Accept: 'application/vnd.github+json' }, signal: controller ? controller.signal : undefined })
       .then(function (response) {
         if (!response.ok) {
-          throw new Error('GitHub API returned status ' + response.status + '.');
+          throw new Error(
+            response.status === 403 || response.status === 429 ? 'GitHub is limiting requests right now.' : 'GitHub did not respond as expected.'
+          );
         }
         return response.json();
       })
-      .then(renderRepos)
+      .then(function (repos) {
+        renderRepos(repos);
+        try {
+          sessionStorage.setItem(cacheKey, JSON.stringify(repos));
+        } catch (e) {}
+      })
       .catch(function (error) {
-        renderError(error && error.message ? error.message : 'Unknown error.');
+        renderError(error && error.name === 'AbortError' ? 'GitHub took too long to respond.' : error && error.message ? error.message : 'The list could not load.');
+      })
+      .finally(function () {
+        if (timer) clearTimeout(timer);
+        container.setAttribute('aria-busy', 'false');
       });
   })();
 </script>

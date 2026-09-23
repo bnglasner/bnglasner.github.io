@@ -1,4 +1,85 @@
+{%- comment -%}
+  Keyword filter for the Research page. Replaces al-folio's bibsearch.js,
+  which (1) only collapsed headings with class "bibliography", so filtered-out
+  sections left empty headings behind, and (2) treated any URL hash as a search
+  term, so an in-page anchor (#theme-work, #<citekey>) filtered every card out.
+
+  Behavior:
+  - Every whitespace-separated term must appear in the card's visible text or
+    its data-search summary (case- and accent-insensitive).
+  - Any container marked data-bibsearch-group is hidden (.unloaded) when none
+    of its cards match, so no empty headings remain.
+  - A status line reports the match count to screen readers.
+  - Deep links: ?q=term filters on load. A legacy #term hash (al-folio's
+    format) still filters, but only when no element has that id, so ordinary
+    anchors keep working.
+{%- endcomment -%}
 {% if site.bib_search %}
-  <script src="{{ '/assets/js/bibsearch.js' | relative_url | bust_file_cache }}" type="module"></script>
-  <input type="text" id="bibsearch" spellcheck="false" autocomplete="off" class="search bibsearch-form-input" placeholder="Type to filter">
+  <div class="research-search">
+    <input
+      type="search"
+      id="bibsearch"
+      spellcheck="false"
+      autocomplete="off"
+      class="search bibsearch-form-input"
+      placeholder="Type to filter"
+      aria-label="Filter research by keyword"
+      aria-describedby="bibsearch-status"
+    >
+    <p id="bibsearch-status" class="work-card__meta" role="status" aria-live="polite"></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const input = document.getElementById('bibsearch');
+      const status = document.getElementById('bibsearch-status');
+      if (!input) return;
+
+      const normalize = (text) => text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+      const items = Array.from(document.querySelectorAll('.bibliography > li'));
+      const haystacks = items.map((li) => {
+        const card = li.querySelector('[data-search]');
+        return normalize(li.textContent + ' ' + (card ? card.dataset.search : ''));
+      });
+
+      function filterItems(raw) {
+        const terms = normalize(raw).split(/\s+/).filter(Boolean);
+        let shown = 0;
+        items.forEach((li, index) => {
+          const match = terms.every((term) => haystacks[index].includes(term));
+          li.classList.toggle('unloaded', !match);
+          if (match) shown += 1;
+        });
+        document.querySelectorAll('[data-bibsearch-group]').forEach((group) => {
+          group.classList.toggle('unloaded', !group.querySelector('.bibliography > li:not(.unloaded)'));
+        });
+        if (!terms.length) {
+          status.textContent = '';
+        } else if (shown) {
+          status.textContent = 'Showing ' + shown + ' of ' + items.length + ' works.';
+        } else {
+          status.textContent = 'No work matches that filter.';
+        }
+      }
+
+      let timeoutId;
+      input.addEventListener('input', function () {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => filterItems(input.value), 200);
+      });
+
+      function filterFromUrl() {
+        const query = new URLSearchParams(window.location.search).get('q');
+        const hash = decodeURIComponent(window.location.hash.slice(1));
+        const term = query || (hash && !document.getElementById(hash) ? hash : '');
+        if (term) {
+          input.value = term;
+          filterItems(term);
+        }
+      }
+
+      window.addEventListener('hashchange', filterFromUrl);
+      filterFromUrl();
+    });
+  </script>
 {% endif %}

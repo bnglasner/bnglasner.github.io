@@ -14,20 +14,28 @@ A simple, clean, and responsive Jekyll theme for academics.
 
 ## Essential Commands
 
-### Local Development (Docker)
+### Local Development
 
-The recommended approach is using Docker.
+> **This fork (bnglasner.github.io):** the primary path is the local Ruby toolchain, which is also what CI uses (`ruby/setup-ruby`, Ruby 3.3.5). Docker is optional and not installed on Ben's machine. `.claude/rules/build-and-verify.md` is authoritative for this repo.
 
 ```bash
-# Initial setup & start dev server
-docker compose pull && docker compose up
-# Site runs at http://localhost:8080
+# First time: install gems and the pinned Prettier
+bundle install && npm ci
 
-# Rebuild after changing dependencies or Dockerfile
-docker compose up --build
+# Dev server (UTF-8 locale avoids jekyll-terser "on US-ASCII" exceptions)
+LC_ALL=en_US.UTF-8 bundle exec jekyll serve --port 4000
+# Site runs at http://localhost:4000
 
-# Stop containers and free port 8080
-docker compose down
+# One-command headless check: schemas, build, internal links
+bash bin/verify_site.sh
+```
+
+Docker alternative (upstream al-folio default; only if Docker is installed):
+
+```bash
+docker compose pull && docker compose up   # http://localhost:8080
+docker compose up --build                  # after changing dependencies or Dockerfile
+docker compose down                        # stop and free port 8080
 ```
 
 ### Pre-Commit Checklist
@@ -36,18 +44,19 @@ Before every commit, you **must** run these steps:
 
 1.  **Format Code:**
     ```bash
-    # (First time only)
-    npm install --save-dev prettier @shopify/prettier-plugin-liquid
+    # (First time only; installs the versions pinned in package-lock.json)
+    npm ci
     # Format all files
     npx prettier . --write
     ```
 2.  **Build Locally & Verify:**
 
     ```bash
-    # Rebuild the site
-    docker compose up --build
+    # Headless: schemas, build, internal links
+    bash bin/verify_site.sh
 
-    # Verify by visiting http://localhost:8080.
+    # Visual: serve and visit http://localhost:4000
+    LC_ALL=en_US.UTF-8 bundle exec jekyll serve --port 4000
     # Check navigation, pages, images, and dark mode.
     ```
 

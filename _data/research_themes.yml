@@ -1,0 +1,27 @@
+# Research agenda themes for the Research page (_pages/publications.md).
+#
+# Each papers.bib entry carries `theme = {<key>}` naming exactly one key below;
+# the page renders one section per theme, in this order, and within a theme
+# orders cards peer-reviewed -> working paper -> policy report -> dissertation
+# -> thesis, newest first inside each type. Descriptions are topic lists, not
+# findings: every claimed result belongs in the entry's sourced `finding`.
+#
+# Schema (enforced by bin/validate_data.py): key, title, description, all
+# required; keys unique; every theme must be used by at least one bib entry,
+# and every bib entry's theme must be a key here.
+
+- key: work
+  title: "Work, wages, and labor-market institutions"
+  description: "Minimum wages, gig and nonstandard work, noncompete agreements, remote work, wage-subsidy design, and how the typical American worker is faring."
+
+- key: safety_net
+  title: "The safety net, poverty, and mobility"
+  description: "How the Child Tax Credit, the Earned Income Tax Credit, food stamps, liquid savings, and government transfers shape work, well-being, hardship, and the intergenerational persistence of poverty."
+
+- key: place
+  title: "Place-based policy and housing"
+  description: "Opportunity Zones and the geography of investment and housing supply."
+
+- key: early
+  title: "Earlier research"
+  description: "Undergraduate thesis research on structural change and political reform in China."

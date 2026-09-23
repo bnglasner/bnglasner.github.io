@@ -1,42 +1,60 @@
 # Site facts (load-bearing, repo-scoped memory)
 
-This file is the first thing any agent walking into the repo cold should read. It captures facts about Ben's portfolio that should not have to be rediscovered every session. Update — do not append — when a fact changes.
+This file is the first thing any agent walking into the repo cold should read. It records facts about Ben's portfolio that no one should have to rediscover each session. When a fact changes, update it in place. Do not append.
 
-**Last verified: 2026-08-10** (structure reconciled against the repo; source-facing facts last verified by the 2026-05-03 audit). The final step of the `portfolio-audit` skill refreshes this stamp and any changed facts.
+**Last verified: 2026-09-23.** The 2026-09 multi-agent improvement pass reconciled both the repo structure and the source-facing facts. Its Research Curator re-checked EIG, Agglomerations, Scholar, NBER, and GitHub. The final step of the `portfolio-audit` skill refreshes this stamp and any changed facts.
 
-## Identity and current role (as of 2026-05-03)
+## Identity and current role (as of 2026-09-23)
 
-- **Name on the site**: Benjamin Glasner. Substack and informal contexts use "Ben Glasner". Both forms are correct.
-- **Title**: Senior Economist, Economic Innovation Group (EIG).
-- **Affiliation**: Affiliate, Center on Poverty and Social Policy, Columbia University. Current, not historical — present-tense on the about page.
-- **Location**: Washington, D.C.
-- **CV PDF**: `assets/pdf/Ben_Glasner_CV_full.pdf`. The CV is the spine of the portfolio; cross-source audits use it as the comparison base.
+- **Name on the site:** Benjamin Glasner. Substack and informal contexts use "Ben Glasner", and both forms are correct.
+  - Listing author rows on the site display "Benjamin Glasner".
+  - Data files and citations keep each byline exactly as published.
+- **Title:** Senior Economist, Economic Innovation Group (EIG). The EIG bio was unchanged as of 2026-09-23 (last modified 2026-05-04).
+- **Affiliation:** Affiliate, Center on Poverty and Social Policy, Columbia University.
+  - The affiliation is current, not historical. Write it in the present tense.
+  - It appears on the homepage's second eyebrow line.
+  - It also appears in the JSON-LD `person:` block in `_config.yml`.
+- **Location:** Washington, D.C.
+- **CV PDF:** `assets/pdf/Ben_Glasner_CV_full.pdf`.
+  - The CV is the spine of the portfolio, and cross-source audits use it as the comparison base.
+  - **Sources live in the repo** (since 2026-09-23): `cv/{full,2p,1p}/` (LianTze Lim's `curve` template, `cv/shared/settings.sty`). Publications print from `_bibliography/papers.bib`. The writing, EIG-analysis, and media rubrics are generated from `_data/writing.yml` and `_data/media_page.yml` by `cv/gen_sections.py`. `bash cv/build.sh` compiles into `cv/_build/` (gitignored), enforces 1p = 1 page and 2p = 2 pages, and publishes to `assets/pdf/`. `cv/` is excluded from Jekyll.
+  - Provenance: imported from the retired job-market-materials pipeline (`resume/build/overleaf_variants/`), whose PDFs were byte-identical to the 2026-02-22 assets.
+  - `Ben_Glasner_CV.pdf` is the download alias. It was a stale earlier build of the full CV with identical text; `cv/build.sh` now writes it as a copy of `_full.pdf`.
+  - TeX: `cv/build.sh` prefers the user-owned TinyTeX (`~/Library/TinyTeX`), where the template packages were installed on 2026-09-23, and falls back to `/Library/TeX/texbin`. The four PDFs were regenerated on 2026-09-23: full is 5 pages, 2p is 2, and 1p is 1, each under 250 KB.
+  - `assets/resume.pdf` is a byte-identical copy of `_full.pdf` that no page links to. It is kept so outside links keep working.
+  - Regenerating the PDFs is Ben's job.
+- **Coauthors:** Thomas Cronin (EIG Research Assistant) is new as of the 2026-05-22 "Babysitter Clause" post.
 
 ## Three bio registers
 
-The site's about-page lead is closer to the EIG bio register than the Substack or Linktree registers, which is the right call. Keep the three voices distinct; do not paste any of the three verbatim.
+The about page's lead is closer to the EIG bio register than to the Substack or Linktree registers, and that is the right call. Keep the three voices distinct, and do not paste any of them verbatim.
 
-- **EIG (institutional)**: third-person, role-and-history. Source: `https://eig.org/about-us/executive-team-staff/ben-glasner/`.
-- **Substack (practitioner)**: short, two sentences. Source: Agglomerations profile.
-- **Linktree (casual)**: ironic and brief. Source: `https://linktr.ee/bglasner`.
+- **EIG (institutional):** third person, role and history. Source: `https://eig.org/about-us/executive-team-staff/ben-glasner/`.
+- **Substack (practitioner):** short, two sentences. Source: the Agglomerations profile.
+- **Linktree (casual):** ironic and brief. Source: `https://linktr.ee/bglasner`. Its "Personal Website" link points to `bnglasner.github.io`.
+
+The `/press/` page carries the site's own short and long bios, drafted in 2026-09 and sourced from the repo and the EIG bio.
 
 ## Channels and handles
 
-Source of truth for what links exist on the site: `_data/socials.yml`. Linktree carries a longer set; the site exposes those that map cleanly to a `jekyll-socials` icon plus the three nested-form keys (`tiktok_url`, `threads_url`, `substack_url`) for platforms not natively supported.
+`_data/socials.yml` is the source of truth for which links exist on the site.
 
-- **Substack publication URL**: `https://agglomerations.eig.org`. Used by `add-short-form` and `portfolio-audit`.
-- **Scholar user ID**: `ZvG1rc8AAAAJ`. Used by `update-citations.yml` (the cron) and `bib-and-citations-sync`.
+- **Footer channels:** email, X, LinkedIn, Scholar, GitHub, Agglomerations, and Bluesky.
+- **Substack publication URL:** `https://agglomerations.eig.org`. Used by `add-short-form` and `portfolio-audit`.
+- **Scholar user ID:** `ZvG1rc8AAAAJ`. Used by `update-citations.yml` (the cron) and `bib-and-citations-sync`.
+- **Needs Ben:** `bglasner.com` still ranks in search, but Ben's control of the domain is unconfirmed. Search Console is not set up.
 
 ## EIG-Research GitHub organization (the one institutional carve-out)
 
-The `EIG-Research` GitHub org is the single allowed third-party surface on the personal site. `_pages/repositories.md` calls the GitHub API to list the org's most recently updated repos. Repositories that map directly to publications on the site:
+The `EIG-Research` GitHub org is the single allowed third-party surface on the personal site. It had 41 public repos as of 2026-09-23. `_pages/repositories.md` calls the GitHub API to list the most recently updated ones; the call has a timeout and a session cache. These repositories map directly to publications on the site:
 
-- `oz-housing-supply` ↔ 2025 OZ housing supply report.
+- `oz-housing-supply` ↔ 2025 OZ housing supply report. `EIG-Opportunity-Zones-and-Housing-Supply` is its 2026-08-05 port; the legacy repo stays live, so existing links still work.
 - `EIG-Great-Transfer-Mation` ↔ 2024 Great "Transfer"-mation report.
 - `Retirement-Analysis-Urban-Rural`, `Retirement-data-summary-2024`, `Retirement-data-summary-2025`, `EIG-Savers-match-sipp` ↔ RSAA policy work.
-- `noncompete-income` ↔ 2023 Hawaii/Oregon noncompete note.
+- `EIG-Retirement-Fast-Facts` and `EIG-Retirement-Fast-Facts-replication` ↔ "The U.S. Retirement System: Fast Facts" (2026-09-18).
+- `noncompete-income` covers income-threshold noncompete work (a 2023 ACS dashboard created 2025-03-26). It does **not** map to the 2023 Hawaii/Oregon note, and may relate to the 2026 Babysitter piece. Ben should confirm.
 
-When `add-publication` or `add-policy-report` runs, check this list (or call the GitHub API live) for a matching repo.
+Only the OZ housing and Transfer-mation bib entries carry `code =` links. When `add-publication` or `add-policy-report` runs, check this list, or call the GitHub API live, for a matching repo.
 
 ## Personal `bnglasner` GitHub account — the do-not-include list
 
@@ -47,47 +65,116 @@ These four repositories on `bnglasner` must NOT appear in any hand-curated perso
 - `policyengine-claude` (a fork of PolicyEngine's plugin)
 - `policy-rules-database` (a fork of the Federal Reserve's database)
 
-The remaining six personal-account repos are genuine research artifacts and may be surfaced (`eig-wagesubsidy-policy-sim`, `hours-working-for-median-home`, `telework-ASEC-analysis`, `MinimumWage-SelfEmp`, `QCEW`, `CTC-MentalHealth`).
+The remaining six personal-account repos are genuine research artifacts and may be surfaced (`eig-wagesubsidy-policy-sim`, `hours-working-for-median-home`, `telework-ASEC-analysis`, `MinimumWage-SelfEmp`, `QCEW`, `CTC-MentalHealth`). Linking them as a paper's `code` needs Ben's confirmation first.
 
-## Scholar-only candidates flagged for verification (May 2026 audit)
+## Scholar-only candidates (triaged 2026-09-23)
 
-Four titles surface in `_data/citations.yml` (Google Scholar) but are not in `papers.bib`. None should be auto-added — verify each before treating as a real publication:
+1. "Tax Evasion Among the Self-Employed: Medicaid Expansion": no source found. Do not add.
+2. "Evaluating the (short-lived) US experiment with a child benefit": an LSE CASE-at-25 slide deck (Waldfogel et al.), not a publication. Do not add.
+3. "The Earned Income Tax Credit and the Intergenerational Persistence of Poverty": **resolved**. It is INET Oxford WP 2025-22 and is now in `papers.bib`.
+4. "Nonstandard Work Arrangements across Metropolitan and Nonmetropolitan Areas of the United States": an unpublished 2019 manuscript (Haskett and Glasner). Do not add unless Ben asks.
 
-1. "Tax Evasion Among the Self-Employed: Medicaid Expansion" — likely a working-paper draft from the dissertation period.
-2. "Evaluating the (short-lived) US experiment with a child benefit" — possibly an alternate listing of the JPubE CTC paper or a related book chapter.
-3. "The Earned Income Tax Credit and the Intergenerational Persistence of Poverty" (2025) — possibly an in-progress companion to the SNAP intergenerational mobility paper.
-4. "Nonstandard Work Arrangements across Metropolitan and Nonmetropolitan Areas of the United States" — likely a dissertation-chapter publication or a working paper.
+Correction to the May audit: NBER lists w29823 (March 2022), the working-paper version of the JPubE CTC paper. Ben is not an NBER affiliate.
 
 ## Data file authority
 
-- **Authoritative, hand-edited**: `_data/writing.yml`, `_data/media_page.yml`, `_data/socials.yml`, `_data/cv.yml`, `_data/venues.yml`, `_data/coauthors.yml`, `_data/highlights.yml`, `_bibliography/papers.bib`.
-- **Generated from source scripts, never retouched**: `assets/video/highlights/` (the homepage headline wheel's MP4/PNG pairs). Regenerate with `bash bin/highlights_figures/render_all.sh`; see `bin/highlights_figures/README.md` for provenance (each figure is a re-themed port of a fact-checked reel from the Style Guide repo).
-- **Site mark / favicon**: `assets/img/bg-monogram.svg`, wired via both `logo:` and `icon:` in `_config.yml` (only `icon:` is actually consumed — by `_includes/head.liquid`; no template references `site.logo`, and the navbar brand is text). Replaced `bg-hex-logo.svg` on 2026-08-10, which used the pre-redesign palette and a `Cabin` font that was never installed. The "BG" is **outlined paths** extracted from the site's own `assets/fonts/newsreader/newsreader-latin-wght-normal.woff2` at `wght 600` — a favicon SVG loads outside the page and cannot use a self-hosted webfont, so live `<text>` would silently fall back to a system serif. Do not convert it back to `<text>`. Colors are `--paper-text`/`--accent-teal` inlined, with a `prefers-color-scheme` block carrying the dark complement.
-- **Cron-managed**: `_data/citations.yml` (Scholar Mon/Wed/Fri).
-- **Repo-authoritative but pipeline-history**: `_data/publications.json`, `_data/mentions.json`, `_data/media.json`, `_data/cv_assets.json`. (No `_data/repositories.*` file exists — the code + data page is `_pages/repositories.md`: a live GitHub API call for EIG-Research plus hand-curated personal-repo HTML.) The external profile-sync pipeline that produced these is retired (`.profile_payload_sync_manifest.json` reads `"status": "retired"`). Edits are allowed when explicitly requested; no automation should overwrite them.
+- **Authoritative, hand-edited:** `_data/writing.yml`, `_data/media_page.yml`, `_data/socials.yml`, `_data/cv.yml`, `_data/venues.yml`, `_data/coauthors.yml`, `_data/highlights.yml`, `_data/homepage.yml`, `_data/research_themes.yml`, `_bibliography/papers.bib`.
+  - Every bib entry requires a `theme` that is a key in `research_themes.yml`.
+  - `writing.yml` reports may carry a validated `bib_key`.
+  - `media_page.yml` items may carry `related_work`, which feeds "Coverage and interviews" on paper pages.
+  - `homepage.yml` has a validated `proof:` strip. Every outlet in it must be in `media_page.yml`, and every journal must be in `papers.bib`.
+- **Generated from source scripts, never retouched.** Regenerate each with its script:
+  - `assets/video/highlights/`: the headline wheel's MP4/PNG pairs. Regenerate with `bash bin/highlights_figures/render_all.sh`; provenance is in `bin/highlights_figures/README.md`. They were re-rendered 2026-09-23 with the warm palette, and only colors changed.
+  - `assets/img/og-card.png`: the 1200×630 social card and the site-wide `og_image`. Regenerate with `bash bin/og_card/render.sh`. Its deck is `_pages/about.md`'s `headline`, verbatim, so re-render when the headline changes.
+  - `assets/img/apple-touch-icon.png` and `/favicon.ico`: regenerate with `bash bin/render_icons.sh`.
+  - `assets/img/prof_pic_color-sq*.webp` and `-sq80.jpg`: the homepage headshot. Regenerate with `bash bin/make_headshot.sh`. Ben chose (2026-09-23) to keep the current photo. `/press/` offers the full-resolution `prof_pic_color.jpg` as the headshot download.
+- **Site mark / favicon:** `assets/img/bg-monogram.svg`, consumed via `icon:` in `_config.yml`.
+  - The same paths are inlined and token-colored in `_includes/site-mark.liquid` for the navbar wordmark.
+  - The "BG" is **outlined paths** from Newsreader at wght 600. A favicon SVG loads outside the page and cannot use a webfont, so do not convert it back to `<text>`.
+  - Colors are the warm tokens: light `#1b1d1f`/`#0f5f55`, dark `#ece9e1`/`#3fb3a0`.
+  - `head.liquid` declares the ICO, then the SVG, then the apple-touch-icon.
+- **JSON-LD Person facts:** `_config.yml` `person:` (jobTitle, worksFor, affiliation, sameAs). Keep it in sync with the CV and the EIG bio.
+- **Cron-managed:** `_data/citations.yml`, updated by the Scholar cron weekly on Mondays.
+  - The cron now fails loudly: `bibtexparser<2` is pinned, and it commits only on change. It had failed silently from 2026-08-28 to 2026-09-23.
+  - No page renders the file; only `bib-and-citations-sync` reads it.
+- **Repo-authoritative but pipeline-history:** `_data/publications.json`, `_data/mentions.json`, `_data/media.json`, `_data/cv_assets.json`.
+  - The external profile-sync pipeline that produced them is retired (`.profile_payload_sync_manifest.json` reads `"status": "retired"`).
+  - Edits are allowed when explicitly requested. No automation should overwrite them.
 
-## Page roster (as of 2026-05-03)
+## Design system (as of 2026-09-23)
 
-Real, intentional pages in `_pages/`:
-`about.md`, `cv.md`, `media.md`, `policy.md`, `publications.md`, `repositories.md`, `wage-subsidy-sim.md`, `writing.md`, `404.md`.
+- **Palette (warm newsprint and warm ink):**
+  - Light: paper `#f8f6f0`, ink `#1b1d1f`, teal `#0f5f55`, amber `#935a0b`.
+  - Dark: paper `#171a1c`, ink `#ece9e1`, teal `#3fb3a0`, amber `#d38a2c`.
+  - Every text pair is at least 4.5:1. The legacy `--global-*` tokens alias the paper tokens.
+  - Teal marks academic work and amber marks policy and media work.
+- **Type:**
+  - Upright Newsreader is the opsz-axis file (wght 400–700), with `font-optical-sizing: auto`. Italic is wght-only.
+  - Newsreader has no old-style figures or small caps.
+  - Public Sans is the body face at 400, and IBM Plex Mono sets eyebrows and meta.
+  - The drop cap appears on the policy narratives only.
+- **Signature elements:**
+  - The navbar wordmark is the monogram plus the name.
+  - The axis rule has one teal "origin" tick.
+- **Color bug fixed 2026-09-23:** base text rules in `_sass/_system.scss` are wrapped in `:where()` so component colors win. Before the fix, every eyebrow and muted tier rendered as plain ink.
+- **Accessibility:**
+  - The fixed navbar relies on `html { scroll-padding-top: 5rem }`.
+  - The dark tokens sit inside `@media screen`, so print always uses light tokens.
+  - As of 2026-09-23, axe finds 0 violations on every page in both themes.
 
-`_pages/media.md` now renders from `_data/media_page.yml`, which separates direct appearances and quoted coverage from selected cited coverage of Ben's research. It is genuinely hand-authored — `.prettierignore` no longer lists it (fixed 2026-08-10; it had wrongly carried a "do not edit, auto-generated" marker left over from an earlier pipeline iteration).
+## Page roster and IA (as of 2026-09-23)
 
-`blog.md`, `media_full_snapshot.md`, `repositories_full_snapshot.md`, and `research.md` do not exist in this repo — they were removed in an earlier cleanup along with the rest of the al-folio template residue. If you see them referenced elsewhere (an old audit report, a stale `.prettierignore` entry), that reference is stale.
-
-`_news/`, `_posts/`, `_projects/`, `_books/`, `_teachings/` are empty as of 2026-05-03. Template residue was removed in May 2026.
-
-The homepage hero's illustrative event-study SVG (`_includes/hero-figure.liquid`) was replaced on 2026-08-10 by the **headline wheel** (`_includes/headline-wheel.liquid` + `_data/highlights.yml`): a user-driven scroll-snap carousel of five findings from Ben's short-form reels, rendered as site-token animated figures in light/dark MP4 pairs. The sitewide motion-budget rule now lives there — videos play only while visible and never under prefers-reduced-motion; the wheel never advances on its own.
-
-All 9 real pages (plus jekyll-scholar's per-paper permalink layout) carry `redesign_2026: true` as of the 2026-08-10 visual/structural redesign — see `docs/audits/2026-08-10-2026-redesign-completion.md`. Because every generatable page has the flag, the pre-redesign CSS branch (`body:not(.redesign-2026)` in `_sass/_layout.scss`/`_typography.scss`/`_site-custom.scss`) was removed rather than kept as a fallback. A future page added without the flag (e.g. a blog post, since `_posts/` is empty but not disabled) will render with un-restyled Bootstrap defaults, not the old palette.
+- **Nav:** Home · Research · Policy · Writing · Media · CV.
+  - `/policy/` hosts the three policy narratives (`#opportunity-zones`, `#retirement`, `#wage-subsidy`) plus the `writing.yml` Reports list (`#reports`).
+  - `/writing/` holds Agglomerations and guest essays only.
+  - Code (`/repositories/`) is off-nav, linked from Research, the footer, and 404.
+- **Real pages in `_pages/`:** `about.md`, `cv.md`, `media.md`, `policy.md`, `press.md` (off-nav; linked from the homepage hero, Media, and the footer), `publications.md`, `repositories.md`, `wage-subsidy-sim.md`, `writing.md`, `404.md` (noindex).
+- **Research page (`publications.md`):**
+  - It is grouped into theme sections from `_data/research_themes.yml` and lists every entry group, including policy reports. Cards show coauthors and type labels.
+  - The keyword filter is inline in `_includes/bib_search.liquid`. `assets/js/bibsearch.js` is unused.
+  - Paper permalink pages label the bib `abstract` "Summary" and include a Cite this block.
+- **Homepage:**
+  - Hero, then the proof strip, then the headline wheel, then the "Currently" note, then three selected-work cards. The third card is the C-SPAN appearance.
+  - The headline wheel (`_includes/headline-wheel.liquid` plus `_data/highlights.yml`) follows the APG carousel pattern. It has a pause/play control whose choice persists in `localStorage` (`headline-wheel-paused`).
+  - Wheel assets load lazily, and only for the active theme's variant.
+  - Videos play only while visible and never under prefers-reduced-motion, and the wheel never advances on its own. This is the sitewide motion budget.
+- `_pages/media.md` renders from `_data/media_page.yml`. It is hand-authored, and Prettier checks it.
+- **Removed pages:** `blog.md`, `media_full_snapshot.md`, `repositories_full_snapshot.md`, and `research.md` do not exist. Any reference to them is stale.
+- **Removed layouts and collections:** the post, distill, archive, book, course, and profiles layouts were deleted in 2026-09, along with the unused al-folio includes. `_news/`, `_posts/`, `_projects/`, `_books/`, and `_teachings/` are empty. A future blog would need `post.liquid` restored from git history and `redesign_2026: true`.
+- **The `redesign_2026` flag:** every real page, plus jekyll-scholar's permalink layout, carries `redesign_2026: true`. The pre-redesign CSS branch is gone, so a page without the flag renders with un-restyled Bootstrap defaults.
+- **No feed:** the site publishes no `/feed.xml`, because `jekyll-feed` was removed.
 
 ## Build and CI
 
-- Dev: `docker compose up --build`, runs at `http://localhost:8080`.
-- Headless verify: `bash bin/verify_site.sh` (authors check, schema validation via `bin/validate_data.py`, headless Jekyll build into `_site_verify/`, internal link check).
-- Format: `npx prettier . --write` (also automated per-edit by the PostToolUse hook in `.claude/settings.json`).
-- CI: Prettier, lychee broken-link check, axe accessibility, CodeQL, Lighthouse (scheduled), `update-citations.yml` (Mon/Wed/Fri Scholar cron).
-- Pre-commit: trailing-whitespace, end-of-file-fixer, check-yaml, check-added-large-files, plus two local hooks: `bin/check_writing_authors.py` (added 2026-05-03) and `bin/validate_data.py` (added 2026-08-10, full schema validation).
+- **Dev:** `LC_ALL=en_US.UTF-8 bundle exec jekyll serve --port 4000`, the same as `.claude/launch.json`. Docker is optional and not installed on Ben's machine. The UTF-8 locale avoids Terser encoding errors.
+- **Headless verify:** `bash bin/verify_site.sh` runs five steps and falls back to Docker only if it is present:
+  1. Authors check.
+  2. Schema validation.
+  3. Local bundle build into `_site_verify/`.
+  4. Internal link check.
+  5. `bin/check_fa_icons.py`.
+- **Font Awesome:** the woff2 files are subsets. The icon list is `bin/fontawesome-icons.txt`; regenerate with `bin/subset_fontawesome.sh` after adding an icon.
+- **Plugins:**
+  - Gems: jekyll-3rd-party-libraries, jekyll-cache-bust, jekyll-email-protect, jekyll-link-attributes, jekyll-minifier, jekyll-scholar, jekyll-sitemap, jekyll-socials, jekyll-terser.
+  - Local plugins: `details.rb`, `hide-custom-bibtex.rb`, `sass-cache-bust.rb`. The last provides the `bust_sass_cache` filter for main.css.
+- **Third-party requests:**
+  - MDB is gone and publication badges are off.
+  - Site search loads on first intent.
+  - The only sitewide CDN request is jQuery from jsDelivr.
+- **Format:** `npx prettier . --write`, also automated per edit by the PostToolUse hook in `.claude/settings.json`.
+- **CI:**
+  - `deploy.yml`: schema, link, and icon gates run before publish.
+  - `prettier.yml`: runs on push and PR.
+  - `codeql.yml`: first-party code only.
+  - `update-citations.yml`: weekly on Mondays.
+  - `axe.yml`: manual dispatch only.
+  - `copilot-setup-steps.yml`.
+  - Dependabot covers actions, bundler, and npm.
+  - The lychee and Lighthouse workflows were removed.
+- **GitHub settings (set by Ben 2026-09-23):** workflow permissions are read-only by default, and Dependabot alerts are enabled.
+- **Pre-commit:**
+  - Standard hooks: trailing-whitespace, end-of-file-fixer, check-yaml, check-added-large-files.
+  - Local hooks: `bin/check_writing_authors.py` and `bin/validate_data.py`.
 
 ## Audits
 
@@ -96,6 +183,9 @@ Dated audit reports live in `docs/audits/`. The two anchor reports:
 - `2026-05-03-portfolio-deep-dive.md` (formerly `PORTFOLIO_DEEP_DIVE.md` at repo root).
 - `2026-05-03-front-facing-review.md` (formerly `REVIEW_REPORT.md` at repo root).
 
-Both are reference documents — do not edit; re-run the corresponding skill to produce a new dated report.
+Both are reference documents. Do not edit them; re-run the corresponding skill to produce a new dated report.
 
-A third report, `2026-08-10-2026-redesign-completion.md`, closes out the visual/structural redesign (design system, per-page definition-of-done, verified contrast ratios, axe-core accessibility results). It is not an "anchor" in the above sense — no skill regenerates it — but is otherwise the same do-not-edit reference-document convention.
+Two later reports follow the same do-not-edit convention, though no skill regenerates them:
+
+- `2026-08-10-2026-redesign-completion.md` closes out the visual and structural redesign.
+- `2026-09-23-multi-agent-improvement-pass.md` records the nine-specialist audit, what shipped, validation results, and the open needs-Ben list.

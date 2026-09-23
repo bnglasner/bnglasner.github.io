@@ -7,47 +7,133 @@ redesign_2026: true
 existence at _layouts/bibtex.html activates it (details_layout in _config.yml's scholar block already points here), one page per entry under
 /bibliography/ (details_dir + details_permalink, both already configured), named after the entry's citekey. page.entry.* exposes every bibtex field
 directly (see .claude/rules/schema-invariants.md). Highwire citation_* meta tags for this page are added in _includes/metadata.liquid, gated on
-page.entry existing, so every generated page gets them for free. {%- endcomment -%}
+page.entry existing, so every generated page gets them for free. Sections: summary (the bib `abstract`, a paraphrase written for this site, so it is
+labeled "Summary", never "Abstract"; falls back to `finding`), links (PDF / website / DOI / code), coverage (media_page.yml items whose `related_work`
+lists this citekey), and "Cite this" (a formatted citation in EIG style: no parenthesized year, ends with a period, plus the raw BibTeX, each with a
+copy button). {%- endcomment -%} {%- assign entry = page.entry -%}
 <div class="post work-detail">
   <a class="work-detail__back" href="{{ '/publications/' | relative_url }}">&larr; Research</a>
 
-  <span class="work-card__eyebrow">
-    {% include entry-type-label.liquid type=page.type entry_group=page.entry.entry_group %} · {{ page.entry.year }}
-  </span>
+  <span class="work-card__eyebrow"> {% include entry-type-label.liquid type=page.type entry_group=entry.entry_group %} · {{ entry.year }} </span>
 
-  <h1 class="work-detail__title">{{ page.entry.title }}</h1>
+  <h1 class="work-detail__title">{{ entry.title }}</h1>
 
-  {% if page.entry.author_array %}
+  {% if entry.author_array %}
   <p class="work-detail__byline">
-    {%- for author in page.entry.author_array -%} {{- author.first }} {{ author.last -}} {%- unless forloop.last %}, {% endunless -%} {%- endfor -%}
+    {%- for author in entry.author_array -%} {{- author.first }} {{ author.last -}} {%- unless forloop.last %}, {% endunless -%} {%- endfor -%}
   </p>
-  {% endif %}
-
+  {% endif %} {%- capture venue -%} {%- if entry.journal -%} {{ entry.journal }} {%- elsif entry.institution -%} {{ entry.institution }} {%- elsif
+  entry.school -%} {{ entry.school }} {%- elsif entry.howpublished -%} {{ entry.howpublished }} {%- endif -%} {%- endcapture -%}
   <p class="work-detail__venue">
-    {%- if page.entry.journal -%} {{ page.entry.journal }} {%- elsif page.entry.institution -%} {{ page.entry.institution }} {%- elsif
-    page.entry.school -%} {{ page.entry.school }} {%- endif -%} {%- if page.entry.volume %}, vol. {{ page.entry.volume }}{% endif -%} {%- if
-    page.entry.number %}, no. {{ page.entry.number }}{% endif -%} {%- if page.entry.pages %}, pp. {{ page.entry.pages }}{% endif -%}
+    {{- venue -}} {%- if entry.volume %}, vol. {{ entry.volume }}{% endif -%} {%- if entry.number %}, no. {{ entry.number }}{% endif -%} {%- if
+    entry.pages %}, pp. {{ entry.pages }}{% endif -%}
   </p>
 
-  {% include axis-rule.liquid class="axis-rule--tight" %} {% if page.entry.abstract %}
-  <h2>Abstract</h2>
-  <p class="work-detail__abstract">{{ page.entry.abstract }}</p>
+  {% include axis-rule.liquid class="axis-rule--tight" %} {% if entry.abstract %}
+  <h2>Summary</h2>
+  <p class="work-detail__abstract">{{ entry.abstract }}</p>
+  <p class="work-card__meta">
+    A plain-language summary written for this site, not the authors' published abstract. {%- if entry.doi or entry.website %} See the published
+    version for the original.{% endif -%}
+  </p>
   {% else %}
-  <p class="work-detail__abstract">{{ page.entry.finding }}</p>
+  <p class="work-detail__abstract">{{ entry.finding }}</p>
   {% endif %}
 
   <div class="work-detail__links">
-    {% if page.entry.pdf %}
-    <a class="btn-cta btn-cta--secondary" href="{{ page.entry.pdf }}" target="_blank" rel="noopener noreferrer">PDF</a>
-    {% endif %} {% if page.entry.website %}
-    <a class="btn-cta btn-cta--secondary" href="{{ page.entry.website }}" target="_blank" rel="noopener noreferrer"> Website </a>
-    {% endif %} {% if page.entry.doi %}
-    <a class="btn-cta btn-cta--secondary" href="https://doi.org/{{ page.entry.doi }}" target="_blank" rel="noopener noreferrer"> DOI </a>
-    {% endif %} {% if page.entry.code %}
-    <a class="btn-cta btn-cta--secondary" href="{{ page.entry.code }}" target="_blank" rel="noopener noreferrer">Code</a>
+    {% if entry.pdf %}
+    <a class="btn-cta btn-cta--secondary" href="{{ entry.pdf }}" target="_blank" rel="noopener noreferrer">PDF</a>
+    {% endif %} {% if entry.website %}
+    <a class="btn-cta btn-cta--secondary" href="{{ entry.website }}" target="_blank" rel="noopener noreferrer">Website</a>
+    {% endif %} {% if entry.doi %}
+    <a class="btn-cta btn-cta--secondary" href="https://doi.org/{{ entry.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>
+    {% endif %} {% if entry.code %}
+    <a class="btn-cta btn-cta--secondary" href="{{ entry.code }}" target="_blank" rel="noopener noreferrer">Code</a>
     {% endif %}
   </div>
 
-  <h2>BibTeX</h2>
-  <pre class="work-detail__bibtex"><code>{{ page.entry.bibtex | hideCustomBibtex }}</code></pre>
+  {%- comment -%} Coverage: collect media items (direct appearances and cited coverage) whose related_work names this entry. {%- endcomment -%} {%-
+  assign coverage_items = "" | split: "" -%} {%- for section in site.data.media_page.sections -%} {%- for item in section.items -%} {%- if
+  item.related_work contains entry.key -%} {%- assign coverage_items = coverage_items | push: item -%} {%- endif -%} {%- endfor -%} {%- endfor -%} {%-
+  for group in site.data.media_page.coverage_groups -%} {%- for item in group.items -%} {%- if item.related_work contains entry.key -%} {%- assign
+  coverage_items = coverage_items | push: item -%} {%- endif -%} {%- endfor -%} {%- endfor -%} {% if coverage_items.size > 0 %} {%- comment -%} Newest
+  first. `published` may be a Date or a month-precision "YYYY-MM" string, and Liquid cannot sort a mix of the two, so sort "YYYY-MM-DD|index" keys
+  instead (a month-only value keys as day 00, just before full dates in the same month). {%- endcomment -%} {%- assign coverage_keys = "" | split: ""
+  -%} {%- for item in coverage_items -%} {%- if item.published.size == 7 -%} {%- assign coverage_key = item.published | append: "-00" -%} {%- elsif
+  item.published -%} {%- assign coverage_key = item.published | date: "%Y-%m-%d" -%} {%- else -%} {%- assign coverage_key = "0000-00-00" -%} {%- endif
+  -%} {%- capture coverage_key -%}{{ coverage_key }}|{{ forloop.index0 }}{%- endcapture -%} {%- assign coverage_keys = coverage_keys | push:
+  coverage_key -%} {%- endfor -%} {%- assign coverage_keys = coverage_keys | sort | reverse -%} {%- assign sorted_coverage = "" | split: "" -%} {%-
+  for coverage_key in coverage_keys -%} {%- assign coverage_index = coverage_key | split: "|" | last | plus: 0 -%} {%- assign sorted_coverage =
+  sorted_coverage | push: coverage_items[coverage_index] -%} {%- endfor -%} {%- assign coverage_items = sorted_coverage -%}
+  <h2>Coverage and interviews</h2>
+  <ul class="work-detail__coverage">
+    {% for item in coverage_items %}
+    <li>
+      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+      <span class="work-card__meta">
+        {{- item.outlet -}} {%- if item.published %} · {% include pub-date.liquid date=item.published format="%B %Y" %}{% endif -%}
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="work-card__meta"><a href="{{ '/media/' | relative_url }}">All media and coverage</a></p>
+  {% endif %} {%- comment -%} Formatted citation, EIG style: Authors. Year. "Title." Venue details. Link. {%- endcomment -%} {%- capture cite_authors
+  -%} {%- for author in entry.author_array -%} {%- unless forloop.first -%} {%- if forloop.last -%} {%- if forloop.length > 2 %},{% endif %} and {%
+  else -%} , {% endif -%} {%- endunless -%} {{- author.first }} {{ author.last -}} {%- endfor -%} {%- endcapture -%} {%- capture cite_venue -%} {%-
+  case page.type -%} {%- when 'article' -%}
+  <i>{{ entry.journal }}</i>
+  {%- if entry.volume %} {{ entry.volume }}{% endif -%} {%- if entry.number %}({{ entry.number }}){% endif -%} {%- if entry.pages %}: {{ entry.pages |
+  replace: "--", "–" }}{% endif -%} {%- when 'phdthesis' -%} PhD diss., {{ entry.school }} {%- else -%} {{ venue }}{% if entry.number %}, no. {{
+  entry.number }}{% endif %} {%- endcase -%} {%- endcapture -%} {%- if entry.doi -%} {%- capture cite_link -%}https://doi.org/{{ entry.doi }}{%-
+  endcapture -%} {%- elsif entry.website -%} {%- assign cite_link = entry.website -%} {%- else -%} {%- assign cite_link = "" -%} {%- endif -%}
+
+  <h2>Cite this</h2>
+  <p class="work-detail__abstract" id="cite-text">
+    {{- cite_authors | strip_newlines | replace: " ", " " | replace: " ,", "," }}. {{ entry.year }}. “{{ entry.title | replace: '"', "'" }}.” {{
+    cite_venue | strip_newlines | strip }}. {%- if cite_link != "" %} {{ cite_link }}.{% endif -%}
+  </p>
+  <div class="work-detail__links">
+    <button type="button" class="btn-cta btn-cta--secondary" data-copy-target="cite-text">Copy citation</button>
+    <button type="button" class="btn-cta btn-cta--secondary" data-copy-target="bibtex-text">Copy BibTeX</button>
+    <span class="work-card__meta" role="status" aria-live="polite" id="copy-status"></span>
+  </div>
+
+  <h3>BibTeX</h3>
+  <pre class="work-detail__bibtex"><code id="bibtex-text">{{ entry.bibtex | hideCustomBibtex }}</code></pre>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const status = document.getElementById("copy-status");
+    document.querySelectorAll("[data-copy-target]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const target = document.getElementById(button.dataset.copyTarget);
+        if (!target) return;
+        const name = button.textContent.replace("Copy ", "");
+        const label = name.charAt(0).toUpperCase() + name.slice(1);
+        const text = target.innerText.replace(/\s+\n/g, "\n").trim();
+        // Fallback when the async clipboard API is missing or denied: select the
+        // text and try execCommand; if that fails too, the text stays selected.
+        const fallback = () => {
+          const range = document.createRange();
+          range.selectNodeContents(target);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          let copied = false;
+          try {
+            copied = document.execCommand("copy");
+          } catch (error) {
+            copied = false;
+          }
+          status.textContent = copied ? label + " copied." : label + " selected; press Ctrl+C (Cmd+C) to copy.";
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(() => (status.textContent = label + " copied."), fallback);
+        } else {
+          fallback();
+        }
+      });
+    });
+  });
+</script>

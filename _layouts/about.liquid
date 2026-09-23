@@ -3,7 +3,13 @@ layout: default
 ---
 <div class="post">
   <section class="home-hero">
-    <span class="site-eyebrow">{{ page.eyebrow }}</span>
+    <span class="site-eyebrow">
+      {{- page.eyebrow -}}
+      {%- if page.eyebrow_affiliation -%}
+        <br>
+        {{ page.eyebrow_affiliation -}}
+      {%- endif -%}
+    </span>
     <h1 class="home-hero__headline">{{ page.headline }}</h1>
     <p class="home-hero__description">{{ page.hero_description }}</p>
     <div class="home-hero__ctas">
@@ -13,22 +19,65 @@ layout: default
       {% if page.cta_secondary %}
         <a class="btn-cta btn-cta--secondary" href="{{ page.cta_secondary.url | relative_url }}">{{ page.cta_secondary.label }}</a>
       {% endif %}
+      {% if page.cta_contact %}
+        <a class="btn-cta" href="{{ page.cta_contact.url | relative_url }}">{{ page.cta_contact.label }} &rarr;</a>
+      {% endif %}
     </div>
+    {% if site.data.homepage.proof %}
+      {% comment %}
+        Proof strip: text-only credibility lines from _data/homepage.yml `proof`.
+        bin/validate_data.py checks every item against media_page.yml or papers.bib.
+        Styled by .home-note__* plus .home-proof (_sass/_system.scss). The <u>
+        gives each label link a non-color cue (WCAG 1.4.1, axe link-in-text-block).
+      {% endcomment %}
+      <ul class="home-proof home-note__body list-unstyled mt-n3 mb-5" aria-label="Appearances, coverage, and journals">
+        {% for line in site.data.homepage.proof %}
+          <li class="home-note__text">
+            <a class="text-uppercase" href="{{ line.url | relative_url }}"
+              ><u>{{ line.label }}</u></a
+            >
+            ·
+            {{ line.items | join: ' · ' }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     {% include headline-wheel.liquid %}
   </section>
 
   {% if site.data.homepage.currently_working_on %}
     <div class="home-note">
       {% if page.profile_image %}
-        {% assign profile_image_path = page.profile_image | prepend: 'assets/img/' | relative_url %}
-        <img class="home-note__photo" src="{{ profile_image_path }}" alt="" width="40" height="40" loading="eager">
+        {% comment %}
+          40px slot: serve the square crops from bin/make_headshot.sh (1x/2x/3x WebP,
+          2x JPEG fallback), not the full-size portrait. The <picture> is the single
+          40px flex item (display:contents would expose <source> as an extra flex
+          item and add a .home-note gap, re-wrapping the note text).
+        {% endcomment %}
+        {% assign profile_image_stem = page.profile_image | prepend: 'assets/img/' | split: '.' | first %}
+        <picture style="display: flex; flex-shrink: 0">
+          <source
+            type="image/webp"
+            srcset="{{ profile_image_stem | append: '-sq40.webp' | relative_url }} 1x, {{ profile_image_stem | append: '-sq80.webp' | relative_url }} 2x, {{ profile_image_stem | append: '-sq120.webp' | relative_url }} 3x"
+          >
+          <img
+            class="home-note__photo"
+            src="{{ profile_image_stem | append: '-sq80.jpg' | relative_url }}"
+            alt=""
+            width="40"
+            height="40"
+            loading="eager"
+          >
+        </picture>
       {% endif %}
       <div class="home-note__body">
         <p class="home-note__text">Currently: {{ site.data.homepage.currently_working_on }}</p>
         {% if site.data.homepage.open_to %}
           <p class="home-note__text">
             {{ site.data.homepage.open_to }}
-            <a href="mailto:{{ site.data.socials.email }}">Email me</a> or <a href="{{ '/media/' | relative_url }}">see past appearances</a>.
+            <a href="mailto:{{ site.data.socials.email }}"><u>Email me</u></a> or
+            <a href="{{ '/media/' | relative_url }}"><u>see past appearances</u></a
+            >.
           </p>
         {% endif %}
       </div>

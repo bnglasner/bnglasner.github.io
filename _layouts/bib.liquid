@@ -8,16 +8,45 @@
   _layouts/bibtex.html) — jekyll-scholar supplies it as a top-level variable
   in this rendering context, not nested under `page`.
 
-  The Research page only queries entry_group in (peer_reviewed, working_paper,
-  dissertation, thesis) — see _pages/publications.md — so every entry
-  rendered here is academic work; the card is always teal-coded.
+  Card color follows the site's two-accent rule: policy reports are amber
+  (policy), everything else is teal (academic). Meta row 1 lists every
+  author in published order, Ben's name in <strong>; meta row 2 is venue and
+  links. `data-search` carries the paraphrased summary so the Research page
+  filter (_includes/bib_search.liquid) matches method and data terms that
+  are not visible on the card.
 {%- endcomment -%}
-<div class="work-card work-card--academic" id="{{ key }}">
+{%- if entry.entry_group == 'policy_report' -%}
+  {%- assign card_category = 'policy' -%}
+{%- else -%}
+  {%- assign card_category = 'academic' -%}
+{%- endif -%}
+<div class="work-card work-card--{{ card_category }}" id="{{ key }}" data-search="{{ entry.abstract | strip_html | escape }}">
   <span class="work-card__eyebrow"> {% include entry-type-label.liquid type=type entry_group=entry.entry_group %} · {{ entry.year }} </span>
   <h3 class="work-card__title">
     <a href="{{ details }}">{{ entry.title }}</a>
   </h3>
   <p class="work-card__finding">{{ entry.finding }}</p>
+  {% if entry.author_array %}
+    <div class="work-card__meta">
+      <span>
+        {%- for author in entry.author_array -%}
+          {%- if author.last == 'Glasner' -%}
+            {%- comment -%}
+              Display-only normalization: bylines vary between "Ben" and
+              "Benjamin" across publications (the bib data keep each byline
+              as published, and the Cite this block on the permalink page
+              uses it). Listing cards show one form so a page never mixes them.
+            {%- endcomment -%}
+            <strong>Benjamin Glasner</strong>
+          {%- else -%}
+            {{ author.first }}
+            {{ author.last }}
+          {%- endif -%}
+          {%- unless forloop.last %}, {% endunless -%}
+        {%- endfor -%}
+      </span>
+    </div>
+  {% endif %}
   <div class="work-card__meta">
     {%- if entry.journal -%}
       <span>{{ entry.journal }}</span>
@@ -25,6 +54,8 @@
       <span>{{ entry.institution }}</span>
     {%- elsif entry.school -%}
       <span>{{ entry.school }}</span>
+    {%- elsif entry.howpublished -%}
+      <span>{{ entry.howpublished }}</span>
     {%- endif -%}
     {% if entry.pdf -%}
       <a href="{{ entry.pdf }}" target="_blank" rel="noopener noreferrer">PDF</a>
@@ -34,6 +65,9 @@
     {%- endif %}
     {% if entry.doi -%}
       <a href="https://doi.org/{{ entry.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>
+    {%- endif %}
+    {% if entry.code -%}
+      <a href="{{ entry.code }}" target="_blank" rel="noopener noreferrer">Code</a>
     {%- endif %}
     <a href="{{ details }}">Details</a>
   </div>

@@ -58,7 +58,32 @@
         >
           <i class="fa-brands fa-github" aria-hidden="true"></i>
         </a>
+        <a
+          href="{{ site.data.socials.substack_url.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ site.first_name }} {{ site.last_name }} on Agglomerations (Substack)"
+        >
+          <i class="{{ site.data.socials.substack_url.logo }}" aria-hidden="true"></i>
+        </a>
+        <a
+          href="{{ site.data.socials.bluesky_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ site.first_name }} {{ site.last_name }} on Bluesky"
+        >
+          <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
+        </a>
       </div>
+
+      {% comment %}
+        Text links for pages that are deliberately off the top nav (content track,
+        2026-09 IA change). Styled by the existing .site-footer__copyright rules.
+      {% endcomment %}
+      <nav class="site-footer__copyright mb-2" aria-label="More pages">
+        <a href="{{ '/press/' | relative_url }}">Press and speaking</a> ·
+        <a href="{{ '/repositories/' | relative_url }}">Code</a>
+      </nav>
 
       {% if site.newsletter.enabled %}
         {% include newsletter.liquid %}
