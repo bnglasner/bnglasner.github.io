@@ -5,7 +5,8 @@
 #           A missing required field silently drops an entry from the rendered
 #           page; this script turns that silent failure into a blocked commit.
 # Scope   - _data/writing.yml, _data/media_page.yml, _data/socials.yml,
-#           _data/homepage.yml, _data/highlights.yml (incl. asset existence),
+#           _data/homepage.yml (incl. proof-strip source cross-check),
+#           _data/highlights.yml (incl. asset existence),
 #           _bibliography/papers.bib <-> _data/venues.yml abbr cross-check,
 #           papers.bib <-> _data/research_themes.yml theme cross-check,
 #           media_page.yml related_work -> papers.bib citekey cross-check,
@@ -227,6 +228,68 @@ def check_homepage() -> None:
         open_to = data.get("open_to")
         if not isinstance(open_to, str) or not open_to.strip():
             fail("homepage.yml: open_to, when present, must be a non-empty string")
+    if "proof" in data:
+        check_homepage_proof(data.get("proof"))
+
+
+PROOF_KINDS = {"appearances", "coverage", "journals"}
+QUOTED_SECTION_TITLE = "Quoted in News Coverage"
+
+
+def check_homepage_proof(proof) -> None:
+    """The homepage proof strip may only name outlets and journals the site documents."""
+    if not isinstance(proof, list) or not proof:
+        fail("homepage.yml: proof, when present, must be a non-empty list")
+        return
+    if len(proof) > 3:
+        fail(f"homepage.yml: proof has {len(proof)} lines; the strip is capped at three")
+    media = load_yaml(DATA / "media_page.yml") or {}
+    appearance_outlets: set[str] = set()
+    all_outlets: set[str] = set()
+    for section in media.get("sections") or []:
+        for item in (section or {}).get("items") or []:
+            outlet = (item or {}).get("outlet")
+            all_outlets.add(outlet)
+            if section.get("title") != QUOTED_SECTION_TITLE:
+                appearance_outlets.add(outlet)
+    for group in media.get("coverage_groups") or []:
+        for item in (group or {}).get("items") or []:
+            all_outlets.add((item or {}).get("outlet"))
+    journals = {
+        fields.get("journal", "").strip()
+        for _, _, fields in parse_bib()
+        if fields.get("entry_group") == "peer_reviewed" and fields.get("journal")
+    }
+    allowed = {"appearances": appearance_outlets, "coverage": all_outlets, "journals": journals}
+    sources = {
+        "appearances": "a direct-appearance outlet in media_page.yml sections",
+        "coverage": "an outlet in media_page.yml",
+        "journals": "the journal of a peer_reviewed papers.bib entry",
+    }
+    for idx, line in enumerate(proof):
+        label = f"homepage.yml proof[{idx}]"
+        if not isinstance(line, dict):
+            fail(f"{label}: expected a mapping")
+            continue
+        missing = {"label", "kind", "url", "items"} - set(line)
+        if missing:
+            fail(f"{label}: missing required fields {sorted(missing)}")
+        if not isinstance(line.get("label"), str) or not line.get("label", "").strip():
+            fail(f"{label}: label must be a non-empty string")
+        url = line.get("url")
+        if not isinstance(url, str) or not (url.startswith("/") or is_absolute_url(url)):
+            fail(f"{label}: url must be a site-relative path (/...) or an absolute URL")
+        kind = line.get("kind")
+        if kind not in PROOF_KINDS:
+            fail(f"{label}: kind must be one of {sorted(PROOF_KINDS)}")
+            continue
+        items = line.get("items")
+        if not isinstance(items, list) or not items or not all(isinstance(i, str) and i.strip() for i in items):
+            fail(f"{label}: items must be a non-empty list of strings")
+            continue
+        for item in items:
+            if item not in allowed[kind]:
+                fail(f"{label}: `{item}` is not {sources[kind]}")
 
 
 # 5) _data/highlights.yml — homepage headline wheel

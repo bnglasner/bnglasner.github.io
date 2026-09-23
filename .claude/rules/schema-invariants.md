@@ -120,8 +120,12 @@ Added in the 2026 redesign for the homepage's one personal note (headshot + a si
 Optional keys:
 
 - `open_to` (string, non-empty when present) — one sentence signaling availability for collaborations, press, podcasts, and panels, rendered as the second line of the same home note. The template appends the "Email me or see past appearances" links; do not duplicate them in the sentence.
+- `proof` (list, non-empty when present) — the text-only proof strip under the hero buttons (added 2026-09-23). Each line requires `label` (string), `kind` (one of `appearances`, `coverage`, `journals`), `url` (site-relative `/…` path or absolute URL), and `items` (non-empty list of strings). The validator cross-checks every item against its source so the strip cannot outrun the evidence:
+  - `appearances` — must be an outlet in `media_page.yml` `sections`, excluding "Quoted in News Coverage" (direct appearances only).
+  - `coverage` — must be an outlet anywhere in `media_page.yml`. Label these lines "covered", never "quoted in" or "featured in".
+  - `journals` — must be the `journal` of a `peer_reviewed` entry in `papers.bib`.
 
-Keep this to the one note the design calls for (the working-on line plus at most the availability line); do not grow it into a second bio or a projects list.
+Keep this to the one note the design calls for (the working-on line plus at most the availability line); do not grow it into a second bio or a projects list. The proof strip is separate from the note and stays at three lines.
 
 ## `_data/highlights.yml`
 
