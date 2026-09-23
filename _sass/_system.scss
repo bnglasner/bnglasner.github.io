@@ -365,6 +365,10 @@ body.redesign-2026 {
   color: var(--paper-text);
   font-family: var(--font-sans);
   font-size: var(--font-size-body);
+  // MDB's base stylesheet sets body text to 300. Public Sans is drawn for
+  // 400 text, and IBM Plex Mono ships no 300 file at all (browsers were
+  // silently substituting 400 for the mono meta lines).
+  font-weight: 400;
   line-height: var(--line-height-body);
 
   .measure {
