@@ -15,7 +15,7 @@ reports:
     authors: ["Ben Glasner", "Adam Ozimek"]
     published: 2025-09-22
     featured: true
-    description: "A large, targeted wage subsidy designed to raise earnings and strengthen labor-market attachment for low-wage workers."
+    description: "The 80-80 proposal would subsidize low-wage paychecks directly, raising take-home pay without adding to employers' cost of hiring."
   - title: "Are Opportunity Zones Helping High-Need Communities? EIG Responds to New York Times Op-Ed"
     url: "https://eig.org/eig-responds-to-nyt-op-ed/"
     outlet: "Economic Innovation Group"
@@ -29,7 +29,7 @@ reports:
     authors: ["Benjamin Glasner", "Adam Ozimek", "John Lettieri"]
     published: 2025-03-11
     featured: true
-    description: "Evidence that Opportunity Zones increased residential development and housing supply in designated communities."
+    description: "Opportunity Zone designation increased new housing construction by 70 percent in designated tracts, adding more than 416,000 residential addresses with little displacement from nearby areas."
   - title: 'The Great "Transfer"-mation: How American Communities Became Reliant on Income from Government'
     bib_key: fikri_eckhardt_glasner_2024_transfermation
     url: "https://eig.org/great-transfermation/"
@@ -37,14 +37,14 @@ reports:
     authors: ["Kenan Fikri", "Sarah Eckhardt", "Ben Glasner"]
     published: 2024-09-12
     featured: true
-    description: "How transfer income has grown across U.S. communities and reshaped the foundations of local economies."
+    description: "Government transfers grew from 8 percent of personal income in 1970 to almost 18 percent by 2022, leaving roughly half of U.S. counties substantially reliant on transfer income."
   - title: "The American Worker Project: Toward a New Consensus"
     bib_key: ozimek_lettieri_glasner_2024_american_worker
     url: "https://eig.org/american-worker/"
     outlet: "Economic Innovation Group"
     authors: ["Adam Ozimek", "John Lettieri", "Ben Glasner"]
     published: 2024-06-26
-    description: "A worker-centered economic policy agenda grounded in labor-market dynamism, mobility, and earnings growth."
+    description: "American workers are more prosperous than prior generations by most measures, but the pace of improvement has slowed, and public perception often lags the underlying data."
   - title: "Living the good life or getting a bad deal?"
     url: "https://eig.org/dci-cost-of-living/"
     outlet: "Economic Innovation Group"
@@ -63,7 +63,7 @@ reports:
     outlet: "Economic Innovation Group"
     authors: ["Eric Carlson", "Benjamin Glasner", "Adam Ozimek"]
     published: 2023-11-16
-    description: "Why full-remote and hybrid arrangements have substantively different consequences for local labor markets."
+    description: "Full-remote work raises long-distance migration and destination-market housing prices, while hybrid work enables shorter moves without the same price effect."
   - title: "Movers And Money: Mapping the Flow of Income During the Pandemic"
     url: "https://eig.org/interactive-income-flows/"
     outlet: "Economic Innovation Group"
@@ -76,7 +76,7 @@ reports:
     outlet: "Economic Innovation Group"
     authors: ["Kenan Fikri", "Ben Glasner"]
     published: 2023-10-12
-    description: "A synthesis of the empirical literature on Opportunity Zones and what the early evidence says about program effects."
+    description: "Studies that wait long enough to observe Opportunity Zones under fully finalized regulations find the strongest positive investment effects; many widely cited early studies end their analysis window too soon to detect them."
   - title: "How Much Does Retirement Plan Coverage Vary by State and Income? An Updated Look."
     url: "https://eig.org/state-retirement-coverage-2023/"
     outlet: "Economic Innovation Group"
@@ -109,7 +109,7 @@ reports:
     outlet: "Economic Innovation Group"
     authors: ["Benjamin Glasner"]
     published: 2023-03-29
-    description: "A research note comparing business-formation outcomes after noncompete reforms in Hawaii and Oregon."
+    description: "Hawaii's noncompete exemption for technology workers was associated with 10 percent more technology establishments, while Oregon's broader low-wage-worker reform showed no significant effect."
 
 # Short-form entries are limited to posts on which Ben is a published byline
 # per Substack's profile API for profile_user_id 219318610. EIG-newsletter
