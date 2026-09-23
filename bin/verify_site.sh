@@ -14,13 +14,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-echo "==> 1/5 writing.yml authors check"
+echo "==> 1/6 writing.yml authors check"
 python3 bin/check_writing_authors.py
 
-echo "==> 2/5 data schema validation"
+echo "==> 2/6 data schema validation"
 python3 bin/validate_data.py
 
-echo "==> 3/5 headless Jekyll build (no server)"
+echo "==> 3/6 headless Jekyll build (no server)"
 # Builds into _site_verify (gitignored) so the dev server's _site/ is untouched.
 # Primary path: the local Ruby toolchain (bundle). Fallback: the al-folio Docker
 # image, for machines that have Docker but no local Ruby.
@@ -39,10 +39,33 @@ else
   exit 1
 fi
 
-echo "==> 4/5 internal link check over the built site"
+echo "==> 4/6 internal link check over the built site"
 python3 bin/check_internal_links.py _site_verify
 
-echo "==> 5/5 Font Awesome subset covers every icon used"
+echo "==> 5/6 Font Awesome subset covers every icon used"
 python3 bin/check_fa_icons.py _site_verify
+
+echo "==> 6/6 production build + PurgeCSS keeps the redesign's base rules"
+# deploy.yml builds with JEKYLL_ENV=production and then runs PurgeCSS. Both
+# steps have silently broken styling before (minified clamp(), purged
+# :where() rules), and neither runs in the dev build above. Needs npx.
+if command -v npx >/dev/null 2>&1; then
+  PROD=_site_verify_prod
+  rm -rf "$PROD"
+  JEKYLL_ENV=production LC_ALL=en_US.UTF-8 bundle exec jekyll build --destination "$PROD" >/dev/null
+  sed "s#_site/#$PROD/#g" purgecss.config.js >"$PROD/.purgecss.config.js"
+  npx --yes purgecss -c "$PROD/.purgecss.config.js" >/dev/null
+  css="$PROD/assets/css/main.css"
+  if ! grep -q ':where(body.redesign-2026) :is(h1,h2,h3,h4,h5,h6)' "$css"; then
+    echo "verify_site.sh: PurgeCSS removed the redesign's heading rules" >&2
+    exit 1
+  fi
+  if grep -Eq 'clamp\([^)]*[0-9a-z]\+[0-9]' "$css"; then
+    echo "verify_site.sh: a clamp()/calc() lost the spaces around +" >&2
+    exit 1
+  fi
+else
+  echo "    (skipped: npx not found)"
+fi
 
 echo "verify_site.sh: all checks passed"
