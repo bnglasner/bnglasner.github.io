@@ -141,16 +141,30 @@
   // gone. Two accents only; every value here is contrast-verified against
   // --paper-bg (see the commit message for ratios) — do not add a third
   // hue or reintroduce a color outside this set.
-  --paper-bg: #fcfcfa;
-  --paper-text: #1a1f24;
-  --paper-hairline: #c9c6bc;
-  --paper-hairline-soft: #d8d6ce;
-  --paper-muted: #4a5158;
-  --paper-muted-soft: #6b7178;
-  --accent-teal: #116a5f; // primary: academic / peer-reviewed
-  --accent-amber: #9c610d; // secondary: policy / media (darkened from the
-  // #B97318 design brief — that value is 3.70:1 on --paper-bg, below the
-  // 4.5:1 AA floor for normal text; this hue at this depth is 4.95:1)
+  //
+  // Warm "newsprint" palette (2026-09-23): the paper moved off near-white
+  // toward a warm off-white, and the teal and amber deepened to read as ink
+  // rather than UI. WCAG 2.x ratios, recomputed with a script from these
+  // exact values (text pairs must be >= 4.5:1):
+  //   paper-text on paper-bg          15.64:1
+  //   paper-muted on paper-bg          7.65:1
+  //   paper-muted-soft on paper-bg     4.76:1
+  //   accent-teal on paper-bg          6.97:1  (links, eyebrows, active nav)
+  //   accent-amber on paper-bg         5.24:1  (policy/media eyebrows)
+  //   paper-bg on accent-teal          6.97:1  (primary button text)
+  //   ... same at 0.88 hover opacity   5.30:1
+  //   paper-text on paper-hairline-soft 11.86:1 (BibTeX block)
+  // Hairlines are decorative only (1.66:1 and 1.32:1), never text.
+  // The amber stays darker than the #B97318 design brief, which is below
+  // 4.5:1 on the paper; do not lighten it back.
+  --paper-bg: #f8f6f0;
+  --paper-text: #1b1d1f;
+  --paper-hairline: #c6c1b4;
+  --paper-hairline-soft: #dcd8cc;
+  --paper-muted: #4a4f55;
+  --paper-muted-soft: #696e73;
+  --accent-teal: #0f5f55; // primary: academic / peer-reviewed
+  --accent-amber: #935a0b; // secondary: policy / media
 
   --font-serif: "Newsreader Variable", "Newsreader", "Iowan Old Style", Georgia, serif;
   --font-sans: "Public Sans Variable", "Public Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
@@ -164,6 +178,18 @@
   --line-height-body: 1.6;
 
   --focus-ring: 0 0 0 3px var(--paper-bg), 0 0 0 5px var(--accent-teal);
+
+  // Legacy-token bridge: chrome that still reads the pre-redesign
+  // --global-* names (the search modal, the theme-toggle icon, inline code,
+  // leftover al-folio partials) follows the paper palette instead of the
+  // retired ivory/forest/navy brand set.
+  --global-bg-color: var(--paper-bg);
+  --global-text-color: var(--paper-text);
+  --global-text-color-light: var(--paper-muted);
+  --global-theme-color: var(--accent-teal);
+  --global-hover-color: var(--accent-teal);
+  --global-card-bg-color: var(--paper-bg);
+  --global-divider-color: var(--paper-hairline);
 }
 
 @media (max-width: 576px) {
@@ -217,25 +243,38 @@ html[data-theme="dark"] {
   --surface-elev-3: 0 22px 42px rgba(0, 0, 0, 0.32);
   --surface-accent: var(--brand-golden-hour);
 
-  // 2026 redesign tokens, dark complement. --paper-bg/--paper-text simply
-  // swap (same two neutrals, same design language); the two accents get
-  // brighter variants because the light-mode values are too dark to clear
-  // 4.5:1 against this navy-ink background (--accent-teal at #116a5f is
-  // only 2.57:1 here). Ratios verified against --paper-bg below:
-  //   paper-text on paper-bg:  16.16:1
-  //   accent-teal on paper-bg:  5.52:1
-  //   accent-amber on paper-bg: 5.09:1
-  //   paper-muted on paper-bg:  7.24:1
-  //   paper-muted-soft on paper-bg: 5.24:1
-  --paper-bg: #1a1f24;
-  --paper-text: #fcfcfa;
-  --paper-hairline: rgba(252, 252, 250, 0.16);
-  --paper-hairline-soft: rgba(252, 252, 250, 0.1);
-  --paper-muted: #a6acb2;
-  --paper-muted-soft: #899299;
-  --accent-teal: #2ba694;
-  --accent-amber: #c97d1d;
+  // 2026 redesign tokens, dark complement: "warm ink". The background is a
+  // near-neutral charcoal and the text an off-white (#ece9e1) rather than
+  // pure white, which cuts glare against the old 16:1 white-on-navy while
+  // staying far above AAA. The accents get brighter variants because the
+  // light-mode values are too dark to clear 4.5:1 here. Ratios (script-
+  // verified from these exact values):
+  //   paper-text on paper-bg          14.41:1
+  //   paper-muted on paper-bg          7.63:1
+  //   paper-muted-soft on paper-bg     5.54:1
+  //   accent-teal on paper-bg          6.80:1
+  //   accent-amber on paper-bg         6.20:1
+  //   paper-bg on accent-teal          6.80:1  (primary button text)
+  //   ... same at 0.88 hover opacity   5.56:1
+  //   paper-text on paper-hairline-soft 11.12:1 (BibTeX block, blended)
+  --paper-bg: #171a1c;
+  --paper-text: #ece9e1;
+  --paper-hairline: rgba(236, 233, 225, 0.16);
+  --paper-hairline-soft: rgba(236, 233, 225, 0.1);
+  --paper-muted: #a9aca9;
+  --paper-muted-soft: #8e928f;
+  --accent-teal: #3fb3a0;
+  --accent-amber: #d38a2c;
   --focus-ring: 0 0 0 3px var(--paper-bg), 0 0 0 5px var(--accent-teal);
+
+  // Legacy-token bridge (see the light block).
+  --global-bg-color: var(--paper-bg);
+  --global-text-color: var(--paper-text);
+  --global-text-color-light: var(--paper-muted);
+  --global-theme-color: var(--accent-teal);
+  --global-hover-color: var(--accent-teal);
+  --global-card-bg-color: var(--paper-bg);
+  --global-divider-color: var(--paper-hairline);
 
   .only-light {
     display: none;
