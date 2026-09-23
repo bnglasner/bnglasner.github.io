@@ -3,7 +3,7 @@
 # Author - Ben Glasner (scaffolded 2026-08-10)
 # Purpose - Give agents (and Ben) a single command that validates data schemas,
 #           builds the site without starting a server, and checks internal links.
-#           Complements the interactive `docker compose up` path in
+#           Complements the interactive `bundle exec jekyll serve` path in
 #           .claude/rules/build-and-verify.md, which remains the tool for visual
 #           spot-checks (dark mode, images, layout).
 # Usage   - bash bin/verify_site.sh          (from the repo root)
@@ -19,11 +19,24 @@ python3 bin/check_writing_authors.py
 echo "==> 2/4 data schema validation"
 python3 bin/validate_data.py
 
-echo "==> 3/4 headless Jekyll build (docker compose run, no server)"
+echo "==> 3/4 headless Jekyll build (no server)"
 # Builds into _site_verify (gitignored) so the dev server's _site/ is untouched.
-docker compose run --rm jekyll bundle exec jekyll build \
-  --strict_front_matter \
-  --destination _site_verify
+# Primary path: the local Ruby toolchain (bundle). Fallback: the al-folio Docker
+# image, for machines that have Docker but no local Ruby.
+if command -v bundle >/dev/null 2>&1 && bundle check >/dev/null 2>&1; then
+  # UTF-8 locale: under LANG=C, jekyll-terser raises "\xE2 on US-ASCII" and
+  # silently skips minifying the affected scripts.
+  LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 bundle exec jekyll build \
+    --strict_front_matter \
+    --destination _site_verify
+elif command -v docker >/dev/null 2>&1; then
+  docker compose run --rm jekyll bundle exec jekyll build \
+    --strict_front_matter \
+    --destination _site_verify
+else
+  echo "verify_site.sh: need either a local Ruby toolchain ('bundle install') or Docker" >&2
+  exit 1
+fi
 
 echo "==> 4/4 internal link check over the built site"
 python3 bin/check_internal_links.py _site_verify
