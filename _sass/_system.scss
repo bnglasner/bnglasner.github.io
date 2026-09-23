@@ -986,6 +986,7 @@ body.redesign-2026 {
   }
 
   .cv table.table-cv td {
+    overflow-wrap: anywhere; // long URLs/emails wrap instead of widening the page at high text zoom
     color: var(--paper-text);
     border-color: var(--paper-hairline-soft);
     padding: 0.5rem 0.75rem 0.5rem 0;
@@ -1053,5 +1054,46 @@ body.redesign-2026 {
   .cv .text-muted a {
     color: var(--accent-teal);
     font-weight: 400;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Print — mainly the CV page. Dark tokens are screen-only (_themes.scss), so
+// print always renders in light ink. Here: drop interactive chrome, keep the
+// content, and show where external links go.
+// ---------------------------------------------------------------------------
+
+@media print {
+  #navbar,
+  footer,
+  #back-to-top,
+  .skip-link,
+  .axis-rule,
+  .cv__pdf-variants,
+  .headline-wheel__nav {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+    background: none;
+  }
+
+  .site-main {
+    margin-top: 0 !important;
+  }
+
+  // Individual entries stay whole; whole cards may split across pages
+  // (keeping a long card intact leaves half-blank pages).
+  .cv .list-group-item,
+  .cv table.table-cv tr {
+    break-inside: avoid;
+  }
+
+  .cv a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: var(--paper-muted);
+    overflow-wrap: anywhere;
   }
 }
