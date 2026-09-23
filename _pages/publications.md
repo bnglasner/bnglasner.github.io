@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Research
-description: Peer-reviewed research, working papers, policy reports, and thesis research, grouped by research agenda.
+description: Peer-reviewed articles, working papers, policy reports, and thesis research, grouped by research agenda.
 nav: true
 nav_order: 1
 redesign_2026: true

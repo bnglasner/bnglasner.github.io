@@ -17,13 +17,12 @@ redesign_2026: true
 
 <h2>Essays and Commentary</h2>
 <p class="research-intro">
-  Agglomerations is the EIG newsletter; pieces are sometimes solo, sometimes co-authored with EIG colleagues.
-  Co-authors are listed on each card.
+  Essays from Agglomerations, EIG's newsletter. Co-authors are listed on each card.
 </p>
 <div class="work-card-grid">
   {% for item in site.data.writing.short_form %}
     <div class="work-card work-card--policy">
-      <span class="work-card__eyebrow">ESSAY · {{ item.published | date: "%Y" }}</span>
+      <span class="work-card__eyebrow">ESSAY · {% include pub-date.liquid date=item.published format="%Y" %}</span>
       <h3 class="work-card__title">
         <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
       </h3>
@@ -43,7 +42,7 @@ redesign_2026: true
   <div class="work-card-grid">
     {% for item in site.data.writing.guest_posts %}
       <div class="work-card work-card--policy">
-        <span class="work-card__eyebrow">GUEST ESSAY · {{ item.published | date: "%Y" }}</span>
+        <span class="work-card__eyebrow">GUEST ESSAY · {% include pub-date.liquid date=item.published format="%Y" %}</span>
         <h3 class="work-card__title">
           <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
         </h3>

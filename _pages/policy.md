@@ -2,7 +2,7 @@
 layout: page
 permalink: /policy/
 title: Policy
-description: Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal, plus my reports and analyses.
+description: "Three policy designs I work on — Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy — plus my reports and analyses."
 nav: true
 nav_order: 2
 redesign_2026: true
@@ -225,7 +225,7 @@ and citation). The replace filter shows one form of Ben's name, as on /writing/.
   {% for item in site.data.writing.reports %}
     {% if item.outlet == "Economic Innovation Group" %}{% assign publisher = "EIG" %}{% else %}{% assign publisher = item.outlet %}{% endif %}
     <div class="work-card work-card--policy">
-      <span class="work-card__eyebrow">{{ publisher }} · {{ item.published | date: "%Y" }}</span>
+      <span class="work-card__eyebrow">{{ publisher }} · {% include pub-date.liquid date=item.published format="%Y" %}</span>
       <h3 class="work-card__title">
         <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
       </h3>

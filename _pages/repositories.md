@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: Code
-description: The five most recently updated repositories on the EIG-Research GitHub organization, where my code and data products live.
+description: "Code and data behind my research: the EIG-Research GitHub organization and research repositories on my personal account."
 nav: false
 redesign_2026: true
 ---
@@ -25,8 +25,7 @@ redesign_2026: true
 </p>
 <p class="measure">
   I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and
-  documentation practices that make a public repository worth publishing. I intend to carry that commitment forward
-  on every project I touch and across every team I work with.
+  documentation practices that make a public repository worth publishing.
 </p>
 
 {% include axis-rule.liquid %}
@@ -50,10 +49,9 @@ redesign_2026: true
 
 <h2>Personal Research Code</h2>
 <p class="research-intro">
-  Side projects and earlier replication code live on my personal account at
-  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">github.com/bnglasner</a>. The
-  repositories below are research-bearing; experimental forks and infrastructure (the source of this site, course
-  material, third-party plugin forks) are not listed here.
+  Replication code for published papers and research side projects live on my personal account at
+  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">github.com/bnglasner</a>. Forks,
+  course material, and the source for this site are not listed.
 </p>
 <div class="work-card-grid">
   <div class="work-card work-card--academic">

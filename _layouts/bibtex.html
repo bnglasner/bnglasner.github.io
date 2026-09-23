@@ -56,14 +56,23 @@ copy button). {%- endcomment -%} {%- assign entry = page.entry -%}
   assign coverage_items = "" | split: "" -%} {%- for section in site.data.media_page.sections -%} {%- for item in section.items -%} {%- if
   item.related_work contains entry.key -%} {%- assign coverage_items = coverage_items | push: item -%} {%- endif -%} {%- endfor -%} {%- endfor -%} {%-
   for group in site.data.media_page.coverage_groups -%} {%- for item in group.items -%} {%- if item.related_work contains entry.key -%} {%- assign
-  coverage_items = coverage_items | push: item -%} {%- endif -%} {%- endfor -%} {%- endfor -%} {% if coverage_items.size > 0 %} {%- assign
-  coverage_items = coverage_items | sort: "published" | reverse -%}
+  coverage_items = coverage_items | push: item -%} {%- endif -%} {%- endfor -%} {%- endfor -%} {% if coverage_items.size > 0 %} {%- comment -%} Newest
+  first. `published` may be a Date or a month-precision "YYYY-MM" string, and Liquid cannot sort a mix of the two, so sort "YYYY-MM-DD|index" keys
+  instead (a month-only value keys as day 00, just before full dates in the same month). {%- endcomment -%} {%- assign coverage_keys = "" | split: ""
+  -%} {%- for item in coverage_items -%} {%- if item.published.size == 7 -%} {%- assign coverage_key = item.published | append: "-00" -%} {%- elsif
+  item.published -%} {%- assign coverage_key = item.published | date: "%Y-%m-%d" -%} {%- else -%} {%- assign coverage_key = "0000-00-00" -%} {%- endif
+  -%} {%- capture coverage_key -%}{{ coverage_key }}|{{ forloop.index0 }}{%- endcapture -%} {%- assign coverage_keys = coverage_keys | push:
+  coverage_key -%} {%- endfor -%} {%- assign coverage_keys = coverage_keys | sort | reverse -%} {%- assign sorted_coverage = "" | split: "" -%} {%-
+  for coverage_key in coverage_keys -%} {%- assign coverage_index = coverage_key | split: "|" | last | plus: 0 -%} {%- assign sorted_coverage =
+  sorted_coverage | push: coverage_items[coverage_index] -%} {%- endfor -%} {%- assign coverage_items = sorted_coverage -%}
   <h2>Coverage and interviews</h2>
   <ul class="work-detail__coverage">
     {% for item in coverage_items %}
     <li>
       <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
-      <span class="work-card__meta"> {{- item.outlet -}} {%- if item.published %} · {{ item.published | date: "%B %Y" }}{% endif -%} </span>
+      <span class="work-card__meta">
+        {{- item.outlet -}} {%- if item.published %} · {% include pub-date.liquid date=item.published format="%B %Y" %}{% endif -%}
+      </span>
     </li>
     {% endfor %}
   </ul>

@@ -2,7 +2,7 @@
 layout: page
 permalink: /media/
 title: Media
-description: Verified interviews, broadcast appearances, podcasts, and quoted coverage.
+description: "Interviews, broadcast and podcast appearances, press quotes, and selected coverage of my research."
 nav: true
 nav_order: 4
 redesign_2026: true
@@ -36,7 +36,7 @@ toc:
     {% for item in section.items %}
       <div class="work-card work-card--policy">
         <span class="work-card__eyebrow">
-          {{ type_label }}{% if item.published %} · {{ item.published | date: "%Y" }}{% endif %}
+          {{ type_label }}{% if item.published %} · {% include pub-date.liquid date=item.published format="%Y" %}{% endif %}
         </span>
         <h3 class="work-card__title">
           <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
@@ -59,7 +59,7 @@ toc:
   <div class="work-card-grid">
     {% for item in group.items %}
       <div class="work-card work-card--policy">
-        <span class="work-card__eyebrow">COVERAGE · {{ item.published | date: "%Y" }}</span>
+        <span class="work-card__eyebrow">COVERAGE · {% include pub-date.liquid date=item.published format="%Y" %}</span>
         <h4 class="work-card__title">
           <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
         </h4>

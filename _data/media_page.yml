@@ -1,6 +1,6 @@
 lead:
-  primary: "This page collects verified interviews, broadcast appearances, podcasts, and quoted coverage. I have excluded syndications, mirrors, and duplicative rewrites where a more direct source link was available, so the sections below are meant to be a clean record of original appearances and original outlet links."
-  coverage: "The final section tracks selected cited coverage of my research, grouped by work stream. It is intentionally selective rather than exhaustive and favors the original outlet link over archive pages, mirrors, or transcript hosts."
+  primary: "Interviews, broadcast and podcast appearances, and news stories that quote me. Links point to the original outlet wherever one exists, not to syndicated copies."
+  coverage: "Reporting that cites my research, grouped by topic. The list is selective and links to the original outlet."
 
 sections:
   - title: "Broadcast and Video"

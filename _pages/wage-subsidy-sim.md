@@ -2,7 +2,7 @@
 layout: page
 permalink: /wage-subsidy-sim/
 title: 80-80 wage subsidy simulator
-description: Interactive simulation of the EIG 80-80 wage subsidy proposal, estimating fiscal and distributional effects for U.S. workers.
+description: "Methods behind the microsimulation for the EIG 80-80 wage subsidy proposal: data, eligibility, fiscal cost, and distributional effects."
 nav: false
 redesign_2026: true
 ---

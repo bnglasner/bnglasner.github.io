@@ -1,0 +1,14 @@
+{%- comment -%}
+  Renders a `published` value from _data (writing.yml, media_page.yml), which
+  is either a full ISO date (YAML parses it as a Date) or a quoted month-
+  precision "YYYY-MM" string for sources that give only a month. Liquid's
+  `date` filter cannot parse "YYYY-MM", so pad it to the first of the month
+  first. Only pass formats without a day (e.g. "%Y", "%B %Y"), or a month-
+  precision value would print a day the source never gave.
+  Usage: {% include pub-date.liquid date=item.published format="%Y" %}
+{%- endcomment -%}
+{%- assign pub_date_value = include.date -%}
+{%- if pub_date_value.size == 7 -%}
+  {%- assign pub_date_value = pub_date_value | append: '-01' -%}
+{%- endif -%}
+{{- pub_date_value | date: include.format -}}

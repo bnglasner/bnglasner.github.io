@@ -56,7 +56,33 @@ from the homepage hero, the Media page, and the footer.
   </p>
 </div>
 
-<!-- TODO: Ben to supply professional headshot -->
+<div class="policy-section" id="headshot">
+  <h2>Headshot</h2>
+  {% comment %}
+    Display: the 120px head-and-shoulders square from bin/make_headshot.sh (sq120 1x, sq240 2x; sq80 JPEG fallback).
+    Download: the full-resolution original, the same file the site uses as the source for every rendition.
+  {% endcomment %}
+  <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap">
+    <picture style="display: flex; flex-shrink: 0">
+      <source
+        type="image/webp"
+        srcset="{{ '/assets/img/prof_pic_color-sq120.webp' | relative_url }} 1x, {{ '/assets/img/prof_pic_color-sq240.webp' | relative_url }} 2x"
+      >
+      <img
+        src="{{ '/assets/img/prof_pic_color-sq80.jpg' | relative_url }}"
+        alt="Benjamin Glasner, head and shoulders, smiling, in sunglasses and a dark jacket, with a harbor and old stone walls behind him."
+        width="120"
+        height="120"
+        loading="lazy"
+        style="border-radius: 50%; object-fit: cover; border: 1px solid var(--paper-hairline)"
+      >
+    </picture>
+    <p class="mb-0">
+      <a href="{{ '/assets/img/prof_pic_color.jpg' | relative_url }}" download="Benjamin-Glasner-headshot.jpg">Download the full-resolution photo</a>
+      (JPEG, 1765 × 2648 px, 574 KB).
+    </p>
+  </div>
+</div>
 
 <div class="policy-section" id="topics">
   <h2>Speaking topics</h2>
