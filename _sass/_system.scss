@@ -393,8 +393,8 @@ body.redesign-2026 {
     max-width: var(--measure);
     margin-top: 0.5rem;
     color: var(--paper-muted);
-    font-size: 1.05rem;
-    line-height: var(--line-height-body);
+    font-size: 1.25rem; // Newsreader italic deck; see "Editorial accents"
+    line-height: 1.45;
   }
 }
 
@@ -451,6 +451,34 @@ body.redesign-2026 {
 
 :where(body.redesign-2026) :is(p, li, .work-card__finding, .headline-wheel__hook) {
   text-wrap: pretty;
+}
+
+// Editorial accents. Newsreader italic is the site's second voice: page
+// decks (.post-description) and the policy ledes read as a magazine
+// standfirst under the headline, and any <em> in a display headline takes
+// the accent color. Italic is used only at these points.
+:where(body.redesign-2026) :is(.post-description, .policy-section__lede) {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+:where(body.redesign-2026) :is(.home-hero__headline, .post-title) em {
+  font-style: italic;
+  color: var(--accent-teal);
+}
+
+// Drop cap: the policy narratives only (the first paragraph under each
+// section's first h3, "The problem"). The wage-subsidy-sim status box
+// reuses .policy-section but has no h3, so it never matches. Two lines
+// deep in Newsreader at its display optical size, in the section's amber.
+.policy-section > h3:first-of-type + p::first-letter {
+  float: left;
+  margin: 0.08em 0.1em 0 0;
+  font-family: var(--font-serif);
+  font-size: 3.35em;
+  font-weight: 500;
+  line-height: 0.82;
+  color: var(--accent-amber);
 }
 
 // Generic in-content link color for migrated pages, scoped to .site-main
@@ -736,11 +764,12 @@ ol.bibliography > li {
   font-size: var(--font-size-h2);
 }
 
-.policy-section__lede {
+// Doubled class: outranks `.policy-section p` (0,1,1) below.
+.policy-section .policy-section__lede {
   margin: 0 0 1.5rem;
   color: var(--paper-muted);
-  font-size: 1.1rem;
-  line-height: var(--line-height-body);
+  font-size: 1.25rem; // Newsreader italic standfirst; see "Editorial accents"
+  line-height: 1.45;
 }
 
 .policy-section h3 {
