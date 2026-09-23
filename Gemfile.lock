@@ -111,8 +111,6 @@ GEM
     jekyll-cache-bust (0.0.1)
       jekyll (>= 3.6, < 5.0)
     jekyll-email-protect (1.1.0)
-    jekyll-feed (0.17.0)
-      jekyll (>= 3.7, < 5.0)
     jekyll-link-attributes (1.0.1)
     jekyll-minifier (0.2.2)
       cssminify2 (~> 2.1.0)
@@ -231,7 +229,6 @@ DEPENDENCIES
   jekyll-3rd-party-libraries
   jekyll-cache-bust
   jekyll-email-protect
-  jekyll-feed
   jekyll-link-attributes
   jekyll-minifier
   jekyll-scholar
