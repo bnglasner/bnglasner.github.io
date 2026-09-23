@@ -3,12 +3,12 @@ name: Deploy site
 on:
   push:
     branches:
-      - master
       - main
     paths:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "bin/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -17,13 +17,8 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
+      - "purgecss.config.js"
+      - "requirements.txt"
       - "!lighthouse_results/**"
       - "!CONTRIBUTING.md"
       - "!CUSTOMIZE.md"
@@ -32,12 +27,12 @@ on:
       - "!README.md"
   pull_request:
     branches:
-      - master
       - main
     paths:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "bin/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -46,13 +41,8 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
+      - "purgecss.config.js"
+      - "requirements.txt"
       - "!lighthouse_results/**"
       - "!CONTRIBUTING.md"
       - "!CUSTOMIZE.md"
@@ -62,12 +52,19 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write # JamesIves pushes the built site to the gh-pages branch
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -81,23 +78,27 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
+      - name: Install Python tools 🧰
+        run: pip3 install --upgrade nbconvert pyyaml
+      # Gate 1: the same schema checks pre-commit runs locally, so a web edit or
+      # a --no-verify commit cannot ship a malformed _data file or papers.bib.
+      - name: Validate data schemas 📋
+        run: |
+          python3 bin/check_writing_authors.py
+          python3 bin/validate_data.py
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
+      # Gate 2: internal links over the production build, before anything is
+      # published. (Replaces the post-deploy broken-links-site.yml rebuild.)
+      - name: Check internal links 🔗
+        run: python3 bin/check_internal_links.py _site
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
