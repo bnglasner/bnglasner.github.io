@@ -352,9 +352,12 @@ html[data-theme-setting="light"] {
   font: var(--fa-font);
 }
 
-/* Left half: MOON */
+/* Left half: MOON. Drawn from circle-half-stroke (\f042), whose left half
+   is a filled half-disc like the full circle (\f111) this used to clip.
+   \f111 is not in the subset Font Awesome webfont (bin/fontawesome-icons.txt),
+   and circle-half-stroke is, so the toggle no longer renders half blank. */
 .fa-half-sun-moon::before {
-  content: "\f111";
+  content: "\f042";
   color: var(--global-text-color);
   clip-path: polygon(0 0, calc(50% - 0.5px) 0, calc(50% - 0.5px) 100%, 0 100%);
 }
