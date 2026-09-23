@@ -367,24 +367,6 @@ body.redesign-2026 {
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-serif);
-    color: var(--paper-text);
-    font-weight: 500;
-  }
-
-  p,
-  li,
-  span,
-  div {
-    color: inherit;
-  }
-
   .measure {
     max-width: var(--measure);
   }
@@ -405,6 +387,23 @@ body.redesign-2026 {
     font-size: 1.05rem;
     line-height: var(--line-height-body);
   }
+}
+
+// Base heading and text-color rules. The gate is wrapped in :where() so the
+// effective specificity is just the element selector (0,0,1): it still beats
+// _typography.scss's legacy `p, h1, ..., span { color: var(--global-text-color) }`
+// (same specificity, earlier in the cascade), but every single-class component
+// rule (.work-card__eyebrow, .site-eyebrow, .policy-section h3, ...) now wins.
+// Nesting these inside `body.redesign-2026 {}` compiled to (0,1,2), which
+// silently forced every eyebrow, finding line, and muted caption to ink.
+:where(body.redesign-2026) :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-serif);
+  color: var(--paper-text);
+  font-weight: 500;
+}
+
+:where(body.redesign-2026) :is(p, li, span, div) {
+  color: inherit;
 }
 
 // Generic in-content link color for migrated pages, scoped to .site-main
