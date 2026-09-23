@@ -45,5 +45,11 @@ jobs:
           node-version: "latest"
           cache: "npm"
 
+      # bin/validate_data.py (run by pre-commit and verify_site.sh) needs PyYAML;
+      # installing it also gives the pip cache above something to save, without
+      # which its post-step fails the job.
+      - name: Install Python dependencies
+        run: pip3 install pyyaml
+
       - name: Install Node.js dependencies
         run: npm ci
