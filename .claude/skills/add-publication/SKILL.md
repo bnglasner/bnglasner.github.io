@@ -31,7 +31,7 @@ network: yes — fetches DOI metadata (via crossref.org), NBER metadata, or the 
 
 6. **Replication code link.** If the EIG-Research GitHub organization (or Ben's `bnglasner` account) has a replication repository for this paper, add a `code` field with the repo URL. The `bib-and-citations-sync` skill has a helper to enumerate these mappings.
 
-7. **Diff and confirm.** Show the BibTeX block as a diff against `papers.bib`. Verify it parses by running the build (`docker compose up --build`) — `jekyll-scholar` will fail loudly on a malformed entry.
+7. **Diff and confirm.** Show the BibTeX block as a diff against `papers.bib`. Verify it parses by running the build (`bash bin/verify_site.sh`) — `jekyll-scholar` will fail loudly on a malformed entry.
 
 ## Outputs
 

@@ -3,6 +3,8 @@
     "allow": [
       "Bash(npx prettier:*)",
       "Bash(docker compose:*)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(bundle exec jekyll serve:*)",
       "Bash(python3 bin/validate_data.py:*)",
       "Bash(python3 bin/check_writing_authors.py:*)",
       "Bash(bash bin/verify_site.sh:*)",

@@ -1,0 +1,45 @@
+# Font Awesome icons kept in the subset webfonts under assets/webfonts/.
+# One "<style> <name>" per line; style is solid or brands. Blank lines and
+# comments are ignored. After editing, run: bash bin/subset_fontawesome.sh
+#
+# An icon NOT listed here renders as an empty box. If you add a
+# `fa-solid fa-*` / `fa-brands fa-*` class anywhere (templates, _data/socials.yml
+# logo keys, JS), add it here and re-run the script.
+
+# Navbar: search button and theme toggle (_includes/header.liquid, shortcut-key.js)
+solid magnifying-glass
+solid moon
+solid sun
+solid circle-half-stroke
+
+# Footer, about page, and press/contact links
+solid envelope
+solid newspaper
+solid rss
+solid square-rss
+solid link
+solid arrow-up-right-from-square
+solid download
+
+# CV page PDF button (_layouts/cv.liquid)
+solid file-pdf
+
+# BibTeX copy button (assets/js/copy_code.js)
+solid clipboard
+solid clipboard-check
+
+# Social profiles (_includes/footer.liquid, _data/socials.yml)
+brands x-twitter
+brands twitter
+brands linkedin
+brands google-scholar
+brands github
+brands bluesky
+brands threads
+brands tiktok
+brands instagram
+brands youtube
+brands mastodon
+brands orcid
+brands researchgate
+brands facebook

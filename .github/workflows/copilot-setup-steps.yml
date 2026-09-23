@@ -45,14 +45,5 @@ jobs:
           node-version: "latest"
           cache: "npm"
 
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick
-
-      - name: Install Python dependencies
-        run: |
-          pip3 install --upgrade nbconvert
-
       - name: Install Node.js dependencies
         run: npm ci

@@ -1,0 +1,47 @@
+# Dependabot version updates: one grouped PR per ecosystem per month.
+# Each PR triggers the Deploy site workflow as a build check (it builds and
+# runs the schema and link gates on pull_request without publishing).
+# Enabling Dependabot *alerts* and *security updates* is a GitHub setting
+# (Settings -> Code security) that this file cannot turn on.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: chore
+
+  - package-ecosystem: bundler
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      gems:
+        patterns: ["*"]
+    commit-message:
+      prefix: chore
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      npm:
+        patterns: ["*"]
+    commit-message:
+      prefix: chore
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    ignore:
+      # scholarly 1.7.x needs the bibtexparser 1.x API (see requirements.txt).
+      - dependency-name: bibtexparser
+        update-types: ["version-update:semver-major"]
+    commit-message:
+      prefix: chore
