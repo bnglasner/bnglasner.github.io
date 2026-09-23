@@ -13,6 +13,9 @@ toc:
 {% assign media_page = site.data.media_page %}
 
 <p class="research-intro">{{ media_page.lead.primary }}</p>
+<p class="research-intro">
+  For bios, speaking topics, and contact details, see <a href="{{ '/press/' | relative_url }}">Press and speaking</a>.
+</p>
 
 {% for section in media_page.sections %}
 {% case section.title %}
@@ -47,7 +50,7 @@ toc:
   </div>
 {% endfor %}
 
-<h2>Selected Coverage of Research</h2>
+<h2 id="coverage">Selected Coverage of Research</h2>
 <p class="research-intro">{{ media_page.lead.coverage }}</p>
 {% for group in media_page.coverage_groups %}
   <h3>{{ group.title }}</h3>
@@ -71,7 +74,8 @@ toc:
 <h2>Connect</h2>
 <p class="research-intro measure">
   For media inquiries, podcast invitations, or speaking engagements, reach out at
-  <a href="mailto:benjamin@eig.org">benjamin@eig.org</a>. For short-form commentary as it lands, the
+  <a href="mailto:benjamin@eig.org">benjamin@eig.org</a>; bios and topics are on the
+  <a href="{{ '/press/' | relative_url }}">Press and speaking</a> page. For short-form commentary as it lands, the
   <a href="https://agglomerations.eig.org" target="_blank" rel="noopener noreferrer">Agglomerations</a>
   newsletter and <a href="https://x.com/BenGlasner" target="_blank" rel="noopener noreferrer">X</a> are the most
   up-to-date channels.

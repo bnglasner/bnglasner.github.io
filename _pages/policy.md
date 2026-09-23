@@ -17,7 +17,7 @@ toc:
   <a href="{{ '/writing/' | relative_url }}">Writing</a> page.
 </p>
 
-<div class="policy-section">
+<div class="policy-section" id="opportunity-zones">
   <span class="work-card__eyebrow work-card__eyebrow--policy">Place-Based Tax Incentive</span>
   <h2>Opportunity Zones</h2>
   <p class="policy-section__lede">Capital-gains incentives for investment in low-income census tracts</p>
@@ -74,7 +74,7 @@ toc:
 
 {% include axis-rule.liquid %}
 
-<div class="policy-section">
+<div class="policy-section" id="retirement">
   <span class="work-card__eyebrow work-card__eyebrow--policy">Retirement Coverage</span>
   <h2>Retirement Savings for Americans Act</h2>
   <p class="policy-section__lede">A federal, portable retirement account with auto-enrollment and a low-income match</p>
@@ -141,7 +141,7 @@ toc:
 
 {% include axis-rule.liquid %}
 
-<div class="policy-section">
+<div class="policy-section" id="wage-subsidy">
   <span class="work-card__eyebrow work-card__eyebrow--policy">Earnings and Labor-Market Attachment</span>
   <h2>80-80 Wage Subsidy</h2>
   <p class="policy-section__lede">A targeted wage subsidy to raise earnings for low-wage workers</p>
