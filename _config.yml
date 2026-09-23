@@ -12,7 +12,6 @@ description: > # site description
   Research on labor markets, place-based policy, and social-policy design.
 footer_text: >
   Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme, and <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: labor markets, place-based policy, social policy, economics
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 logo: bg-monogram.svg # logo image in /assets/img/
 icon: bg-monogram.svg # favicon image in /assets/img/
@@ -56,7 +55,30 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: true # Include Schema.org in the HTML head
-og_image: /assets/img/prof_pic_color.jpg # The site-wide (default for all links) Open Graph preview image
+og_image: /assets/img/og-card.png # Site-wide default preview image (1200x630 social card; emitted as an absolute URL)
+og_image_width: 1200 # Dimensions and alt apply only when a page uses the default og_image
+og_image_height: 630
+og_image_alt: "Social card for Benjamin Glasner, Senior Economist at the Economic Innovation Group"
+
+# Schema.org Person (rendered as JSON-LD by _includes/metadata.liquid). Facts
+# here must match the CV and the EIG bio; sameAs profiles come from
+# _data/socials.yml, plus work_url (the institutional bio).
+person:
+  alternate_name: Ben Glasner
+  job_title: Senior Economist
+  works_for:
+    name: Economic Innovation Group
+    url: https://eig.org
+  affiliation:
+    name: Center on Poverty and Social Policy
+    parent: Columbia University
+  alumni_of:
+    - University of Washington
+    - Vassar College
+  knows_about: [labor economics, place-based policy, social policy, Opportunity Zones, Child Tax Credit, wage subsidies]
+  image: /assets/img/prof_pic_color.jpg
+  address_locality: Washington, D.C.
+  work_url: https://eig.org/about-us/executive-team-staff/ben-glasner/
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -265,7 +287,6 @@ enable_publication_badges:
   altmetric: false # Altmetric badge (Customization options: https://badge-docs.altmetric.com/index.html)
   dimensions: false # Dimensions badge (Customization options: https://badge.dimensions.ai/)
   google_scholar: false # Google Scholar badge (https://scholar.google.com/intl/en/scholar/citations.html)
-  inspirehep: false # Inspire HEP badge (https://help.inspirehep.net/knowledge-base/citation-metrics/)
 
 # Filter out certain bibtex entry keywords used internally from the bib output
 filtered_bibtex_keywords:
