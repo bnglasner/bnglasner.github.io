@@ -31,10 +31,13 @@
       <span>
         {%- for author in entry.author_array -%}
           {%- if author.last == 'Glasner' -%}
-            <strong>
-              {{- author.first }}
-              {{ author.last -}}
-            </strong>
+            {%- comment -%}
+              Display-only normalization: bylines vary between "Ben" and
+              "Benjamin" across publications (the bib data keep each byline
+              as published, and the Cite this block on the permalink page
+              uses it). Listing cards show one form so a page never mixes them.
+            {%- endcomment -%}
+            <strong>Benjamin Glasner</strong>
           {%- else -%}
             {{ author.first }}
             {{ author.last }}

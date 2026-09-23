@@ -8,6 +8,8 @@ nav_order: 2
 redesign_2026: true
 ---
 
+{% comment %} Author lists keep each byline as published in the writing data file; the replace filter shows one form of Ben's name on the page. {% endcomment %}
+
 <p class="research-intro">
   For a closer look at three specific policy designs — the problem, the state of the research, and my role in it — see
   <a href="{{ '/policy/' | relative_url }}">Policy focus areas</a>.
@@ -24,7 +26,7 @@ redesign_2026: true
       <p class="work-card__finding">{{ item.description }}</p>
       <div class="work-card__meta">
         <span>{{ item.outlet }}</span>
-        {% if item.authors.size > 1 %}<span>{{ item.authors | join: ", " }}</span>{% endif %}
+        {% if item.authors.size > 1 %}<span>{{ item.authors | join: ", " | replace: "Ben Glasner", "Benjamin Glasner" }}</span>{% endif %}
       </div>
     </div>
   {% endfor %}
@@ -45,7 +47,7 @@ redesign_2026: true
       <p class="work-card__finding">{{ item.description }}</p>
       <div class="work-card__meta">
         <span>{{ item.outlet }}</span>
-        {% if item.authors.size > 1 %}<span>{{ item.authors | join: ", " }}</span>{% endif %}
+        {% if item.authors.size > 1 %}<span>{{ item.authors | join: ", " | replace: "Ben Glasner", "Benjamin Glasner" }}</span>{% endif %}
       </div>
     </div>
   {% endfor %}
@@ -65,7 +67,7 @@ redesign_2026: true
         <p class="work-card__finding">{{ item.description }}</p>
         <div class="work-card__meta">
           <span>{{ item.outlet }}</span>
-          {% if item.authors.size > 1 %}<span>{{ item.authors | join: ", " }}</span>{% endif %}
+          {% if item.authors.size > 1 %}<span>{{ item.authors | join: ", " | replace: "Ben Glasner", "Benjamin Glasner" }}</span>{% endif %}
         </div>
       </div>
     {% endfor %}
