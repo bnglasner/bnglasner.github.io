@@ -22,11 +22,12 @@ layout: default
       {% if page.profile_image %}
         {% comment %}
           40px slot: serve the square crops from bin/make_headshot.sh (1x/2x/3x WebP,
-          2x JPEG fallback), not the full-size portrait. display:contents keeps the
-          <img> as the flex item that .home-note__photo styles.
+          2x JPEG fallback), not the full-size portrait. The <picture> is the single
+          40px flex item (display:contents would expose <source> as an extra flex
+          item and add a .home-note gap, re-wrapping the note text).
         {% endcomment %}
         {% assign profile_image_stem = page.profile_image | prepend: 'assets/img/' | split: '.' | first %}
-        <picture style="display: contents">
+        <picture style="display: flex; flex-shrink: 0">
           <source
             type="image/webp"
             srcset="{{ profile_image_stem | append: '-sq40.webp' | relative_url }} 1x, {{ profile_image_stem | append: '-sq80.webp' | relative_url }} 2x, {{ profile_image_stem | append: '-sq120.webp' | relative_url }} 3x"
