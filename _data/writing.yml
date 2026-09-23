@@ -9,6 +9,7 @@ reports:
     published: 2026-09-18
     description: "About 76 million workers — nearly 52 percent of working Americans ages 18 to 64 — lack access to an employer-provided retirement plan, and only 37 percent of workers receive an employer contribution or match."
   - title: "How to end low-wage work forever: An 80-80 wage subsidy proposal"
+    bib_key: ozimek_glasner_2025_wage_subsidy
     url: "https://eig.org/how-to-end-low-wage-work-forever/"
     outlet: "Economic Innovation Group"
     authors: ["Ben Glasner", "Adam Ozimek"]
@@ -22,6 +23,7 @@ reports:
     published: 2025-06-06
     description: "A response to Corinth and Feldman's New York Times op-ed arguing that the evidence now shows Opportunity Zones drove investment into low-income communities, and that the critics' revised case against the policy does not hold."
   - title: "The Impact of Opportunity Zones on Housing Supply"
+    bib_key: glasner_2025_oz_housing_supply
     url: "https://eig.org/opportunity-zones-housing-supply/"
     outlet: "Economic Innovation Group"
     authors: ["Benjamin Glasner", "Adam Ozimek", "John Lettieri"]
@@ -29,6 +31,7 @@ reports:
     featured: true
     description: "Evidence that Opportunity Zones increased residential development and housing supply in designated communities."
   - title: 'The Great "Transfer"-mation: How American Communities Became Reliant on Income from Government'
+    bib_key: fikri_eckhardt_glasner_2024_transfermation
     url: "https://eig.org/great-transfermation/"
     outlet: "Economic Innovation Group"
     authors: ["Kenan Fikri", "Sarah Eckhardt", "Ben Glasner"]
@@ -36,6 +39,7 @@ reports:
     featured: true
     description: "How transfer income has grown across U.S. communities and reshaped the foundations of local economies."
   - title: "The American Worker Project: Toward a New Consensus"
+    bib_key: ozimek_lettieri_glasner_2024_american_worker
     url: "https://eig.org/american-worker/"
     outlet: "Economic Innovation Group"
     authors: ["Adam Ozimek", "John Lettieri", "Ben Glasner"]
@@ -54,6 +58,7 @@ reports:
     published: 2024-02-08
     description: "The history, goals, and trade-offs of the Child Tax Credit — anti-poverty tool versus tax relief for working parents — as the Tax Relief for American Families and Workers Act of 2024 heads to the Senate."
   - title: "Full vs. Hybrid: Examining the Consequences of How Americans Work Remotely"
+    bib_key: carlson_glasner_ozimek_2023_full_vs_hybrid
     url: "https://eig.org/full-vs-hybrid-remote-work/"
     outlet: "Economic Innovation Group"
     authors: ["Eric Carlson", "Benjamin Glasner", "Adam Ozimek"]
@@ -66,6 +71,7 @@ reports:
     published: 2023-10-17
     description: "An interactive tool tracing the origins and destinations of pandemic-era movers' taxable income, led by Manhattan's $16.5 billion in outflows and Florida's $39 billion net gain."
   - title: "Are Opportunity Zones Working? What the Literature Tells Us"
+    bib_key: fikri_glasner_2023_oz_literature
     url: "https://eig.org/opportunity-zones-research-brief/"
     outlet: "Economic Innovation Group"
     authors: ["Kenan Fikri", "Ben Glasner"]
@@ -81,6 +87,7 @@ reports:
   # placeholder (the writing page renders the year only). Needs Ben for the
   # exact publication day.
   - title: "Liquid Assets, Financial Shocks, and Entrances into Material Hardship"
+    bib_key: maury_jia_yera_glasner_2023_liquid_assets
     url: "https://robinhood.org/wp-content/uploads/2024/01/poverty-tracker_2023.08_spotlight-on-liquid-assets-financial-shocks-and-entrances-into-material-hardship.pdf"
     outlet: "Robin Hood Poverty Tracker"
     co_outlet: "Center on Poverty and Social Policy, Columbia University"
@@ -100,6 +107,7 @@ reports:
     published: 2023-05-16
     description: "The GAO's report on noncompete agreements underscores their excessive and relatively indiscriminate use, including heavier use by large employers and little differentiation across classes of workers."
   - title: "The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii and Oregon"
+    bib_key: glasner_2023_noncompetes_workingpaper
     url: "https://eig.org/noncompetes-research-note/"
     outlet: "Economic Innovation Group"
     authors: ["Benjamin Glasner"]

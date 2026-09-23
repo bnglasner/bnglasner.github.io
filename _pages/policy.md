@@ -70,6 +70,10 @@ toc:
       </a>
     </li>
   </ul>
+  <p class="policy-section__related">
+    Related: <a href="{{ '/publications/' | relative_url }}#theme-place">Place-based policy and housing</a> research and
+    <a href="{{ '/media/' | relative_url }}#coverage-opportunity-zones-and-housing-supply">press coverage</a> of this work.
+  </p>
 </div>
 
 {% include axis-rule.liquid %}
@@ -137,6 +141,10 @@ toc:
     </li>
     <li>Ongoing internal analysis at EIG supporting the institution's policy work on RSAA design and implementation.</li>
   </ul>
+  <p class="policy-section__related">
+    Related: <a href="{{ '/media/' | relative_url }}#coverage-retirement-access-and-reform">press coverage</a> of this
+    work.
+  </p>
 </div>
 
 {% include axis-rule.liquid %}
@@ -194,6 +202,11 @@ toc:
       offline.
     </li>
   </ul>
+  <p class="policy-section__related">
+    Related: <a href="{{ '/bibliography/ozimek_glasner_2025_wage_subsidy/' | relative_url }}">summary and citation</a>
+    for the proposal, and
+    <a href="{{ '/publications/' | relative_url }}#theme-work">Work, wages, and labor-market institutions</a> research.
+  </p>
 </div>
 
 {% include axis-rule.liquid %}

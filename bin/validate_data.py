@@ -135,6 +135,11 @@ def check_writing() -> None:
                 or not all(isinstance(a, str) and a.strip() for a in authors)
             ):
                 fail(f"{label}: authors must be a non-empty list of non-empty strings")
+            if "bib_key" in entry:
+                # Optional: the papers.bib citekey for the same work. The Policy
+                # page's Reports cards link that entry's permalink page.
+                if entry["bib_key"] not in {key for _, key, _ in parse_bib()}:
+                    fail(f"{label}: bib_key `{entry['bib_key']}` is not a papers.bib citekey")
 
 
 # 2) _data/media_page.yml

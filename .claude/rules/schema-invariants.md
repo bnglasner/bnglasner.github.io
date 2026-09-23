@@ -21,6 +21,7 @@ Optional:
 - `tags` (list of strings)
 - `co_outlet` (string, used when a piece appears on more than one masthead)
 - `pdf` (string URL, for reports with a stable PDF mirror)
+- `bib_key` (string, reports only in practice) — the `papers.bib` citekey for the same work. The Policy page's Reports cards link that entry's permalink page (summary, coverage, code, and citation). The validator checks that the citekey exists.
 
 A pre-commit hook (`bin/check_writing_authors.py`) blocks commits that introduce a `short_form` or `reports` entry without an `authors` field.
 

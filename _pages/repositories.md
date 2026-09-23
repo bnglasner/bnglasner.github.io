@@ -11,7 +11,9 @@ redesign_2026: true
   Most of the code and data I produce — anything I write or collaborate on through work — are published on the
   <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">EIG-Research</a>
   GitHub organization. Personal experiments, side projects, and the source for this site live on my
-  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">personal GitHub account</a>.
+  <a href="https://github.com/bnglasner" target="_blank" rel="noopener noreferrer">personal GitHub account</a>. When a
+  paper or report has public replication code, its entry on the <a href="{{ '/publications/' | relative_url }}">Research</a>
+  page links to the repository.
 </p>
 
 <h2>Open Research, by Default</h2>

@@ -44,6 +44,7 @@ toc:
         <p class="work-card__finding">{{ item.description }}</p>
         <div class="work-card__meta">
           <span>{{ item.outlet }}</span>
+          {% for key in item.related_work %}<a href="{{ '/bibliography/' | append: key | append: '/' | relative_url }}">Related research</a>{% endfor %}
         </div>
       </div>
     {% endfor %}
@@ -53,7 +54,7 @@ toc:
 <h2 id="coverage">Selected Coverage of Research</h2>
 <p class="research-intro">{{ media_page.lead.coverage }}</p>
 {% for group in media_page.coverage_groups %}
-  <h3>{{ group.title }}</h3>
+  <h3 id="coverage-{{ group.title | slugify }}">{{ group.title }}</h3>
   <p class="research-intro">{{ group.description }}</p>
   <div class="work-card-grid">
     {% for item in group.items %}
@@ -65,6 +66,7 @@ toc:
         <p class="work-card__finding">{{ item.description }}</p>
         <div class="work-card__meta">
           <span>{{ item.outlet }}</span>
+          {% for key in item.related_work %}<a href="{{ '/bibliography/' | append: key | append: '/' | relative_url }}">Related research</a>{% endfor %}
         </div>
       </div>
     {% endfor %}
