@@ -233,6 +233,10 @@ sass:
 
 jekyll-minifier:
   compress_javascript: false # set to false since we are using terser as the js minifier
+  # Sass already emits compressed CSS. The minifier's own CSS pass strips the
+  # spaces around + and - inside clamp()/calc(), which makes them invalid (the
+  # hero headline fell back to 17px in production), so leave CSS to Sass.
+  compress_css: false
   exclude: ["robots.txt", "assets/js/search/*.js"]
 
 # -----------------------------------------------------------------------------
