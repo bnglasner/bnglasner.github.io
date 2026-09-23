@@ -6,6 +6,7 @@ sections:
   - title: "Broadcast and Video"
     items:
       - outlet: "C-SPAN Washington Journal"
+        published: 2026-03-13
         title: "Benjamin Glasner on President Trump's Proposal to Create Private-Sector Retirement Accounts"
         url: "https://www.c-span.org/program/washington-journal/benjamin-glasner-on-pres-trumps-proposal-to-create-private-sector-retirement-accounts/675412"
         description: "Washington Journal interview on retirement-plan access, the gaps in the current system, and the policy logic behind expanding portable retirement accounts for workers without employer coverage."
@@ -73,6 +74,16 @@ coverage_groups:
   - title: "Retirement Access and Reform"
     description: "Selected cited coverage of Ben's retirement-access research and related policy work on portable, automatically enrolled savings accounts."
     items:
+      - outlet: "401(k) Specialist"
+        published: 2026-09-22
+        title: "Over Half of Working-Age Americans Lack Access to Employer-Provided Retirement Plans: EIG Analysis"
+        url: "https://401kspecialistmag.com/over-half-of-working-age-americans-lack-access-to-employer-provided-retirement-plans-eig-analysis/"
+        description: "Reports the updated Retirement Fast Facts estimate that 76 million workers lack plan access and quotes Ben, as the analysis author, on the access gap and the cost of tax-advantaged saving."
+      - outlet: "USA Today"
+        published: 2026-05-01
+        title: "TrumpIRA offers up to $1,000 in free retirement savings. How to enroll"
+        url: "https://www.usatoday.com/story/money/2026/05/01/trump-executive-order-retirement-401k-ira-enroll/89888594007/"
+        description: "Cites EIG's estimate of the share of full-time and part-time workers without workplace retirement access to frame the TrumpIRA executive order."
       - outlet: "The Washington Post"
         published: 2026-02-25
         title: "Trump floats new retirement benefit for 54 million workers"
