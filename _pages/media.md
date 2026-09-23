@@ -2,7 +2,7 @@
 layout: page
 permalink: /media/
 title: Media
-description: Verified interviews, broadcast appearances, podcasts, and quoted coverage.
+description: "Interviews, broadcast and podcast appearances, press quotes, and selected coverage of my research."
 nav: true
 nav_order: 4
 redesign_2026: true

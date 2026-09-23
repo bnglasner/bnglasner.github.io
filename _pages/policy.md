@@ -2,7 +2,7 @@
 layout: page
 permalink: /policy/
 title: Policy
-description: Active policy work on Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy proposal, plus my reports and analyses.
+description: "Three policy designs I work on — Opportunity Zones, the Retirement Savings for Americans Act, and the 80-80 wage subsidy — plus my reports and analyses."
 nav: true
 nav_order: 2
 redesign_2026: true
