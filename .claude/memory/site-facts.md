@@ -19,7 +19,7 @@ This file is the first thing any agent walking into the repo cold should read. I
   - The CV is the spine of the portfolio, and cross-source audits use it as the comparison base.
   - All four CV PDFs date from 2026-02-22 and are stale. They lack the Columbia affiliation and use the gmail address.
   - `Ben_Glasner_CV.pdf` differs from `_full.pdf`.
-  - `assets/resume.pdf` is an older resume that no page links to. It is kept so outside links keep working.
+  - `assets/resume.pdf` is a byte-identical copy of `_full.pdf` that no page links to. It is kept so outside links keep working.
   - Regenerating the PDFs is Ben's job.
 - **Coauthors:** Thomas Cronin (EIG Research Assistant) is new as of the 2026-05-22 "Babysitter Clause" post.
 
