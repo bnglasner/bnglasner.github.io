@@ -584,7 +584,16 @@ body.redesign-2026 {
 // rule — those are already visually distinct as headings, buttons, and
 // chrome, not text a reader could mistake for a link only by its color.
 :where(body.redesign-2026 .site-main)
-  :is(.research-intro, .measure, .policy-section p, .policy-section__links, .work-detail__abstract, .post-description)
+  :is(
+    .research-intro,
+    .measure,
+    .policy-section p,
+    .policy-section__links,
+    .work-detail__abstract,
+    .post-description,
+    .home-note__text,
+    .headline-wheel__credit
+  )
   a {
   text-decoration: underline;
   text-underline-offset: 0.15em;
