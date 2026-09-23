@@ -1,4 +1,13 @@
 reports:
+  # Originally published 2024-10-03 (co-bylined with Sarah Eckhardt on
+  # Agglomerations; see short_form); republished on eig.org 2026-09-18 with
+  # updated SIPP data under a solo byline.
+  - title: "The U.S. Retirement System: Fast Facts"
+    url: "https://eig.org/retirement-fast-facts/"
+    outlet: "Economic Innovation Group"
+    authors: ["Benjamin Glasner"]
+    published: 2026-09-18
+    description: "About 76 million workers — nearly 52 percent of working Americans ages 18 to 64 — lack access to an employer-provided retirement plan, and only 37 percent of workers receive an employer contribution or match."
   - title: "How to end low-wage work forever: An 80-80 wage subsidy proposal"
     url: "https://eig.org/how-to-end-low-wage-work-forever/"
     outlet: "Economic Innovation Group"
@@ -6,6 +15,12 @@ reports:
     published: 2025-09-22
     featured: true
     description: "A large, targeted wage subsidy designed to raise earnings and strengthen labor-market attachment for low-wage workers."
+  - title: "Are Opportunity Zones Helping High-Need Communities? EIG Responds to New York Times Op-Ed"
+    url: "https://eig.org/eig-responds-to-nyt-op-ed/"
+    outlet: "Economic Innovation Group"
+    authors: ["John Lettieri", "Adam Ozimek", "Ben Glasner"]
+    published: 2025-06-06
+    description: "A response to Corinth and Feldman's New York Times op-ed arguing that the evidence now shows Opportunity Zones drove investment into low-income communities, and that the critics' revised case against the policy does not hold."
   - title: "The Impact of Opportunity Zones on Housing Supply"
     url: "https://eig.org/opportunity-zones-housing-supply/"
     outlet: "Economic Innovation Group"
@@ -26,18 +41,64 @@ reports:
     authors: ["Adam Ozimek", "John Lettieri", "Ben Glasner"]
     published: 2024-06-26
     description: "A worker-centered economic policy agenda grounded in labor-market dynamism, mobility, and earnings growth."
+  - title: "Living the good life or getting a bad deal?"
+    url: "https://eig.org/dci-cost-of-living/"
+    outlet: "Economic Innovation Group"
+    authors: ["Ben Glasner", "Kenan Fikri"]
+    published: 2024-03-28
+    description: "Combining EPI's Family Budget Calculator with EIG's Distressed Communities Index to assess which U.S. communities offer families a good value proposition on cost of living versus well-being."
+  - title: "Evaluating the Trade-offs: Children's Well-being vs. Parents' Work Incentives"
+    url: "https://eig.org/evaluating-the-child-tax-credit/"
+    outlet: "Economic Innovation Group"
+    authors: ["Benjamin Glasner"]
+    published: 2024-02-08
+    description: "The history, goals, and trade-offs of the Child Tax Credit — anti-poverty tool versus tax relief for working parents — as the Tax Relief for American Families and Workers Act of 2024 heads to the Senate."
   - title: "Full vs. Hybrid: Examining the Consequences of How Americans Work Remotely"
     url: "https://eig.org/full-vs-hybrid-remote-work/"
     outlet: "Economic Innovation Group"
     authors: ["Eric Carlson", "Benjamin Glasner", "Adam Ozimek"]
     published: 2023-11-16
     description: "Why full-remote and hybrid arrangements have substantively different consequences for local labor markets."
+  - title: "Movers And Money: Mapping the Flow of Income During the Pandemic"
+    url: "https://eig.org/interactive-income-flows/"
+    outlet: "Economic Innovation Group"
+    authors: ["Benjamin Glasner"]
+    published: 2023-10-17
+    description: "An interactive tool tracing the origins and destinations of pandemic-era movers' taxable income, led by Manhattan's $16.5 billion in outflows and Florida's $39 billion net gain."
   - title: "Are Opportunity Zones Working? What the Literature Tells Us"
     url: "https://eig.org/opportunity-zones-research-brief/"
     outlet: "Economic Innovation Group"
     authors: ["Kenan Fikri", "Ben Glasner"]
     published: 2023-10-12
     description: "A synthesis of the empirical literature on Opportunity Zones and what the early evidence says about program effects."
+  - title: "How Much Does Retirement Plan Coverage Vary by State and Income? An Updated Look."
+    url: "https://eig.org/state-retirement-coverage-2023/"
+    outlet: "Economic Innovation Group"
+    authors: ["Benjamin Glasner"]
+    published: 2023-08-10
+    description: "In 2021, 69 million workers — 55.5 percent — lacked any employer-provided retirement plan, a gap concentrated among low-income earners and uneven across states."
+  # Source (PDF cover and CPSP listing) gives only "August 2023"; the day is a
+  # placeholder (the writing page renders the year only). Needs Ben for the
+  # exact publication day.
+  - title: "Liquid Assets, Financial Shocks, and Entrances into Material Hardship"
+    url: "https://robinhood.org/wp-content/uploads/2024/01/poverty-tracker_2023.08_spotlight-on-liquid-assets-financial-shocks-and-entrances-into-material-hardship.pdf"
+    outlet: "Robin Hood Poverty Tracker"
+    co_outlet: "Center on Poverty and Social Policy, Columbia University"
+    authors: ["Matthew Maury", "Sophie Collyer", "Benjamin Glasner", "Yajun Jia", "Christopher Wimer", "Christopher Yera"]
+    published: 2023-08-01
+    description: "New Yorkers with $2,000 in liquid assets are substantially less likely to fall into material hardship after a financial shock than those with none, and the protective effect levels off above that amount."
+  - title: "Business Establishments Bloom in Booming Georgia"
+    url: "https://eig.org/georgia-business-establishments/"
+    outlet: "Economic Innovation Group"
+    authors: ["Benjamin Glasner"]
+    published: 2023-06-08
+    description: "County-level QCEW data for the fourth quarter of 2022 show the post-pandemic surge in new business establishments persisting, with Georgia among the standout states."
+  - title: "GAO Report Underscores Excessive Use of Noncompetes"
+    url: "https://eig.org/gao-noncompetes/"
+    outlet: "Economic Innovation Group"
+    authors: ["Benjamin Glasner", "Kenan Fikri"]
+    published: 2023-05-16
+    description: "The GAO's report on noncompete agreements underscores their excessive and relatively indiscriminate use, including heavier use by large employers and little differentiation across classes of workers."
   - title: "The Effects of Noncompete Agreement Reforms on Business Formation: A Comparison of Hawaii and Oregon"
     url: "https://eig.org/noncompetes-research-note/"
     outlet: "Economic Innovation Group"
@@ -51,6 +112,12 @@ reports:
 # Iscenko & Millet) are intentionally excluded from this list per the strict
 # byline rule.
 short_form:
+  - title: "The Babysitter Clause and the Problem of Partial Noncompete Bans"
+    url: "https://agglomerations.eig.org/p/the-babysitter-clause-and-the-problem"
+    outlet: "Agglomerations"
+    authors: ["Thomas Cronin", "Ben Glasner"]
+    published: 2026-05-22
+    description: "Partial noncompete bans that carve out workers by income, occupation, or industry — down to Washington, D.C.'s exemption for casual babysitters — end up arbitrary, confusing, and hard to enforce, which makes the case for full bans."
   - title: "Fixing the U.S. Retirement System: A Q&A"
     url: "https://agglomerations.eig.org/p/fixing-the-us-retirement-system-a"
     outlet: "Agglomerations"
