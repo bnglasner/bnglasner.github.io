@@ -1,6 +1,6 @@
 {% comment %}
   Axis rule: the site's signature divider — a 1px hairline with small tick
-  marks, like the axis of a chart. Used under the nav, between major page
+  marks, like the axis of a chart, with an accent "origin" tick at zero. Used under the nav, between major page
   sections, and above the footer. Purely decorative (aria-hidden); color
   comes from `currentColor` so it follows the `color` set on `.axis-rule`
   (see _sass/_system.scss), which already tracks light/dark mode via the
@@ -12,7 +12,22 @@
 <div class="axis-rule {{ include.class }}" role="separator" aria-hidden="true">
   <svg viewBox="0 0 1000 16" preserveAspectRatio="none" focusable="false">
     <line x1="0" y1="8" x2="1000" y2="8" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"></line>
-    {% for i in (0..40) %}
+    {% comment %}
+      Origin tick: the axis's zero, drawn taller and in the accent color
+      (see .axis-rule__origin in _sass/_system.scss). The loop starts at 1 so
+      the origin is not drawn twice. Decorative, like the rest of the rule.
+    {% endcomment %}
+    <line
+      class="axis-rule__origin"
+      x1="1"
+      y1="1"
+      x2="1"
+      y2="15"
+      stroke="currentColor"
+      stroke-width="2"
+      vector-effect="non-scaling-stroke"
+    ></line>
+    {% for i in (1..40) %}
       {% assign x = i | times: 25 %}
       {% assign tick_top = 5 %}
       {% assign tick_bottom = 11 %}

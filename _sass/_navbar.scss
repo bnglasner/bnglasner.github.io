@@ -28,6 +28,33 @@
   color: var(--paper-text);
 }
 
+// Wordmark: inline BG mark (outlined Newsreader paths, token-colored) +
+// the name in Newsreader 600. The mark is aria-hidden; the text is the
+// accessible name of the home link.
+.site-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1;
+}
+
+.site-mark {
+  flex-shrink: 0;
+  width: 34px; // viewBox is cropped to the letters and rule (62 x 44)
+  height: 24px;
+}
+
+.site-mark__letters {
+  fill: var(--paper-text);
+}
+
+.site-mark__rule {
+  stroke: var(--accent-teal);
+}
+
 .navbar.navbar-light {
   a:hover {
     text-decoration: none;

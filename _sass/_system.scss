@@ -70,6 +70,18 @@ button:focus-visible,
   }
 }
 
+// The origin (zero) tick: taller, 2px, accent teal. In-content rules only;
+// the full-bleed header/footer rules are chrome that meets the viewport
+// edge, where a zero mark would be clipped and mean nothing.
+.axis-rule .axis-rule__origin {
+  stroke: var(--accent-teal);
+}
+
+header .axis-rule .axis-rule__origin,
+footer .axis-rule .axis-rule__origin {
+  display: none;
+}
+
 .axis-rule--tight {
   margin: 1.25rem 0;
 }

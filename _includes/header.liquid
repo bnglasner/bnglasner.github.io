@@ -2,22 +2,16 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      <a class="navbar-brand title" href="{{ site.baseurl }}/">
-        {% if site.title == 'blank' %}
-          {% if site.first_name %}
-            <span class="font-weight-bold">
-              {{- site.first_name -}}
-            </span>
-          {% endif %}
-          {% if site.middle_name %}
-            {{- site.middle_name -}}
-          {% endif %}
-          {% if site.last_name %}
-            {{- site.last_name -}}
-          {% endif %}
-        {% else %}
-          {{- site.title -}}
-        {% endif %}
+      <a class="navbar-brand title site-wordmark" href="{{ site.baseurl }}/">
+        {% include site-mark.liquid %}
+        {%- comment -%}
+          Wordmark is the name alone; the degree lives on the CV and in
+          site.title (page titles, Open Graph), which are unchanged.
+        {%- endcomment -%}
+        <span class="site-wordmark__name">
+          {{- site.first_name }}
+          {{ site.last_name -}}
+        </span>
       </a>
       <!-- Navbar Toggle -->
       <button
