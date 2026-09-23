@@ -17,13 +17,13 @@
   -->
   <style>
     :root {
-      --ink: #1a1f24;
-      --accent: #116a5f;
+      --ink: #1b1d1f;
+      --accent: #0f5f55;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --ink: #fcfcfa;
-        --accent: #2ba694;
+        --ink: #ece9e1;
+        --accent: #3fb3a0;
       }
     }
   </style>
