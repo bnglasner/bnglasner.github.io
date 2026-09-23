@@ -58,30 +58,43 @@ All three are now caught mechanically. Step 6 of `verify_site.sh` builds in prod
 
 The gate also flagged "Research covered in · Business Insider" as the loosest homepage claim, because the Business Insider items quote Ben rather than cover a study. That outlet was removed from the coverage line. Whether to add a separate "Quoted in" line is Ben's call.
 
+## Follow-up decisions (same day)
+
+Ben resolved several open items after the first review.
+
+- **New copy approved.** Ben approved all newly written copy: the proof strip, both press bios, speaking topics, the Reports intro, and the nav labels.
+- **Voice rewrites applied.** He approved the eight voice-rewrite drafts, and the Copy Editor applied them, adapted to the new page structure.
+  - The homepage `seo_title` is "Benjamin Glasner — Economist, Economic Innovation Group".
+  - The seven report descriptions on `/policy/` reuse each report's sourced `finding`, verbatim.
+- **Two findings tightened.** Two `papers.bib` findings were edited so they claim no more than their abstracts. OZ housing supply now says "designated" tracts instead of "eligible". The Hawaii noncompete finding now says the exemption "was associated with" more establishments instead of "raised". No numbers changed.
+- **Headshot kept.** The current photo stays. `/press/` offers it as a full-resolution download.
+- **Robin Hood date.** The report is dated "August 2023", with no day. `writing.yml` now accepts month-precision `published: "YYYY-MM"`. The validator, schema rule, display, and sorting all handle it, and the validator checks that each writing list stays newest first.
+- **CV PDFs regenerated.**
+  - The Overleaf sources, which match the February builds byte for byte, now live in `cv/`.
+  - `cv/build.sh` builds with the user-owned TinyTeX; Ben approved the CTAN packages it needed.
+  - The content now reads `benjamin@eig.org` and includes the Columbia affiliation, every publication and report on the site, and media consistent with `media_page.yml`.
+  - Page counts: full is 5, two-page is 2, one-page is 1. Each file is under 250 KB.
+  - `Ben_Glasner_CV.pdf` is now a copy of the full CV.
+- **GitHub settings.** Ben set workflow permissions to read-only and enabled Dependabot alerts.
+- **CI follow-up.** Auto-fix caught a failing Copilot setup job and fixed it by restoring a PyYAML install for its pip cache.
+
 ## Open items for Ben
 
-**Content and facts only Ben can supply.**
+**Content confirmations.**
 
-- A professional headshot. The `/press/` download and the homepage avatar are waiting on it.
-- Regenerate the four CV PDFs, which date from February 2026, lack Columbia, and use the gmail address. `Ben_Glasner_CV.pdf` also differs from `_full.pdf`.
-- Review all newly written copy: the proof strip, both press bios, speaking topics, the Reports intro, and the nav labels. Also confirm the homepage `<title>` (`seo_title:` is supported).
-- The eight voice-rewrite drafts from the copy review remain deferred and unapplied.
-- Confirm details on existing entries:
-  - the Robin Hood report's exact day (entered as 2023-08-01)
-  - the food stamp paper's canonical title
-  - the Liquid Assets author order
-  - the two paywalled Forbes columns
-  - the OZ housing supply SSRN version
-  - the four personal-repo code links
-  - the `noncompete-income` mapping
-  - The New Bazaar podcast role
-  - whether press requests should route through EIG communications
-- Two paper summaries may claim more than their abstracts: "eligible" vs. "designated" tracts, and "raised" vs. "associated with".
+- the food stamp paper's canonical title
+- the Liquid Assets author order
+- the two paywalled Forbes columns
+- the OZ housing supply SSRN version
+- the four personal-repo code links
+- the `noncompete-income` mapping
+- The New Bazaar podcast role
+- whether press requests should route through EIG communications
+- whether to add a "Quoted in · Business Insider" proof line
 
-**GitHub settings (Ben must do these himself).**
+**GitHub (optional or after merge).**
 
-- Set workflow permissions to read-only.
-- Enable Dependabot alerts and security updates.
+- Optionally enable Dependabot security updates, not just alerts.
 - Delete the stale remote branches listed in the infra handoff.
 - After merge, run `gh workflow run update-citations.yml` once to confirm a green run.
 - The first deploy installs from a committed `Gemfile.lock` for the first time. Watch that run.

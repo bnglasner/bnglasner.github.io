@@ -87,7 +87,7 @@ Correction to the May audit: NBER lists w29823 (March 2022), the working-paper v
   - `assets/video/highlights/`: the headline wheel's MP4/PNG pairs. Regenerate with `bash bin/highlights_figures/render_all.sh`; provenance is in `bin/highlights_figures/README.md`. They were re-rendered 2026-09-23 with the warm palette, and only colors changed.
   - `assets/img/og-card.png`: the 1200×630 social card and the site-wide `og_image`. Regenerate with `bash bin/og_card/render.sh`. Its deck is `_pages/about.md`'s `headline`, verbatim, so re-render when the headline changes.
   - `assets/img/apple-touch-icon.png` and `/favicon.ico`: regenerate with `bash bin/render_icons.sh`.
-  - `assets/img/prof_pic_color-sq*.webp` and `-sq80.jpg`: the homepage headshot. Regenerate with `bash bin/make_headshot.sh`. The current photo is a casual shot. Ben will supply a professional portrait, and the `/press/` headshot download is waiting on it.
+  - `assets/img/prof_pic_color-sq*.webp` and `-sq80.jpg`: the homepage headshot. Regenerate with `bash bin/make_headshot.sh`. Ben chose (2026-09-23) to keep the current photo. `/press/` offers the full-resolution `prof_pic_color.jpg` as the headshot download.
 - **Site mark / favicon:** `assets/img/bg-monogram.svg`, consumed via `icon:` in `_config.yml`.
   - The same paths are inlined and token-colored in `_includes/site-mark.liquid` for the navbar wordmark.
   - The "BG" is **outlined paths** from Newsreader at wght 600. A favicon SVG loads outside the page and cannot use a webfont, so do not convert it back to `<text>`.
@@ -171,7 +171,7 @@ Correction to the May audit: NBER lists w29823 (March 2022), the working-paper v
   - `copilot-setup-steps.yml`.
   - Dependabot covers actions, bundler, and npm.
   - The lychee and Lighthouse workflows were removed.
-- **Needs Ben, in GitHub settings:** set workflow permissions to read-only and enable Dependabot alerts.
+- **GitHub settings (set by Ben 2026-09-23):** workflow permissions are read-only by default, and Dependabot alerts are enabled.
 - **Pre-commit:**
   - Standard hooks: trailing-whitespace, end-of-file-fixer, check-yaml, check-added-large-files.
   - Local hooks: `bin/check_writing_authors.py` and `bin/validate_data.py`.
