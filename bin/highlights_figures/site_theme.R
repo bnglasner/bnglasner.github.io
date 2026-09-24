@@ -92,9 +92,25 @@ source_line <- function(text, a = 1, x = 0.035, y_top = 0.955, size = 2.9) {
 
 # ---- renderer ------------------------------------------------------------------
 # frame_fn(t) -> ggplot for t in [0,1]. Writes frames + final-frame poster PNG.
+# SITE_POSTER_ONLY=1 skips the frame sequence (fast layout iteration);
+# SITE_PEEK=0.4 also writes a single mid-build frame to out/<stem>_<theme>_peek.png.
 site_anim <- function(frame_fn, stem, build_secs = 2.4, hold_secs = 1.6,
                       fps = 30) {
   out_root <- file.path(dirname(FONT_DIR), "out")
+  dir.create(out_root, recursive = TRUE, showWarnings = FALSE)
+  peek <- suppressWarnings(as.numeric(Sys.getenv("SITE_PEEK", "")))
+  if (!is.na(peek)) {
+    ggsave(file.path(out_root, sprintf("%s_%s_peek.png", stem, THEME)),
+           frame_fn(peek), device = ragg::agg_png,
+           width = W / DPI, height = H / DPI, dpi = DPI, bg = FIELD)
+  }
+  if (nzchar(Sys.getenv("SITE_POSTER_ONLY"))) {
+    ggsave(file.path(out_root, sprintf("%s_%s.png", stem, THEME)), frame_fn(1),
+           device = ragg::agg_png, width = W / DPI, height = H / DPI,
+           dpi = DPI, bg = FIELD)
+    cat(sprintf("[%s/%s] poster only\n", stem, THEME))
+    return(invisible())
+  }
   frame_dir <- file.path(out_root, "frames", paste0(stem, "_", THEME))
   unlink(frame_dir, recursive = TRUE)
   dir.create(frame_dir, recursive = TRUE, showWarnings = FALSE)

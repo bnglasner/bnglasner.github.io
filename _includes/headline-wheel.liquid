@@ -1,6 +1,6 @@
 {% comment %}
   Homepage headline wheel — replaces the illustrative hero-figure SVG with
-  five real findings from Ben's short-form reel work, re-rendered as
+  real findings from Ben's short-form reel work, re-rendered as
   site-token animated figures (light + dark MP4 pairs with poster PNGs,
   built from the Style Guide repo's reel pipeline data — see
   _data/highlights.yml for the asset contract).
@@ -26,7 +26,12 @@
   visible variant. Without JavaScript, the <noscript> poster image stands in.
 {% endcomment %}
 {% assign theme_variants = 'light,dark' | split: ',' %}
-<div class="headline-wheel" role="group" aria-roledescription="carousel" aria-label="Five findings from recent short-form work">
+<div
+  class="headline-wheel"
+  role="group"
+  aria-roledescription="carousel"
+  aria-label="Findings from recent short-form work"
+>
   <h2 class="sr-only">Recent findings</h2>
   <div class="headline-wheel__track" role="group" aria-label="Slides" tabindex="0">
     {% for item in site.data.highlights %}

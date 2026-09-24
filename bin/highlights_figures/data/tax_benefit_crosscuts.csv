@@ -1,0 +1,14 @@
+dimension,group,pop_share,te_share,mean_te
+Pillar 1: access,Has employer access,0.4829,0.9749,3394.2587
+Pillar 2: participation,Participates,0.4296,0.9443,3695.4569
+Pillar 3: matching,Receives employer match,0.3673,0.7569,3464.5366
+Worker earnings decile,1,0.1,0.0055,92.1965
+Worker earnings decile,2,0.0998,0.008,134.2485
+Worker earnings decile,3,0.1002,0.004,67.8835
+Worker earnings decile,4,0.0999,0.0285,478.667
+Worker earnings decile,5,0.0966,0.0541,941.7099
+Worker earnings decile,6,0.1035,0.0787,1278.3345
+Worker earnings decile,7,0.0999,0.1185,1993.7971
+Worker earnings decile,8,0.1001,0.1725,2895.6561
+Worker earnings decile,9,0.1,0.2279,3830.7389
+Worker earnings decile,10,0.1,0.3024,5084.3224

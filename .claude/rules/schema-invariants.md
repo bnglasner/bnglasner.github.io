@@ -132,7 +132,7 @@ Keep this to the one note the design calls for (the working-on line plus at most
 
 ## `_data/highlights.yml`
 
-Added with the homepage headline wheel (2026-08-10): the five findings from Ben's short-form reel work rendered as site-token animated figures. A top-level list of 3–7 entries. Required fields per entry:
+Added with the homepage headline wheel (2026-08-10): findings from Ben's short-form reel work rendered as site-token animated figures. A top-level list of 3–7 entries. Required fields per entry:
 
 - `name` (string, unique) — asset stem. The wheel resolves four files from it, and the validator checks all four exist: `assets/video/highlights/<name>_{light,dark}.mp4` and `..._{light,dark}.png` (posters).
 - `eyebrow` (string) — short topic label, rendered mono uppercase.

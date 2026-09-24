@@ -49,8 +49,8 @@ for rel, stem, weights in jobs:
 print("fonts ready")
 EOF
 
-echo "==> 2/4 render frame sequences + posters (5 figures x 2 themes)"
-for fig in fig_ladder fig_wages fig_rpp fig_socsec fig_california; do
+echo "==> 2/4 render frame sequences + posters (6 figures x 2 themes)"
+for fig in fig_retirement fig_realpay fig_minwage fig_prices fig_ladder fig_rpp; do
   for theme in light dark; do
     SITE_THEME=$theme Rscript "$fig.R"
   done
