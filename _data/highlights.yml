@@ -1,4 +1,4 @@
-# Homepage headline wheel — five findings from Ben's short-form reel work,
+# Homepage headline wheel — findings from Ben's short-form reel work,
 # re-rendered as site-native animated figures (see assets/video/highlights/).
 #
 # Each entry maps to four assets produced from the Style Guide repo's reel
@@ -10,7 +10,35 @@
 # without re-checking it there.
 #
 # Schema (enforced by bin/validate_data.py): name, eyebrow, title, hook,
-# alt, date — all required. 3-7 entries.
+# alt, date — all required. 3-7 entries, newest first.
+
+- name: retirement
+  eyebrow: "Retirement policy"
+  title: "Half the workers, a tenth of the tax benefit"
+  hook: "The bottom half of U.S. workers receives about 10 percent of the federal tax benefit that goes to workers for retirement saving — a modeled $92 a year on average in the lowest-paid tenth, against $5,084 in the highest-paid tenth."
+  alt: "Animated bar chart of the average modeled federal tax benefit from retirement saving by worker earnings decile in 2024, for workers ages 18 to 64. Bars grow in decile order from $92 in the lowest-paid tenth to $5,084 in the highest-paid tenth, which receives 30 percent of the benefit dollars. A bracket then closes over the five lowest deciles: together, the bottom half receives about 10 percent. Source: EIG analysis of the Census Bureau's 2025 Survey of Income and Program Participation."
+  date: 2026-09-15
+
+- name: realpay
+  eyebrow: "August 2026 jobs report"
+  title: "Pay has trailed prices for five months"
+  hook: "Average hourly earnings after inflation were below their year-earlier level for five straight months, April through August 2026 — in August, pay was up 3.1 percent and prices 3.4 percent."
+  alt: "Animated line chart of the year-over-year change in inflation-adjusted average hourly earnings for private-sector employees from August 2024 to August 2026. The line stays above zero through March 2026, then drops below it, and the five negative months from April to August light up one at a time, ending at negative 0.3 percent in August. The line breaks at October 2025, which is missing from the source data. Source: BLS Employment Situation and Consumer Price Index releases for August 2026."
+  date: 2026-09-11
+
+- name: minwage
+  eyebrow: "Minimum wage"
+  title: "$7.25 no longer tells the whole story"
+  hook: "In 2025, one percent of hourly workers earned at or below the $7.25 federal minimum, but seven percent earned at or below the higher federal-or-state floor — in 1982, both measures were about 14 percent."
+  alt: "Animated line chart of the share of hourly workers earning at or below the minimum wage from 1982 to 2025. Two lines start together near 14 percent in 1982: one measured against the federal minimum alone, the other against the higher of the federal or state minimum. They separate in the late 1980s and split widely in the mid-2010s, and the gap between them fills in as they draw, ending at one percent for the federal minimum and seven percent for the higher floor. Local minimums are excluded, so seven percent is a lower bound. Source: EIG analysis of Current Population Survey Outgoing Rotation Group data."
+  date: 2026-09-01
+
+- name: prices
+  eyebrow: "Inflation"
+  title: "One inflation rate, very different prices"
+  hook: "From 2000 to 2024, consumer prices rose 82.2 percent overall, but medical care prices rose 116.2 percent and apparel prices just 1.5 percent — all inside the same official index."
+  alt: "Animated horizontal bar chart of cumulative CPI-U price growth from 2000 to 2024 by category. Bars grow in turn for education at 166.4 percent, energy at 124.4 percent, medical care at 116.2 percent, shelter at 107.1 percent, all items at 82.2 percent, and apparel at 1.5 percent. A dashed line at the all-items rate then drops through every row, showing four categories above the headline rate and apparel far below it. Source: Bureau of Labor Statistics, Consumer Price Index annual averages."
+  date: 2026-08-06
 
 - name: ladder
   eyebrow: "Generational mobility"
@@ -19,30 +47,9 @@
   alt: "Animated line chart of median wage income by age for four generations. Lines for Boomer, Gen X, Millennial, and Gen Z draw in one at a time, with each later generation tracing a higher path at the same ages. Dashed stretches mark partly observed data. Source: IPUMS CPS ASEC 1962 to 2025 and FRED PCEPI."
   date: 2026-08-03
 
-- name: wages
-  eyebrow: "July 2026 jobs report"
-  title: "Raises are the smallest in five years"
-  hook: "Average hourly earnings grew 3.2 percent year over year in July 2026 — the slowest pace since May 2021."
-  alt: "Animated line chart of year-over-year growth in private-sector average hourly earnings from 2021 to 2026. The line surges above 5.9 percent in 2022, then declines to 3.2 percent in July 2026. A dashed reference line marks that May 2021 was the last month below this level. Source: BLS Employment Situation, August 7, 2026."
-  date: 2026-08-07
-
 - name: rpp
   eyebrow: "Cost of living · 2024 election"
   title: "One dot breaks the 2024 election chart"
   hook: "Democratic vote share fell 4.35 percentage points in the 27 most expensive U.S. counties — nearly four times the decline the trend across all other counties predicts."
   alt: "Animated scatter plot of the change in Democratic vote share from 2020 to 2024 against county price level, with dot area scaled to population. A trend line slopes gently downward, then the top price bin drops far below it to negative 4.35 percentage points against a predicted negative 1.14. Source: EIG analysis of county returns and BEA Regional Price Parities."
   date: 2026-07-17
-
-- name: socsec
-  eyebrow: "Social Security"
-  title: "The largest anti-poverty program"
-  hook: "Social Security lifted 28.7 million Americans out of poverty in 2024 — more than any other program, and 20.1 million of them were 65 or older."
-  alt: "Animated stacked bar chart counting up to 28.7 million people lifted out of poverty by Social Security in 2024, split by age group: 20.1 million older Americans, 7.2 million working-age adults, and 1.4 million children. Source: Census Bureau P60-287, Table B-7, Supplemental Poverty Measure."
-  date: 2026-06-23
-
-- name: california
-  eyebrow: "State economies"
-  title: "Take out healthcare and California shrank"
-  hook: "California employment grew 3.4 percent over the four years to March 2026, but excluding healthcare it fell 0.3 percent — healthcare is carrying the state's job market."
-  alt: "Animated grouped bar chart comparing California and U.S. employment growth from March 2022 to March 2026. Healthcare grew 25.3 percent in California against 16.3 percent nationally; all jobs grew 3.4 versus 4.7 percent; excluding healthcare, California fell 0.3 percent while the U.S. grew 2.9 percent. Source: EIG analysis of BLS State and Area Employment data."
-  date: 2026-05-28
