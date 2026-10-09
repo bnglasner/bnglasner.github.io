@@ -12,6 +12,20 @@
 # Schema (enforced by bin/validate_data.py): name, eyebrow, title, hook,
 # alt, date — all required. 3-7 entries, newest first.
 
+- name: wagepct
+  eyebrow: "Real wages since 1982"
+  title: "The top pulled away from everyone else"
+  hook: "Since December 1982, real hourly wages at the 90th percentile are up 77.5 percent, against 39.7 percent at the median and 53.6 percent at the 10th percentile."
+  alt: "Animated line chart of real hourly wages at the 10th, 25th, 50th, 75th, and 90th percentiles, indexed so each 12-month rolling average equals 100 in December 1982, through August 2026. All five lines start together near 100 and stay close until the late 1990s, then the 90th percentile line pulls ahead and ends at 177.5. The median ends at 139.7, and the 10th, 25th, and 75th percentiles end between 145 and 154. March 2020 to December 2021 is dashed because of shifts in Current Population Survey sample composition. Source: EIG analysis of Current Population Survey Outgoing Rotation Group data, deflated with the PCE price index."
+  date: 2026-10-07
+
+- name: wageratio
+  eyebrow: "Wage inequality since 1982"
+  title: "The bottom closed on the middle while the top pulled away"
+  hook: "Measured against December 1982, the 90th-percentile wage has gained 27 percent on the median, while the median has lost 9 percent against the 10th percentile."
+  alt: "Animated line chart of three wage ratios, each indexed to 100 in December 1982, through August 2026. The ratio of the 90th percentile to the median rises to about 127. The ratio of the 90th to the 10th percentile ends near 116 after peaking above 125 around 2013. The ratio of the median to the 10th percentile drifts down to about 91, meaning the lowest-paid tenth gained on the median. March 2020 to December 2021 is dashed because of shifts in Current Population Survey sample composition. Source: EIG analysis of Current Population Survey Outgoing Rotation Group data, deflated with the PCE price index."
+  date: 2026-10-07
+
 - name: retirement
   eyebrow: "Retirement policy"
   title: "Half the workers, a tenth of the tax benefit"
@@ -46,10 +60,3 @@
   hook: "At the same age, each generation of U.S. wage earners has out-earned the last — at 35, the typical Millennial earned about 32 percent more than the typical Boomer did, in 2025 dollars."
   alt: "Animated line chart of median wage income by age for four generations. Lines for Boomer, Gen X, Millennial, and Gen Z draw in one at a time, with each later generation tracing a higher path at the same ages. Dashed stretches mark partly observed data. Source: IPUMS CPS ASEC 1962 to 2025 and FRED PCEPI."
   date: 2026-08-03
-
-- name: rpp
-  eyebrow: "Cost of living · 2024 election"
-  title: "One dot breaks the 2024 election chart"
-  hook: "Democratic vote share fell 4.35 percentage points in the 27 most expensive U.S. counties — nearly four times the decline the trend across all other counties predicts."
-  alt: "Animated scatter plot of the change in Democratic vote share from 2020 to 2024 against county price level, with dot area scaled to population. A trend line slopes gently downward, then the top price bin drops far below it to negative 4.35 percentage points against a predicted negative 1.14. Source: EIG analysis of county returns and BEA Regional Price Parities."
-  date: 2026-07-17

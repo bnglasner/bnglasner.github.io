@@ -16,14 +16,15 @@ carries the title and hook — at 1280x720, in a light and a dark variant
 (`SITE_THEME=light|dark`), as a frame sequence stitched to H.264 plus a
 final-frame poster PNG.
 
-| Script             | Source reel                                           | Claim provenance                                                                                                                      |
-| ------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `fig_retirement.R` | 2026-09-15-retirement-help-misses-half-the-workforce  | 16:9 re-layout of `rff_tax_concentration.R` (portrait); source-notes Claims 11-12, matching the published EIG Fast Facts (2026-09-18) |
-| `fig_realpay.R`    | 2026-09-11-jobs-came-back-raises-did-not              | 16:9 port of `v6_real_earnings.R` (portrait, presenter cutout); source-notes Claims 7, 9, 11                                          |
-| `fig_minwage.R`    | 2026-09-01-federal-minimum-wage-misses-workers        | 16:9 port of `02_aw_minwage_federal_vs_prevailing_animation.R`; source-notes Claims 1, 6, 6a, 7 ("at or below", never "covered")      |
-| `fig_prices.R`     | 2026-08-06-inflation-series-pt3-what-drives-inflation | 16:9 re-layout of `r3_component_growth.R`, reading the upstream CSV the reel typed its values from; source-notes Claim 1              |
-| `fig_ladder.R`     | 2026-08-03-intergenerational-wage-ladder              | port of `gen_ladder_hero_x16x9.R` (reveal schedule, label anchors, dashed partly-observed runs)                                       |
-| `fig_rpp.R`        | 2026-07-17-rpp-harris-vote-share                      | 16:9 re-layout of `render_rpp_scatter.R` (portrait)                                                                                   |
+| Script             | Source reel                                           | Claim provenance                                                                                                                                        |
+| ------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fig_retirement.R` | 2026-09-15-retirement-help-misses-half-the-workforce  | 16:9 re-layout of `rff_tax_concentration.R` (portrait); source-notes Claims 11-12, matching the published EIG Fast Facts (2026-09-18)                   |
+| `fig_realpay.R`    | 2026-09-11-jobs-came-back-raises-did-not              | 16:9 port of `v6_real_earnings.R` (portrait, presenter cutout); source-notes Claims 7, 9, 11                                                            |
+| `fig_minwage.R`    | 2026-09-01-federal-minimum-wage-misses-workers        | 16:9 port of `02_aw_minwage_federal_vs_prevailing_animation.R`; source-notes Claims 1, 6, 6a, 7 ("at or below", never "covered")                        |
+| `fig_prices.R`     | 2026-08-06-inflation-series-pt3-what-drives-inflation | 16:9 re-layout of `r3_component_growth.R`, reading the upstream CSV the reel typed its values from; source-notes Claim 1                                |
+| `fig_ladder.R`     | 2026-08-03-intergenerational-wage-ladder              | port of `gen_ladder_hero_x16x9.R` (reveal schedule, label anchors, dashed partly-observed runs)                                                         |
+| `fig_wagepct.R`    | EIG-Wage-Figure-Explain-Everything, Figure A          | re-theme of `figure_a_percentiles_indexed_roll12.csv`; claims are `drafts/figures_summary.md` Figure A (+77.5% / +39.7% / +53.6%, Dec 1982 to Aug 2026) |
+| `fig_wageratio.R`  | EIG-Wage-Figure-Explain-Everything, Figure 6b         | lines of `figure_f_ratios_indexed_roll12.csv` without the era bars; 90/50 +27%, 50/10 -9%, 90/10 +16% at Aug 2026                                       |
 
 `data/` holds copies of each reel's verified CSV/TSV inputs. The numbers
 are the reels' fact-checked claims — if a number changes, change it in the
@@ -61,6 +62,6 @@ escapes so the scripts render the same under any locale.
 
 ## Retired figures
 
-`fig_california.R`, `fig_wages.R` (July 2026 wage growth, superseded by
+`fig_rpp.R` (2024 election vs. price levels, left 2026-10-09 to stay under the seven-card cap), `fig_california.R`, `fig_wages.R` (July 2026 wage growth, superseded by
 `fig_realpay.R`), and `fig_socsec.R` left the wheel on 2026-09-23. Restore
 any of them, with its `data/` input, from git history.

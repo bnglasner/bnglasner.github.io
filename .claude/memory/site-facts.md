@@ -85,7 +85,7 @@ Correction to the May audit: NBER lists w29823 (March 2022), the working-paper v
   - `homepage.yml` has a validated `proof:` strip. Every outlet in it must be in `media_page.yml`, and every journal must be in `papers.bib`.
 - **Generated from source scripts, never retouched.** Regenerate each with its script:
   - `assets/video/highlights/`: the headline wheel's MP4/PNG pairs. Regenerate with `bash bin/highlights_figures/render_all.sh`; provenance is in `bin/highlights_figures/README.md`. They were re-rendered 2026-09-23 with the warm palette, and only colors changed.
-    - Lineup since 2026-09-23 (six cards, newest first): retirement, realpay, minwage, prices, ladder, rpp. The California, July-wages, and Social Security cards were retired.
+    - Lineup since 2026-10-09 (seven cards, newest first): wagepct, wageratio, retirement, realpay, minwage, prices, ladder. The two wage cards re-theme Figures A and 6b from the EIG-Wage-Figure-Explain-Everything repo (data copied into `bin/highlights_figures/data/`). The California, July-wages, Social Security, and RPP cards were retired.
     - `realpay` cites the August 2026 jobs and CPI releases and goes stale with the next BLS jobs report (October 2, 2026).
     - The render's font step needs Python with `fonttools` and `brotli`. No system Python on Ben's machine has them, so use a venv.
   - `assets/img/og-card.png`: the 1200×630 social card and the site-wide `og_image`. Regenerate with `bash bin/og_card/render.sh`. Its deck is `_pages/about.md`'s `headline`, verbatim, so re-render when the headline changes.
