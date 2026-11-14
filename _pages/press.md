@@ -41,7 +41,9 @@ from the homepage hero, the Media page, and the footer.
     Benjamin Glasner is a Senior Economist at the Economic Innovation Group and an affiliate of the Center on Poverty and
     Social Policy at Columbia University. He studies U.S. labor markets, place-based policy, and the design of social
     programs. At EIG, he co-authored the 80-80 wage subsidy proposal with Adam Ozimek, led EIG's analysis of how
-    Opportunity Zones affected housing supply, and documents gaps in U.S. retirement-plan coverage.
+    Opportunity Zones affected housing supply, and documents gaps in U.S. retirement-plan coverage. He also designed EIG's
+    AI-assisted research template, which brings AI coding agents into empirical work under standards for review, reproducibility,
+    and disclosure.
   </p>
   <p>
     His peer-reviewed research on the minimum wage and gig work and on the expanded Child Tax Credit appears in the
@@ -108,6 +110,9 @@ from the homepage hero, the Media page, and the footer.
     </li>
     <li>
       <a href="{{ '/bibliography/ozimek_lettieri_glasner_2024_american_worker/' | relative_url }}">The state of the American worker</a>
+    </li>
+    <li>
+      <a href="{{ '/ai-research/' | relative_url }}">AI agents in empirical research: faster work without weaker evidence</a>
     </li>
   </ul>
 </div>

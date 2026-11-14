@@ -13,7 +13,7 @@
 **Core Technologies:**
 
 - **Jekyll:** v4.x (Ruby static site generator)
-- **Ruby:** 3.3.5 (primary CI/CD version), 3.2.2 (some workflows)
+- **Ruby:** 3.3 series, latest patch (primary CI/CD version), 3.2.2 (some workflows)
 - **Python:** 3.13 (for nbconvert, jupyter notebook support)
 - **Node.js:** Latest (for purgecss and prettier)
 - **Docker:** Uses prebuilt image `amirpourmand/al-folio:v0.16.3` (Ruby slim-based)
@@ -38,7 +38,7 @@
 
 ## Building & Local Development
 
-> **This fork (bnglasner.github.io):** CI does not use Docker; `deploy.yml` builds with `ruby/setup-ruby` (Ruby 3.3.5). Locally, use `bundle install` then `LC_ALL=en_US.UTF-8 bundle exec jekyll serve --port 4000`, or `bash bin/verify_site.sh` for a headless check. The Docker instructions below are upstream al-folio guidance and optional here. See `.claude/rules/build-and-verify.md`.
+> **This fork (bnglasner.github.io):** CI does not use Docker; `deploy.yml` builds with `ruby/setup-ruby` (latest Ruby 3.3.x). Locally, use `bundle install` then `LC_ALL=en_US.UTF-8 bundle exec jekyll serve --port 4000`, or `bash bin/verify_site.sh` for a headless check. The Docker instructions below are upstream al-folio guidance and optional here. See `.claude/rules/build-and-verify.md`.
 
 ### Docker (upstream al-folio approach; optional in this fork)
 
@@ -126,7 +126,7 @@ When making changes:
 ### GitHub Workflows (in `.github/workflows/`)
 
 - **deploy.yml** – Main deployment workflow (runs on push/PR to main/master)
-  - Sets up Ruby 3.3.5, Python 3.13
+  - Sets up Ruby 3.3 (latest patch), Python 3.13
   - Installs imagemagick, nbconvert
   - Runs `bundle exec jekyll build` with JEKYLL_ENV=production
   - Runs purgecss for CSS optimization

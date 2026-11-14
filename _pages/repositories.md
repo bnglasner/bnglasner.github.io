@@ -25,7 +25,8 @@ redesign_2026: true
 </p>
 <p class="measure">
   I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and
-  documentation practices that make a public repository worth publishing.
+  documentation practices that make a public repository worth publishing. The same standard now governs AI-assisted work; see
+  <a href="{{ '/ai-research/' | relative_url }}">AI and research infrastructure</a>.
 </p>
 
 {% include axis-rule.liquid %}
