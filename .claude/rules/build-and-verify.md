@@ -1,6 +1,6 @@
 # Rule: build and verify
 
-The site is built locally with the Ruby toolchain (`bundle exec jekyll`, Ruby 3.3 via Homebrew; CI pins 3.3.5) and deployed to GitHub Pages by `.github/workflows/deploy.yml`. Docker (the al-folio prebuilt image) is an optional alternative for machines without local Ruby; it is not installed on Ben's machine. The pre-commit checklist below applies to every commit that touches site source.
+The site is built locally with the Ruby toolchain (`bundle exec jekyll`, Ruby 3.3 via Homebrew; CI pins the 3.3 series, latest patch) and deployed to GitHub Pages by `.github/workflows/deploy.yml`. Docker (the al-folio prebuilt image) is an optional alternative for machines without local Ruby; it is not installed on Ben's machine. The pre-commit checklist below applies to every commit that touches site source.
 
 ## Pre-commit checklist
 
@@ -54,7 +54,7 @@ Two pairs of fields must be updated together, never one without the other:
 
 ## CI workflows already running
 
-- **`deploy.yml`** (push to `main` and PRs): validates data schemas (`check_writing_authors.py`, `validate_data.py`), builds with Ruby 3.3.5, purges CSS, runs `check_internal_links.py` over the production `_site`, then publishes to `gh-pages`. PRs run every gate but skip the publish. A schema or link failure blocks the deploy.
+- **`deploy.yml`** (push to `main` and PRs): validates data schemas (`check_writing_authors.py`, `validate_data.py`), builds with the latest Ruby 3.3.x, purges CSS, runs `check_internal_links.py` over the production `_site`, then publishes to `gh-pages`. PRs run every gate but skip the publish. A schema or link failure blocks the deploy.
 - **`prettier.yml`** (push to `main` and PRs): `prettier . --check` with the lockfile versions.
 - **`codeql.yml`** (push, PR, weekly): JavaScript and Ruby, ignoring vendored `assets/js/distillpub/` and `assets/libs/`.
 - **`update-citations.yml`** (weekly, Monday): refreshes `_data/citations.yml` from Google Scholar and commits only when counts changed. A Scholar or dependency failure now fails the run (red) instead of reporting success. Its commits use `GITHUB_TOKEN`, so they do not trigger a deploy; that is fine because no page renders `citations.yml`.

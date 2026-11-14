@@ -16,7 +16,7 @@ A simple, clean, and responsive Jekyll theme for academics.
 
 ### Local Development
 
-> **This fork (bnglasner.github.io):** the primary path is the local Ruby toolchain, which is also what CI uses (`ruby/setup-ruby`, Ruby 3.3.5). Docker is optional and not installed on Ben's machine. `.claude/rules/build-and-verify.md` is authoritative for this repo.
+> **This fork (bnglasner.github.io):** the primary path is the local Ruby toolchain, which is also what CI uses (`ruby/setup-ruby`, latest Ruby 3.3.x). Docker is optional and not installed on Ben's machine. `.claude/rules/build-and-verify.md` is authoritative for this repo.
 
 ```bash
 # First time: install gems and the pinned Prettier
