@@ -69,7 +69,18 @@ person:
   alumni_of:
     - University of Washington
     - Vassar College
-  knows_about: [labor economics, place-based policy, social policy, Opportunity Zones, Child Tax Credit, wage subsidies]
+  knows_about:
+    [
+      labor economics,
+      place-based policy,
+      social policy,
+      Opportunity Zones,
+      Child Tax Credit,
+      wage subsidies,
+      AI-assisted research,
+      AI agents in empirical research,
+      reproducible research,
+    ]
   image: /assets/img/prof_pic_color.jpg
   address_locality: Washington, D.C.
   work_url: https://eig.org/about-us/executive-team-staff/ben-glasner/

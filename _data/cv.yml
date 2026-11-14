@@ -17,6 +17,8 @@
       value: <a href="https://linktr.ee/bglasner" target="_blank" rel="noopener noreferrer">linktr.ee/bglasner</a>
     - name: Research Focus
       value: Labor markets; place-based policy; social-policy design and economic well-being.
+    - name: Methods and Tools
+      value: R, Stata, and Python; Git and GitHub; AI coding agents (Claude Code) for research workflows; CPS, ACS, SIPP, and QCEW microdata; microsimulation.
 
 - title: Education
   type: time_table
@@ -154,6 +156,16 @@
 - title: Code and Data (Selected)
   type: time_table
   contents:
+    - title: <a href="/ai-research/">AI-Assisted Research Infrastructure at EIG</a>
+      institution: Economic Innovation Group (EIG)
+      year: 2026
+      description:
+        - Designed and maintain EIG's AI-assisted research template, which brings AI coding agents into empirical projects under standards for code review, methodology, verification of reported numbers, reproducibility, and disclosure of AI use.
+        - Designed and prototyped a structured knowledge base that makes institutional knowledge readable by both staff and AI agents.
+      linkitems:
+        - link: /ai-research/
+          linkname: Overview
+
     - title: <a href="https://github.com/EIG-Research" target="_blank" rel="noopener noreferrer">Reproducible Research Pipeline and GitHub Standards at EIG</a>
       institution: Economic Innovation Group (EIG)
       year: 2026
