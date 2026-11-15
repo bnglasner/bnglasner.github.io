@@ -79,7 +79,7 @@ toc:
 {% include axis-rule.liquid %}
 
 <div class="policy-section" id="retirement">
-  <span class="work-card__eyebrow work-card__eyebrow--policy">Retirement Coverage</span>
+  <span class="work-card__eyebrow work-card__eyebrow--policy">Retirement Security</span>
   <h2>Retirement Savings for Americans Act</h2>
   <p class="policy-section__lede">A federal, portable retirement account with auto-enrollment and a low-income match</p>
 

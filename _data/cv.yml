@@ -16,9 +16,9 @@
     - name: Linktree
       value: <a href="https://linktr.ee/bglasner" target="_blank" rel="noopener noreferrer">linktr.ee/bglasner</a>
     - name: Research Focus
-      value: Labor markets; place-based policy; social-policy design and economic well-being.
+      value: Labor and public economics — labor markets and worker classification; place-based policy; retirement security; social-policy design and economic well-being.
     - name: Methods and Tools
-      value: R, Stata, and Python; Git and GitHub; AI coding agents (Claude Code) for research workflows; CPS, ACS, SIPP, and QCEW microdata; microsimulation.
+      value: Causal inference and quasi-experimental program evaluation (difference-in-differences); R, Stata, and Python; Git and GitHub; AI coding agents (Claude Code) for research workflows; CPS, ACS, SIPP, and QCEW microdata; microsimulation.
 
 - title: Education
   type: time_table
