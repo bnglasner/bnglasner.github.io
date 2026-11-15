@@ -21,7 +21,7 @@ This file is the first thing any agent walking into the repo cold should read. I
   - Provenance: imported from the retired job-market-materials pipeline (`resume/build/overleaf_variants/`), whose PDFs were byte-identical to the 2026-02-22 assets.
   - `Ben_Glasner_CV.pdf` is the download alias. It was a stale earlier build of the full CV with identical text; `cv/build.sh` now writes it as a copy of `_full.pdf`.
   - TeX: `cv/build.sh` prefers the user-owned TinyTeX (`~/Library/TinyTeX`), where the template packages were installed on 2026-09-23, and falls back to `/Library/TeX/texbin`. The four PDFs were regenerated on 2026-09-23: full is 5 pages, 2p is 2, and 1p is 1, each under 250 KB.
-  - `assets/resume.pdf` is a byte-identical copy of `_full.pdf` that no page links to. It is kept so outside links keep working.
+  - `assets/resume.pdf` is a byte-identical copy of `_full.pdf` that no page links to. It is kept so outside links keep working. `cv/build.sh` writes it alongside the `Ben_Glasner_CV.pdf` alias (since 2026-11-14; before that it drifted out of sync).
   - Regenerating the PDFs is Ben's job.
 - **Coauthors:** Thomas Cronin (EIG Research Assistant) is new as of the 2026-05-22 "Babysitter Clause" post.
 

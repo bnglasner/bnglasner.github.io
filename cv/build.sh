@@ -6,6 +6,8 @@
 #             assets/pdf/Ben_Glasner_CV_2p.pdf    (must be exactly 2 pages)
 #             assets/pdf/Ben_Glasner_CV_1p.pdf    (must be exactly 1 page)
 #             assets/pdf/Ben_Glasner_CV.pdf       (download alias = copy of full)
+#             assets/resume.pdf                   (legacy alias = copy of full; no page
+#                                                  links it, kept for outside links)
 # Sources - cv/{full,2p,1p}/ variant .tex files, cv/shared/ (settings.sty,
 #           photo), _bibliography/papers.bib (publications, via biblatex), and
 #           _data/writing.yml + _data/media_page.yml (via cv/gen_sections.py).
@@ -85,5 +87,6 @@ if [[ "$COPY" == 1 ]]; then
     cp "$BUILD/$v/Ben_Glasner_CV_$v.pdf" "$OUT/Ben_Glasner_CV_$v.pdf"
   done
   cp "$OUT/Ben_Glasner_CV_full.pdf" "$OUT/Ben_Glasner_CV.pdf"
-  echo "build.sh: published to assets/pdf/ (Ben_Glasner_CV.pdf = full)"
+  cp "$OUT/Ben_Glasner_CV_full.pdf" "$REPO/assets/resume.pdf"
+  echo "build.sh: published to assets/pdf/ (Ben_Glasner_CV.pdf = full) and assets/resume.pdf (= full)"
 fi
