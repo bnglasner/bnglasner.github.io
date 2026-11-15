@@ -35,6 +35,13 @@ ninja.data = [{
         handler: () => {
           window.location.href = "/media/";
         },
+      },{id: "nav-ai-and-research-infrastructure",
+        title: "AI and research infrastructure",
+        description: "AI-assisted workflows for empirical economic research: a research template and an institutional knowledge base, built at the Economic Innovation Group.",
+        section: "Navigation",
+        handler: () => {
+          window.location.href = "/ai-research/";
+        },
       },{id: "nav-cv",
         title: "CV",
         description: "Education, employment, publications, and media. One-page, two-page, and full PDF versions are below.",
