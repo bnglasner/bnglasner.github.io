@@ -129,7 +129,7 @@ Correction to the May audit: NBER lists w29823 (March 2022), the working-paper v
 ## Page roster and IA (as of 2026-09-23)
 
 - **Nav:** Home · Research · Policy · Writing · Media · AI · CV.
-  - "AI" is `/ai-research/` (added 2026-11-14). Its link label comes from the optional `nav_title` front-matter field, which `_includes/header.liquid` prefers over `title`. The page describes the AI research template and knowledge base at a high level only, per Ben: no internal repo names, counts, test results, or status.
+  - "AI" is `/ai-research/` (added 2026-11-14). Its link label comes from the optional `nav_title` front-matter field, which `_includes/header.liquid` prefers over `title`. The page describes the AI research template and knowledge base at a high level only, per Ben: no internal repo names, counts, test results, or status. Its `#writing` section includes the one sanctioned list of colleagues' EIG AI research (see `.claude/rules/content-integrity.md`).
   - `/policy/` hosts the three policy narratives (`#opportunity-zones`, `#retirement`, `#wage-subsidy`) plus the `writing.yml` Reports list (`#reports`).
   - `/writing/` holds Agglomerations and guest essays only.
   - Code (`/repositories/`) is off-nav, linked from Research, the footer, and 404.

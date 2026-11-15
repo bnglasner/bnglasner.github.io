@@ -67,7 +67,15 @@ that way when editing.
 </div>
 
 <div class="policy-section" id="writing">
-  <h2>Writing on AI and the economy</h2>
+  <h2>AI, the economy, and young workers</h2>
+  {% comment %}
+    Sanctioned exception to the only-Ben rule (Ben, 2026-11-14): the "EIG research" list
+    surfaces colleagues' work Ben contributed to without a byline. Keep it honest:
+    full bylines exactly as published, Ben's role stated once for the program as a whole,
+    never per piece, and EIG staff work only (no outside guest essays). See
+    .claude/rules/content-integrity.md.
+  {% endcomment %}
+  <h3>My writing</h3>
   <ul class="policy-section__links">
     <li>
       <a href="https://agglomerations.eig.org/p/fat-bear-week-and-the-fate-of-the" target="_blank" rel="noopener noreferrer"
@@ -75,6 +83,58 @@ that way when editing.
       >
       (with Nathan Goldschlag, Agglomerations, October 2025): AI, productivity, and the human-judgment problems that policy still has to
       solve.
+    </li>
+    <li>
+      <a href="https://agglomerations.eig.org/p/no-we-are-not-producing-too-many" target="_blank" rel="noopener noreferrer"
+        >No, we are not producing too many STEM graduates</a
+      >
+      (with Connor O'Brien, Agglomerations, January 2025): why the argument that the U.S. has oversupplied STEM labor does not hold up.
+    </li>
+  </ul>
+
+  <h3>EIG research on AI, work, and young workers</h3>
+  <p>
+    I contribute to EIG's research program on AI and the labor market, often without a byline. Selected pieces from that program,
+    credited to their authors:
+  </p>
+  <ul class="policy-section__links">
+    <li>
+      <a href="https://eig.org/measuring-ai/" target="_blank" rel="noopener noreferrer">Measuring the Economic Effects of AI</a>
+      (Nathan Goldschlag, EIG, July 2026): answering how AI affects firms and workers will require better data, and significant investment
+      in U.S. statistical agencies.
+    </li>
+    <li>
+      <a href="https://eig.org/ai-versus-the-china-shock/" target="_blank" rel="noopener noreferrer">AI versus the China Shock</a>
+      (Adam Ozimek, Jason Harrison, and Nathan Goldschlag, EIG, June 2026): AI exposure falls on more educated, higher-paid workers and is
+      far less geographically concentrated, so AI is unlikely to repeat the China Shock's damage.
+    </li>
+    <li>
+      <a href="https://agglomerations.eig.org/p/smells-like-teen-unemployment" target="_blank" rel="noopener noreferrer"
+        >Smells Like Teen Unemployment</a
+      >
+      (Adam Ozimek, Agglomerations, May 2026): the employment decline among young workers, teens included, points to a low-hire, low-fire
+      economy rather than AI.
+    </li>
+    <li>
+      <a href="https://eig.org/how-students-and-recent-grads-are-responding-to-the-rise-of-ai/" target="_blank" rel="noopener noreferrer"
+        >How Students and Recent Grads are Responding to the Rise of AI</a
+      >
+      (Sarah Eckhardt and Nathan Goldschlag, EIG, May 2026): many students say AI has shaped their degree choices, but enrollment in
+      AI-exposed degrees has grown and young graduates' occupation mix has barely changed.
+    </li>
+    <li>
+      <a href="https://agglomerations.eig.org/p/ai-and-young-adult-jobs-the-real" target="_blank" rel="noopener noreferrer"
+        >AI and Young-adult Jobs: The Real Mystery</a
+      >
+      (Adam Ozimek and Nathan Goldschlag, Agglomerations, March 2026): employment has fallen for young adults with and without degrees, a
+      broad weakness that AI is unlikely to explain.
+    </li>
+    <li>
+      <a href="https://eig.org/ai-and-jobs-the-final-word/" target="_blank" rel="noopener noreferrer"
+        >AI and Jobs: The Final Word (Until the Next One)</a
+      >
+      (Sarah Eckhardt and Nathan Goldschlag, EIG, August 2025): across five measures of AI exposure, no meaningful evidence yet that AI is
+      causing significant job losses.
     </li>
   </ul>
 </div>

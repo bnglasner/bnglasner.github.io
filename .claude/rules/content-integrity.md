@@ -8,7 +8,14 @@ Every page, bibliography entry, data-file entry, and surfaced repository must re
 
 ## EIG-Research GitHub organization is the one institutional carve-out
 
-The `EIG-Research` GitHub organization may be surfaced on the site (and is, on `_pages/repositories.md`, via a live API call to the org's most recently updated repositories). This is the single allowed exception to the only-Ben rule. No other institutional or third-party content gets a personal-site surface.
+The `EIG-Research` GitHub organization may be surfaced on the site (and is, on `_pages/repositories.md`, via a live API call to the org's most recently updated repositories). This is the single allowed exception to the only-Ben rule. No other institutional or third-party content gets a personal-site surface, apart from the one list below.
+
+**Sanctioned list: EIG research on AI, work, and young workers (Ben, 2026-11-14).** The `#writing` section of `_pages/ai-research.md` lists EIG pieces on AI and the labor market that Ben contributed to without a byline. It stays within these limits:
+
+- Each item carries its byline exactly as published. Ben's role is stated once, at the level of the research program ("often without a byline"), never against an individual piece.
+- EIG staff work only. Outside guest essays (American Worker Project essays, Google economists' posts) are excluded.
+- Ben's own bylined pieces sit in a separate "My writing" list above it.
+- This is not a precedent for other pages. A new list like it needs Ben's explicit request.
 
 The personal `bnglasner` GitHub account contains repositories that are _not_ his research artifacts: `bnglasner.github.io` (the site source), `are213` (a UC Berkeley course fork), `policyengine-claude` (a fork of PolicyEngine's plugin), `policy-rules-database` (a fork of the Federal Reserve's database). These four repositories must not appear in any hand-curated personal-research-code section.
 
