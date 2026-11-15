@@ -42,7 +42,14 @@ The `/press/` page carries the site's own short and long bios, drafted in 2026-0
 - **Footer channels:** email, X, LinkedIn, Scholar, GitHub, Agglomerations, and Bluesky.
 - **Substack publication URL:** `https://agglomerations.eig.org`. Used by `add-short-form` and `portfolio-audit`.
 - **Scholar user ID:** `ZvG1rc8AAAAJ`. Used by `update-citations.yml` (the cron) and `bib-and-citations-sync`.
-- **Needs Ben:** `bglasner.com` still ranks in search, but Ben's control of the domain is unconfirmed. Search Console is not set up.
+- **Needs Ben:** `bglasner.com` still ranks in search, but Ben's control of the domain is unconfirmed.
+- **Google Search Console** (verified 2026-11-14, under Ben's personal Google account): the property is the URL prefix `https://bnglasner.github.io/`, verified with the HTML file method.
+  - `google5e955f21891ba0b1.html` at the repo root must stay, byte-identical, or verification lapses.
+  - The minifier, Prettier, and the end-of-file hook all skip it. A `_config.yml` default keeps it out of the sitemap.
+  - Before verification, `site:bnglasner.github.io` returned 0 Google results, though Bing indexed the site. URL Inspection reported the homepage as "URL is unknown to Google."
+  - On 2026-11-14 `sitemap.xml` (25 URLs) was submitted. It showed the usual first-day "Couldn't fetch" while Last read was still blank.
+  - Indexing was requested the same day for `/`, `/cv/`, `/publications/`, `/press/`, and `/policy/`. Re-check the Pages report and `site:` results in late November 2026.
+  - Bing Webmaster can import the site from Search Console; whether that has been done is unconfirmed.
 
 ## EIG-Research GitHub organization (the one institutional carve-out)
 
