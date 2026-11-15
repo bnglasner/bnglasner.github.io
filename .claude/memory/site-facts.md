@@ -48,10 +48,13 @@ The `/press/` page carries the site's own short and long bios, drafted in 2026-0
 
 The `EIG-Research` GitHub org is the single allowed third-party surface on the personal site. It had 41 public repos as of 2026-09-23. `_pages/repositories.md` calls the GitHub API to list the most recently updated ones; the call has a timeout and a session cache. These repositories map directly to publications on the site:
 
-- `oz-housing-supply` ↔ 2025 OZ housing supply report. `EIG-Opportunity-Zones-and-Housing-Supply` is its 2026-08-05 port; the legacy repo stays live, so existing links still work.
+- `oz-housing-supply` ↔ 2025 OZ housing supply report. `EIG-Opportunity-Zones-and-Housing-Supply` is its 2026-08-05 port; the legacy repo stays live, so existing links still work. As of 2026-11-14 the port is not publicly visible (the GitHub API returns 404), so link the legacy repo.
 - `EIG-Great-Transfer-Mation` ↔ 2024 Great "Transfer"-mation report.
-- `Retirement-Analysis-Urban-Rural`, `Retirement-data-summary-2024`, `Retirement-data-summary-2025`, `EIG-Savers-match-sipp` ↔ RSAA policy work.
-- `EIG-Retirement-Fast-Facts` and `EIG-Retirement-Fast-Facts-replication` ↔ "The U.S. Retirement System: Fast Facts" (2026-09-18).
+- Retirement repositories, by GitHub contributor history as of 2026-11-14:
+  - `EIG-Savers-match-sipp`: Ben is the sole contributor. It holds Saver's Match eligibility and cost microsimulation, created 2026-04-21, and is listed in the CV's Code section.
+  - `Retirement-data-summary-2024` and `Retirement-data-summary-2025`: mostly Sarah Eckhardt's commits, with Ben as a contributor. These are co-authored, so credit both before surfacing them.
+  - `Retirement-Analysis-Urban-Rural`: Sarah Eckhardt and Jason Bourbaki, with **no commits from Ben**. Do not attribute it to Ben.
+- `EIG-Retirement-Fast-Facts-replication` ↔ "The U.S. Retirement System: Fast Facts" (2026-09-18). Ben is the sole contributor, and it is listed in the CV's Code section. `EIG-Retirement-Fast-Facts` is not publicly visible (404 as of 2026-11-14).
 - `noncompete-income` covers income-threshold noncompete work (a 2023 ACS dashboard created 2025-03-26). It does **not** map to the 2023 Hawaii/Oregon note, and may relate to the 2026 Babysitter piece. Ben should confirm.
 
 Only the OZ housing and Transfer-mation bib entries carry `code =` links. When `add-publication` or `add-policy-report` runs, check this list, or call the GitHub API live, for a matching repo.
