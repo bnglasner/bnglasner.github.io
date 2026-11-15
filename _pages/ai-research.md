@@ -3,13 +3,15 @@ layout: page
 permalink: /ai-research/
 title: AI and research infrastructure
 description: "AI-assisted workflows for empirical economic research: a research template and an institutional knowledge base, built at the Economic Innovation Group."
-nav: false
+nav: true
+nav_order: 5
+nav_title: AI
 redesign_2026: true
 ---
 
 {% comment %}
-Off-nav by design (the AI work is a second lane, not equal billing with the research):
-linked from the Code page, the Press page, and the CV.
+In the header nav as "AI" (nav_title) since 2026-11-14, between Media and CV, and linked
+from the homepage "Currently" note, the Code page, the Press page, and the CV.
 Ben's instruction (2026-11-14): describe both systems at a high level only. No internal
 repository names or links, component counts, test results, or project status. Keep it
 that way when editing.

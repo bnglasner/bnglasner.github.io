@@ -127,11 +127,12 @@ Correction to the May audit: NBER lists w29823 (March 2022), the working-paper v
 
 ## Page roster and IA (as of 2026-09-23)
 
-- **Nav:** Home · Research · Policy · Writing · Media · CV.
+- **Nav:** Home · Research · Policy · Writing · Media · AI · CV.
+  - "AI" is `/ai-research/` (added 2026-11-14). Its link label comes from the optional `nav_title` front-matter field, which `_includes/header.liquid` prefers over `title`. The page describes the AI research template and knowledge base at a high level only, per Ben: no internal repo names, counts, test results, or status.
   - `/policy/` hosts the three policy narratives (`#opportunity-zones`, `#retirement`, `#wage-subsidy`) plus the `writing.yml` Reports list (`#reports`).
   - `/writing/` holds Agglomerations and guest essays only.
   - Code (`/repositories/`) is off-nav, linked from Research, the footer, and 404.
-- **Real pages in `_pages/`:** `about.md`, `cv.md`, `media.md`, `policy.md`, `press.md` (off-nav; linked from the homepage hero, Media, and the footer), `publications.md`, `repositories.md`, `wage-subsidy-sim.md`, `writing.md`, `404.md` (noindex).
+- **Real pages in `_pages/`:** `about.md`, `ai-research.md`, `cv.md`, `media.md`, `policy.md`, `press.md` (off-nav; linked from the homepage hero, Media, and the footer), `publications.md`, `repositories.md`, `wage-subsidy-sim.md`, `writing.md`, `404.md` (noindex).
 - **Research page (`publications.md`):**
   - It is grouped into theme sections from `_data/research_themes.yml` and lists every entry group, including policy reports. Cards show coauthors and type labels.
   - The keyword filter is inline in `_includes/bib_search.liquid`. `assets/js/bibsearch.js` is unused.

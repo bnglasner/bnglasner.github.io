@@ -16,7 +16,7 @@ role, dates, and education from \_data/cv.yml; journals and coauthors from
 policy roles ("lead author", "co-author with Adam Ozimek", "documenting the
 coverage gap") from \_pages/policy.md. Bios are third person on purpose, so
 they can be pasted into an introduction or program without editing.
-Not in the nav by design: the nav stays at five items; this page is linked
+Not in the nav by design, to keep the nav lean; this page is linked
 from the homepage hero, the Media page, and the footer.
 {% endcomment %}
 

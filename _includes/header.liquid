@@ -1,6 +1,6 @@
 <header>
   <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" aria-label="Main">
+  <nav id="navbar" class="navbar navbar-light navbar-expand-md {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" aria-label="Main">
     <div class="container">
       <a class="navbar-brand title site-wordmark" href="{{ site.baseurl }}/">
         {% include site-mark.liquid %}
@@ -49,9 +49,10 @@
           </li>
 
           <!--
-            Flat nav: Research, Policy writing, Media, Code, CV. No dropdowns
+            Flat nav: Research, Policy, Writing, Media, AI, CV. No dropdowns
             by design (see design brief) — nav_order on each page's front
-            matter controls order.
+            matter controls order; an optional nav_title overrides the title
+            as the link label (the AI page's title is too long for the bar).
           -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
@@ -70,7 +71,7 @@
                     aria-current="page"
                   {% endif %}
                 >
-                  {{- p.title }}
+                  {{- p.nav_title | default: p.title }}
                 </a>
               </li>
             {% endif %}
