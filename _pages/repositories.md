@@ -17,13 +17,13 @@ redesign_2026: true
 </p>
 
 <h2>Open Research, by Default</h2>
-<p class="measure">
+<p class="prose">
   I established the open-research standard EIG now uses for its empirical projects. Every analysis — whether a short memo or
   a multi-year study — should be readable from raw inputs to final figure, and that expectation applies across
   the EIG-Research organization. Any researcher, journalist, or policymaker should be able to open one of these
   repositories and trace the chain from data to claim.
 </p>
-<p class="measure">
+<p class="prose">
   I extend the same workflow to the teams I collaborate with, coaching colleagues on the Git, code review, and
   documentation practices that make a public repository worth publishing. The same standard now governs AI-assisted work; see
   <a href="{{ '/ai-research/' | relative_url }}">AI and research infrastructure</a>.

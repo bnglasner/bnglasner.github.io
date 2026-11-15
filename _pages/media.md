@@ -74,7 +74,7 @@ toc:
 {% endfor %}
 
 <h2>Connect</h2>
-<p class="research-intro measure">
+<p class="research-intro">
   For media inquiries, podcast invitations, or speaking engagements, reach out at
   <a href="mailto:benjamin@eig.org">benjamin@eig.org</a>; bios and topics are on the
   <a href="{{ '/press/' | relative_url }}">Press and speaking</a> page. For short-form commentary as it lands, the
