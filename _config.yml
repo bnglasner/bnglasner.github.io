@@ -245,6 +245,11 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  # Google Search Console verification file: served, but not listed in the sitemap.
+  - scope:
+      path: "google5e955f21891ba0b1.html"
+    values:
+      sitemap: false
 
 sass:
   style: compressed
@@ -259,7 +264,7 @@ jekyll-minifier:
   # spaces around + and - inside clamp()/calc(), which makes them invalid (the
   # hero headline fell back to 17px in production), so leave CSS to Sass.
   compress_css: false
-  exclude: ["robots.txt", "assets/js/search/*.js"]
+  exclude: ["robots.txt", "assets/js/search/*.js", "google5e955f21891ba0b1.html"]
 
 # -----------------------------------------------------------------------------
 # Terser
