@@ -170,6 +170,10 @@
   --font-sans: "Public Sans Variable", "Public Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
 
+  // Width standard (Ben, 2026-11-14): paragraphs of content fill their
+  // column. Only titles and one-line decks/summaries are capped — the page
+  // deck (.post-description) at --measure, the hero headline at 22ch, and
+  // the headline-wheel hook at 62ch.
   --measure: 68ch;
   --font-size-hero: clamp(2.1rem, 1.7rem + 1.8vw, 3.1rem);
   --font-size-h2: 1.75rem;

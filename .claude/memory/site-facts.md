@@ -116,6 +116,7 @@ Correction to the May audit: NBER lists w29823 (March 2022), the working-paper v
   - Newsreader has no old-style figures or small caps.
   - Public Sans is the body face at 400, and IBM Plex Mono sets eyebrows and meta.
   - The drop cap appears on the policy narratives only.
+- **Text width (2026-11-14, Ben's standard):** paragraphs of content fill the available column; do not add `max-width` caps to body text. Only titles and one-line decks or summaries are capped: `.post-description` at `--measure` (68ch), `.home-hero__headline` at 22ch, and `.headline-wheel__hook` at 62ch. Use `.prose` for an uncapped paragraph that needs the in-text link underline.
 - **Signature elements:**
   - The navbar wordmark is the monogram plus the name.
   - The axis rule has one teal "origin" tick.
