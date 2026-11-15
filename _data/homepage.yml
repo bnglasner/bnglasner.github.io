@@ -4,8 +4,11 @@
 # 2026-09-23 (retirement coverage work and the short-form video series, both
 # documented on the site) — update the line itself, and the date below,
 # whenever what he's actually doing changes.
-currently_working_on: "Research on the U.S. retirement coverage gap and the Retirement Savings for Americans Act, plus a short-form video series on what the latest labor-market data show."
-currently_working_on_updated: 2026-09-23
+# 2026-11-14: Ben asked for a homepage mention of the AI research work; the
+# linked clause points to /ai-research/ (the template renders this string raw,
+# so the <a><u> markup matches the note's other links).
+currently_working_on: 'Research on the U.S. retirement coverage gap and the Retirement Savings for Americans Act, a short-form video series on what the latest labor-market data show, and the <a href="/ai-research/"><u>AI research tools</u></a> EIG economists use.'
+currently_working_on_updated: 2026-11-14
 
 # Optional second line of the same note: the availability signal. Keep it a
 # casual statement of fact, not a plea — the media page carries the proof.

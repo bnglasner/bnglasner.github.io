@@ -164,7 +164,10 @@
   }
 }
 
-@media (min-width: 576px) {
+// Matches the navbar-expand-md breakpoint in _includes/header.liquid: the
+// expanded bar needs ~671px for the wordmark plus seven links, so it collapses
+// to the hamburger below 768px.
+@media (min-width: 768px) {
   #light-toggle {
     transform: translateY(4px);
   }
