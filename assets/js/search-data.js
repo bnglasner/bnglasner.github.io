@@ -178,6 +178,38 @@ ninja.data = [{
         window.open("https://eig.org/noncompetes-research-note/", "_blank");
       },
     },{
+      id: "writing-did-young-americans-really-just-get-poorer",
+      title: "Did Young Americans Really Just Get Poorer?",
+      description: "The Survey of Consumer Finances&#39; reported 23 percent drop in median net worth for households under 35 rests on about 630 young households, carries a confidence band that crosses zero, and is concentrated among 30- to 34-year-olds, so the headline needs more context than it got.",
+      section: "Writing",
+      handler: () => {
+        window.open("https://agglomerations.eig.org/p/did-young-americans-really-get-poorer", "_blank");
+      },
+    },{
+      id: "writing-the-facts-that-matter-about-retiring-in-america",
+      title: "The facts that matter about retiring in America",
+      description: "New 2025 SIPP data show about 76 million workers — nearly 52 percent of working Americans ages 18 to 64 — lack access to an employer-provided retirement plan, with the widest gaps among part-time workers, low earners, and workers without a college degree.",
+      section: "Writing",
+      handler: () => {
+        window.open("https://agglomerations.eig.org/p/the-facts-that-matter-about-retiring", "_blank");
+      },
+    },{
+      id: "writing-the-chart-that-explains-work-in-america",
+      title: "The Chart that Explains Work in America",
+      description: "Breaking real wage growth since 1982 into five eras surfaces six stories about U.S. work, led by the finding that broad-based wage gains came almost entirely during stretches of sustained low unemployment.",
+      section: "Writing",
+      handler: () => {
+        window.open("https://agglomerations.eig.org/p/the-chart-that-explains-work-in-america", "_blank");
+      },
+    },{
+      id: "writing-if-demography-is-destiny-can-communities-change-their-fate",
+      title: "If demography is destiny, can communities change their fate?",
+      description: "Rural population growth turned positive after 2020, but rural counties inside metro areas account for more than two-thirds of it, and relocation incentives give the places still losing residents only a modest, ultimately zero-sum tool.",
+      section: "Writing",
+      handler: () => {
+        window.open("https://agglomerations.eig.org/p/if-demography-is-destiny-can-communities", "_blank");
+      },
+    },{
       id: "writing-the-babysitter-clause-and-the-problem-of-partial-noncompete-bans",
       title: "The Babysitter Clause and the Problem of Partial Noncompete Bans",
       description: "Partial noncompete bans that carve out workers by income, occupation, or industry — down to Washington, D.C.&#39;s exemption for casual babysitters — end up arbitrary, confusing, and hard to enforce, which makes the case for full bans.",
