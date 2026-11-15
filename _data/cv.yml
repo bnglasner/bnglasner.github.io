@@ -16,9 +16,9 @@
     - name: Linktree
       value: <a href="https://linktr.ee/bglasner" target="_blank" rel="noopener noreferrer">linktr.ee/bglasner</a>
     - name: Research Focus
-      value: Labor markets; place-based policy; social-policy design and economic well-being.
+      value: Labor and public economics — labor markets and worker classification; place-based policy; retirement security; social-policy design and economic well-being.
     - name: Methods and Tools
-      value: R, Stata, and Python; Git and GitHub; AI coding agents (Claude Code) for research workflows; CPS, ACS, SIPP, and QCEW microdata; microsimulation.
+      value: Causal inference and quasi-experimental program evaluation (difference-in-differences); R, Stata, and Python; Git and GitHub; AI coding agents (Claude Code) for research workflows; CPS, ACS, SIPP, and QCEW microdata; microsimulation.
 
 - title: Education
   type: time_table
@@ -50,11 +50,11 @@
       location: Washington, D.C.
       year: Jan 2026–present
       description:
-        - Help shape and prioritize EIG's research pipeline by generating new ideas, assessing fit with strategic priorities, and tracking key economic, academic, and policy developments.
-        - "Lead end-to-end research projects: frame questions, select data, design and defend identification strategies, run quantitative analysis, and write publication-ready outputs with institutional rigor."
-        - Serve as a public-facing representative of EIG by presenting findings to policymakers, researchers, and media and translating technical work for broad audiences.
-        - Support fundraising and external partnerships by cultivating relationships with funders, contractors, and vendors.
-        - Mentor and develop junior staff with hands-on support for coding, data best practices, quality norms, and team development.
+        - "Set research direction: generate and prioritize projects against EIG's strategic priorities, and track economic, academic, and policy developments across labor markets, place-based policy, and retirement security."
+        - "Lead research end to end: frame policy questions, select data, design and defend identification strategies, build microsimulation and fiscal-cost models, and write publication-ready analysis. Methods: applied microeconomics, modern difference-in-differences, geospatial analysis, and large administrative and survey datasets."
+        - "Build research infrastructure: set EIG's standards for reproducible research (GitHub collaboration, code review, and replication packages) and for <a href='/ai-research/'>AI-assisted empirical work</a> (AI coding agents used under verification and disclosure standards)."
+        - Represent EIG publicly, translating technical work for policymakers, journalists, and broadcast audiences.
+        - Mentor and develop junior staff on coding, data practices, and quality norms; support fundraising and partnerships with funders, contractors, and vendors.
 
     - title: Economist
       institution: Economic Innovation Group (EIG)
@@ -62,7 +62,8 @@
       location: Washington, D.C.
       year: Sep 2024–Jan 2026
       description:
-        - Economic research with large datasets; advanced statistical and spatial analysis.
+        - Led quasi-experimental policy evaluations with large administrative and survey datasets, including advanced statistical and spatial analysis at the county and census-tract levels.
+        - Developed evidence-based policy proposals, from literature review and data analysis through program design.
         - Translated empirical results into policy writing, data visualization, and stakeholder outreach.
 
     - title: Associate Economist
@@ -71,8 +72,8 @@
       location: Washington, D.C.
       year: Jan 2023–Sep 2024
       description:
-        - Applied empirical methods to EIG research on labor markets, place-based policy, and economic mobility.
-        - Supported report production, data engineering, and policy communication for public-facing publications.
+        - Applied empirical methods to research on labor markets, business formation, remote work, and place-based policy.
+        - Built data pipelines and supported report production, from data engineering through publication and policy communication; synthesized research literatures for policy audiences.
 
     - title: Postdoctoral Research Scientist
       institution: Center on Poverty and Social Policy, Columbia University
@@ -177,6 +178,26 @@
         - link: https://github.com/bnglasner
           linkname: bnglasner
 
+    - title: '<a href="https://github.com/EIG-Research/EIG-Retirement-Fast-Facts-replication" target="_blank" rel="noopener noreferrer">The U.S. Retirement System: Fast Facts (Replication Package)</a>'
+      institution: GitHub (EIG-Research)
+      year: 2026
+      description:
+        - R pipeline characterizing retirement plan access, participation, and employer contributions for 147 million civilian workers from SIPP microdata, with a present-value estimate of the federal retirement tax expenditure and a testthat suite of invariant checks.
+      linkitems:
+        - link: https://github.com/EIG-Research/EIG-Retirement-Fast-Facts-replication
+          linkname: Code
+        - link: https://eig.org/retirement-fast-facts/
+          linkname: Website
+
+    - title: '<a href="https://github.com/EIG-Research/EIG-Savers-match-sipp" target="_blank" rel="noopener noreferrer">Saver''s Match: Eligibility and Cost Analysis (Repository)</a>'
+      institution: GitHub (EIG-Research)
+      year: 2026
+      description:
+        - Eligibility, access-gap, and fiscal-cost microsimulation of the SECURE 2.0 Saver's Match from SIPP microdata, replicating the Joint Committee on Taxation score and costing expanded and universal designs.
+      linkitems:
+        - link: https://github.com/EIG-Research/EIG-Savers-match-sipp
+          linkname: Code
+
     - title: <a href="https://github.com/EIG-Research/EIG-Great-Transfer-Mation" target="_blank" rel="noopener noreferrer">The Great "Transfer"-mation (Repository)</a>
       institution: GitHub (EIG-Research)
       year: 2024
@@ -265,3 +286,4 @@
     - Transfers, safety-net programs, and poverty dynamics
     - Opportunity Zones and housing supply
     - Gig economy and the future of work
+    - Retirement security and retirement plan access

@@ -30,3 +30,6 @@ CUSTOMIZE.md
 _site/
 _site_verify/
 .jekyll-cache/
+
+# Google Search Console verification file: must stay byte-identical to the download
+google*.html

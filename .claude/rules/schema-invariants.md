@@ -99,7 +99,7 @@ Research agenda themes for the Research page. A list; each entry requires `key` 
 
 ## `_data/socials.yml`
 
-Single flat map. Existing keys (do not rename; templates reference them by these names): `cv_pdf`, `email`, `rss_icon`, `scholar_userid`, `github_username`, `linkedin_username`, `x_username`, `bluesky_url`, `instagram_id`, `tiktok_url`, `threads_url`, `substack_url`. The last three use the nested `{ url: <string> }` form because `jekyll-socials` does not natively support those platforms; the about-page "Find me elsewhere" block renders explicit links for each.
+Single flat map. Existing keys (do not rename; templates reference them by these names): `cv_pdf`, `email`, `rss_icon`, `scholar_userid`, `orcid_id` (rendered only into the JSON-LD `sameAs`, not the footer), `github_username`, `linkedin_username`, `x_username`, `bluesky_url`, `instagram_id`, `tiktok_url`, `threads_url`, `substack_url`. The last three use the nested `{ url: <string> }` form because `jekyll-socials` does not natively support those platforms; the about-page "Find me elsewhere" block renders explicit links for each.
 
 ## `_data/cv.yml`
 

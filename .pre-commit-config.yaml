@@ -6,6 +6,8 @@ repos:
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
+        # Google Search Console verification file must match Google's download byte for byte (no trailing newline).
+        exclude: ^google[0-9a-f]+\.html$
       - id: check-yaml
       - id: check-added-large-files
 
