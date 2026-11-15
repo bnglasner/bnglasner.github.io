@@ -117,6 +117,30 @@ reports:
 # Iscenko & Millet) are intentionally excluded from this list per the strict
 # byline rule.
 short_form:
+  - title: "Did Young Americans Really Just Get Poorer?"
+    url: "https://agglomerations.eig.org/p/did-young-americans-really-get-poorer"
+    outlet: "Agglomerations"
+    authors: ["Ben Glasner"]
+    published: 2026-11-06
+    description: "The Survey of Consumer Finances' reported 23 percent drop in median net worth for households under 35 rests on about 630 young households, carries a confidence band that crosses zero, and is concentrated among 30- to 34-year-olds, so the headline needs more context than it got."
+  - title: "The facts that matter about retiring in America"
+    url: "https://agglomerations.eig.org/p/the-facts-that-matter-about-retiring"
+    outlet: "Agglomerations"
+    authors: ["Ben Glasner"]
+    published: 2026-10-28
+    description: "New 2025 SIPP data show about 76 million workers — nearly 52 percent of working Americans ages 18 to 64 — lack access to an employer-provided retirement plan, with the widest gaps among part-time workers, low earners, and workers without a college degree."
+  - title: "The Chart that Explains Work in America"
+    url: "https://agglomerations.eig.org/p/the-chart-that-explains-work-in-america"
+    outlet: "Agglomerations"
+    authors: ["Cardiff Garcia", "Ben Glasner"]
+    published: 2026-10-09
+    description: "Breaking real wage growth since 1982 into five eras surfaces six stories about U.S. work, led by the finding that broad-based wage gains came almost entirely during stretches of sustained low unemployment."
+  - title: "If demography is destiny, can communities change their fate?"
+    url: "https://agglomerations.eig.org/p/if-demography-is-destiny-can-communities"
+    outlet: "Agglomerations"
+    authors: ["Jiaxin (Jason) He", "Kenan Fikri", "Ben Glasner"]
+    published: 2026-10-02
+    description: "Rural population growth turned positive after 2020, but rural counties inside metro areas account for more than two-thirds of it, and relocation incentives give the places still losing residents only a modest, ultimately zero-sum tool."
   - title: "The Babysitter Clause and the Problem of Partial Noncompete Bans"
     url: "https://agglomerations.eig.org/p/the-babysitter-clause-and-the-problem"
     outlet: "Agglomerations"
