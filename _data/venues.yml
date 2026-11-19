@@ -20,6 +20,9 @@
   url: https://www.journals.uchicago.edu/journals/jole/home
   color: "#6b4c9a"
 
+"Mercatus":
+  url: https://www.mercatus.org/
+
 "JPubE":
   url: https://www.sciencedirect.com/journal/journal-of-public-economics
   color: "#26547c"
