@@ -244,6 +244,12 @@ short_form:
 # Guest posts on outside publications, listed separately so they are not
 # presented as Agglomerations work.
 guest_posts:
+  - title: "Gig Work Is Good Work"
+    url: "https://www.wsj.com/opinion/gig-work-is-good-work-2a972db2"
+    outlet: "The Wall Street Journal"
+    authors: ["Liya Palagashvili", "Benjamin Glasner"]
+    published: 2026-11-16
+    description: "A Mercatus survey of 2,705 Instacart shoppers shows that Americans see flexible work as crucial to keeping up with rising prices."
   - title: "Minimum Wage Laws and App-Based Workers"
     url: "https://www.labormarketmatters.com/p/minimum-wage-laws-and-app-based-workers"
     outlet: "Labor Market Matters"
